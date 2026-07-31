@@ -1,19 +1,31 @@
 import json
 import os
 import sys
+import traceback
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import parse_qs, urlparse
 
 # 將專案根目錄加入 Python 搜尋路徑
-OKA_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if OKA_ROOT not in sys.path:
-    sys.path.insert(0, OKA_ROOT)
+root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if root_path not in sys.path:
+    sys.path.insert(0, root_path)
 
-from web_server import build_encyclopedia_data
-from ai_oka import hybrid_search_oka
+_INIT_ERROR = None
+try:
+    from web_server import build_encyclopedia_data
+    from ai_oka import hybrid_search_oka
+except Exception as e:
+    _INIT_ERROR = f"Import error: {e}\n{traceback.format_exc()}"
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
+        if _INIT_ERROR:
+            self.send_response(500)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(json.dumps({"error": _INIT_ERROR}).encode('utf-8'))
+            return
+
         try:
             parsed_url = urlparse(self.path)
             path = parsed_url.path
@@ -40,5 +52,5 @@ class handler(BaseHTTPRequestHandler):
             self.send_response(500)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
-            err_res = {"error": str(e)}
+            err_res = {"error": f"Runtime error: {e}\n{traceback.format_exc()}"}
             self.wfile.write(json.dumps(err_res).encode('utf-8'))
