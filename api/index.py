@@ -31,13 +31,13 @@ class handler(BaseHTTPRequestHandler):
             path = parsed_url.path
             query_params = parse_qs(parsed_url.query)
             
-            if '/api/encyclopedia' in path:
+            if 'encyclopedia' in path:
                 res = build_encyclopedia_data()
-            elif '/api/search' in path:
+            elif 'search' in path:
                 q = query_params.get('q', [''])[0]
                 res = hybrid_search_oka(q)
             else:
-                res = {"status": "ok", "message": "OKA Search API on Vercel"}
+                res = {"status": "ok", "message": "OKA Search API on Vercel", "path": path}
 
             body = json.dumps(res, ensure_ascii=False).encode('utf-8')
             
