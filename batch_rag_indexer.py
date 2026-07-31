@@ -12,6 +12,7 @@ INDEX_FILE = os.path.join(OKA_ROOT, "data", "oka_rag_index.json")
 INV_INDEX_FILE = os.path.join(OKA_ROOT, "data", "oka_inverted_index.json")
 
 _RAG_INDEX_CACHE = None
+_INVERTED_INDEX_CACHE = None
 import gzip
 
 def load_json_auto(path):
