@@ -198,16 +198,24 @@ class OKAHandler(SimpleHTTPRequestHandler):
             ]
         }
 
+import threading
+
 def run_server(port=8080):
-    print("=" * 80, flush=True)
-    print("🔥 正在進行資料庫【RAM 記憶體熱快取預熱 (Warmup)】...", flush=True)
-    hybrid_search_oka("預熱 Warmup")
-    print("⚡ 記憶體預熱完成！全頻道 1,271,163 切片已常駐 RAM 暫存器", flush=True)
-    print(f"🚀 OKA 全頻道 Web Server 已在 Port {port} 啟動：http://localhost:{port}", flush=True)
-    print("=" * 80, flush=True)
-    
     server_address = ('', port)
     httpd = HTTPServer(server_address, OKAHandler)
+    print("=" * 80, flush=True)
+    print(f"🚀 OKA 全頻道 Web Server 已在 Port {port} 成功綁定啟動！", flush=True)
+    print("=" * 80, flush=True)
+    
+    def warmup_bg():
+        print("🔥 正在背景進行資料庫【RAM 記憶體熱快取預熱 (Warmup)】...", flush=True)
+        try:
+            hybrid_search_oka("預熱 Warmup")
+            print("⚡ 記憶體預熱完成！全頻道切片已常駐 RAM 暫存器", flush=True)
+        except Exception as e:
+            print(f"⚠️ 背景預熱提醒: {e}", flush=True)
+
+    threading.Thread(target=warmup_bg, daemon=True).start()
     httpd.serve_forever()
 
 if __name__ == '__main__':
