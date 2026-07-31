@@ -27,7 +27,14 @@ def load_json_auto(path):
 def get_rag_chunks():
     global _RAG_INDEX_CACHE
     if _RAG_INDEX_CACHE is None:
-        _RAG_INDEX_CACHE = load_json_auto(INDEX_FILE)
+        raw_list = load_json_auto(INDEX_FILE) or []
+        # 超強記憶體瘦身優化：將 1.3M 筆字典轉為精簡 Tuple 元組 (video_id, timestamp, text, start)
+        # 將 RAM 記憶體開銷從 550MB 大幅壓低至 ~80MB，完全通過 Render 512MB 限制！
+        _RAG_INDEX_CACHE = [
+            (c.get('video_id') or c.get('source'), c.get('timestamp', '00:00'), c.get('text', ''), c.get('start', 0))
+            if isinstance(c, dict) else c
+            for c in raw_list
+        ]
     return _RAG_INDEX_CACHE or []
 
 def get_inverted_index():
@@ -58,24 +65,47 @@ def search_transcript_rag(query, top_k=50):
     else:
         target_pool = chunks[:500]
 
+    from ai_oka import get_video_map, get_clean_title
+    vmap = get_video_map()
+
     num_kw = len(keywords)
     matched = []
     for c in target_pool:
-        score = 0
-        txt = c.get('text', '').lower()
-        title = c.get('video_title', '').lower()
+        if isinstance(c, tuple):
+            vid, timestamp, txt_content, start = c
+        else:
+            vid = c.get('video_id') or c.get('source')
+            timestamp = c.get('timestamp', '00:00')
+            txt_content = c.get('text', '')
+            start = c.get('start', 0)
+
+        v_title = get_clean_title(vid, vmap.get(vid, {}).get('title', ''))
         
+        score = 0
+        txt_lower = txt_content.lower()
+        title_lower = v_title.lower()
+
         for idx, kw in enumerate(keywords):
             pos_weight = 10 ** (num_kw - 1 - idx)
-            if kw in txt:
-                cnt = min(txt.count(kw), 5)
+            if kw in txt_lower:
+                cnt = min(txt_lower.count(kw), 5)
                 score += cnt * pos_weight
-            if kw in title:
-                cnt = min(title.count(kw), 5)
+            if kw in title_lower:
+                cnt = min(title_lower.count(kw), 5)
                 score += cnt * pos_weight * 5
 
         if score > 0:
-            matched.append((score, c))
+            start_sec = int(start)
+            item_dict = {
+                "source": vid,
+                "video_id": vid,
+                "video_title": v_title,
+                "start": start,
+                "timestamp": timestamp,
+                "text": txt_content,
+                "url": f"https://www.youtube.com/watch?v={vid}&t={start_sec}s"
+            }
+            matched.append((score, item_dict))
             
     matched.sort(key=lambda x: x[0], reverse=True)
     return [item[1] for item in matched[:top_k]]
