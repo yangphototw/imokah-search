@@ -1,0 +1,38 @@
+# [eFEgyB9-HE4] 終於把線上課程做完啦！
+
+影片網址: https://www.youtube.com/watch?v=eFEgyB9-HE4
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [我們的現場課程終於上線了](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=0s)
+- **[00:02]** [累死了 終於做完了](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=2s)
+- **[00:05]** [這堂課程呢 包含非常多的東西](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=5s)
+- **[00:07]** [我們從旅行做出發](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=7s)
+- **[00:08]** [從小品的拍攝到人像到風景到街拍](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=8s)
+- **[00:12]** [我們分門別類的針對大家常問的問題呢](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=12s)
+- **[00:16]** [做了一個完整的解答](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=16s)
+- **[00:17]** [無論你在雪地不知道要幹什麼拍攝](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=17s)
+- **[00:19]** [或者是你今天看到要去做高山](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=19s)
+- **[00:21]** [也不知道要幹什麼構圖](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=21s)
+- **[00:22]** [我們都有專門的章節去一一的解釋](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=22s)
+- **[00:25]** [試著把所有關於攝影的基本知識](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=25s)
+- **[00:27]** [以及各種你需要知道的東西](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=27s)
+- **[00:30]** [全部都把它藏在了每個章節裡面](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=30s)
+- **[00:33]** [也就是說如果你今天從頭一路看到尾的話](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=33s)
+- **[00:35]** [應該可以把大致上你所需要學到的攝影的基本](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=35s)
+- **[00:39]** [所有的知識都一口氣難掛在內](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=39s)
+- **[00:42]** [這堂課程呢 一共錄了888分鐘](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=42s)
+- **[00:45]** [真的是一個非常長的課程](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=45s)
+- **[00:47]** [大家也知道我的話稍微就是比較多一點點](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=47s)
+- **[00:49]** [那希望這堂課程呢 能夠幫助你無論你是新手](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=49s)
+- **[00:52]** [剛踏入攝影 想要學習拍照](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=52s)
+- **[00:55]** [或是你已經拍了一小段時間](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=55s)
+- **[00:57]** [但是呢 對於可能更進一步的創作](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=57s)
+- **[00:59]** [或是發展出自己的觀點](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=59s)
+- **[01:01]** [還有一點困難的話呢](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=61s)
+- **[01:02]** [我覺得這堂課程應該都能夠完整的去cover到各位的各種問題](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=62s)
+- **[01:06]** [最後呢 就希望大家有機會的話](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=66s)
+- **[01:09]** [可以去試看一下我們課程上面的一些視聽章節](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=69s)
+- **[01:12]** [如果你喜歡的話呢](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=72s)
+- **[01:13]** [也歡迎你可以購買我們的新課程](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=73s)
+- **[01:15]** [那就期待我們的課程中相見](https://www.youtube.com/watch?v=eFEgyB9-HE4&t=75s)

@@ -1,0 +1,36 @@
+# [cMhcch5nxuA] 【嘉義的行人號誌是火雞耶！】喝酒喝太多會喝到什麼動物？　#1分鐘ok  #拍照技巧 #人像攝影 #專業拍攝  #拍照教學  #photography  #拍照技巧 #攝影技巧
+
+影片網址: https://www.youtube.com/watch?v=cMhcch5nxuA
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [嘉義的人型號字是火雞耶](https://www.youtube.com/watch?v=cMhcch5nxuA&t=0s)
+- **[00:01]** [幫我指火雞](https://www.youtube.com/watch?v=cMhcch5nxuA&t=1s)
+- **[00:04]** [今天我們來到嘉義市區](https://www.youtube.com/watch?v=cMhcch5nxuA&t=4s)
+- **[00:06]** [新華美西裝飾附近的街道](https://www.youtube.com/watch?v=cMhcch5nxuA&t=6s)
+- **[00:08]** [這裡有很多古屋很好拍攝](https://www.youtube.com/watch?v=cMhcch5nxuA&t=8s)
+- **[00:10]** [OK](https://www.youtube.com/watch?v=cMhcch5nxuA&t=10s)
+- **[00:11]** [地開旁邊不搭搭遇棚](https://www.youtube.com/watch?v=cMhcch5nxuA&t=11s)
+- **[00:13]** [只取左邊這一塊](https://www.youtube.com/watch?v=cMhcch5nxuA&t=13s)
+- **[00:16]** [看出頭來看一邊](https://www.youtube.com/watch?v=cMhcch5nxuA&t=16s)
+- **[00:20]** [然後在馬路對角長焦段拍攝](https://www.youtube.com/watch?v=cMhcch5nxuA&t=20s)
+- **[00:24]** [然後看你的右手邊](https://www.youtube.com/watch?v=cMhcch5nxuA&t=24s)
+- **[00:29]** [手撐在茶汁上](https://www.youtube.com/watch?v=cMhcch5nxuA&t=29s)
+- **[00:31]** [看我](https://www.youtube.com/watch?v=cMhcch5nxuA&t=31s)
+- **[00:34]** [在街對面遠景長焦拍攝一張](https://www.youtube.com/watch?v=cMhcch5nxuA&t=34s)
+- **[00:38]** [街對面斜角拍攝一張](https://www.youtube.com/watch?v=cMhcch5nxuA&t=38s)
+- **[00:42]** [好看的復古牆面和鐵柵欄](https://www.youtube.com/watch?v=cMhcch5nxuA&t=42s)
+- **[00:44]** [擁挽的往後靠](https://www.youtube.com/watch?v=cMhcch5nxuA&t=44s)
+- **[00:47]** [好來舉重](https://www.youtube.com/watch?v=cMhcch5nxuA&t=47s)
+- **[00:52]** [好看的老牆貼牆](https://www.youtube.com/watch?v=cMhcch5nxuA&t=52s)
+- **[00:54]** [頭高](https://www.youtube.com/watch?v=cMhcch5nxuA&t=54s)
+- **[00:55]** [好正我的陽光](https://www.youtube.com/watch?v=cMhcch5nxuA&t=55s)
+- **[00:56]** [頭高一點可以吃到光](https://www.youtube.com/watch?v=cMhcch5nxuA&t=56s)
+- **[01:00]** [只要老房子不要旁邊的工地](https://www.youtube.com/watch?v=cMhcch5nxuA&t=60s)
+- **[01:02]** [看我來一張](https://www.youtube.com/watch?v=cMhcch5nxuA&t=62s)
+- **[01:05]** [OK小儀跟你一起拍](https://www.youtube.com/watch?v=cMhcch5nxuA&t=65s)
+- **[01:07]** [酒喝太多會喝到什麼動物](https://www.youtube.com/watch?v=cMhcch5nxuA&t=67s)
+- **[01:10]** [會喝到猴子](https://www.youtube.com/watch?v=cMhcch5nxuA&t=70s)
+- **[01:12]** [因為喝到猫體](https://www.youtube.com/watch?v=cMhcch5nxuA&t=72s)
+- **[01:15]** [猫體](https://www.youtube.com/watch?v=cMhcch5nxuA&t=75s)
+- **[01:17]** [猴子猫體](https://www.youtube.com/watch?v=cMhcch5nxuA&t=77s)

@@ -1,0 +1,36 @@
+# [rT4_LiQSPkE] 【特色車站 】臺灣有很多好拍的舊車站呀！ #攝影技巧 #攝影教學 #人像攝影 #景點
+
+影片網址: https://www.youtube.com/watch?v=rT4_LiQSPkE
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [下午三點這個樹影非常好看](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=0s)
+- **[00:03]** [OK 小偉跟你一起拍](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=3s)
+- **[00:04]** [今天我們來到造橋車站來看看老車站怎麼拍](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=4s)
+- **[00:07]** [OK](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=7s)
+- **[00:08]** [我們從裡面拍到外面](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=8s)
+- **[00:12]** [走生頭看我](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=12s)
+- **[00:13]** [曝光拉高可以消除後面的雜物](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=13s)
+- **[00:17]** [台灣很多這種老車站都相當好拍](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=17s)
+- **[00:19]** [是台灣的特色](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=19s)
+- **[00:20]** [來看我一張](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=20s)
+- **[00:23]** [樓梯的延伸感](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=23s)
+- **[00:24]** [他還不回頭看我](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=24s)
+- **[00:27]** [造橋火車站還有一個特色](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=27s)
+- **[00:28]** [有一個日據時代留下來的站長休息室](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=28s)
+- **[00:33]** [我們在湖的對面拍一張這個宿舍全景](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=33s)
+- **[00:37]** [藍柑跟烏岩的夾縫](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=37s)
+- **[00:41]** [月台很適合拍壓縮感](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=41s)
+- **[00:42]** [往前走回頭看我](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=42s)
+- **[00:45]** [往後看好抬頭眼睛閉](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=45s)
+- **[00:49]** [來 月台最尾端](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=49s)
+- **[00:51]** [拍遠端沉沉跌跌的電線桿](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=51s)
+- **[00:52]** [回頭看我](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=52s)
+- **[00:55]** [低角度下往上拍](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=55s)
+- **[00:56]** [可以拍到電線這些延伸感](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=56s)
+- **[01:01]** [造橋車站這裡真的是非常好拍](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=61s)
+- **[01:03]** [台灣有很多老車站都很棒](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=63s)
+- **[01:05]** [長期吃油炸食品點上會出現什麼](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=65s)
+- **[01:07]** [造大](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=67s)
+- **[01:08]** [錯 是笑容](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=68s)
+- **[01:10]** [笑什麼](https://www.youtube.com/watch?v=rT4_LiQSPkE&t=70s)

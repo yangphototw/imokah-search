@@ -1,0 +1,38 @@
+# [Qv65MDWnuLI] 『陰天怎麼拍？』 最難刮傷的車子 #1分鐘OK  #攝影教學 #photography #景點 #專業拍攝 #人像攝影 #camera #拍照技巧
+
+影片網址: https://www.youtube.com/watch?v=Qv65MDWnuLI
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [幫我手扶上去](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=0s)
+- **[00:01]** [口罩上去](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=1s)
+- **[00:04]** [我們來到光不清春教大家](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=4s)
+- **[00:06]** [陰天怎麼拍](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=6s)
+- **[00:07]** [記住射塊線條光差高低差](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=7s)
+- **[00:09]** [ok](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=9s)
+- **[00:10]** [遠距離長焦段拍攝](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=10s)
+- **[00:11]** [拍攝屋頂的線條](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=11s)
+- **[00:12]** [還有樓梯欄杆的線條](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=12s)
+- **[00:16]** [樓梯的線條可以衝招出更多衍生感](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=16s)
+- **[00:21]** [換個方向](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=21s)
+- **[00:22]** [樓梯的線條呈對角線構圖](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=22s)
+- **[00:23]** [畫面更集中](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=23s)
+- **[00:26]** [在室內利用窗戶的光線](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=26s)
+- **[00:28]** [製造多一點反差](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=28s)
+- **[00:31]** [利用高低差拍攝屋頂的線條](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=31s)
+- **[00:33]** [手扶在欄杆上看天空](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=33s)
+- **[00:38]** [找到一些明顯的框框](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=38s)
+- **[00:39]** [把馬桶放在框框裡](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=39s)
+- **[00:43]** [找到一些有趣的元素](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=43s)
+- **[00:44]** [譬如說這個椅子](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=44s)
+- **[00:48]** [紅色跟綠色搭配到畫面更豐富](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=48s)
+- **[00:50]** [來看旁邊](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=50s)
+- **[00:53]** [圍牆可以當做前景的色塊](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=53s)
+- **[00:55]** [靠圍牆](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=55s)
+- **[00:59]** [原作和布幕的色塊](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=59s)
+- **[01:00]** [幫我手伸頭](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=60s)
+- **[01:04]** [你知道誰的車子最不容易被刮傷嗎](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=64s)
+- **[01:06]** [不知道](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=66s)
+- **[01:07]** [灰姑娘](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=67s)
+- **[01:08]** [因為灰姑娘的是南瓜馬車](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=68s)
+- **[01:11]** [哦好](https://www.youtube.com/watch?v=Qv65MDWnuLI&t=71s)

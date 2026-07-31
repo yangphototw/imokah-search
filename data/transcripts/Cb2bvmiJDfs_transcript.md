@@ -1,0 +1,38 @@
+# [Cb2bvmiJDfs] 大頭小身影片拍起來就是這麼簡單｜DJI OSMO 360
+
+影片網址: https://www.youtube.com/watch?v=Cb2bvmiJDfs
+
+## 語音逐字稿與時間戳記
+
+- **[00:08]** [這是一台DJI Osmo 360的全景相機](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=8s)
+- **[00:11]** [我跟它真的是相見恨玩](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=11s)
+- **[00:13]** [原來網路上那麼多有趣的畫面](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=13s)
+- **[00:15]** [都是用它才能夠拍攝出來](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=15s)
+- **[00:17]** [如果你跟我一樣從來沒有用過360的相機](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=17s)
+- **[00:20]** [那麼你會有一種打開新世界打門的感覺](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=20s)
+- **[00:23]** [你跟我說不會構圖該怎麼辦](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=23s)
+- **[00:25]** [很簡單 那就全部都拍下來](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=25s)
+- **[00:27]** [你跟我說拍攝的太單調怎麼辦](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=27s)
+- **[00:29]** [拿著相機走了一整路](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=29s)
+- **[00:31]** [轉換一下角度讓你的影片動起來](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=31s)
+- **[00:33]** [越是狹窄的空間](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=33s)
+- **[00:34]** [越能發揮它的潛力](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=34s)
+- **[00:36]** [如果你要作為一般的Vlog相機](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=36s)
+- **[00:38]** [肯定是沒有問題的](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=38s)
+- **[00:39]** [甚至它還可以給你前後的視角](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=39s)
+- **[00:41]** [有點類似iPhone前鏡頭跟後鏡頭](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=41s)
+- **[00:43]** [同時拍攝的感覺](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=43s)
+- **[00:45]** [DJI Osmo 360搭載1.1英吋的](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=45s)
+- **[00:47]** [正風型CMOS](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=47s)
+- **[00:48]** [支持1英吋的全景影像](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=48s)
+- **[00:50]** [畫質更好](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=50s)
+- **[00:51]** [夜間表現更加出色](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=51s)
+- **[00:53]** [最高支持8K50fps](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=53s)
+- **[00:55]** [以及4K120fps的拍攝](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=55s)
+- **[00:57]** [與Action系列通用電池](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=57s)
+- **[00:59]** [以及通用配件](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=59s)
+- **[01:00]** [無線連接DJI系列的麥克風](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=60s)
+- **[01:02]** [輕鬆解決收音的問題](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=62s)
+- **[01:04]** [想要去看看](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=64s)
+- **[01:05]** [360全景相機的獨特視角](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=65s)
+- **[01:07]** [DJI Osmo 360推薦給你](https://www.youtube.com/watch?v=Cb2bvmiJDfs&t=67s)

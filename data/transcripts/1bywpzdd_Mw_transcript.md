@@ -1,0 +1,36 @@
+# [1bywpzdd_Mw] 新手拍鳥不能不知道的三件事
+
+影片網址: https://www.youtube.com/watch?v=1bywpzdd_Mw
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [如果你說我們頻道的老觀眾](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=0s)
+- **[00:01]** [應該知道我們對拍鳥這塊](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=1s)
+- **[00:03]** [不是特別的擅長](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=3s)
+- **[00:04]** [所以呢這一次我們特別請來一位老熟人](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=4s)
+- **[00:07]** [同時也是有超過10年拍鳥經驗的泰哥](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=7s)
+- **[00:10]** [來跟大家分享](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=10s)
+- **[00:11]** [新手在拍鳥時有哪些地方需要特別注意](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=11s)
+- **[00:14]** [如果新手入門拍鳥的話](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=14s)
+- **[00:16]** [一定要注意兩件事情](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=16s)
+- **[00:17]** [第一件事情一定要穿著](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=17s)
+- **[00:19]** [不要太幸運的衣服](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=19s)
+- **[00:20]** [一定要戴著帽子](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=20s)
+- **[00:21]** [不管什麼樣的帽子都可以](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=21s)
+- **[00:23]** [你只要改變你頭部的形狀](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=23s)
+- **[00:25]** [鳥類就不容易把你當成敵人](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=25s)
+- **[00:26]** [或是有威脅的目標](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=26s)
+- **[00:29]** [如果要靠近鳥的話](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=29s)
+- **[00:30]** [找遮蔽物是蠻重要的一件事情](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=30s)
+- **[00:33]** [在我們遠方那邊有一群](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=33s)
+- **[00:35]** [排路](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=35s)
+- **[00:35]** [如果我想辦法靠近他們](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=35s)
+- **[00:37]** [或是等待他們過來的話](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=37s)
+- **[00:38]** [我們通常一定會找樹](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=38s)
+- **[00:40]** [或者是草](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=40s)
+- **[00:41]** [前面有遮蔽物的地方](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=41s)
+- **[00:42]** [一個很重要的事情就是](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=42s)
+- **[00:44]** [不要去打擾他們](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=44s)
+- **[00:45]** [自然的方式去拍攝他們](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=45s)
+- **[00:47]** [這樣子比較OK](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=47s)
+- **[00:48]** [大概是這樣](https://www.youtube.com/watch?v=1bywpzdd_Mw&t=48s)

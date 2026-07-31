@@ -1,0 +1,35 @@
+# [rINH5IxMAgw] 請問我失戀了...該怎麼辦...
+
+影片網址: https://www.youtube.com/watch?v=rINH5IxMAgw
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [最近我們頻道的Discord上有沒有觀眾留言說](https://www.youtube.com/watch?v=rINH5IxMAgw&t=0s)
+- **[00:02]** [最近剛分手了](https://www.youtube.com/watch?v=rINH5IxMAgw&t=2s)
+- **[00:03]** [不知道該做些什麼](https://www.youtube.com/watch?v=rINH5IxMAgw&t=3s)
+- **[00:04]** [當了一個肥宅學生](https://www.youtube.com/watch?v=rINH5IxMAgw&t=4s)
+- **[00:06]** [看來是因為剛分手大學生](https://www.youtube.com/watch?v=rINH5IxMAgw&t=6s)
+- **[00:07]** [這邊給你一點簡單的建議](https://www.youtube.com/watch?v=rINH5IxMAgw&t=7s)
+- **[00:08]** [如果你手邊沒有相機的話](https://www.youtube.com/watch?v=rINH5IxMAgw&t=8s)
+- **[00:10]** [推薦可以購買Panasonic的GF系列](https://www.youtube.com/watch?v=rINH5IxMAgw&t=10s)
+- **[00:12]** [GF系列當年被稱為女朋友系列](https://www.youtube.com/watch?v=rINH5IxMAgw&t=12s)
+- **[00:14]** [從2009的一代到2018年時代](https://www.youtube.com/watch?v=rINH5IxMAgw&t=14s)
+- **[00:18]** [它一共推出了時代](https://www.youtube.com/watch?v=rINH5IxMAgw&t=18s)
+- **[00:20]** [那它陪伴了許多老玩家的青春歲月](https://www.youtube.com/watch?v=rINH5IxMAgw&t=20s)
+- **[00:22]** [失去女朋友你](https://www.youtube.com/watch?v=rINH5IxMAgw&t=22s)
+- **[00:23]** [還是值得擁有一台GF](https://www.youtube.com/watch?v=rINH5IxMAgw&t=23s)
+- **[00:25]** [如果你想買攝影機的話](https://www.youtube.com/watch?v=rINH5IxMAgw&t=25s)
+- **[00:26]** [個人推薦奧山遊之的Kiminotsunmachi](https://www.youtube.com/watch?v=rINH5IxMAgw&t=26s)
+- **[00:29]** [這本攝影機](https://www.youtube.com/watch?v=rINH5IxMAgw&t=29s)
+- **[00:30]** [它是奧山遊之拍攝了](https://www.youtube.com/watch?v=rINH5IxMAgw&t=30s)
+- **[00:33]** [三十幾位當代的日本女星](https://www.youtube.com/watch?v=rINH5IxMAgw&t=33s)
+- **[00:35]** [然後利用非常日常的手法](https://www.youtube.com/watch?v=rINH5IxMAgw&t=35s)
+- **[00:36]** [非常凌家女孩的感覺](https://www.youtube.com/watch?v=rINH5IxMAgw&t=36s)
+- **[00:38]** [以及像女友般視角的包裝](https://www.youtube.com/watch?v=rINH5IxMAgw&t=38s)
+- **[00:40]** [把這些女明星真實的一面呈現給大家](https://www.youtube.com/watch?v=rINH5IxMAgw&t=40s)
+- **[00:43]** [我相信這本攝影機裡面呈現的氛圍](https://www.youtube.com/watch?v=rINH5IxMAgw&t=43s)
+- **[00:45]** [那種戀愛感那些夢幻的感覺](https://www.youtube.com/watch?v=rINH5IxMAgw&t=45s)
+- **[00:48]** [一個剛分手大學生](https://www.youtube.com/watch?v=rINH5IxMAgw&t=48s)
+- **[00:49]** [看到這本攝影機](https://www.youtube.com/watch?v=rINH5IxMAgw&t=49s)
+- **[00:50]** [看完之後我相信你的心情](https://www.youtube.com/watch?v=rINH5IxMAgw&t=50s)
+- **[00:52]** [肯定是笨X了](https://www.youtube.com/watch?v=rINH5IxMAgw&t=52s)

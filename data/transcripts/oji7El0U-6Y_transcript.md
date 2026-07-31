@@ -1,0 +1,37 @@
+# [oji7El0U-6Y] 長源醫院—鹿港歷史影像館
+
+影片網址: https://www.youtube.com/watch?v=oji7El0U-6Y
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [位於鹿港的長榮醫院在經過大規模的整修之後](https://www.youtube.com/watch?v=oji7El0U-6Y&t=0s)
+- **[00:03]** [又再次都在開放](https://www.youtube.com/watch?v=oji7El0U-6Y&t=3s)
+- **[00:04]** [包含了除了漢市的長屋之外](https://www.youtube.com/watch?v=oji7El0U-6Y&t=4s)
+- **[00:06]** [原本醫院日治時期所建的洋樓也一併開放](https://www.youtube.com/watch?v=oji7El0U-6Y&t=6s)
+- **[00:09]** [良農建築合而為一](https://www.youtube.com/watch?v=oji7El0U-6Y&t=9s)
+- **[00:10]** [一樓過去就有開放診療師依然可以免費的參觀](https://www.youtube.com/watch?v=oji7El0U-6Y&t=10s)
+- **[00:13]** [也有小版愛玉可以遲到相機造型的愛玉](https://www.youtube.com/watch?v=oji7El0U-6Y&t=13s)
+- **[00:15]** [長射館中可以看到當年許多醫生跟許昌哲攝影師的攝影作品](https://www.youtube.com/watch?v=oji7El0U-6Y&t=15s)
+- **[00:19]** [也保留了阿嬤現在每天都還會去祭祖的神明廳](https://www.youtube.com/watch?v=oji7El0U-6Y&t=19s)
+- **[00:22]** [二樓以上則需要購買門票來參觀](https://www.youtube.com/watch?v=oji7El0U-6Y&t=22s)
+- **[00:24]** [全票是100元](https://www.youtube.com/watch?v=oji7El0U-6Y&t=24s)
+- **[00:25]** [搭配導覽的話是250元還有真送一份愛玉](https://www.youtube.com/watch?v=oji7El0U-6Y&t=25s)
+- **[00:28]** [我們一致都認為導覽非常值得](https://www.youtube.com/watch?v=oji7El0U-6Y&t=28s)
+- **[00:30]** [管理因為充滿大量細節](https://www.youtube.com/watch?v=oji7El0U-6Y&t=30s)
+- **[00:32]** [包含牆上的字畫](https://www.youtube.com/watch?v=oji7El0U-6Y&t=32s)
+- **[00:33]** [在一空間中除了可以看到全台第一批進口的鋼琴之外](https://www.youtube.com/watch?v=oji7El0U-6Y&t=33s)
+- **[00:36]** [還可以看到羅大佑當年年輕熟的照片](https://www.youtube.com/watch?v=oji7El0U-6Y&t=36s)
+- **[00:38]** [在孟治國的空間中可以看到當年的老建](https://www.youtube.com/watch?v=oji7El0U-6Y&t=38s)
+- **[00:41]** [以幾乎完美的狀態被保留下來](https://www.youtube.com/watch?v=oji7El0U-6Y&t=41s)
+- **[00:43]** [以及許讀醫生拍攝的沙龍照片](https://www.youtube.com/watch?v=oji7El0U-6Y&t=43s)
+- **[00:45]** [三樓分成和室跟陽室的兩種空間](https://www.youtube.com/watch?v=oji7El0U-6Y&t=45s)
+- **[00:48]** [你可以坐下來好好休息一下](https://www.youtube.com/watch?v=oji7El0U-6Y&t=48s)
+- **[00:49]** [冷泡烏龍茶香氣十足](https://www.youtube.com/watch?v=oji7El0U-6Y&t=49s)
+- **[00:51]** [而最驚豔的是頂樓](https://www.youtube.com/watch?v=oji7El0U-6Y&t=51s)
+- **[00:52]** [頂樓也是可以參觀的](https://www.youtube.com/watch?v=oji7El0U-6Y&t=52s)
+- **[00:54]** [雖然隨時代這裡已經不是鹿港的最高樓](https://www.youtube.com/watch?v=oji7El0U-6Y&t=54s)
+- **[00:56]** [但依然可以俯瞰](https://www.youtube.com/watch?v=oji7El0U-6Y&t=56s)
+- **[00:57]** [民族路跟中山路繁忙街道](https://www.youtube.com/watch?v=oji7El0U-6Y&t=57s)
+- **[00:59]** [如果今天會前往鹿港的話](https://www.youtube.com/watch?v=oji7El0U-6Y&t=59s)
+- **[01:00]** [千萬不要錯過這個景點](https://www.youtube.com/watch?v=oji7El0U-6Y&t=60s)
+- **[01:01]** [非常適合全家老小一起來參觀](https://www.youtube.com/watch?v=oji7El0U-6Y&t=61s)

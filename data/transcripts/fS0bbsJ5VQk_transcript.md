@@ -1,0 +1,37 @@
+# [fS0bbsJ5VQk] Sony G Master 變焦鏡到底該選哪顆？
+
+影片網址: https://www.youtube.com/watch?v=fS0bbsJ5VQk
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [Sony的G-Master到目前為止推出了非常多的變焦鏡](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=0s)
+- **[00:03]** [而其中最常被討論到的就是二代的大三元鏡頭](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=3s)
+- **[00:06]** [新時代的鏡身設計有光圈環的設計在操作上會有更好的手感](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=6s)
+- **[00:10]** [比起一代有更好的畫質以及更輕便的重量](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=10s)
+- **[00:13]** [我自己在拍攝工作上的最高程度是2470fps F-2008 G&2](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=13s)
+- **[00:17]** [695顆的重量以及很漂亮的價格](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=17s)
+- **[00:19]** [認為在2025年如果要用Sony拍攝活動紀錄、婚禮生成肖像](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=19s)
+- **[00:23]** [依然是最高CP值鏡頭沒有之一](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=23s)
+- **[00:25]** [另外值得一提的就是](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=25s)
+- **[00:26]** [兩顆F2橫定光圈的變焦鏡](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=26s)
+- **[00:29]** [分別是2870fps F2 G&以及51550fps F2 G&](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=29s)
+- **[00:32]** [這兩顆除了在規格宣示上具有很大的異性之外](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=32s)
+- **[00:36]** [其實在使用性上也有很好的表現](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=36s)
+- **[00:38]** [比起F2.8來說它大了一級的光圈](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=38s)
+- **[00:40]** [在相同的拍攝劇以下有更好的散景表現](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=40s)
+- **[00:43]** [而當然在低光源的環境下有更多的發揮空間](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=43s)
+- **[00:46]** [我第一時間就購入了5150fps F2 G&](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=46s)
+- **[00:48]** [做我平常拍攝婚紗、部分婚禮場地它其實也很適合](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=48s)
+- **[00:51]** [當然拍攝形象照更是能夠發揮出很好的效果](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=51s)
+- **[00:54]** [1340顆的重量](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=54s)
+- **[00:56]** [詐聽之下好像有點嚇人](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=56s)
+- **[00:57]** [但由於配重比較靠後的關係](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=57s)
+- **[00:58]** [長時間使用下來也沒有想像中負擔那麼重](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=58s)
+- **[01:01]** [而空氣7顆的魅力它絕對是讓你直回票價](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=61s)
+- **[01:04]** [其他還有許多非常有趣的G&變焦鏡](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=64s)
+- **[01:06]** [比如說有誇張視野的1224F2.8 G&](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=66s)
+- **[01:10]** [或者像畫質表現依然相當精湛的1400](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=70s)
+- **[01:12]** [你有哪顆G&變焦鏡在勾芯能等著下手](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=72s)
+- **[01:15]** [歡迎在留言區跟我們分享](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=75s)
+- **[01:16]** [而如果你想要看到更多鏡頭資訊的話](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=76s)
+- **[01:18]** [都可以上Sony的官網看到詳細的介紹喔](https://www.youtube.com/watch?v=fS0bbsJ5VQk&t=78s)

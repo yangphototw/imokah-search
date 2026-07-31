@@ -1,0 +1,37 @@
+# [y-24MXsP4dE] NiSi JetMag Pro 魔術套裝濾鏡組合
+
+影片網址: https://www.youtube.com/watch?v=y-24MXsP4dE
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [我們都知道拍影片的時候](https://www.youtube.com/watch?v=y-24MXsP4dE&t=0s)
+- **[00:01]** [時常會需要減光鏡](https://www.youtube.com/watch?v=y-24MXsP4dE&t=1s)
+- **[00:02]** [我們也知道大家現在都很喜歡加上黑柔](https://www.youtube.com/watch?v=y-24MXsP4dE&t=2s)
+- **[00:05]** [但有的時候你又想加一片CPU該怎麼辦呢](https://www.youtube.com/watch?v=y-24MXsP4dE&t=5s)
+- **[00:07]** [買了三片濾鏡](https://www.youtube.com/watch?v=y-24MXsP4dE&t=7s)
+- **[00:08]** [互相拆裝還沒搞定](https://www.youtube.com/watch?v=y-24MXsP4dE&t=8s)
+- **[00:09]** [比如說太陽都快下山了](https://www.youtube.com/watch?v=y-24MXsP4dE&t=9s)
+- **[00:11]** [連Model都要老了](https://www.youtube.com/watch?v=y-24MXsP4dE&t=11s)
+- **[00:12]** [有沒有一種可能可以讓你在短短的幾秒內](https://www.youtube.com/watch?v=y-24MXsP4dE&t=12s)
+- **[00:15]** [快速的組合書你所需要的各種濾鏡呢](https://www.youtube.com/watch?v=y-24MXsP4dE&t=15s)
+- **[00:17]** [那就來看看這次Nissi所推出的](https://www.youtube.com/watch?v=y-24MXsP4dE&t=17s)
+- **[00:19]** [Gymac Pro魔術快裝吧](https://www.youtube.com/watch?v=y-24MXsP4dE&t=19s)
+- **[00:21]** [無論你是要用ND搭配黑柔](https://www.youtube.com/watch?v=y-24MXsP4dE&t=21s)
+- **[00:22]** [或者是黑柔搭配CPU](https://www.youtube.com/watch?v=y-24MXsP4dE&t=22s)
+- **[00:24]** [都可以透過磁吸的方式組合](https://www.youtube.com/watch?v=y-24MXsP4dE&t=24s)
+- **[00:25]** [小耳朵的特殊設計讓鼻子緊扣](https://www.youtube.com/watch?v=y-24MXsP4dE&t=25s)
+- **[00:28]** [不會鬆脫](https://www.youtube.com/watch?v=y-24MXsP4dE&t=28s)
+- **[00:28]** [而在官方的測試中](https://www.youtube.com/watch?v=y-24MXsP4dE&t=28s)
+- **[00:30]** [即便在15mm的廣角鏡下](https://www.youtube.com/watch?v=y-24MXsP4dE&t=30s)
+- **[00:32]** [疊加兩片濾鏡](https://www.youtube.com/watch?v=y-24MXsP4dE&t=32s)
+- **[00:34]** [依然不會有任何的按角](https://www.youtube.com/watch?v=y-24MXsP4dE&t=34s)
+- **[00:35]** [可以讓你輕鬆方便的使用](https://www.youtube.com/watch?v=y-24MXsP4dE&t=35s)
+- **[00:37]** [這次我們所拿到的電影套組裡面包含](https://www.youtube.com/watch?v=y-24MXsP4dE&t=37s)
+- **[00:40]** [有ND486](https://www.youtube.com/watch?v=y-24MXsP4dE&t=40s)
+- **[00:41]** [三片減光鏡](https://www.youtube.com/watch?v=y-24MXsP4dE&t=41s)
+- **[00:42]** [以及1.8的黑柔](https://www.youtube.com/watch?v=y-24MXsP4dE&t=42s)
+- **[00:44]** [還有一片CPU](https://www.youtube.com/watch?v=y-24MXsP4dE&t=44s)
+- **[00:45]** [可以說你拍片所需要濾鏡](https://www.youtube.com/watch?v=y-24MXsP4dE&t=45s)
+- **[00:47]** [一包全部交給你](https://www.youtube.com/watch?v=y-24MXsP4dE&t=47s)
+- **[00:48]** [有興趣的話可以在資訊欄](https://www.youtube.com/watch?v=y-24MXsP4dE&t=48s)
+- **[00:50]** [看到更多的訊息了](https://www.youtube.com/watch?v=y-24MXsP4dE&t=50s)

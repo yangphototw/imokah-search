@@ -1,0 +1,35 @@
+# [u1yl1Y0idx0] 年度最佳隨身相機｜RICOH GR IV
+
+影片網址: https://www.youtube.com/watch?v=u1yl1Y0idx0
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [如果要問技能最強的存身相機是哪一台](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=0s)
+- **[00:02]** [那毫無疑問就是我手上的這台Rekon GR Mark 4](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=2s)
+- **[00:05]** [採用了全新2500萬像素的感光元件以及處理器](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=5s)
+- **[00:08]** [全新的電池上續航力有明顯的提升](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=8s)
+- **[00:10]** [而全新的競主設計](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=10s)
+- **[00:12]** [伸出來的體積甚至比起三代更窄一些](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=12s)
+- **[00:14]** [還有兩個全新的機身調色風格Cinema的黃雨綠](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=14s)
+- **[00:18]** [搭配連線的手機APP也是新的](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=18s)
+- **[00:20]** [所以外觀乍看還是GR的老樣子](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=20s)
+- **[00:22]** [但裡面的設計可以說是全換了個變](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=22s)
+- **[00:25]** [GR Mark 4在對比三代上](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=25s)
+- **[00:27]** [機身握持的手感更為扎實了一些](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=27s)
+- **[00:29]** [而設計上](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=29s)
+- **[00:30]** [銀回的許多網友認為更經典的機背設計](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=30s)
+- **[00:33]** [它取消掉了三代的轉盤](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=33s)
+- **[00:35]** [回歸成二代有加減符號的設計](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=35s)
+- **[00:37]** [重量不含電池只有228克](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=37s)
+- **[00:39]** [而體積比起三代再更鮮細了一些](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=39s)
+- **[00:42]** [實在是很難想像他們怎麼把原本已經夠小的相機](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=42s)
+- **[00:45]** [可以再三代更緊湊一些](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=45s)
+- **[00:46]** [而實際的體驗下來](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=46s)
+- **[00:47]** [對焦速度有明顯的提升](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=47s)
+- **[00:49]** [自訂愛鈕跟全新可以當作滾輪的ADJ](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=49s)
+- **[00:52]** [用起來更為直覺](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=52s)
+- **[00:53]** [新增的兩種調色氛圍感也是十足](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=53s)
+- **[00:56]** [如果你想要看到更多更詳細的介紹](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=56s)
+- **[00:58]** [別忘了這段我們頻道的影片看更多的資訊](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=58s)
+- **[01:01]** [我們會把連結貼在資訊欄](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=61s)
+- **[01:02]** [以及下方的留言當中](https://www.youtube.com/watch?v=u1yl1Y0idx0&t=62s)

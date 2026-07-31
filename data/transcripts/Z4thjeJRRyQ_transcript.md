@@ -1,0 +1,37 @@
+# [Z4thjeJRRyQ] 看膩平凡視角？試試 DJI Osmo Nano
+
+影片網址: https://www.youtube.com/watch?v=Z4thjeJRRyQ
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [你是不是也開始看你那種](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=0s)
+- **[00:01]** [異程不變的平凡視角](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=1s)
+- **[00:03]** [那你一定要試試看](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=3s)
+- **[00:04]** [第一台Osmo Nano](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=4s)
+- **[00:05]** [它最誇張的地方就是](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=5s)
+- **[00:07]** [背面跟側面都可以磁吸](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=7s)
+- **[00:09]** [不論是冰箱 洗衣機](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=9s)
+- **[00:10]** [想到哪就吸到哪](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=10s)
+- **[00:12]** [我完全不用腳架](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=12s)
+- **[00:13]** [而且配件超級多](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=13s)
+- **[00:15]** [磁吸的帽甲 磁吸掛繩](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=15s)
+- **[00:17]** [雙向磁吸球頭 磁吸頭戴](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=17s)
+- **[00:19]** [可以自由組合](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=19s)
+- **[00:21]** [拍出一堆你以前根本拍不到的角度](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=21s)
+- **[00:23]** [就算遇到視角超刁鑽的情況](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=23s)
+- **[00:25]** [也不用亂猜畫面](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=25s)
+- **[00:26]** [因為有多功能圖傳模組](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=26s)
+- **[00:28]** [即時就能夠看到畫面](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=28s)
+- **[00:30]** [甚至還能夠反向控制參數](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=30s)
+- **[00:32]** [直接錄製](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=32s)
+- **[00:33]** [規格的部分](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=33s)
+- **[00:34]** [搭載全新的1.3分之1英側的感光元件](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=34s)
+- **[00:37]** [最高支援4K 120幀的慢動作](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=37s)
+- **[00:39]** [機身小小一顆 續航缺超有感](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=39s)
+- **[00:41]** [還支援快充](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=41s)
+- **[00:42]** [拍到沒電也不用怕](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=42s)
+- **[00:44]** [那收音的部分就更簡單啦](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=44s)
+- **[00:46]** [直接連接DJI自家的麥克風](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=46s)
+- **[00:48]** [如果你也想要拍出](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=48s)
+- **[00:49]** [更自由更不一樣的視角](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=49s)
+- **[00:51]** [DJI Osmo Nano 推薦給你](https://www.youtube.com/watch?v=Z4thjeJRRyQ&t=51s)

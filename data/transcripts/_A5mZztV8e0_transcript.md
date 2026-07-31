@@ -1,0 +1,37 @@
+# [_A5mZztV8e0] 智雲燈X60 & X60 RGB
+
+影片網址: https://www.youtube.com/watch?v=_A5mZztV8e0
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [這樣跟大家介紹的兩支新的小燈](https://www.youtube.com/watch?v=_A5mZztV8e0&t=0s)
+- **[00:02]** [是來自於智雲推出的X60RGB以及X60](https://www.youtube.com/watch?v=_A5mZztV8e0&t=2s)
+- **[00:05]** [因為這兩支燈](https://www.youtube.com/watch?v=_A5mZztV8e0&t=5s)
+- **[00:07]** [重量只有300克非常小巧輕便](https://www.youtube.com/watch?v=_A5mZztV8e0&t=7s)
+- **[00:09]** [所以它非常的適合帶出門去使用](https://www.youtube.com/watch?v=_A5mZztV8e0&t=9s)
+- **[00:11]** [如果今天你把他帶出門拍攝人像的話](https://www.youtube.com/watch?v=_A5mZztV8e0&t=11s)
+- **[00:13]** [即便你只有一個人](https://www.youtube.com/watch?v=_A5mZztV8e0&t=13s)
+- **[00:14]** [無論你是要上腳架](https://www.youtube.com/watch?v=_A5mZztV8e0&t=14s)
+- **[00:15]** [或是你要把它黏在外面的任何地方](https://www.youtube.com/watch?v=_A5mZztV8e0&t=15s)
+- **[00:17]** [其實都是非常方便的](https://www.youtube.com/watch?v=_A5mZztV8e0&t=17s)
+- **[00:18]** [當然如果你有個朋友幫你拿的話](https://www.youtube.com/watch?v=_A5mZztV8e0&t=18s)
+- **[00:20]** [也是非常好的一件事情](https://www.youtube.com/watch?v=_A5mZztV8e0&t=20s)
+- **[00:21]** [我覺得裝上電池之後](https://www.youtube.com/watch?v=_A5mZztV8e0&t=21s)
+- **[00:23]** [電池本身就會形成一個手把](https://www.youtube.com/watch?v=_A5mZztV8e0&t=23s)
+- **[00:24]** [你帶著走也非常的方便](https://www.youtube.com/watch?v=_A5mZztV8e0&t=24s)
+- **[00:26]** [那因為X60RGB它是可以調整RGB顏色的](https://www.youtube.com/watch?v=_A5mZztV8e0&t=26s)
+- **[00:29]** [所以如果你今天在夜景中想拍攝一些](https://www.youtube.com/watch?v=_A5mZztV8e0&t=29s)
+- **[00:31]** [不同顏色的人像](https://www.youtube.com/watch?v=_A5mZztV8e0&t=31s)
+- **[00:32]** [其實可以利用這支燈](https://www.youtube.com/watch?v=_A5mZztV8e0&t=32s)
+- **[00:34]** [去做了很多不一樣的創意拍攝](https://www.youtube.com/watch?v=_A5mZztV8e0&t=34s)
+- **[00:36]** [過去我們有介紹過它X100](https://www.youtube.com/watch?v=_A5mZztV8e0&t=36s)
+- **[00:38]** [但X60比起X100再更小巧一些](https://www.youtube.com/watch?v=_A5mZztV8e0&t=38s)
+- **[00:40]** [如果你今天在家裡使用的話](https://www.youtube.com/watch?v=_A5mZztV8e0&t=40s)
+- **[00:42]** [因為它非常的輕便](https://www.youtube.com/watch?v=_A5mZztV8e0&t=42s)
+- **[00:43]** [你可以把它架在家裡的任何地方](https://www.youtube.com/watch?v=_A5mZztV8e0&t=43s)
+- **[00:45]** [讓家裡的氛圍也變得非常的不一樣](https://www.youtube.com/watch?v=_A5mZztV8e0&t=45s)
+- **[00:47]** [那今天這兩支小燈](https://www.youtube.com/watch?v=_A5mZztV8e0&t=47s)
+- **[00:48]** [它各自都達到CR-I95EG](https://www.youtube.com/watch?v=_A5mZztV8e0&t=48s)
+- **[00:51]** [最高可達在2000多流名](https://www.youtube.com/watch?v=_A5mZztV8e0&t=51s)
+- **[00:52]** [所以即便它非常的小巧](https://www.youtube.com/watch?v=_A5mZztV8e0&t=52s)
+- **[00:54]** [但是它在運用上面也是非常的廣泛](https://www.youtube.com/watch?v=_A5mZztV8e0&t=54s)

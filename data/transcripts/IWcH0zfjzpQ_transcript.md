@@ -1,0 +1,35 @@
+# [IWcH0zfjzpQ] 影像 + 傳輸 + 充電 一線搞定｜Allite Max Cable 閃速快充傳輸線
+
+影片網址: https://www.youtube.com/watch?v=IWcH0zfjzpQ
+
+## 語音逐字稿與時間戳記
+
+- **[00:01]** [今天](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=1s)
+- **[00:04]** [今天要跟你介紹一條](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=4s)
+- **[00:05]** [整合高速傳輸快充影像的傳輸線](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=5s)
+- **[00:08]** [OLED所推出的Max Kevo閃速快充傳輸線](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=8s)
+- **[00:11]** [現身採用液態矽膠材質](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=11s)
+- **[00:13]** [不易打結好收納](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=13s)
+- **[00:14]** [一公尺適中的長度](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=14s)
+- **[00:15]** [搭配泰瑟鋁合金接頭](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=15s)
+- **[00:17]** [質感到為耐用加倍](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=17s)
+- **[00:19]** [重點是這條線真的很超級快](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=19s)
+- **[00:20]** [內在具備超高的傳輸速度](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=20s)
+- **[00:22]** [超過200GB的影片專案](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=22s)
+- **[00:24]** [不用五分鐘就輕鬆搞定](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=24s)
+- **[00:25]** [接龍SoundBoss 5連接技術](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=25s)
+- **[00:27]** [搭配具備SoundBoss技術的螢幕](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=27s)
+- **[00:29]** [輸出畫面筆電充電一次搞定](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=29s)
+- **[00:31]** [支援超高解析度輸出](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=31s)
+- **[00:33]** [同時滿足專業以及娛樂需求](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=33s)
+- **[00:35]** [在充電方面](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=35s)
+- **[00:35]** [線材快充最高支援240W](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=35s)
+- **[00:38]** [不論是手機、平板、相機電池、電腦](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=38s)
+- **[00:40]** [都可以快速充電](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=40s)
+- **[00:41]** [另外搭配自家A1 Pro](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=41s)
+- **[00:42]** [70W、三孔淡化加快充頭](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=42s)
+- **[00:45]** [輕巧重量以及小巧體積](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=45s)
+- **[00:46]** [不論是在國內還是在國外](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=46s)
+- **[00:48]** [都可以快速補足手機所需的電量](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=48s)
+- **[00:50]** [一條線、傳輸、快充、影像都搞定](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=50s)
+- **[00:53]** [這才叫做工作節奏](https://www.youtube.com/watch?v=IWcH0zfjzpQ&t=53s)

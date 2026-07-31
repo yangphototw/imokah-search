@@ -1,0 +1,36 @@
+# [R3ky7MVx6gA] 日本合法洗錢神社！！！
+
+影片網址: https://www.youtube.com/watch?v=R3ky7MVx6gA
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [你知道日本有個合法可以洗錢的神社嗎](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=0s)
+- **[00:02]** [就是位於仙台附近的金水蛇神社](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=2s)
+- **[00:05]** [號稱日本東北求財能量最強的一個神社](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=5s)
+- **[00:08]** [我相信以我們頻道的屬性](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=8s)
+- **[00:10]** [應該都對這個神社非常有興趣](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=10s)
+- **[00:12]** [只能用幾個字來形容](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=12s)
+- **[00:14]** [就是富利堂皇](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=14s)
+- **[00:15]** [它無論是樹上裝飾整個神社的擺飾以及它的休息區](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=15s)
+- **[00:19]** [甚至它的餐廳都相當相當的漂亮跟豪華](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=19s)
+- **[00:23]** [甚至它的玉珠印有一張黃金的玉珠印](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=23s)
+- **[00:26]** [價值高達日幣5萬5千塊](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=26s)
+- **[00:28]** [我這輩子真沒有看過](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=28s)
+- **[00:31]** [這麼貴的玉珠印](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=31s)
+- **[00:32]** [那你要洗錢的話](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=32s)
+- **[00:34]** [你可以帶著你的無論是信用卡或是帶著你的錢](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=34s)
+- **[00:36]** [在神社的受付所你可以花200塊得到一個小竹籃](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=36s)
+- **[00:39]** [把你的錢或信用卡放到竹籃裡面](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=39s)
+- **[00:41]** [它有一個專門洗底你的金錢的一個池子](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=41s)
+- **[00:44]** [把它放進去讓神水交付之後](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=44s)
+- **[00:46]** [再把那個錢帶回家供奉就可以迎來源源不絕的財](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=46s)
+- **[00:50]** [當然就是傳說求財上面請還是理智](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=50s)
+- **[00:54]** [不要把所有錢都花在這個神社裡面](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=54s)
+- **[00:56]** [因為這個神社除了有賣黑卡之外](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=56s)
+- **[00:58]** [它的各種相關的商品呢](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=58s)
+- **[01:00]** [價格都不是很便宜](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=60s)
+- **[01:01]** [所以如果有興趣經過仙台附近的話呢](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=61s)
+- **[01:04]** [對於求財非常有興趣的話](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=64s)
+- **[01:06]** [推薦大家可以去看一下這個](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=66s)
+- **[01:07]** [我認為我心中目前屬一屬二豪華](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=67s)
+- **[01:10]** [就富麗堂皇的一個神社](https://www.youtube.com/watch?v=R3ky7MVx6gA&t=70s)

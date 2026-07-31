@@ -1,0 +1,36 @@
+# [36D2QgZB1OA] 只想帶手機出門拍攝可以嗎｜Xiaomi 15 Ultra
+
+影片網址: https://www.youtube.com/watch?v=36D2QgZB1OA
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [現在提到小米手機就會想到萊卡鏡頭](https://www.youtube.com/watch?v=36D2QgZB1OA&t=0s)
+- **[00:02]** [想到萊卡就會想到街頭攝影](https://www.youtube.com/watch?v=36D2QgZB1OA&t=2s)
+- **[00:03]** [這是小米新推出的15Altra](https://www.youtube.com/watch?v=36D2QgZB1OA&t=3s)
+- **[00:05]** [大家在街拍模式下有很高的可玩性](https://www.youtube.com/watch?v=36D2QgZB1OA&t=5s)
+- **[00:08]** [除了焦段壞自動拍攝成街拍的經典焦段](https://www.youtube.com/watch?v=36D2QgZB1OA&t=8s)
+- **[00:10]** [例如283550](https://www.youtube.com/watch?v=36D2QgZB1OA&t=10s)
+- **[00:11]** [這次等效23mm的主鏡頭](https://www.youtube.com/watch?v=36D2QgZB1OA&t=11s)
+- **[00:13]** [採用了一英寸的感光鏡件](https://www.youtube.com/watch?v=36D2QgZB1OA&t=13s)
+- **[00:14]** [在夜景的拍攝下](https://www.youtube.com/watch?v=36D2QgZB1OA&t=14s)
+- **[00:15]** [提供了超過手機攝影想像的效果](https://www.youtube.com/watch?v=36D2QgZB1OA&t=15s)
+- **[00:18]** [長焦方面除了70mm的浮動是長焦之外](https://www.youtube.com/watch?v=36D2QgZB1OA&t=18s)
+- **[00:20]** [另個賣點是帶有2億像素的](https://www.youtube.com/watch?v=36D2QgZB1OA&t=20s)
+- **[00:22]** [等效100mm的超望遠鏡頭](https://www.youtube.com/watch?v=36D2QgZB1OA&t=22s)
+- **[00:24]** [除了單純的拍照外](https://www.youtube.com/watch?v=36D2QgZB1OA&t=24s)
+- **[00:26]** [也可以用來記錄旅行中的大小視野](https://www.youtube.com/watch?v=36D2QgZB1OA&t=26s)
+- **[00:27]** [相當的方便](https://www.youtube.com/watch?v=36D2QgZB1OA&t=27s)
+- **[00:28]** [遠處看不見的招牌也可以透過手機幫你看見](https://www.youtube.com/watch?v=36D2QgZB1OA&t=28s)
+- **[00:31]** [而最後一顆是等效14mm的超廣角鏡頭](https://www.youtube.com/watch?v=36D2QgZB1OA&t=31s)
+- **[00:34]** [透過模擬萊卡的調色](https://www.youtube.com/watch?v=36D2QgZB1OA&t=34s)
+- **[00:35]** [無論是用萊卡經典或是生動色調](https://www.youtube.com/watch?v=36D2QgZB1OA&t=35s)
+- **[00:37]** [其實都已經足夠好看](https://www.youtube.com/watch?v=36D2QgZB1OA&t=37s)
+- **[00:38]** [最後想說明提一下是全新的攝影套裝](https://www.youtube.com/watch?v=36D2QgZB1OA&t=38s)
+- **[00:41]** [除了手感很好自帶電源之外](https://www.youtube.com/watch?v=36D2QgZB1OA&t=41s)
+- **[00:42]** [兩個滾輪可以分別調整焦段以及曝光](https://www.youtube.com/watch?v=36D2QgZB1OA&t=42s)
+- **[00:45]** [而且真的要論街拍攝的手感](https://www.youtube.com/watch?v=36D2QgZB1OA&t=45s)
+- **[00:47]** [我相信這應該是我所有用過的手機裡面](https://www.youtube.com/watch?v=36D2QgZB1OA&t=47s)
+- **[00:49]** [最強的沒有之一](https://www.youtube.com/watch?v=36D2QgZB1OA&t=49s)
+- **[00:50]** [搭配街拍模式真的如有神助](https://www.youtube.com/watch?v=36D2QgZB1OA&t=50s)
+- **[00:52]** [這一點真的沒有誇大](https://www.youtube.com/watch?v=36D2QgZB1OA&t=52s)
+- **[00:53]** [有興趣的朋友也可以找機會嘗試看看](https://www.youtube.com/watch?v=36D2QgZB1OA&t=53s)

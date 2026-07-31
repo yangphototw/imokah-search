@@ -1,0 +1,35 @@
+# [mnGMuEe8dGo] 你也對旋焦鏡頭感興趣嗎｜TTArtisan 75mm F1.5 M42 接口
+
+影片網址: https://www.youtube.com/watch?v=mnGMuEe8dGo
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [漩渦狀的散景一直都有一群忠實的愛好者](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=0s)
+- **[00:02]** [對於一般人來說](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=2s)
+- **[00:03]** [當你玩了一段時間的攝影](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=3s)
+- **[00:05]** [時常在網路上搜尋各種資料](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=5s)
+- **[00:07]** [或多或少其實都會注意到它](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=7s)
+- **[00:09]** [名將所推出的這顆75mm F1.5M42卡口的鏡頭](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=9s)
+- **[00:14]** [正是一顆所謂的漩渦散景鏡頭](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=14s)
+- **[00:16]** [無論是要拍攝照片或者是錄影](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=16s)
+- **[00:18]** [都可以利用這個鏡頭做出很獨特的影像效果](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=18s)
+- **[00:21]** [我們常說最能夠吸睛的畫面](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=21s)
+- **[00:23]** [就是肉眼無法直接看到的影像](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=23s)
+- **[00:25]** [漩渦散景就是這種觀點最好的代表](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=25s)
+- **[00:28]** [但我們在拍攝的主體](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=28s)
+- **[00:29]** [背後剛好有大量的光點](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=29s)
+- **[00:31]** [例如穿過樹林的光線](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=31s)
+- **[00:32]** [這顆具有F1.5的大光圈鏡頭](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=32s)
+- **[00:35]** [都能夠讓你在拍攝時增添滿滿的樂趣](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=35s)
+- **[00:37]** [手動對焦](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=37s)
+- **[00:38]** [可以利用轉接環搭配各種廠牌的機身](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=38s)
+- **[00:41]** [很適合幫你在日常的影像中增添一絲的獨一無二](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=41s)
+- **[00:45]** [你有試過漩渦狀的散景嗎?](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=45s)
+- **[00:46]** [你都拿來拍攝什麼樣的題材呢?](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=46s)
+- **[00:48]** [歡迎在下方留言跟大家分享](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=48s)
+- **[00:51]** [如果對這顆鏡頭有興趣的朋友](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=51s)
+- **[00:53]** [5月15到5月31購買此鏡頭輸入](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=53s)
+- **[00:56]** [IMOK0515](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=56s)
+- **[00:57]** [就可以享有500元的折扣](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=57s)
+- **[00:59]** [想請請看影片下方資訊欄](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=59s)
+- **[01:01]** [最後也感謝博凱光學的贊助](https://www.youtube.com/watch?v=mnGMuEe8dGo&t=61s)

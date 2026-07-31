@@ -1,0 +1,36 @@
+# [zFGMlVJ1eyo] 【綠美圖建築人像攝影】試著拍出建築特色結合人像寫真 #人像攝影 #攝影技巧 #攝影技巧 #攝影教學 #拍照技巧 #拍照教學
+
+影片網址: https://www.youtube.com/watch?v=zFGMlVJ1eyo
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [用廣角下往上拍上面的建築](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=0s)
+- **[00:04]** [OK 小偉跟妳一起拍](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=4s)
+- **[00:05]** [我們今天來到台中綠美圖](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=5s)
+- **[00:07]** [看看人大建築物怎麼拍 OK](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=7s)
+- **[00:10]** [樓梯和地上的陰影](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=10s)
+- **[00:11]** [這個幾何圖形非常對稱好看](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=11s)
+- **[00:15]** [下往上我們拍到這個樓梯全部](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=15s)
+- **[00:19]** [背後的光線前景的樓梯](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=19s)
+- **[00:21]** [也是夾出一個很好看的幾何圖案](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=21s)
+- **[00:25]** [這邊有一個很細的光影](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=25s)
+- **[00:27]** [我們來就拍這個光影](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=27s)
+- **[00:28]** [來投台高](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=28s)
+- **[00:31]** [綠美圖這裡頂光也很好拍](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=31s)
+- **[00:32]** [因為地上的水泥牆白色會反光到臉上](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=32s)
+- **[00:35]** [陰影不會太重](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=35s)
+- **[00:38]** [Model正在暗的地方背景也是陰影](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=38s)
+- **[00:40]** [這樣拍起來曝光就會比較平均一點](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=40s)
+- **[00:44]** [地上的三角形光影](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=44s)
+- **[00:46]** [還有後面的建築物](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=46s)
+- **[00:49]** [這邊風很大我們來拍一張](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=49s)
+- **[00:51]** [頭髮隨風飄逸的感覺](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=51s)
+- **[00:54]** [後面兩拍的柱子](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=54s)
+- **[00:56]** [蹲地下往上拍看我](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=56s)
+- **[01:08]** [這邊室內室外都可以拍照](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=68s)
+- **[01:10]** [但是室內不能錄影](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=70s)
+- **[01:11]** [所以我們就沒有在室內錄影](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=71s)
+- **[01:13]** [建築大人像可以看一下後面建築的共舞照](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=73s)
+- **[01:15]** [拍出後面的流線比較有主題性](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=75s)
+- **[01:17]** [哪一個藝人的頭最遠](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=77s)
+- **[01:19]** [頭鏡影](https://www.youtube.com/watch?v=zFGMlVJ1eyo&t=79s)

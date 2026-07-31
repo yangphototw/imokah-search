@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.env
+.antigravity/
+.system_generated/
+*.log
+
+# Ignore uncompressed large database files (>100MB)
+data/oka_rag_index.json
+data/oka_llm_summaries.json
+data/oka_inverted_index.json
+data/oka_ai_summaries.json
+data/oka_vector_db/chunks_meta.pkl

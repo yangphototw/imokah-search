@@ -1,0 +1,36 @@
+# [RKuA5RkSTCE] 非常有趣的組合式鏡頭！SAMYANG Remaster Slim
+
+影片網址: https://www.youtube.com/watch?v=RKuA5RkSTCE
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [顯餅乾鏡還不夠小嗎?](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=0s)
+- **[00:01]** [有什麼樣的東西能夠比餅乾鏡更小呢?](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=1s)
+- **[00:04]** [是不是能夠把不同焦段](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=4s)
+- **[00:05]** [塞進同一個餅乾鏡的身體裡呢?](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=5s)
+- **[00:07]** [沒有錯!](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=7s)
+- **[00:08]** [這次來自於三陽所推出](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=8s)
+- **[00:10]** [正城代理的Remus Slim](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=10s)
+- **[00:12]** [這個套組呢](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=12s)
+- **[00:13]** [它三個鏡片共用一個機身的對焦馬達](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=13s)
+- **[00:16]** [也就是說當你把鏡身裝到機身上面之後](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=16s)
+- **[00:19]** [你只需要抽換中間的鏡片](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=19s)
+- **[00:21]** [就可以直接更換焦段](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=21s)
+- **[00:23]** [它同時帶有了21、28](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=23s)
+- **[00:25]** [以及32三種焦段](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=25s)
+- **[00:26]** [讓你只需要一個餅乾鏡的大小](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=26s)
+- **[00:29]** [同時可以使用三個不同的焦段](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=29s)
+- **[00:30]** [對於日常的生活接拍來說](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=30s)
+- **[00:32]** [我覺得這個鏡頭組合](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=32s)
+- **[00:34]** [這個焦段搭配相當的不錯](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=34s)
+- **[00:36]** [而這三個鏡頭呢](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=36s)
+- **[00:37]** [看起來好像是一個否放的小玩具](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=37s)
+- **[00:39]** [但意外的畫質表現其實也蠻不錯的](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=39s)
+- **[00:41]** [甚至在抗藥光的部分呢](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=41s)
+- **[00:42]** [我覺得在某些角度下來看](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=42s)
+- **[00:44]** [其實表現也是挺良好](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=44s)
+- **[00:45]** [如果你還在追求更小更輕便的鏡頭](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=45s)
+- **[00:48]** [想要攜帶在身上](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=48s)
+- **[00:49]** [搭配那些更輕便的相機的話](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=49s)
+- **[00:51]** [不妨參考一下](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=51s)
+- **[00:52]** [這次三陽所推出的Remus Slim這個系列](https://www.youtube.com/watch?v=RKuA5RkSTCE&t=52s)

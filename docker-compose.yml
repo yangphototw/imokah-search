@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  oka-rag-web:
+    build: .
+    container_name: oka_rag_search_engine
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - PYTHONUNBUFFERED=1
+    restart: always

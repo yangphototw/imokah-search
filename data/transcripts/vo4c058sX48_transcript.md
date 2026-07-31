@@ -1,0 +1,35 @@
+# [vo4c058sX48] SONY相機+富士鏡頭，蹦出新花樣。 #人像寫真 #引導 #攝影教學 #拍照教學 #拍照姿勢
+
+影片網址: https://www.youtube.com/watch?v=vo4c058sX48
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [好 轉圈](https://www.youtube.com/watch?v=vo4c058sX48&t=0s)
+- **[00:03]** [今天我們大手筆](https://www.youtube.com/watch?v=vo4c058sX48&t=3s)
+- **[00:04]** [故事即可拍鏡頭](https://www.youtube.com/watch?v=vo4c058sX48&t=4s)
+- **[00:05]** [裝在Sony相機上](https://www.youtube.com/watch?v=vo4c058sX48&t=5s)
+- **[00:06]** [看看會拍出什麼樣的照片](https://www.youtube.com/watch?v=vo4c058sX48&t=6s)
+- **[00:08]** [看起來這顆鏡頭的焦段應該是28mm](https://www.youtube.com/watch?v=vo4c058sX48&t=8s)
+- **[00:13]** [光圈感覺也超小的](https://www.youtube.com/watch?v=vo4c058sX48&t=13s)
+- **[00:16]** [好處是根本不用對焦](https://www.youtube.com/watch?v=vo4c058sX48&t=16s)
+- **[00:20]** [可以找一些色彩比較突出的地方](https://www.youtube.com/watch?v=vo4c058sX48&t=20s)
+- **[00:22]** [像這個遮雨棚的顏色很好看](https://www.youtube.com/watch?v=vo4c058sX48&t=22s)
+- **[00:26]** [這一台中第二市場](https://www.youtube.com/watch?v=vo4c058sX48&t=26s)
+- **[00:27]** [中五來人都超多的](https://www.youtube.com/watch?v=vo4c058sX48&t=27s)
+- **[00:30]** [你跟樓梯高低差](https://www.youtube.com/watch?v=vo4c058sX48&t=30s)
+- **[00:32]** [上面的彩色部分](https://www.youtube.com/watch?v=vo4c058sX48&t=32s)
+- **[00:33]** [來 走上去看我](https://www.youtube.com/watch?v=vo4c058sX48&t=33s)
+- **[00:37]** [來 跑步](https://www.youtube.com/watch?v=vo4c058sX48&t=37s)
+- **[00:38]** [好 回頭](https://www.youtube.com/watch?v=vo4c058sX48&t=38s)
+- **[00:40]** [好 轉圈](https://www.youtube.com/watch?v=vo4c058sX48&t=40s)
+- **[00:44]** [這一定要拍吧](https://www.youtube.com/watch?v=vo4c058sX48&t=44s)
+- **[00:45]** [錢椅子來](https://www.youtube.com/watch?v=vo4c058sX48&t=45s)
+- **[00:49]** [跟大家拜個早年](https://www.youtube.com/watch?v=vo4c058sX48&t=49s)
+- **[00:53]** [往這裡跑過來](https://www.youtube.com/watch?v=vo4c058sX48&t=53s)
+- **[00:58]** [我們來試試看帶一點前景](https://www.youtube.com/watch?v=vo4c058sX48&t=58s)
+- **[01:02]** [讓model站在有光的地方](https://www.youtube.com/watch?v=vo4c058sX48&t=62s)
+- **[01:03]** [這樣子model跟後面的燈都會是亮的](https://www.youtube.com/watch?v=vo4c058sX48&t=63s)
+- **[01:08]** [OK 小宇跟你一起拍](https://www.youtube.com/watch?v=vo4c058sX48&t=68s)
+- **[01:09]** [你知道世界上最聰明的狗是什麼狗嗎](https://www.youtube.com/watch?v=vo4c058sX48&t=69s)
+- **[01:12]** [什麼狗](https://www.youtube.com/watch?v=vo4c058sX48&t=72s)
+- **[01:13]** [是Google](https://www.youtube.com/watch?v=vo4c058sX48&t=73s)

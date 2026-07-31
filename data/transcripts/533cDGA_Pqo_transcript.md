@@ -1,0 +1,37 @@
+# [533cDGA_Pqo] 開箱 FE 100mm F2.8 Macro GM OSS
+
+影片網址: https://www.youtube.com/watch?v=533cDGA_Pqo
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [大家期盼已久的Sony擺為終於更新了](https://www.youtube.com/watch?v=533cDGA_Pqo&t=0s)
+- **[00:03]** [而且不負眾望的掛上了G-Master的標籤](https://www.youtube.com/watch?v=533cDGA_Pqo&t=3s)
+- **[00:06]** [首先最重要的是這次的放大倍率](https://www.youtube.com/watch?v=533cDGA_Pqo&t=6s)
+- **[00:08]** [直接超過了1比1](https://www.youtube.com/watch?v=533cDGA_Pqo&t=8s)
+- **[00:10]** [來到了1.4比1](https://www.youtube.com/watch?v=533cDGA_Pqo&t=10s)
+- **[00:11]** [更誇張的是可以裝上兩倍的針距鏡](https://www.youtube.com/watch?v=533cDGA_Pqo&t=11s)
+- **[00:14]** [也就是說放大倍率最大可以達到2.8比1](https://www.youtube.com/watch?v=533cDGA_Pqo&t=14s)
+- **[00:18]** [同時是可以自動對焦的](https://www.youtube.com/watch?v=533cDGA_Pqo&t=18s)
+- **[00:19]** [這讓過去只能依靠接血環或道接人](https://www.youtube.com/watch?v=533cDGA_Pqo&t=19s)
+- **[00:22]** [現在除了可以享受到幾乎三倍的放大倍率之外](https://www.youtube.com/watch?v=533cDGA_Pqo&t=22s)
+- **[00:25]** [還可以擁有自動對焦以及輔助辨識的功能](https://www.youtube.com/watch?v=533cDGA_Pqo&t=25s)
+- **[00:28]** [搭配Sony新世代機身擁有的昆蟲對焦](https://www.youtube.com/watch?v=533cDGA_Pqo&t=28s)
+- **[00:31]** [我只能說哇嗚 拍蝴蝶也太輕鬆了吧](https://www.youtube.com/watch?v=533cDGA_Pqo&t=31s)
+- **[00:34]** [這次提升最有感的呢](https://www.youtube.com/watch?v=533cDGA_Pqo&t=34s)
+- **[00:35]** [除了放大倍率之外呢 就是對焦速度](https://www.youtube.com/watch?v=533cDGA_Pqo&t=35s)
+- **[00:38]** [不愧是塞入了四顆查替星星馬達](https://www.youtube.com/watch?v=533cDGA_Pqo&t=38s)
+- **[00:40]** [讓過去90為大家購併最大弱點](https://www.youtube.com/watch?v=533cDGA_Pqo&t=40s)
+- **[00:43]** [也就是對焦速度一口氣就被消除](https://www.youtube.com/watch?v=533cDGA_Pqo&t=43s)
+- **[00:45]** [而當你把對焦區域限制在5公尺到無線遠的時候呢](https://www.youtube.com/watch?v=533cDGA_Pqo&t=45s)
+- **[00:47]** [它馬上變成一顆可以拍攝人像的簡易長焦鏡頭](https://www.youtube.com/watch?v=533cDGA_Pqo&t=47s)
+- **[00:51]** [很多人都會問說不微距鏡可以拍攝人像嗎](https://www.youtube.com/watch?v=533cDGA_Pqo&t=51s)
+- **[00:54]** [過去因為對焦速度的關係不太推薦](https://www.youtube.com/watch?v=533cDGA_Pqo&t=54s)
+- **[00:55]** [但現在它的速度呢](https://www.youtube.com/watch?v=533cDGA_Pqo&t=55s)
+- **[00:57]** [連預寒的旋轉跳躍閉著眼我都可以捕捉得到](https://www.youtube.com/watch?v=533cDGA_Pqo&t=57s)
+- **[01:00]** [關於更多這個鏡頭介紹](https://www.youtube.com/watch?v=533cDGA_Pqo&t=60s)
+- **[01:01]** [我們會在之後影片中逐一的解說](https://www.youtube.com/watch?v=533cDGA_Pqo&t=61s)
+- **[01:03]** [包含搭配機身有些特殊的功能呢](https://www.youtube.com/watch?v=533cDGA_Pqo&t=63s)
+- **[01:05]** [請在等我們一下子](https://www.youtube.com/watch?v=533cDGA_Pqo&t=65s)
+- **[01:07]** [如果你真的等不及的話呢](https://www.youtube.com/watch?v=533cDGA_Pqo&t=67s)
+- **[01:08]** [也可以先到Sony的官網上看到更多的資訊](https://www.youtube.com/watch?v=533cDGA_Pqo&t=68s)
+- **[01:10]** [我認為它是一顆充滿可能性又非常有趣的鏡頭](https://www.youtube.com/watch?v=533cDGA_Pqo&t=70s)

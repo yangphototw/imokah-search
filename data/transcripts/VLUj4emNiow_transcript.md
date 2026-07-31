@@ -1,0 +1,37 @@
+# [VLUj4emNiow] 帶一台會讓你想拍照的相機出門 - x100v
+
+影片網址: https://www.youtube.com/watch?v=VLUj4emNiow
+
+## 語音逐字稿與時間戳記
+
+- **[00:01]** [我這年輕10歲,在年輕10歲擁跳的](https://www.youtube.com/watch?v=VLUj4emNiow&t=1s)
+- **[00:10]** [繞路吧,現在算了](https://www.youtube.com/watch?v=VLUj4emNiow&t=10s)
+- **[00:59]** [那天一個人開車南下高雄](https://www.youtube.com/watch?v=VLUj4emNiow&t=59s)
+- **[01:01]** [在中壢跟團隊短暫的會合後](https://www.youtube.com/watch?v=VLUj4emNiow&t=61s)
+- **[01:04]** [拍了幾支影片](https://www.youtube.com/watch?v=VLUj4emNiow&t=64s)
+- **[01:06]** [接著繼續一個人往南走](https://www.youtube.com/watch?v=VLUj4emNiow&t=66s)
+- **[01:09]** [因為前幾天在臉書上看到了一位很喜歡的攝影師Pino](https://www.youtube.com/watch?v=VLUj4emNiow&t=69s)
+- **[01:13]** [他PO了幾張海邊的照片](https://www.youtube.com/watch?v=VLUj4emNiow&t=73s)
+- **[01:15]** [想著我也要去那樣子的海邊](https://www.youtube.com/watch?v=VLUj4emNiow&t=75s)
+- **[01:18]** [於是不走高速公路](https://www.youtube.com/watch?v=VLUj4emNiow&t=78s)
+- **[01:20]** [沿著西部的濱海公路往南前進](https://www.youtube.com/watch?v=VLUj4emNiow&t=80s)
+- **[01:23]** [想要快點看到海](https://www.youtube.com/watch?v=VLUj4emNiow&t=83s)
+- **[01:25]** [紅刺蝟藏在他的文章裡面提到](https://www.youtube.com/watch?v=VLUj4emNiow&t=85s)
+- **[01:35]** [腐蝕極式的美](https://www.youtube.com/watch?v=VLUj4emNiow&t=95s)
+- **[01:38]** [你找到你身邊的美了嗎](https://www.youtube.com/watch?v=VLUj4emNiow&t=98s)
+- **[01:49]** [你注意到你周遭值得時期的事物了嗎](https://www.youtube.com/watch?v=VLUj4emNiow&t=109s)
+- **[01:53]** [每天都這樣問自己的話](https://www.youtube.com/watch?v=VLUj4emNiow&t=113s)
+- **[01:55]** [是不是就能夠更進步一些人呢](https://www.youtube.com/watch?v=VLUj4emNiow&t=115s)
+- **[01:58]** [不知道這是不是一個大家都知道的地方](https://www.youtube.com/watch?v=VLUj4emNiow&t=118s)
+- **[02:04]** [我覺得這裡超可愛的](https://www.youtube.com/watch?v=VLUj4emNiow&t=124s)
+- **[02:05]** [好像那個](https://www.youtube.com/watch?v=VLUj4emNiow&t=125s)
+- **[02:07]** [一顆一顆的小波塊](https://www.youtube.com/watch?v=VLUj4emNiow&t=127s)
+- **[02:10]** [排隊跳海嗎](https://www.youtube.com/watch?v=VLUj4emNiow&t=130s)
+- **[02:14]** [那天頻道的IG跳出了一個訊息問到](https://www.youtube.com/watch?v=VLUj4emNiow&t=134s)
+- **[02:17]** [作為一位新手](https://www.youtube.com/watch?v=VLUj4emNiow&t=137s)
+- **[02:18]** [該買什麼樣的相機好呢](https://www.youtube.com/watch?v=VLUj4emNiow&t=138s)
+- **[02:21]** [一台可以讓你每天都帶出門的相機](https://www.youtube.com/watch?v=VLUj4emNiow&t=141s)
+- **[02:24]** [是一個聽起來很敷衍](https://www.youtube.com/watch?v=VLUj4emNiow&t=144s)
+- **[02:27]** [但卻很發自內心的回答](https://www.youtube.com/watch?v=VLUj4emNiow&t=147s)
+- **[02:29]** [你看到那些腐蝕極式的美了嗎](https://www.youtube.com/watch?v=VLUj4emNiow&t=149s)
+- **[03:33]** [帶著一台會讓你一直想要拍照的相機出門吧](https://www.youtube.com/watch?v=VLUj4emNiow&t=213s)

@@ -1,0 +1,36 @@
+# [h6w46BOLw3Y] 這是PGY的OneGo Solo V2
+
+影片網址: https://www.youtube.com/watch?v=h6w46BOLw3Y
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [想要跟大家介紹的這款隨身包](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=0s)
+- **[00:01]** [是PGUI的One Go Solo](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=1s)
+- **[00:03]** [它是一個六聲的包](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=3s)
+- **[00:04]** [但是它的空間容量非常的大](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=4s)
+- **[00:06]** [如果你的鏡頭沒有太大的話](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=6s)
+- **[00:08]** [它可以輕鬆塞一下一機三鏡](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=8s)
+- **[00:10]** [一機它後面的隔層可以裝下一台AP Pro](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=10s)
+- **[00:12]** [它裡面有一些磁吸的袋子](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=12s)
+- **[00:14]** [可以讓你放小東西不會掉出來](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=14s)
+- **[00:15]** [一機當你今天要區別電池](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=15s)
+- **[00:18]** [有電煤電還有特別的磁鐵扣子](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=18s)
+- **[00:20]** [可以分成綠色跟紅色](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=20s)
+- **[00:21]** [讓你可以辨別你的電池](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=21s)
+- **[00:22]** [是否有電非常貼心的小設計](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=22s)
+- **[00:24]** [要我來評價它的話](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=24s)
+- **[00:26]** [我認為它整體的機能性算相當好的](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=26s)
+- **[00:28]** [它的背帶設計可以讓你快速的伸縮](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=28s)
+- **[00:30]** [然後在移動的時候相當方便](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=30s)
+- **[00:32]** [以及我不得不提](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=32s)
+- **[00:33]** [背包側邊有一個隱藏小袋子](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=33s)
+- **[00:35]** [這個小袋子拉出來](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=35s)
+- **[00:37]** [可以讓你裝一些寶特瓶](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=37s)
+- **[00:38]** [如果你今天在旅行旅遊的時候](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=38s)
+- **[00:40]** [有買一些冰冷的飲料](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=40s)
+- **[00:42]** [然後因為冰到可能會出水](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=42s)
+- **[00:43]** [你怕弄到你的器材的話](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=43s)
+- **[00:44]** [你可以把它掛在外面](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=44s)
+- **[00:46]** [相當貼心的設計](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=46s)
+- **[00:47]** [現在就上官網輸入折扣碼](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=47s)
+- **[00:49]** [OK Solo即可享有特殊的優惠](https://www.youtube.com/watch?v=h6w46BOLw3Y&t=49s)

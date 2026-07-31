@@ -1,0 +1,37 @@
+# [OU41t-o6rv4] 「散步街拍」小琉球篇 - fujifilm XS10 + XF23mm f2
+
+影片網址: https://www.youtube.com/watch?v=OU41t-o6rv4
+
+## 語音逐字稿與時間戳記
+
+- **[00:17]** [I've books through the years](https://www.youtube.com/watch?v=OU41t-o6rv4&t=17s)
+- **[00:20]** [I had a library next to my home](https://www.youtube.com/watch?v=OU41t-o6rv4&t=20s)
+- **[00:25]** [And some I held close to my chest](https://www.youtube.com/watch?v=OU41t-o6rv4&t=25s)
+- **[00:29]** [So dear that they were close on loan](https://www.youtube.com/watch?v=OU41t-o6rv4&t=29s)
+- **[00:35]** [But if the pages make me smile like a fool](https://www.youtube.com/watch?v=OU41t-o6rv4&t=35s)
+- **[00:42]** [Maybe for once I won't follow the rules](https://www.youtube.com/watch?v=OU41t-o6rv4&t=42s)
+- **[00:47]** [I'll keep it until it's long overdue](https://www.youtube.com/watch?v=OU41t-o6rv4&t=47s)
+- **[00:53]** [When I find my favorite book](https://www.youtube.com/watch?v=OU41t-o6rv4&t=53s)
+- **[01:01]** [I've read a story that opened my eyes](https://www.youtube.com/watch?v=OU41t-o6rv4&t=61s)
+- **[01:09]** [To the world and its passing time](https://www.youtube.com/watch?v=OU41t-o6rv4&t=69s)
+- **[01:14]** [And I know the one saying a sweet song to my heart](https://www.youtube.com/watch?v=OU41t-o6rv4&t=74s)
+- **[01:20]** [But the ending was sad from the start](https://www.youtube.com/watch?v=OU41t-o6rv4&t=80s)
+- **[01:26]** [And then came a long, just an ordinary book](https://www.youtube.com/watch?v=OU41t-o6rv4&t=86s)
+- **[01:32]** [That I happened to give a second look](https://www.youtube.com/watch?v=OU41t-o6rv4&t=92s)
+- **[01:37]** [It was humor and heartbreak](https://www.youtube.com/watch?v=OU41t-o6rv4&t=97s)
+- **[01:40]** [And something in between](https://www.youtube.com/watch?v=OU41t-o6rv4&t=100s)
+- **[01:43]** [The most beautiful one I'd ever see](https://www.youtube.com/watch?v=OU41t-o6rv4&t=103s)
+- **[01:51]** [And your pages smile like a fool](https://www.youtube.com/watch?v=OU41t-o6rv4&t=111s)
+- **[01:59]** [Once I won't follow the rules](https://www.youtube.com/watch?v=OU41t-o6rv4&t=119s)
+- **[02:03]** [I'll keep it until it's long overdue](https://www.youtube.com/watch?v=OU41t-o6rv4&t=123s)
+- **[02:09]** [When I find my favorite book](https://www.youtube.com/watch?v=OU41t-o6rv4&t=129s)
+- **[02:19]** [So I'll pour over you](https://www.youtube.com/watch?v=OU41t-o6rv4&t=139s)
+- **[02:22]** [Till I know you by heart](https://www.youtube.com/watch?v=OU41t-o6rv4&t=142s)
+- **[02:25]** [And when time wears you down](https://www.youtube.com/watch?v=OU41t-o6rv4&t=145s)
+- **[02:27]** [I'll mend your broken parts](https://www.youtube.com/watch?v=OU41t-o6rv4&t=147s)
+- **[02:30]** [And I'll treasure the days](https://www.youtube.com/watch?v=OU41t-o6rv4&t=150s)
+- **[02:33]** [With you that I'm spending](https://www.youtube.com/watch?v=OU41t-o6rv4&t=153s)
+- **[02:36]** [I'm still waiting to read your ending](https://www.youtube.com/watch?v=OU41t-o6rv4&t=156s)
+- **[02:44]** [And your pages make me smile like a fool](https://www.youtube.com/watch?v=OU41t-o6rv4&t=164s)
+- **[02:53]** [And for once I didn't follow the rules](https://www.youtube.com/watch?v=OU41t-o6rv4&t=173s)
+- **[02:59]** [I'm keeping it until it's long overdue](https://www.youtube.com/watch?v=OU41t-o6rv4&t=179s)

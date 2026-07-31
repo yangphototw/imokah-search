@@ -1,0 +1,37 @@
+# [5o5s-mvinI0] 我都ok啊十萬線下見面會✌️
+
+影片網址: https://www.youtube.com/watch?v=5o5s-mvinI0
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [上個月辦完頻道10萬訂閱的線下活動](https://www.youtube.com/watch?v=5o5s-mvinI0&t=0s)
+- **[00:03]** [很感謝當天有特別抽空前來的各位觀眾](https://www.youtube.com/watch?v=5o5s-mvinI0&t=3s)
+- **[00:05]** [對我自己而言](https://www.youtube.com/watch?v=5o5s-mvinI0&t=5s)
+- **[00:06]** [也許只是想找個藉口辦場盛大了尾牙](https://www.youtube.com/watch?v=5o5s-mvinI0&t=6s)
+- **[00:09]** [來感謝幾年來一路從影片到直播](https://www.youtube.com/watch?v=5o5s-mvinI0&t=9s)
+- **[00:12]** [Package上陪伴著我們的各位觀眾](https://www.youtube.com/watch?v=5o5s-mvinI0&t=12s)
+- **[00:14]** [透過攝影讓大家聚在一起](https://www.youtube.com/watch?v=5o5s-mvinI0&t=14s)
+- **[00:15]** [是件奇妙的事情](https://www.youtube.com/watch?v=5o5s-mvinI0&t=15s)
+- **[00:16]** [我知道對於其他大頻道來說](https://www.youtube.com/watch?v=5o5s-mvinI0&t=16s)
+- **[00:18]** [10萬訂閱只是一瞬間的事](https://www.youtube.com/watch?v=5o5s-mvinI0&t=18s)
+- **[00:20]** [我們卻慢了像在攀燈什麼高山一樣](https://www.youtube.com/watch?v=5o5s-mvinI0&t=20s)
+- **[00:22]** [但我卻覺得這樣慢慢前行的感覺特別的好](https://www.youtube.com/watch?v=5o5s-mvinI0&t=22s)
+- **[00:25]** [一直以來舉辦線下會都是我做過最好的決定](https://www.youtube.com/watch?v=5o5s-mvinI0&t=25s)
+- **[00:27]** [即便沒機會跟每個人都說到話](https://www.youtube.com/watch?v=5o5s-mvinI0&t=27s)
+- **[00:29]** [但其實看到平常在聊天室](https://www.youtube.com/watch?v=5o5s-mvinI0&t=29s)
+- **[00:31]** [常出現的那些ID變成真人](https://www.youtube.com/watch?v=5o5s-mvinI0&t=31s)
+- **[00:33]** [其實也是很有趣的](https://www.youtube.com/watch?v=5o5s-mvinI0&t=33s)
+- **[00:34]** [常有遇到觀眾說](https://www.youtube.com/watch?v=5o5s-mvinI0&t=34s)
+- **[00:35]** [愛終於見到的道次本人](https://www.youtube.com/watch?v=5o5s-mvinI0&t=35s)
+- **[00:37]** [其實反過來我想跟你說](https://www.youtube.com/watch?v=5o5s-mvinI0&t=37s)
+- **[00:38]** [終於看到你本人了](https://www.youtube.com/watch?v=5o5s-mvinI0&t=38s)
+- **[00:40]** [舉辦線下活動很累很麻煩很花錢](https://www.youtube.com/watch?v=5o5s-mvinI0&t=40s)
+- **[00:43]** [但可以親自見到你們](https://www.youtube.com/watch?v=5o5s-mvinI0&t=43s)
+- **[00:44]** [好像又特別的值得](https://www.youtube.com/watch?v=5o5s-mvinI0&t=44s)
+- **[00:46]** [最後要感謝SonyTaiwan](https://www.youtube.com/watch?v=5o5s-mvinI0&t=46s)
+- **[00:47]** [跟STG大力的贊助這次的獎品](https://www.youtube.com/watch?v=5o5s-mvinI0&t=47s)
+- **[00:49]** [讓活動變得更為熱絡](https://www.youtube.com/watch?v=5o5s-mvinI0&t=49s)
+- **[00:50]** [我們順利地登上了一座小山丘](https://www.youtube.com/watch?v=5o5s-mvinI0&t=50s)
+- **[00:52]** [接著還會繼續往前行](https://www.youtube.com/watch?v=5o5s-mvinI0&t=52s)
+- **[00:54]** [我也不知道鏡頭會在哪裡](https://www.youtube.com/watch?v=5o5s-mvinI0&t=54s)
+- **[00:55]** [但我相信我們會一起往前走](https://www.youtube.com/watch?v=5o5s-mvinI0&t=55s)

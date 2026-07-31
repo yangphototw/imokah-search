@@ -1,0 +1,38 @@
+# [jLZ-AmFcJP4] 【培養攝影眼，尋找色塊】 #拍照教學拍照 #攝影教學 #引導 #攝影技巧 #人像寫真
+
+影片網址: https://www.youtube.com/watch?v=jLZ-AmFcJP4
+
+## 語音逐字稿與時間戳記
+
+- **[00:00]** [這裡太美了吧 看我拍一張](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=0s)
+- **[00:03]** [我們來到台中五泉西六街附近](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=3s)
+- **[00:05]** [這裡很多色塊可以運用](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=5s)
+- **[00:07]** [看看有沒有可以拍些什麼 OK](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=7s)
+- **[00:10]** [這裡有很多紅色鐵門色塊](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=10s)
+- **[00:12]** [來看我這裡](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=12s)
+- **[00:14]** [點台高吃光](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=14s)
+- **[00:16]** [我們比綠葉當前景](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=16s)
+- **[00:19]** [各種顏色的圍牆](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=19s)
+- **[00:20]** [手背後面靠牆看我](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=20s)
+- **[00:22]** [我們廣角拍一張](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=22s)
+- **[00:25]** [這邊有一個很好看的復古柵欄](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=25s)
+- **[00:27]** [下半身靠柵欄](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=27s)
+- **[00:28]** [上半身往前身看我](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=28s)
+- **[00:31]** [白牆加上好看的光斑](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=31s)
+- **[00:35]** [我們換一個角度再拍一張](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=35s)
+- **[00:39]** [這個景太漂亮了](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=39s)
+- **[00:40]** [來拍一張](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=40s)
+- **[00:43]** [我們距離拉近拍攝一張](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=43s)
+- **[00:45]** [看我](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=45s)
+- **[00:47]** [找到一個有趣的招牌](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=47s)
+- **[00:49]** [來背後靠招牌](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=49s)
+- **[00:50]** [來看你的右邊](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=50s)
+- **[00:53]** [看的復古瓷磚](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=53s)
+- **[00:58]** [這裡有很多老宅改裝的店](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=58s)
+- **[00:59]** [很好拍 大家都可以來試試看](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=59s)
+- **[01:01]** [我問你喔 消防小常識](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=61s)
+- **[01:03]** [A類是普通火災](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=63s)
+- **[01:04]** [B類是油性火災](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=64s)
+- **[01:05]** [那C類是什麼](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=65s)
+- **[01:08]** [C類是抱歉](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=68s)
+- **[01:09]** [C類](https://www.youtube.com/watch?v=jLZ-AmFcJP4&t=69s)
