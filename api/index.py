@@ -1,7 +1,6 @@
 import json
 import os
 import sys
-from http.server import BaseHTTPRequestHandler
 from urllib.parse import parse_qs, urlparse
 
 # 將專案根目錄加入 Python 搜尋路徑
@@ -12,23 +11,25 @@ if OKA_ROOT not in sys.path:
 from web_server import build_encyclopedia_data
 from ai_oka import hybrid_search_oka
 
-class handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        parsed_url = urlparse(self.path)
-        path = parsed_url.path
-        query_params = parse_qs(parsed_url.query)
-        
-        self.send_response(200)
-        self.send_header('Content-Type', 'application/json; charset=utf-8')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.end_headers()
-        
-        if path == '/api/encyclopedia' or path == '/api/encyclopedia/':
-            res = build_encyclopedia_data()
-        elif path == '/api/search' or path == '/api/search/':
-            q = query_params.get('q', [''])[0]
-            res = hybrid_search_oka(q)
-        else:
-            res = {"status": "ok", "message": "OKA Search API on Vercel"}
-            
-        self.wfile.write(json.dumps(res, ensure_ascii=False).encode('utf-8'))
+def app(environ, start_response):
+    path = environ.get('PATH_INFO', '')
+    query_string = environ.get('QUERY_STRING', '')
+    query_params = parse_qs(query_string)
+    
+    if '/api/encyclopedia' in path:
+        res = build_encyclopedia_data()
+    elif '/api/search' in path:
+        q = query_params.get('q', [''])[0]
+        res = hybrid_search_oka(q)
+    else:
+        res = {"status": "ok", "message": "OKA Search API on Vercel"}
+
+    body = json.dumps(res, ensure_ascii=False).encode('utf-8')
+    status = '200 OK'
+    headers = [
+        ('Content-Type', 'application/json; charset=utf-8'),
+        ('Access-Control-Allow-Origin', '*'),
+        ('Content-Length', str(len(body)))
+    ]
+    start_response(status, headers)
+    return [body]
