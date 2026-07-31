@@ -30,11 +30,8 @@ class handler(BaseHTTPRequestHandler):
             parsed_url = urlparse(self.path)
             path = parsed_url.path
             query_params = parse_qs(parsed_url.query)
-            action = query_params.get('action', [''])[0]
             
-            if action == 'encyclopedia' or 'encyclopedia' in path:
-                res = build_encyclopedia_data()
-            elif action == 'search' or 'search' in path:
+            if 'search' in path or 'q' in query_params:
                 q = query_params.get('q', [''])[0]
                 res = hybrid_search_oka(q)
             else:

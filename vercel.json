@@ -4,10 +4,5 @@
       "memory": 1024,
       "maxDuration": 15
     }
-  },
-  "rewrites": [
-    { "source": "/api/encyclopedia", "destination": "/api/index.py?action=encyclopedia" },
-    { "source": "/api/search", "destination": "/api/index.py?action=search" },
-    { "source": "/(.*)", "destination": "/web/$1" }
-  ]
+  }
 }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我都OK啊｜道慈老師全頻道 AI 攝影知識庫</title>
+    <meta name="description" content="《我都OK啊》頻道全量 1,038 部影片知識庫。遵循 PPVI 極簡設計哲學，支援 0.000 秒極速語意搜尋、Gemini 3.6 觀點提煉與 YouTube 秒數直跳。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 誠實精確之 Glassmorphism 載入遮罩 -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner-card">
+            <div class="glass-spinner"></div>
+            <div class="loading-title">0.000 秒極速檢索中...</div>
+            <div class="loading-sub">全頻道 1,271,163 切片倒排比對 ‧ 載入 Gemini 3.6 觀點</div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- 頁首 Top Bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <div class="status-pill">
+                    <span class="live-dot"></span>
+                    <span>1,038 部影片資料庫在線</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="themeToggleBtn" class="theme-toggle-btn" title="切換亮色/暗色主題">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-text">深色模式</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- 主標題區段 (Strict Typography Hierarchy) -->
+        <section class="hero-section">
+            <h1 class="type-lvl-1">我都OK啊 ‧ 攝影知識庫</h1>
+            <p class="type-lvl-4-sub">輸入器材、參數心法或攝影主題，秒尋道慈老師全頻道實戰對白與觀點</p>
+            <div class="random-action-row">
+                <button id="randomBtn" class="random-hero-btn" title="隨機抽取並觀看一部道慈老師影片">
+                    🎲 隨機抽取並觀看
+                </button>
+            </div>
+        </section>
+
+        <!-- 搜尋列與標籤 (Restraint & Density) -->
+        <section class="search-section">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="搜尋關鍵字：Nikon Zf, GR3 街拍, 光圈景深, ISO 噪點, 底片調色..." autocomplete="off">
+                <button id="clearBtn" class="clear-btn" style="display: none;" title="清除">✕</button>
+                <button id="searchBtn" class="search-btn">
+                    <span id="btnText">搜尋</span>
+                </button>
+            </div>
+
+            <!-- 熱門推薦微型標籤 -->
+            <div class="tags-row">
+                <span class="tags-label">熱門專題：</span>
+                <button class="tag-pill" data-tag="Nikon Zf">Nikon Zf</button>
+                <button class="tag-pill" data-tag="GR3 街拍">GR3 街拍</button>
+                <button class="tag-pill" data-tag="ISO 噪點">ISO 感光度</button>
+                <button class="tag-pill" data-tag="光圈 景深">光圈與景深</button>
+                <button class="tag-pill" data-tag="底片調色">HSL 調色</button>
+                <button class="tag-pill" data-tag="蔡司 鏡頭">蔡司鏡頭</button>
+            </div>
+        </section>
+
+        <!-- 🚀 使用者權威五大分類導覽 Tabs -->
+        <nav class="nav-tabs" id="categoryTabs">
+            <button class="tab-pill active" data-cat="all">全頻道專題</button>
+            <button class="tab-pill" data-cat="daily">📸 日常影片</button>
+            <button class="tab-pill" data-cat="gear">📷 器材評測</button>
+            <button class="tab-pill" data-cat="live">🎙️ 直播存檔</button>
+            <button class="tab-pill" data-cat="member_review">👑 會員評圖</button>
+            <button class="tab-pill" data-cat="book">📚 讀書會</button>
+        </nav>
+
+        <!-- 主要內容區域 -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2 id="sectionTitle" class="type-lvl-2">全頻道熱門觀點與精選影片</h2>
+                <span id="resultCount" class="type-lvl-5-count">載入資料中...</span>
+            </div>
+
+            <!-- 網格卡片區段 -->
+            <div class="grid-layout" id="videoGrid">
+                <!-- 由 app.js 動態渲染卡片 -->
+            </div>
+        </main>
+
+        <!-- 頁尾 -->
+        <footer class="app-footer">
+            <p>《我都OK啊》YouTube 全頻道語音檢索系統 ‧ 道慈老師攝影知識庫</p>
+            <p class="footer-sub">遵循 PPVI 極簡視覺規範 ‧ 倒排索引與 Gemini 3.6 觀點提煉</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
