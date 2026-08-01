@@ -18,9 +18,9 @@ class handler(BaseHTTPRequestHandler):
             query_params = parse_qs(parsed_url.query)
             
             if 'search' in path or 'q' in query_params:
-                from ai_oka import hybrid_search_oka
+                from web_server import perform_search
                 q = query_params.get('q', [''])[0]
-                res = hybrid_search_oka(q)
+                res = perform_search(q)
             else:
                 from web_server import build_encyclopedia_data
                 res = build_encyclopedia_data()

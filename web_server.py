@@ -46,46 +46,7 @@ class OKAHandler(SimpleHTTPRequestHandler):
         if parsed.path == '/api/search':
             qs = parse_qs(parsed.query)
             q = qs.get('q', [''])[0]
-            results = hybrid_search_oka(q) if q else []
-            
-            gemini_cats = {}
-            if os.path.exists(GEMINI_CAT_FILE):
-                try:
-                    with open(GEMINI_CAT_FILE, "r", encoding="utf-8") as f:
-                        gemini_cats = json.load(f)
-                except Exception:
-                    pass
-            
-            privacy_map = get_youtube_privacy_map()
-            dates_map = get_youtube_dates_map()
-                    
-            for r in results:
-                v_id = ""
-                m = re.search(r'v=([a-zA-Z0-9_-]{11})', r.get('url', ''))
-                if m:
-                    v_id = m.group(1)
-                
-                cat = gemini_cats.get(v_id)
-                if not cat:
-                    t_lower = r.get('video_title', '').lower()
-                    if any(k in t_lower for k in ['週三八點半', '週三攝影週報', '週三攝影周報', '攝影週報', '攝影周報', '會後直播']):
-                        cat = 'live'
-                    elif any(k in t_lower for k in ['讀書會', '導讀', '攝影集', '畫冊', '作品集', '經典畫冊', '書報']):
-                        cat = 'book'
-                    elif '評圖' in t_lower or ('會員' in t_lower and any(k in t_lower for k in ['作業', '照片', '點評', '獨家'])):
-                        cat = 'member_review'
-                    elif any(k in t_lower for k in ['相機', '鏡頭', '實測', '評測', '開箱', '選購', '手冊', '濾鏡', '腳架', '相機包', '包款', 'sony', 'fujifilm', '富士', 'nikon', 'canon', 'ricoh', 'gr', 'gr3', 'gr3x', 'gr4', 'leica', '徠卡', '銘匠', '適馬', 'sigma', 'tamron', '騰龍', '哈蘇', 'hasselblad', 'zeiss', '蔡司', 'panasonic', 'fx30', 'fx3', 'a7', 'z8', 'z9', 'z6', 'zf', 'zfc', 'x100v', 'x100vi', 'x-t5', 'x-e4']):
-                        cat = 'gear'
-                    else:
-                        cat = 'daily'
-                
-                r['category'] = cat
-                r['publish_date'] = dates_map.get(v_id, "")
-                p_info = privacy_map.get(v_id)
-                if p_info:
-                    r['is_member_only'] = p_info.get("is_member_only", False)
-                else:
-                    r['is_member_only'] = (cat in ["member_review", "live", "book"])
+            results = perform_search(q)
 
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -106,6 +67,50 @@ class OKAHandler(SimpleHTTPRequestHandler):
             return
 
         return super().do_GET()
+
+def perform_search(q):
+    results = hybrid_search_oka(q) if q else []
+    
+    gemini_cats = {}
+    if os.path.exists(GEMINI_CAT_FILE):
+        try:
+            with open(GEMINI_CAT_FILE, "r", encoding="utf-8") as f:
+                gemini_cats = json.load(f)
+        except Exception:
+            pass
+    
+    privacy_map = get_youtube_privacy_map()
+    dates_map = get_youtube_dates_map()
+            
+    for r in results:
+        v_id = ""
+        m = re.search(r'v=([a-zA-Z0-9_-]{11})', r.get('url', ''))
+        if m:
+            v_id = m.group(1)
+        
+        cat = gemini_cats.get(v_id)
+        if not cat:
+            t_lower = r.get('video_title', '').lower()
+            if any(k in t_lower for k in ['週三八點半', '週三攝影週報', '週三攝影周報', '攝影週報', '攝影周報', '會後直播']):
+                cat = 'live'
+            elif any(k in t_lower for k in ['讀書會', '導讀', '攝影集', '畫冊', '作品集', '經典畫冊', '書報']):
+                cat = 'book'
+            elif '評圖' in t_lower or ('會員' in t_lower and any(k in t_lower for k in ['作業', '照片', '點評', '獨家'])):
+                cat = 'member_review'
+            elif any(k in t_lower for k in ['相機', '鏡頭', '實測', '評測', '開箱', '選購', '手冊', '濾鏡', '腳架', '相機包', '包款', 'sony', 'fujifilm', '富士', 'nikon', 'canon', 'ricoh', 'gr', 'gr3', 'gr3x', 'gr4', 'leica', '徠卡', '銘匠', '適馬', 'sigma', 'tamron', '騰龍', '哈蘇', 'hasselblad', 'zeiss', '蔡司', 'panasonic', 'fx30', 'fx3', 'a7', 'z8', 'z9', 'z6', 'zf', 'zfc', 'x100v', 'x100vi', 'x-t5', 'x-e4']):
+                cat = 'gear'
+            else:
+                cat = 'daily'
+        
+        r['category'] = cat
+        r['publish_date'] = dates_map.get(v_id, "")
+        p_info = privacy_map.get(v_id)
+        if p_info:
+            r['is_member_only'] = p_info.get("is_member_only", False)
+        else:
+            r['is_member_only'] = (cat in ["member_review", "live", "book"])
+
+    return results
 
 def build_encyclopedia_data():
     vmap = get_video_map()
