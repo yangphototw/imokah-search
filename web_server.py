@@ -11,12 +11,14 @@ if hasattr(sys.stderr, 'reconfigure'):
     sys.stderr.reconfigure(encoding='utf-8')
 
 OKA_ROOT = os.path.dirname(os.path.abspath(__file__))
-WEB_DIR = os.path.join(OKA_ROOT, "web")
+# public is the deployable static site.  Keeping the local server on the same
+# directory makes local QA match Vercel's zero-function production build.
+WEB_DIR = os.path.join(OKA_ROOT, "public")
 GEMINI_CAT_FILE = os.path.join(OKA_ROOT, "data", "oka_gemini_categories.json")
 PRIVACY_FILE = os.path.join(OKA_ROOT, "data", "oka_youtube_privacy.json")
 DATES_FILE = os.path.join(OKA_ROOT, "data", "oka_youtube_dates.json")
 
-from ai_oka import hybrid_search_oka, get_video_map, get_llm_summaries, get_clean_title
+from ai_oka import hybrid_search_oka, get_video_map, get_llm_summaries, get_clean_title, get_title_zh_map
 
 def get_youtube_privacy_map():
     if os.path.exists(PRIVACY_FILE):
@@ -224,7 +226,13 @@ def run_server(port=8080):
         except Exception as e:
             print(f"⚠️ 背景預熱提醒: {e}", flush=True)
 
-    threading.Thread(target=warmup_bg, daemon=True).start()
+    # Production serves only static files from public/, so eagerly loading the
+    # legacy 1.3M-segment Python index wastes RAM and can freeze local QA.
+    # Keep it opt-in for developers still testing the compatibility API.
+    if os.environ.get("ENABLE_LEGACY_API_WARMUP") == "1":
+        threading.Thread(target=warmup_bg, daemon=True).start()
+    else:
+        print("📦 靜態模式：略過舊版 RAG API 記憶體預熱。", flush=True)
     httpd.serve_forever()
 
 if __name__ == '__main__':
@@ -235,4 +243,3 @@ if __name__ == '__main__':
         except ValueError:
             pass
     run_server(port)
-

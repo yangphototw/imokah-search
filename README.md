@@ -40,6 +40,18 @@ python web_server.py
 
 開啟瀏覽器造訪 `http://localhost:8080` 即可開始體驗！
 
+### 靜態部署（Vercel 免費方案）
+
+正式部署不會執行 Python 搜尋 API。請在更新搜尋資料後先產生靜態索引：
+
+```bash
+python build_static_search_index.py
+```
+
+此指令會將搜尋索引拆成 512 個 gzip 分片，並產生 `public/catalog.json`。
+瀏覽器只會下載與查詢關鍵字相符的分片；Vercel 因此只需提供 CDN 靜態檔案，沒有
+Serverless 記憶體、冷啟動或函式逾時問題。
+
 ---
 
 ## 📂 專案架構說明

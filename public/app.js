@@ -19,6 +19,199 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let lastSearchQuery = '';
     let currentRawSearchResults = null;
+    const shardCache = new Map();
+
+    // Keep this list deliberately small and client-side.  The index itself is
+    // pre-built, so expanding a query only means downloading a few tiny shards.
+    const CAMERA_SYNONYMS = {
+        'iso': ['iso', '感光度', '感光', '高感', '噪點'],
+        '感光度': ['感光度', 'iso', '感光', '高感', '噪點'],
+        '高感': ['高感', 'iso', '感光度', '噪點', '夜拍', '夜景'],
+        '噪點': ['噪點', 'iso', '高感', '感光度', '降噪'],
+        '光圈': ['光圈', 'aperture', 'f值', 'f1.4', 'f1.8', 'f2.8', '大光圈', '小光圈', '景深', '散景', '虛化'],
+        '景深': ['景深', '光圈', '虛化', '散景', '背景虛化'],
+        '虛化': ['虛化', '景深', '散景', '光圈'],
+        '快門': ['快門', 'shutter', '快門速度', '電子快門', '機械快門'],
+        '慢快門': ['慢快門', '慢速快門', '長曝', '長時間曝光', '車軌', '流水', '腳架'],
+        '長曝': ['長曝', '長時間曝光', '慢快門', '慢速快門', '腳架', '車軌', '流水'],
+        '底片': ['底片', '底片相機', '膠卷', '底片膠卷', '135底片', '120底片'],
+        '底片模擬': ['底片模擬', '富士底片模擬', 'film simulation', 'classic neg', '底片配方'],
+        '對焦': ['對焦', 'focus', '眼對焦', '追焦', '手動對焦', 'af', 'mf'],
+        '白平衡': ['白平衡', 'wb', '色溫', 'k值', '偏色'],
+        '定焦': ['定焦', '35mm', '50mm', '85mm', '大光圈定焦'],
+        '變焦': ['變焦', '24-70', '70-200', '24-105'],
+        '富士': ['富士', 'fuji', 'fujifilm', 'x100v', 'x100vi', 'x-t5', 'x-e4', 'gfx'],
+        '索尼': ['索尼', 'sony', 'a74', 'a7iv', 'a7m4', 'a7r5', 'a7c', 'fx3'],
+        '尼康': ['尼康', 'nikon', 'zf', 'z8', 'z9', 'z6', 'zfc'],
+        '理光': ['理光', 'ricoh', 'gr3', 'griii', 'gr3x', 'gr'],
+        '佳能': ['佳能', 'canon', 'r5', 'r6', 'r6ii', 'r8', 'eos r'],
+        '萊卡': ['萊卡', '徠卡', 'leica', 'm10', 'm11', 'q2', 'q3'],
+        '蔡司': ['蔡司', 'zeiss', '蔡絲', 'carl zeiss'],
+        'cpl': ['cpl', '偏光鏡', '偏振鏡'],
+        'nd': ['nd', '減光鏡'],
+        '街拍': ['街拍', '快照', 'snap', 'street photography', '掃街', '抓拍'],
+        '調色': ['調色', '修圖', 'lightroom', 'lut', '色調', '後製', 'hsl'],
+        '鏡頭': ['鏡頭', '焦段', '副廠', '騰龍', '適馬', '卡口']
+    };
+
+    function expandTerms(term) {
+        const normalized = term.trim().toLowerCase();
+        return [...new Set([normalized, ...(CAMERA_SYNONYMS[normalized] || [])])];
+    }
+
+    function escapeHtml(value) {
+        return String(value ?? '').replace(/[&<>'"]/g, character => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+        })[character]);
+    }
+
+    // This must match build_static_search_index.py.  FNV-1a gives a stable,
+    // evenly distributed shard without revealing the entire search corpus.
+    function shardIdFor(term) {
+        let hash = 0x811c9dc5;
+        for (let i = 0; i < term.length; i += 1) {
+            hash ^= term.charCodeAt(i);
+            hash = Math.imul(hash, 0x01000193);
+        }
+        return String((hash >>> 0) & 511).padStart(3, '0');
+    }
+
+    async function loadSearchShard(shardId) {
+        if (shardCache.has(shardId)) return shardCache.get(shardId);
+
+        const pending = (async () => {
+            const response = await fetch(`/search-index/${shardId}.json.gz`);
+            if (!response.ok) throw new Error(`搜尋索引分片載入失敗 (${response.status})`);
+            if (!('DecompressionStream' in window)) {
+                throw new Error('你的瀏覽器不支援壓縮搜尋索引');
+            }
+            const stream = response.body.pipeThrough(new DecompressionStream('gzip'));
+            return JSON.parse(await new Response(stream).text());
+        })();
+        shardCache.set(shardId, pending);
+        try {
+            return await pending;
+        } catch (error) {
+            shardCache.delete(shardId);
+            throw error;
+        }
+    }
+
+    function allVideosById() {
+        const videos = new Map();
+        encyclopediaData.categories.forEach(category => {
+            category.videos.forEach(video => videos.set(video.id, { ...video, category: category.id }));
+        });
+        return videos;
+    }
+
+    function topicTag(text) {
+        const content = (text || '').toLowerCase();
+        if (['光圈', 'aperture', '景深', '虛化', '散景'].some(term => content.includes(term))) return '📷 【光圈與景深控制】';
+        if (['iso', '感光度', '高感', '噪點'].some(term => content.includes(term))) return '🎨 【ISO 與感光度表現】';
+        if (['快門', 'shutter'].some(term => content.includes(term))) return '⏱️ 【快門速度與動態】';
+        if (['對焦', '追焦', '眼對焦'].some(term => content.includes(term))) return '🎯 【對焦性能與反應】';
+        if (['鏡頭', '焦段', '35mm', '50mm', '85mm'].some(term => content.includes(term))) return '📷 【鏡頭搭配與焦段選擇】';
+        return '💡 【核心觀點與建議】';
+    }
+
+    async function staticSearch(query) {
+        const subQueries = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+        const termGroups = subQueries.map(expandTerms);
+        const terms = [...new Set(termGroups.flat())];
+        const shards = await Promise.all([...new Set(terms.map(shardIdFor))].map(loadSearchShard));
+        const index = new Map();
+        shards.forEach(shard => Object.entries(shard).forEach(([term, hits]) => index.set(term, hits)));
+
+        const videos = allVideosById();
+        const scored = new Map();
+        const totalTerms = termGroups.length;
+
+        // Title matches are small enough to rank in the browser and give users
+        // useful results even when a transcript has no matching time segment.
+        videos.forEach(video => {
+            const title = (video.title || '').toLowerCase();
+            let hits = 0;
+            let score = 0;
+            termGroups.forEach((group, position) => {
+                if (group.some(term => title.includes(term))) {
+                    hits += 1;
+                    score += 10000 * (10 ** (totalTerms - position - 1));
+                }
+            });
+            if (hits) {
+                const allMatched = hits === totalTerms;
+                const key = `${video.id}_title`;
+                scored.set(key, {
+                    score: (allMatched ? 2000000 : 0) + score,
+                    video_title: video.title,
+                    timestamp: '00:00',
+                    text: video.title,
+                    summary: video.ai_summary || `影片標題包含「${query}」主題討論`,
+                    topic_tag: '📌 【標題專題討論】',
+                    match_reason: allMatched ? `🏆 「${query}」主題精華影片` : `含關鍵字: ${query}`,
+                    url: video.url,
+                    type: '標題精確匹配',
+                    category: video.category,
+                    publish_date: video.publish_date,
+                    is_member_only: video.is_member_only
+                });
+            }
+        });
+
+        termGroups.forEach((group, groupIndex) => {
+            group.forEach(term => {
+                (index.get(term) || []).forEach(hit => {
+                    const [videoId, timestamp, text, start] = hit;
+                    const key = `${videoId}_${timestamp}`;
+                    const video = videos.get(videoId);
+                    if (!video) return;
+                    let item = scored.get(key);
+                    if (!item) {
+                        item = {
+                            score: 0,
+                            hitGroups: new Set(),
+                            video_title: video.title,
+                            timestamp,
+                            text,
+                            summary: video.ai_summary || `💡 攝影點評：探討「${query}」相關實務拍攝經驗與參數設定`,
+                            topic_tag: topicTag(text),
+                            match_reason: `含關鍵字: ${query}`,
+                            url: `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(Number(start) || 0)}s`,
+                            type: '對白同義詞檢索',
+                            category: video.category,
+                            publish_date: video.publish_date,
+                            is_member_only: video.is_member_only
+                        };
+                        scored.set(key, item);
+                    }
+                    if (item.hitGroups && !item.hitGroups.has(groupIndex)) {
+                        item.hitGroups.add(groupIndex);
+                        item.score += 5000 * (10 ** (totalTerms - groupIndex - 1));
+                    }
+                });
+            });
+        });
+
+        return [...scored.values()]
+            .map(item => {
+                if (item.hitGroups) {
+                    const allMatched = item.hitGroups.size === totalTerms;
+                    if (allMatched) {
+                        item.score += 1000000;
+                        item.match_reason = `🏆 「${query}」主題精華影片`;
+                    }
+                    delete item.hitGroups;
+                }
+                return item;
+            })
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 500);
+    }
 
     function initTheme() {
         const savedTheme = localStorage.getItem('ppvi-theme') || 'dark';
@@ -114,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadEncyclopedia() {
         try {
-            const res = await fetch('/api/encyclopedia');
+            const res = await fetch('/catalog.json');
             if (!res.ok) throw new Error('API request failed');
             encyclopediaData = await res.json();
             renderCategory('all');
@@ -200,19 +393,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     ? '<span class="badge-tag member-only">會員獨家</span>' 
                     : '<span class="badge-tag public-free">公開影片</span>';
 
-                const dateHtml = v.publish_date ? `<span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.85;">📅 ${v.publish_date}</span>` : '';
+                const dateHtml = v.publish_date ? `<span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.85;">📅 ${escapeHtml(v.publish_date)}</span>` : '';
 
                 card.innerHTML = `
                     <div class="thumb-container">
-                        <img class="card-thumb" src="${thumbUrl}" alt="${v.title}" loading="lazy">
+                        <img class="card-thumb" src="${thumbUrl}" alt="${escapeHtml(v.title)}" loading="lazy">
                         ${badgeHtml}
                         <span class="ts-badge">▶️ ${tsText} 點播</span>
                     </div>
                     <div class="card-content">
                         ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
-                        <h3 class="type-lvl-3-title" title="${v.title}">${v.title}</h3>
+                        <h3 class="type-lvl-3-title" title="${escapeHtml(v.title)}">${escapeHtml(v.title)}</h3>
                         <div class="summary-block">
-                            <div class="summary-text">${summaryText}</div>
+                            <div class="summary-text">${escapeHtml(summaryText)}</div>
                         </div>
                     </div>
                 `;
@@ -331,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (groupedVideos.length === 0) {
             videoGrid.innerHTML = `
                 <div style="grid-column: 1/-1; text-align: center; padding: 48px; color: var(--text-secondary);">
-                    <div style="font-size: 1.1rem; color: var(--text-primary); font-weight: 700;">在「${catLabel}」分類中未找到「${lastSearchQuery}」相關影片</div>
+                    <div style="font-size: 1.1rem; color: var(--text-primary); font-weight: 700;">在「${escapeHtml(catLabel)}」分類中未找到「${escapeHtml(lastSearchQuery)}」相關影片</div>
                     <div style="font-size: 0.85rem; margin-top: 6px; color: var(--text-muted);">建議點選【全頻道專題】或其他分類查看完整搜尋結果</div>
                 </div>`;
             return;
@@ -351,7 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 featureBadgeHtml = `<span class="featured-label">🏆 「${lastSearchQuery}」主題精華</span>`;
             }
 
-            const dateHtml = item.publish_date ? `<span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.85;">📅 ${item.publish_date}</span>` : '';
+            const dateHtml = item.publish_date ? `<span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.85;">📅 ${escapeHtml(item.publish_date)}</span>` : '';
 
             const INITIAL_SHOW = 2;
             const visibleClips = item.clips.slice(0, INITIAL_SHOW);
@@ -361,16 +554,16 @@ document.addEventListener('DOMContentLoaded', () => {
             
             visibleClips.forEach(clip => {
                 clipsHtml += `
-                    <div class="clip-node" data-url="${clip.url}">
+                    <div class="clip-node" data-url="${escapeHtml(clip.url)}">
                         <div class="clip-meta">
-                            <span class="topic-label">${clip.topic_tag}</span>
+                            <span class="topic-label">${escapeHtml(clip.topic_tag)}</span>
                             <span class="ts-link">▶️ ${clip.timestamp} 點播</span>
                         </div>
-                        <div class="match-reason-pill">🎯 ${clip.match_reason}</div>
+                        <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
                         <div class="summary-block">
-                            <div class="summary-text">${clip.summary}</div>
+                            <div class="summary-text">${escapeHtml(clip.summary)}</div>
                         </div>
-                        <div class="quote-text">💬 原對白：「${clip.text}」</div>
+                        <div class="quote-text">💬 原對白：「${escapeHtml(clip.text)}」</div>
                     </div>
                 `;
             });
@@ -379,16 +572,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 clipsHtml += `<div class="more-clips-container" style="display: none;">`;
                 hiddenClips.forEach(clip => {
                     clipsHtml += `
-                        <div class="clip-node" data-url="${clip.url}">
+                        <div class="clip-node" data-url="${escapeHtml(clip.url)}">
                             <div class="clip-meta">
-                                <span class="topic-label">${clip.topic_tag}</span>
+                                <span class="topic-label">${escapeHtml(clip.topic_tag)}</span>
                                 <span class="ts-link">▶️ ${clip.timestamp} 點播</span>
                             </div>
-                            <div class="match-reason-pill">🎯 ${clip.match_reason}</div>
+                            <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
                             <div class="summary-block">
-                                <div class="summary-text">${clip.summary}</div>
+                                <div class="summary-text">${escapeHtml(clip.summary)}</div>
                             </div>
-                            <div class="quote-text">💬 原對白：「${clip.text}」</div>
+                            <div class="quote-text">💬 原對白：「${escapeHtml(clip.text)}」</div>
                         </div>
                     `;
                 });
@@ -404,14 +597,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.innerHTML = `
                 <div class="thumb-container">
-                    <img class="card-thumb" src="${thumbUrl}" alt="${item.video_title}" loading="lazy">
+                    <img class="card-thumb" src="${thumbUrl}" alt="${escapeHtml(item.video_title)}" loading="lazy">
                     ${badgeHtml}
                     <span class="ts-badge">共 ${item.clips.length} 個重點對話</span>
                 </div>
                 <div class="card-content">
                     ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
                     ${featureBadgeHtml}
-                    <h3 class="type-lvl-3-title">${item.video_title}</h3>
+                    <h3 class="type-lvl-3-title">${escapeHtml(item.video_title)}</h3>
                     ${clipsHtml}
                 </div>
             `;
@@ -473,8 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultCount.textContent = '倒排索引比對 ‧ 載入 Gemini 3.6 觀點...';
 
         try {
-            const res = await fetch(`/api/search?q=${encodeURIComponent(cleanQuery)}`);
-            currentRawSearchResults = await res.json();
+            currentRawSearchResults = await staticSearch(cleanQuery);
             renderSearchResultsByCategory();
         } catch (err) {
             console.error('Search failed:', err);

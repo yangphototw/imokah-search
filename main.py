@@ -7,8 +7,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 if hasattr(sys.stderr, 'reconfigure'):
     sys.stderr.reconfigure(encoding='utf-8')
 
-from ai_oka import analyze_oka_topic
-from build_vector_db import query_vector_db
+from ai_oka import hybrid_search_oka
 
 OKA_ROOT = os.path.dirname(os.path.abspath(__file__))
 ENCYCLOPEDIA_FILE = os.path.join(OKA_ROOT, "data", "oka_knowledge_encyclopedia.json")
@@ -38,13 +37,27 @@ def show_knowledge_summary():
     print("-" * 50)
     print(f"📄 詳細 Markdown 知識樹請參閱：{TREE_FILE}\n")
 
+def search_and_display(query, top_k=10):
+    """Run the maintained lexical search engine and format a compact CLI view."""
+    results = hybrid_search_oka(query, top_k=top_k)
+    if not results:
+        print(f"\n找不到與「{query}」相關的影片或對白。")
+        return
+
+    print(f"\n🔎 「{query}」前 {min(len(results), top_k)} 筆結果：")
+    for index, result in enumerate(results[:top_k], start=1):
+        print(f"\n[{index}] {result['video_title']}  {result['timestamp']}")
+        print(f"    {result.get('topic_tag', '💡 【核心觀點】')}")
+        print(f"    {result.get('summary', result.get('text', ''))}")
+        print(f"    {result['url']}")
+
 def main():
     show_banner()
     show_knowledge_summary()
     
     if len(sys.argv) > 1:
         query = " ".join(sys.argv[1:])
-        analyze_oka_topic(query)
+        search_and_display(query)
         return
 
     print("💡 提示：您可以輸入任何抽象問題或器材關鍵字（例如：「對街拍尷尬的看法」、「Nikon Zf 評測」、「日本自駕建議」）")
@@ -62,7 +75,7 @@ def main():
                 show_knowledge_summary()
                 continue
 
-            analyze_oka_topic(user_input)
+            search_and_display(user_input)
 
         except (KeyboardInterrupt, EOFError):
             print("\n再會！👋")
