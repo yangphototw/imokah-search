@@ -13,7 +13,7 @@ if hasattr(sys.stderr, 'reconfigure'):
 OKA_ROOT = os.path.dirname(os.path.abspath(__file__))
 MAP_FILE = os.path.join(OKA_ROOT, "data", "oka_youtube_map.json")
 TITLE_ZH_MAP_FILE = os.path.join(OKA_ROOT, "data", "oka_title_zh_mapping.json")
-LLM_SUMMARIES_FILE = os.path.join(OKA_ROOT, "data", "oka_llm_summaries.json")
+LLM_SUMMARIES_FILE = os.path.join(OKA_ROOT, "data", "oka_video_summaries.json")
 AI_SUMMARIES_FILE = os.path.join(OKA_ROOT, "data", "oka_ai_summaries.json")
 CLEANED_TRANSCRIPTS_FILE = os.path.join(OKA_ROOT, "data", "oka_cleaned_transcripts.json")
 
@@ -150,18 +150,8 @@ def get_video_map():
 def get_llm_summaries():
     global _LLM_SUMMARIES_CACHE
     if _LLM_SUMMARIES_CACHE is None:
-        _LLM_SUMMARIES_CACHE = {}
-        raw_llm = load_json_auto(LLM_SUMMARIES_FILE)
-        if raw_llm:
-            for k, v in raw_llm.items():
-                _LLM_SUMMARIES_CACHE[k] = clean_homophone_typos(v)
-        
-        fallback_sums = load_json_auto(AI_SUMMARIES_FILE)
-        if fallback_sums:
-            for k, v in fallback_sums.items():
-                if k not in _LLM_SUMMARIES_CACHE:
-                    _LLM_SUMMARIES_CACHE[k] = clean_homophone_typos(v)
-    return _LLM_SUMMARIES_CACHE or {}
+        _LLM_SUMMARIES_CACHE = load_json_auto(LLM_SUMMARIES_FILE) or {}
+    return _LLM_SUMMARIES_CACHE
 
 def get_clean_title(v_id, fallback_title):
     zh_map = get_title_zh_map()
