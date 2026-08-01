@@ -29,13 +29,18 @@ def get_rag_chunks():
     global _RAG_INDEX_CACHE
     if _RAG_INDEX_CACHE is None:
         raw_list = load_json_auto(INDEX_FILE) or []
-        # 超強記憶體瘦身優化：將 1.3M 筆字典轉為精簡 Tuple 元組 (video_id, timestamp, text, start)
-        # 將 RAM 記憶體開銷從 550MB 大幅壓低至 ~80MB，完全通過 Render 512MB 限制！
-        _RAG_INDEX_CACHE = [
-            (c.get('video_id') or c.get('source'), c.get('timestamp', '00:00'), c.get('text', ''), c.get('start', 0))
-            if isinstance(c, dict) else c
-            for c in raw_list
-        ]
+        _RAG_INDEX_CACHE = []
+        while raw_list:
+            c = raw_list.pop()
+            if isinstance(c, dict):
+                v_id = c.get('video_id') or c.get('source')
+                ts = c.get('timestamp', '00:00')
+                txt = c.get('text', '')
+                st = c.get('start', 0)
+                _RAG_INDEX_CACHE.append((v_id, ts, txt, st))
+            else:
+                _RAG_INDEX_CACHE.append(c)
+        _RAG_INDEX_CACHE.reverse()
     return _RAG_INDEX_CACHE or []
 
 def get_inverted_index():
