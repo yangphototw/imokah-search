@@ -3,7 +3,7 @@ import os
 import sys
 import traceback
 from http.server import BaseHTTPRequestHandler
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, urlparse, unquote
 
 # 將專案根目錄加入 Python 搜尋路徑
 root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -17,9 +17,11 @@ class handler(BaseHTTPRequestHandler):
             path = parsed_url.path
             query_params = parse_qs(parsed_url.query)
             
-            if 'search' in path or 'q' in query_params:
+            raw_q = query_params.get('q', [''])[0]
+            q = unquote(raw_q).strip()
+            
+            if 'search' in path or q:
                 from web_server import perform_search
-                q = query_params.get('q', [''])[0]
                 res = perform_search(q)
             else:
                 from web_server import build_encyclopedia_data
