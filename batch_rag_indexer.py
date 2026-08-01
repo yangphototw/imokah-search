@@ -10,9 +10,11 @@ if hasattr(sys.stderr, 'reconfigure'):
 OKA_ROOT = os.path.dirname(os.path.abspath(__file__))
 INDEX_FILE = os.path.join(OKA_ROOT, "data", "oka_rag_index.json")
 INV_INDEX_FILE = os.path.join(OKA_ROOT, "data", "oka_inverted_index.json")
+SEARCH_DB_FILE = os.path.join(OKA_ROOT, "data", "oka_search_db.json")
 
 _RAG_INDEX_CACHE = None
 _INVERTED_INDEX_CACHE = None
+_SEARCH_DB_CACHE = None
 import gzip
 
 def load_json_auto(path):
@@ -24,6 +26,12 @@ def load_json_auto(path):
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     return None
+
+def get_search_db():
+    global _SEARCH_DB_CACHE
+    if _SEARCH_DB_CACHE is None:
+        _SEARCH_DB_CACHE = load_json_auto(SEARCH_DB_FILE)
+    return _SEARCH_DB_CACHE or {}
 
 def get_rag_chunks():
     global _RAG_INDEX_CACHE
@@ -50,6 +58,53 @@ def get_inverted_index():
     return _INVERTED_INDEX_CACHE or {}
 
 def search_transcript_rag(query, top_k=50):
+    s_db = get_search_db()
+    if s_db:
+        keywords = [k.strip().lower() for k in query.split() if k.strip()]
+        if not keywords:
+            return []
+        
+        matched_chunks = []
+        seen = set()
+        for kw in keywords:
+            items = s_db.get(kw, [])
+            for item in items:
+                v_id = item[0] if isinstance(item, (list, tuple)) else item.get('video_id')
+                ts = item[1] if isinstance(item, (list, tuple)) else item.get('timestamp')
+                key = f"{v_id}_{ts}"
+                if key not in seen:
+                    seen.add(key)
+                    matched_chunks.append(item)
+                    if len(matched_chunks) >= top_k:
+                        break
+            if len(matched_chunks) >= top_k:
+                break
+        
+        results = []
+        from ai_oka import get_video_map, get_clean_title
+        vmap = get_video_map()
+        
+        for c in matched_chunks:
+            if isinstance(c, (list, tuple)):
+                v_id, timestamp, text, start = c[0], c[1], c[2], c[3]
+            else:
+                v_id = c.get('video_id') or c.get('source')
+                timestamp = c.get('timestamp', '00:00')
+                text = c.get('text', '')
+                start = c.get('start', 0)
+            
+            raw_title = vmap.get(v_id, {}).get('title', '')
+            clean_t = get_clean_title(v_id, raw_title)
+            
+            results.append({
+                "video_title": clean_t,
+                "timestamp": timestamp,
+                "text": text,
+                "start": start,
+                "url": f"https://www.youtube.com/watch?v={v_id}&t={start}s"
+            })
+        return results
+
     chunks = get_rag_chunks()
     if not chunks:
         return []
