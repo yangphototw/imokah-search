@@ -10,31 +10,19 @@ root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if root_path not in sys.path:
     sys.path.insert(0, root_path)
 
-_INIT_ERROR = None
-try:
-    from web_server import build_encyclopedia_data
-    from ai_oka import hybrid_search_oka
-except Exception as e:
-    _INIT_ERROR = f"Import error: {e}\n{traceback.format_exc()}"
-
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        if _INIT_ERROR:
-            self.send_response(500)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-            self.wfile.write(json.dumps({"error": _INIT_ERROR}).encode('utf-8'))
-            return
-
         try:
             parsed_url = urlparse(self.path)
             path = parsed_url.path
             query_params = parse_qs(parsed_url.query)
             
             if 'search' in path or 'q' in query_params:
+                from ai_oka import hybrid_search_oka
                 q = query_params.get('q', [''])[0]
                 res = hybrid_search_oka(q)
             else:
+                from web_server import build_encyclopedia_data
                 res = build_encyclopedia_data()
 
             body = json.dumps(res, ensure_ascii=False).encode('utf-8')
