@@ -51,7 +51,8 @@ def fetch_oka_video_list():
         'extract_flat': True,
         'playlistend': 2000,
         'quiet': True,
-        'ignoreerrors': True
+        'ignoreerrors': True,
+        'extractor_args': {'youtube': {'lang': ['zh-TW', 'zh-Hant']}}
     }
     
     if cookie_path and os.path.exists(cookie_path):

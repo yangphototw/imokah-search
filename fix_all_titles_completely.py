@@ -30,7 +30,10 @@ ENGLISH_TO_CHINESE_MAP = {
     "We Adopted a Plum Tree...": "我們領養了一棵梅花樹...",
     "Into the Land of SnowUAn Easy Half-Day Road Trip Around Sapporo!": "駛入雪國 - 札幌周邊半日輕鬆自駕公路旅行！",
     "28mm or 35mm, How to Choose? The Ultimate Showdown of Angle of View and Depth of Field": "28mm 還是 35mm 怎麼選？視角與景深的終極對決",
-    "Flew Halfway Across the World for a Single BirdUBucket-List Dream: The Faroe Islands": "為了看一隻鳥飛了大半個地球 - 人生夢幻清單：法羅群島"
+    "Flew Halfway Across the World for a Single BirdUBucket-List Dream: The Faroe Islands": "為了看一隻鳥飛了大半個地球 - 人生夢幻清單：法羅群島",
+    "Is a 100MP Compact Worth Buying? | A Camera Born of Pure Self-Indulgence": "一億像素隨身機值得買嗎？｜一台為任性而生的相機",
+    "The Question Editing Beginners Ask Most | How Bright Should Exposure Be? | ft. BenQ": "修圖新手最常問的問題｜曝光到底要多亮？｜ft. BenQ",
+
 }
 
 def is_pure_english(text):
