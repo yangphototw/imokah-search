@@ -147,6 +147,8 @@ def process_oka_transcripts():
                 'preferredcodec': 'mp3',
                 'preferredquality': '192',
             }],
+            'js_runtimes': {'node': {}},
+            'remote_components': ['ejs:github'],
             'sleep_interval': 2,
             'max_sleep_interval': 4,
             'quiet': True,

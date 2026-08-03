@@ -11,7 +11,7 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SOURCE = ROOT / "data" / "oka_search_db.json.gz"
+
 PUBLIC = ROOT / "public"
 SHARD_DIR = PUBLIC / "search-index"
 NEXT_SHARD_DIR = PUBLIC / ".search-index-next"
@@ -72,24 +72,26 @@ def activate_output() -> None:
 
 
 def main() -> None:
-    if not SOURCE.exists():
-        raise SystemExit(f"Missing source index: {SOURCE}")
-
     if SHARD_COUNT <= 0 or SHARD_COUNT & (SHARD_COUNT - 1):
         raise SystemExit("SHARD_COUNT must be a positive power of two")
 
     prepare_output_directory()
-    print("Loading compressed search index…", flush=True)
-    with gzip.open(SOURCE, "rt", encoding="utf-8") as handle:
-        search_db = json.load(handle)
+    print("Loading RAG index and Inverted index…", flush=True)
+    with open(ROOT / "data" / "oka_rag_index.json", "r", encoding="utf-8") as f:
+        chunks = json.load(f)
+    with open(ROOT / "data" / "oka_inverted_index.json", "r", encoding="utf-8") as f:
+        inv_map = json.load(f)
 
     buckets = [{} for _ in range(SHARD_COUNT)]
-    while search_db:
-        term, hits = search_db.popitem()
+    for term, indices in inv_map.items():
         normalized_term = term.lower()
         bucket = buckets[shard_id(normalized_term)]
-        # The server lookup is case-insensitive.  Preserve every hit when the
-        # source contains multiple case variants of the same search term.
+        hits = []
+        for idx in indices:
+            c = chunks[idx]
+            v_id = c.get('video_id') or c.get('source')
+            hits.append([v_id, c.get('timestamp', '00:00'), c.get('text', ''), c.get('start', 0)])
+        
         if normalized_term in bucket:
             bucket[normalized_term].extend(hits)
         else:
