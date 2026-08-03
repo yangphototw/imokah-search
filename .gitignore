@@ -11,3 +11,7 @@ data/oka_llm_summaries.json
 data/oka_inverted_index.json
 data/oka_ai_summaries.json
 data/oka_vector_db/chunks_meta.pkl
+
+# Ignore ffmpeg large binaries and audio cache
+ff*.exe
+data/audio_cache/
