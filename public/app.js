@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnText = document.getElementById('btnText');
     const categoryTabs = document.getElementById('categoryTabs');
     const videoGrid = document.getElementById('videoGrid');
+    const latestVideosSection = document.getElementById('latestVideosSection');
+    const latestVideoGrid = document.getElementById('latestVideoGrid');
     const sectionTitle = document.getElementById('sectionTitle');
     const resultCount = document.getElementById('resultCount');
     const hotTags = document.querySelectorAll('.tag-pill');
@@ -334,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentCategory = catId;
 
         if (lastSearchQuery && currentRawSearchResults) {
+            latestVideosSection.style.display = 'none';
             renderSearchResultsByCategory();
             return;
         }
@@ -344,7 +347,27 @@ document.addEventListener('DOMContentLoaded', () => {
             encyclopediaData.categories.forEach(cat => {
                 videos.push(...cat.videos);
             });
+            
+            latestVideosSection.style.display = 'block';
+            latestVideoGrid.innerHTML = '';
+            
+            const uniqueMap = new Map();
+            videos.forEach(v => uniqueMap.set(v.id, v));
+            const uniqueVideos = Array.from(uniqueMap.values());
+            
+            const sortedVideos = [...uniqueVideos].sort((a, b) => {
+                const da = a.publish_date || '1970-01-01';
+                const db = b.publish_date || '1970-01-01';
+                return db.localeCompare(da);
+            });
+            
+            const latestVideos = sortedVideos.slice(0, 4);
+            latestVideos.forEach(v => {
+                latestVideoGrid.appendChild(createVideoCardElement(v));
+            });
+            
         } else {
+            latestVideosSection.style.display = 'none';
             const catObj = encyclopediaData.categories.find(c => c.id === catId);
             if (catObj) {
                 sectionTitle.textContent = `${catObj.name}`;
@@ -354,6 +377,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
         resultCount.textContent = `共 ${videos.length} 部影片專題`;
         renderVideoCards(videos);
+    }
+
+    function createVideoCardElement(v) {
+        const card = document.createElement('div');
+        card.className = 'video-card';
+        
+        const thumbUrl = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
+        const firstQuote = (v.sample_quotes && v.sample_quotes.length > 0) ? v.sample_quotes[0] : null;
+        const tsText = firstQuote ? firstQuote.timestamp : '00:00';
+        
+        let summaryText = v.ai_summary;
+        if (!summaryText && firstQuote && firstQuote.summary) {
+            summaryText = firstQuote.summary;
+        }
+        if (!summaryText) {
+            summaryText = `💡 實戰觀點：道慈老師針對「${v.title.slice(0, 18)}」分享攝影心法與器材操練要點`;
+        }
+
+        const targetUrl = firstQuote ? firstQuote.url : v.url;
+
+        const isMember = checkIsMember(v);
+        const badgeHtml = isMember 
+            ? '<span class="badge-tag member-only">會員獨家</span>' 
+            : '<span class="badge-tag public-free">公開影片</span>';
+
+        const dateHtml = v.publish_date ? `<span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.85;">📅 ${escapeHtml(v.publish_date)}</span>` : '';
+
+        card.innerHTML = `
+            <div class="thumb-container">
+                <img class="card-thumb" src="${thumbUrl}" alt="${escapeHtml(v.title)}" loading="lazy">
+                ${badgeHtml}
+                <span class="ts-badge">▶️ ${tsText} 點播</span>
+            </div>
+            <div class="card-content">
+                ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
+                <h3 class="type-lvl-3-title" title="${escapeHtml(v.title)}">${escapeHtml(v.title)}</h3>
+                <div class="summary-block">
+                    <div class="summary-text">${escapeHtml(summaryText)}</div>
+                </div>
+            </div>
+        `;
+
+        card.addEventListener('click', () => {
+            window.open(targetUrl, '_blank');
+        });
+        
+        return card;
     }
 
     function renderVideoCards(videos) {
@@ -371,49 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentlyShown += batch.length;
 
             batch.forEach(v => {
-                const card = document.createElement('div');
-                card.className = 'video-card';
-                
-                const thumbUrl = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
-                const firstQuote = (v.sample_quotes && v.sample_quotes.length > 0) ? v.sample_quotes[0] : null;
-                const tsText = firstQuote ? firstQuote.timestamp : '00:00';
-                
-                let summaryText = v.ai_summary;
-                if (!summaryText && firstQuote && firstQuote.summary) {
-                    summaryText = firstQuote.summary;
-                }
-                if (!summaryText) {
-                    summaryText = `💡 實戰觀點：道慈老師針對「${v.title.slice(0, 18)}」分享攝影心法與器材操練要點`;
-                }
-
-                const targetUrl = firstQuote ? firstQuote.url : v.url;
-
-                const isMember = checkIsMember(v);
-                const badgeHtml = isMember 
-                    ? '<span class="badge-tag member-only">會員獨家</span>' 
-                    : '<span class="badge-tag public-free">公開影片</span>';
-
-                const dateHtml = v.publish_date ? `<span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.85;">📅 ${escapeHtml(v.publish_date)}</span>` : '';
-
-                card.innerHTML = `
-                    <div class="thumb-container">
-                        <img class="card-thumb" src="${thumbUrl}" alt="${escapeHtml(v.title)}" loading="lazy">
-                        ${badgeHtml}
-                        <span class="ts-badge">▶️ ${tsText} 點播</span>
-                    </div>
-                    <div class="card-content">
-                        ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
-                        <h3 class="type-lvl-3-title" title="${escapeHtml(v.title)}">${escapeHtml(v.title)}</h3>
-                        <div class="summary-block">
-                            <div class="summary-text">${escapeHtml(summaryText)}</div>
-                        </div>
-                    </div>
-                `;
-
-                card.addEventListener('click', () => {
-                    window.open(targetUrl, '_blank');
-                });
-
+                const card = createVideoCardElement(v);
                 videoGrid.appendChild(card);
             });
 
