@@ -1,0 +1,131 @@
+"""Resumable local ASR review for paragraphs flagged by the audit."""
+
+from __future__ import annotations
+
+import argparse
+from datetime import datetime, timezone
+import gc
+import gzip
+import json
+import os
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / ".python-packages"))
+os.environ["PATH"] = os.pathsep.join([
+    str(ROOT / ".python-packages" / "nvidia" / "cublas" / "bin"),
+    str(ROOT / ".python-packages" / "nvidia" / "cudnn" / "bin"),
+    str(ROOT / ".python-packages" / "nvidia" / "cuda_nvrtc" / "bin"),
+    os.environ["PATH"],
+])
+
+from faster_whisper import WhisperModel
+
+AUDIT = ROOT / "data" / "transcript_paragraph_audit.json.gz"
+REVIEWS = ROOT / "data" / "transcript_audio_reviews.json"
+AUDIO_ROOT = Path(r"F:\AI_Youtube\MP3\OK")
+
+
+def audio_path(video_id: str) -> Path | None:
+    candidate = AUDIO_ROOT / f"Oka_{video_id}.webm"
+    if candidate.exists():
+        return candidate
+    return next(iter((ROOT / "data" / "audio_cache").glob(f"{video_id}.*")), None)
+
+
+def load_audit() -> list[dict]:
+    with gzip.open(AUDIT, "rt", encoding="utf-8") as handle:
+        return json.load(handle)["paragraphs"]
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument(
+        "--ids",
+        help="Comma-separated paragraph IDs. Use this for a targeted review instead of the audit queue.",
+    )
+    parser.add_argument("--models", default="small,medium,large-v3")
+    parser.add_argument("--dry-run", action="store_true")
+    args = parser.parse_args()
+
+    model_names = [name.strip() for name in args.models.split(",") if name.strip()]
+    if not model_names:
+        parser.error("--models must contain at least one model name")
+
+    existing = json.loads(REVIEWS.read_text(encoding="utf-8")) if REVIEWS.exists() else {}
+    audit = load_audit()
+    requested_ids = {value.strip() for value in (args.ids or "").split(",") if value.strip()}
+    def needs_requested_models(paragraph: dict) -> bool:
+        prior_asr = existing.get(paragraph["id"], {}).get("asr", {})
+        return any(name not in prior_asr for name in model_names)
+
+    if requested_ids:
+        found_ids = {paragraph["id"] for paragraph in audit}
+        unknown_ids = sorted(requested_ids - found_ids)
+        if unknown_ids:
+            parser.error(f"Unknown paragraph IDs: {', '.join(unknown_ids)}")
+        pending = [p for p in audit if p["id"] in requested_ids and needs_requested_models(p)]
+    else:
+        pending = [p for p in audit if p["needs_audio_review"] and needs_requested_models(p)]
+    pending = pending[:args.limit]
+    missing = [p["id"] for p in pending if not audio_path(p["video_id"])]
+    print(f"Pending: {len(pending)}; audio missing: {len(missing)}")
+    if args.dry_run:
+        for paragraph in pending[:10]:
+            print(paragraph["id"], audio_path(paragraph["video_id"]))
+        return
+
+    for paragraph in pending:
+        source = audio_path(paragraph["video_id"])
+        if not source:
+            print(f"Skipped {paragraph['id']}: source audio not found", file=sys.stderr)
+            continue
+        clip_start = max(0, paragraph["start"] - 2)
+        clip_end = paragraph["end"] + 2
+        prior = existing.get(paragraph["id"], {})
+        existing[paragraph["id"]] = {
+            "schema_version": 1,
+            "reviewed_at": datetime.now(timezone.utc).isoformat(),
+            "video_id": paragraph["video_id"],
+            "title": paragraph["title"],
+            "start": paragraph["start"],
+            "end": paragraph["end"],
+            "audio_path": str(source),
+            "clip_start": clip_start,
+            "clip_end": clip_end,
+            "raw_text": paragraph["raw_text"],
+            "candidate_text": paragraph["candidate_text"],
+            "flags": paragraph["flags"],
+            "asr": prior.get("asr", {}),
+        }
+
+    # Load one model at a time so a low-memory GPU can review the same clips.
+    # Save after every clip; interrupted runs resume from the missing model output.
+    for name in model_names:
+        if not any(
+            paragraph["id"] in existing and name not in existing[paragraph["id"]]["asr"]
+            for paragraph in pending
+        ):
+            continue
+        model = WhisperModel(name, device="cuda", compute_type="float16")
+        for paragraph in pending:
+            review = existing.get(paragraph["id"])
+            if not review or name in review["asr"]:
+                continue
+            clip = f"{review['clip_start']:.2f},{review['clip_end']:.2f}"
+            segments, _ = model.transcribe(
+                review["audio_path"], language="zh", vad_filter=True,
+                clip_timestamps=clip, beam_size=5,
+            )
+            review["asr"][name] = "".join(segment.text.strip() for segment in segments)
+            review["reviewed_at"] = datetime.now(timezone.utc).isoformat()
+            REVIEWS.write_text(json.dumps(existing, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"Reviewed {paragraph['id']} with {name}")
+        del model
+        gc.collect()
+
+
+if __name__ == "__main__":
+    main()
