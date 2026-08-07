@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     match_reason: allMatched ? `🏆 「${query}」主題精華影片` : `含關鍵字: ${query}`,
                     url: video.url,
                     type: '標題精確匹配',
+                    isTitleMatch: true,
                     category: video.category,
                     publish_date: video.publish_date,
                     is_member_only: video.is_member_only
@@ -235,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             match_reason: `含關鍵字: ${query}`,
                             url: `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(Number(start) || 0)}s`,
                             type: '對白同義詞檢索',
+                            isTitleMatch: false,
                             category: video.category,
                             publish_date: video.publish_date,
                             is_member_only: video.is_member_only
@@ -556,13 +558,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         video_title: r.video_title,
                         publish_date: r.publish_date || '',
                         is_member_only: checkIsMember(r),
+                        titleMatch: false,
                         clips: []
                     });
+                }
+                if (r.isTitleMatch) {
+                    groupedMap.get(key).titleMatch = true;
+                    return;
                 }
                 groupedMap.get(key).clips.push({
                     timestamp: r.timestamp,
                     text: r.text,
-                    summary: createClipListeningGuide(r.text, lastSearchQuery),
                     topic_tag: r.topic_tag || '🎧 本段導讀',
                     match_reason: r.match_reason || `含關鍵字: ${lastSearchQuery}`,
                     url: r.url
@@ -625,9 +631,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="ts-link">▶️ ${clip.timestamp} 點播</span>
                         </div>
                         <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
-                        <div class="summary-block">
-                            <div class="summary-text">${escapeHtml(clip.summary)}</div>
-                        </div>
                         <div class="quote-text">📝 逐字稿原文：「${escapeHtml(clip.text)}」</div>
                     </div>
                 `;
@@ -643,9 +646,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="ts-link">▶️ ${clip.timestamp} 點播</span>
                             </div>
                             <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
-                            <div class="summary-block">
-                                <div class="summary-text">${escapeHtml(clip.summary)}</div>
-                            </div>
                             <div class="quote-text">📝 逐字稿原文：「${escapeHtml(clip.text)}」</div>
                         </div>
                     `;
@@ -659,12 +659,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             clipsHtml += '</div>';
+            if (item.clips.length === 0 && item.titleMatch) {
+                clipsHtml = `<div class="clips-wrapper"><div class="clip-node">
+                    <div class="match-reason-pill">📌 影片標題符合「${escapeHtml(lastSearchQuery)}」</div>
+                    <div class="quote-text">尚未定位到對應的逐字稿時間點；點擊卡片可直接開啟影片。</div>
+                </div></div>`;
+            }
 
             card.innerHTML = `
                 <div class="thumb-container">
                     <img class="card-thumb" src="${thumbUrl}" alt="${escapeHtml(item.video_title)}" loading="lazy">
                     ${badgeHtml}
-                    <span class="ts-badge">共 ${item.clips.length} 個重點對話</span>
+                    <span class="ts-badge">${item.clips.length ? `共 ${item.clips.length} 個重點對話` : '標題符合'}</span>
                 </div>
                 <div class="card-content">
                     ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
