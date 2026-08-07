@@ -5,17 +5,22 @@ echo ==================================================
 set "NVIDIA_SITE_PACKAGES=%APPDATA%\Python\Python314\site-packages\nvidia"
 set "PATH=%NVIDIA_SITE_PACKAGES%\cublas\bin;%NVIDIA_SITE_PACKAGES%\cudnn\bin;%NVIDIA_SITE_PACKAGES%\cuda_nvrtc\bin;%PATH%"
 echo.
-echo [1/5] Discovering and processing new videos only...
+echo [1/6] Discovering and processing new videos only...
 python channel_update.py
 if errorlevel 1 goto :error
 
 echo.
-echo [2/5] Verifying static deployment assets...
+echo [2/6] Applying the public text quality gate...
+python content_quality.py --rewrite-catalog
+if errorlevel 1 goto :error
+
+echo.
+echo [3/6] Verifying static deployment assets...
 python verify_static_site.py
 if errorlevel 1 goto :error
 
 echo.
-echo [3/5] Pushing to GitHub...
+echo [4/6] Pushing to GitHub...
 REM Only publish the static deploy output. Do not accidentally commit cookies,
 REM audio, raw transcripts, or local databases with `git add .`.
 git add public/catalog.json public/search-index

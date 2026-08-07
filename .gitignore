@@ -16,4 +16,5 @@ data/oka_vector_db/chunks_meta.pkl
 ff*.exe
 data/audio_cache/
 data/update_state.json
+data/summary_review_queue.json
 logs/

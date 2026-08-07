@@ -19,6 +19,7 @@ PRIVACY_FILE = os.path.join(OKA_ROOT, "data", "oka_youtube_privacy.json")
 DATES_FILE = os.path.join(OKA_ROOT, "data", "oka_youtube_dates.json")
 
 from ai_oka import hybrid_search_oka, get_video_map, get_llm_summaries, get_clean_title, get_title_zh_map
+from content_quality import display_summary
 
 def get_youtube_privacy_map():
     if os.path.exists(PRIVACY_FILE):
@@ -160,7 +161,7 @@ def build_encyclopedia_data():
         else:
             is_member = (cat in ["member_review", "live", "book"])
 
-        ai_sum = llm_sums.get(url, f"💡 觀點點評：探討「{title[:18]}」實務經驗與選單設定")
+        ai_sum = display_summary(title, llm_sums.get(url, ""), cat)
 
         item = {
             "id": v_id,

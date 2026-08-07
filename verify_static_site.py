@@ -11,6 +11,7 @@ from build_static_search_index import (
     SHARD_COUNT,
     shard_id,
 )
+from content_quality import display_summary
 
 ROOT = Path(__file__).resolve().parent
 PUBLIC = ROOT / "public"
@@ -58,7 +59,12 @@ def main() -> None:
             fail(f"search term exceeds result limit: {term}")
 
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
-    videos = [video for category in catalog.get("categories", []) for video in category.get("videos", [])]
+    category_video_pairs = [
+        (category.get("id", ""), video)
+        for category in catalog.get("categories", [])
+        for video in category.get("videos", [])
+    ]
+    videos = [video for _, video in category_video_pairs]
     expected_count = catalog.get("channel_info", {}).get("total_videos")
     if not isinstance(expected_count, int) or expected_count <= 0:
         fail("catalog is missing a positive channel_info.total_videos")
@@ -67,6 +73,12 @@ def main() -> None:
     required = {"id", "title", "url"}
     if any(not required.issubset(video) for video in videos):
         fail("catalog contains a video missing id, title, or url")
+    for category_id, video in category_video_pairs:
+        summary = video.get("ai_summary", "")
+        if summary != display_summary(video["title"], summary, category_id):
+            fail(f"catalog has unreviewed or low-quality public text: {video['id']}")
+        if any(quote.get("summary") != summary for quote in video.get("sample_quotes", [])):
+            fail(f"catalog quote text does not match its checked summary: {video['id']}")
 
     print(
         f"PASS: {len(videos)} videos; {manifest['terms']:,} search terms; "

@@ -13,7 +13,9 @@ if hasattr(sys.stderr, 'reconfigure'):
 OKA_ROOT = os.path.dirname(os.path.abspath(__file__))
 RAG_INDEX_FILE = os.path.join(OKA_ROOT, "data", "oka_rag_index.json")
 LLM_SUMMARIES_FILE = os.path.join(OKA_ROOT, "data", "oka_llm_summaries.json")
-API_KEY = "AQ.Ab8RN6IAAbWQMdmyqvyHsNsK_tjV9O52K8oYcVMjSDxUS8aEMQ"
+API_KEY = os.environ.get("GEMINI_API_KEY")
+if not API_KEY:
+    raise RuntimeError("GEMINI_API_KEY is required. Set it in the environment or your ignored .env file.")
 
 client = genai.Client(api_key=API_KEY)
 
