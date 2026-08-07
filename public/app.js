@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnText = document.getElementById('btnText');
     const categoryTabs = document.getElementById('categoryTabs');
     const videoGrid = document.getElementById('videoGrid');
-    const latestVideosSection = document.getElementById('latestVideosSection');
-    const latestVideoGrid = document.getElementById('latestVideoGrid');
     const sectionTitle = document.getElementById('sectionTitle');
     const resultCount = document.getElementById('resultCount');
     const hotTags = document.querySelectorAll('.tag-pill');
@@ -394,7 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentCategory = catId;
 
         if (lastSearchQuery && currentRawSearchResults) {
-            latestVideosSection.style.display = 'none';
             renderSearchResultsByCategory();
             return;
         }
@@ -406,26 +403,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 videos.push(...cat.videos);
             });
             
-            latestVideosSection.style.display = 'block';
-            latestVideoGrid.innerHTML = '';
-            
             const uniqueMap = new Map();
             videos.forEach(v => uniqueMap.set(v.id, v));
             const uniqueVideos = Array.from(uniqueMap.values());
-            
-            const sortedVideos = [...uniqueVideos].sort((a, b) => {
-                const da = a.publish_date || '1970-01-01';
-                const db = b.publish_date || '1970-01-01';
-                return db.localeCompare(da);
-            });
-            
-            const latestVideos = sortedVideos.slice(0, 4);
-            latestVideos.forEach(v => {
-                latestVideoGrid.appendChild(createVideoCardElement(v));
-            });
-            
         } else {
-            latestVideosSection.style.display = 'none';
             const catObj = encyclopediaData.categories.find(c => c.id === catId);
             if (catObj) {
                 sectionTitle.textContent = `${catObj.name}`;
