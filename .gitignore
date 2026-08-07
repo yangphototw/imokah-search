@@ -22,3 +22,6 @@ data/transcript_audio_reviews.json
 data/transcript_review_evaluation.json
 .python-packages/
 logs/
+
+.vercel
+.env*
