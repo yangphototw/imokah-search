@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastSearchQuery = '';
     let currentRawSearchResults = null;
     const shardCache = new Map();
+    const MAX_CACHED_SHARDS = 24;
+    const MAX_SEARCH_RESULTS = 80;
+    let videosById = null;
 
     // Keep this list deliberately small and client-side.  The index itself is
     // pre-built, so expanding a query only means downloading a few tiny shards.
@@ -83,7 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function loadSearchShard(shardId) {
-        if (shardCache.has(shardId)) return shardCache.get(shardId);
+        if (shardCache.has(shardId)) {
+            const cached = shardCache.get(shardId);
+            // Map insertion order gives us a small LRU cache without keeping
+            // every decompressed shard alive for the whole browser session.
+            shardCache.delete(shardId);
+            shardCache.set(shardId, cached);
+            return cached;
+        }
 
         const pending = (async () => {
             const response = await fetch(`/search-index/${shardId}.json.gz`);
@@ -95,6 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return JSON.parse(await new Response(stream).text());
         })();
         shardCache.set(shardId, pending);
+        while (shardCache.size > MAX_CACHED_SHARDS) {
+            shardCache.delete(shardCache.keys().next().value);
+        }
         try {
             return await pending;
         } catch (error) {
@@ -104,11 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function allVideosById() {
+        if (videosById) return videosById;
         const videos = new Map();
         encyclopediaData.categories.forEach(category => {
             category.videos.forEach(video => videos.set(video.id, { ...video, category: category.id }));
         });
-        return videos;
+        videosById = videos;
+        return videosById;
     }
 
     function topicTag(text) {
@@ -122,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function staticSearch(query) {
-        const subQueries = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+        const subQueries = query.trim().toLowerCase().split(/\s+/).filter(Boolean).slice(0, 4);
         const termGroups = subQueries.map(expandTerms);
         const terms = [...new Set(termGroups.flat())];
         const shards = await Promise.all([...new Set(terms.map(shardIdFor))].map(loadSearchShard));
@@ -212,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return item;
             })
             .sort((a, b) => b.score - a.score)
-            .slice(0, 500);
+            .slice(0, MAX_SEARCH_RESULTS);
     }
 
     function initTheme() {
@@ -312,6 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch('/catalog.json');
             if (!res.ok) throw new Error('API request failed');
             encyclopediaData = await res.json();
+            videosById = null;
             renderCategory('all');
         } catch (err) {
             console.error('Failed to load data:', err);

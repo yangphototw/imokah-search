@@ -18,6 +18,14 @@ NEXT_SHARD_DIR = PUBLIC / ".search-index-next"
 BACKUP_SHARD_DIR = PUBLIC / ".search-index-backup"
 NEXT_CATALOG = PUBLIC / ".catalog.next.json"
 SHARD_COUNT = 512
+# A static site must bound both download size and client-side decompression.
+# More than a dozen clips for one exact term provides little additional value
+# because title matches and synonym expansion still contribute extra results.
+MAX_HITS_PER_TERM = 12
+# Deployment regression budgets.  Static assets should remain comfortably
+# below free-hosting limits and cheap to decompress on a phone.
+MAX_SHARD_BYTES = 1 * 1024 * 1024
+MAX_TOTAL_INDEX_BYTES = 100 * 1024 * 1024
 
 
 def shard_id(term: str) -> int:
@@ -76,10 +84,15 @@ def main() -> None:
         raise SystemExit("SHARD_COUNT must be a positive power of two")
 
     prepare_output_directory()
+    rag_index_file = ROOT / "data" / "oka_rag_index.json"
+    inverted_index_file = ROOT / "data" / "oka_inverted_index.json"
+    if not rag_index_file.exists() or not inverted_index_file.exists():
+        raise SystemExit("Missing RAG source files; rebuild the RAG and inverted indexes first")
+
     print("Loading RAG index and Inverted index…", flush=True)
-    with open(ROOT / "data" / "oka_rag_index.json", "r", encoding="utf-8") as f:
+    with rag_index_file.open("r", encoding="utf-8") as f:
         chunks = json.load(f)
-    with open(ROOT / "data" / "oka_inverted_index.json", "r", encoding="utf-8") as f:
+    with inverted_index_file.open("r", encoding="utf-8") as f:
         inv_map = json.load(f)
 
     buckets = [{} for _ in range(SHARD_COUNT)]
@@ -87,7 +100,9 @@ def main() -> None:
         normalized_term = term.lower()
         bucket = buckets[shard_id(normalized_term)]
         hits = []
-        for idx in indices:
+        # The old builder copied every occurrence of a common word.  A single
+        # term could therefore create a 10+ MiB shard and freeze a browser.
+        for idx in indices[:MAX_HITS_PER_TERM]:
             c = chunks[idx]
             v_id = c.get('video_id') or c.get('source')
             hits.append([v_id, c.get('timestamp', '00:00'), c.get('text', ''), c.get('start', 0)])
@@ -97,8 +112,19 @@ def main() -> None:
         else:
             bucket[normalized_term] = hits
 
+    # Drop source containers before serialising so the output stage keeps the
+    # lowest practical peak memory for an offline build.
+    del inv_map
+    del chunks
+
     print(f"Writing {SHARD_COUNT} compressed shards…", flush=True)
-    manifest = {"version": 1, "shards": SHARD_COUNT, "terms": 0, "files": {}}
+    manifest = {
+        "version": 2,
+        "shards": SHARD_COUNT,
+        "terms": 0,
+        "max_hits_per_term": MAX_HITS_PER_TERM,
+        "files": {},
+    }
     for number, bucket in enumerate(buckets):
         filename = f"{number:03d}.json.gz"
         write_json_gzip(NEXT_SHARD_DIR / filename, bucket)

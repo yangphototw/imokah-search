@@ -52,6 +52,30 @@ python build_static_search_index.py
 瀏覽器只會下載與查詢關鍵字相符的分片；Vercel 因此只需提供 CDN 靜態檔案，沒有
 Serverless 記憶體、冷啟動或函式逾時問題。
 
+### 增量更新與自動排程
+
+新影片的下載、Whisper 轉錄與索引更新都在本機執行；Vercel 只接收通過驗證的
+`public/` 靜態檔案。先以唯讀方式檢查待處理影片：
+
+```bash
+python channel_update.py --dry-run
+```
+
+手動執行完整增量更新並推送：
+
+```bash
+auto_update.bat
+```
+
+安裝每天凌晨四點的 Windows 工作排程：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install_update_schedule.ps1 -Time 04:00
+```
+
+排程可在電腦睡眠時喚醒執行；若電腦關機而錯過時間，會在下次登入後補跑。每次執行
+都會將日誌寫入本機 `logs/`，而 `data/update_state.json` 保留可重試的處理狀態。
+
 ---
 
 ## 📂 專案架構說明
