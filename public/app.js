@@ -328,6 +328,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!res.ok) throw new Error('API request failed');
             encyclopediaData = await res.json();
             videosById = null;
+            const statusText = document.querySelector('.status-pill span:last-child');
+            const totalVideos = encyclopediaData?.channel_info?.total_videos;
+            if (statusText && Number.isInteger(totalVideos)) {
+                statusText.textContent = `${totalVideos.toLocaleString('zh-TW')} 部影片資料庫在線`;
+            }
             renderCategory('all');
         } catch (err) {
             console.error('Failed to load data:', err);
@@ -707,7 +712,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         lastSearchQuery = cleanQuery;
         sectionTitle.textContent = `搜尋「${cleanQuery}」觀點與時間軸`;
-        resultCount.textContent = '倒排索引比對 ‧ 載入 Gemini 3.6 觀點...';
+        resultCount.textContent = '正在搜尋索引...';
 
         try {
             currentRawSearchResults = await staticSearch(cleanQuery);
