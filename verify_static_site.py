@@ -11,7 +11,7 @@ from build_static_search_index import (
     SHARD_COUNT,
     shard_id,
 )
-from content_quality import display_summary
+from content_quality import is_valid_public_summary
 
 ROOT = Path(__file__).resolve().parent
 PUBLIC = ROOT / "public"
@@ -75,8 +75,8 @@ def main() -> None:
         fail("catalog contains a video missing id, title, or url")
     for category_id, video in category_video_pairs:
         summary = video.get("ai_summary", "")
-        if summary != display_summary(video["title"], summary, category_id):
-            fail(f"catalog has unreviewed or low-quality public text: {video['id']}")
+        if not is_valid_public_summary(summary, video["title"]):
+            fail(f"catalog has low-quality public text: {video['id']}")
         if any(quote.get("summary") != summary for quote in video.get("sample_quotes", [])):
             fail(f"catalog quote text does not match its checked summary: {video['id']}")
 

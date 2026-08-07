@@ -41,6 +41,14 @@ def is_publishable_summary(summary: str, title: str) -> bool:
     return not summary.startswith("本集主題：") or has_usable_title(title)
 
 
+def is_valid_public_summary(summary: str, title: str) -> bool:
+    """Validate text after the private review marker has been removed."""
+    summary = (summary or "").strip()
+    if not 18 <= len(summary) <= 90 or any(phrase in summary for phrase in BAD_PHRASES):
+        return False
+    return not summary.startswith("本集主題：") or has_usable_title(title)
+
+
 def safe_topic_line(title: str, category: str) -> str:
     title = normalise_title(title)
     if has_usable_title(title):
