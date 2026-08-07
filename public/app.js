@@ -74,6 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
         })[character]);
     }
 
+    // These are the same deliberately narrow corrections used by the local
+    // transcript audit.  They improve displayed text only: the downloadable
+    // raw ASR corpus remains intact and no broad global substitution is made.
+    function normalizePublicTranscript(value) {
+        let text = String(value || '');
+        const focalContext = /(?:\d{2,3}\s*mm|鏡頭|視角|廣角|望遠|景深)/iu.test(text);
+        if (focalContext) {
+            text = text.replaceAll('焦燈', '焦段').replaceAll('四角', '視角');
+            if (/交代.{0,18}(?:鏡頭|廣角|望遠)|(?:鏡頭|廣角|望遠).{0,18}交代/iu.test(text)) {
+                text = text.replaceAll('交代', '焦段');
+            }
+        }
+        text = text.replace(/((?:(?:嗨|大家好|OK).{0,20}?我是)|我是)\s*(?:道子|到此|刀子|到齊)(?=[，。！？!?\s]|$)/u, '$1道慈');
+        text = text.replace(/(?:道子|到此|刀子|到齊)老師/gu, '道慈老師');
+        text = text.replace(/(?:在|去|做|喜歡|練習)接拍(?=的時候|時|[，。！？!?\s]|$)/gu, match => match.replace('接拍', '街拍'));
+        return text;
+    }
+
     // Search shards intentionally contain only the original transcript.  A
     // pre-written summary for all 1.27M cuts would make the free static site
     // much larger, so make a conservative listening guide only for cuts the
@@ -186,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     video_title: video.title,
                     timestamp: '00:00',
                     text: video.title,
-                    summary: video.ai_summary || `影片標題包含「${query}」主題討論`,
+                    summary: '',
                     topic_tag: '📌 【標題專題討論】',
                     match_reason: allMatched ? `🏆 「${query}」主題精華影片` : `含關鍵字: ${query}`,
                     url: video.url,
@@ -202,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             group.forEach(term => {
                 (index.get(term) || []).forEach(hit => {
                     const [videoId, timestamp, text, start] = hit;
+                    const displayText = normalizePublicTranscript(text);
                     const key = `${videoId}_${timestamp}`;
                     const video = videos.get(videoId);
                     if (!video) return;
@@ -212,9 +231,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             hitGroups: new Set(),
                             video_title: video.title,
                             timestamp,
-                            text,
-                            summary: video.ai_summary || `💡 攝影點評：探討「${query}」相關實務拍攝經驗與參數設定`,
-                            topic_tag: topicTag(text),
+                            text: displayText,
+                            summary: '',
+                            topic_tag: topicTag(displayText),
                             match_reason: `含關鍵字: ${query}`,
                             url: `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(Number(start) || 0)}s`,
                             type: '對白同義詞檢索',
@@ -426,13 +445,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const firstQuote = (v.sample_quotes && v.sample_quotes.length > 0) ? v.sample_quotes[0] : null;
         const tsText = firstQuote ? firstQuote.timestamp : '00:00';
         
-        let summaryText = v.ai_summary;
-        if (!summaryText && firstQuote && firstQuote.summary) {
-            summaryText = firstQuote.summary;
-        }
-        if (!summaryText) {
-            summaryText = `💡 實戰觀點：道慈老師針對「${v.title.slice(0, 18)}」分享攝影心法與器材操練要點`;
-        }
+        // Do not show legacy generated summaries here.  They cannot be
+        // traced to audio and previously made claims beyond the source.
+        const summaryText = firstQuote
+            ? createClipListeningGuide(normalizePublicTranscript(firstQuote.text || ''), '')
+            : `影片主題：${v.title}`;
 
         const targetUrl = firstQuote ? firstQuote.url : v.url;
 
