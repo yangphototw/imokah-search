@@ -20,8 +20,10 @@ data/summary_review_queue.json
 data/transcript_paragraph_audit.json.gz
 data/transcript_audio_reviews.json
 data/transcript_review_evaluation.json
+data/current_youtube_title_audit.json
 .python-packages/
 logs/
+scratch/
 
 .vercel
 .env*

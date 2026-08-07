@@ -73,6 +73,14 @@ def main() -> None:
     required = {"id", "title", "url"}
     if any(not required.issubset(video) for video in videos):
         fail("catalog contains a video missing id, title, or url")
+    titles = [str(video["title"]).strip() for video in videos]
+    if len(titles) != len(set(titles)):
+        fail("catalog contains duplicate public video titles")
+    app_source = (PUBLIC / "app.js").read_text(encoding="utf-8")
+    if "summary: createClipListeningGuide(r.text, lastSearchQuery)" in app_source:
+        fail("search clips still present transcript fragments as summaries")
+    if "isTitleMatch: true" not in app_source:
+        fail("title matches are not explicitly separated from transcript clips")
     for category_id, video in category_video_pairs:
         summary = video.get("ai_summary", "")
         if not is_valid_public_summary(summary, video["title"]):

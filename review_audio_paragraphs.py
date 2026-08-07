@@ -58,7 +58,10 @@ def main() -> None:
     audit = load_audit()
     requested_ids = {value.strip() for value in (args.ids or "").split(",") if value.strip()}
     def needs_requested_models(paragraph: dict) -> bool:
-        prior_asr = existing.get(paragraph["id"], {}).get("asr", {})
+        prior = existing.get(paragraph["id"], {})
+        if prior.get("audio_status") == "unavailable":
+            return False
+        prior_asr = prior.get("asr", {})
         return any(name not in prior_asr for name in model_names)
 
     if requested_ids:
@@ -70,7 +73,24 @@ def main() -> None:
     else:
         pending = [p for p in audit if p["needs_audio_review"] and needs_requested_models(p)]
     pending = pending[:args.limit]
-    missing = [p["id"] for p in pending if not audio_path(p["video_id"])]
+    unavailable = [p for p in pending if not audio_path(p["video_id"])]
+    missing = [p["id"] for p in unavailable]
+    for paragraph in unavailable:
+        existing[paragraph["id"]] = {
+            "schema_version": 1,
+            "reviewed_at": datetime.now(timezone.utc).isoformat(),
+            "video_id": paragraph["video_id"],
+            "start": paragraph["start"],
+            "end": paragraph["end"],
+            "raw_text": paragraph["raw_text"],
+            "candidate_text": paragraph["candidate_text"],
+            "flags": paragraph["flags"],
+            "audio_status": "unavailable",
+            "asr": {},
+        }
+    if unavailable and not args.dry_run:
+        REVIEWS.write_text(json.dumps(existing, ensure_ascii=False, indent=2), encoding="utf-8")
+    pending = [p for p in pending if p not in unavailable]
     print(f"Pending: {len(pending)}; audio missing: {len(missing)}")
     if args.dry_run:
         for paragraph in pending[:10]:

@@ -428,10 +428,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const firstQuote = (v.sample_quotes && v.sample_quotes.length > 0) ? v.sample_quotes[0] : null;
         const tsText = firstQuote ? firstQuote.timestamp : '00:00';
         
-        // Do not show legacy generated summaries here.  They cannot be
-        // traced to audio and previously made claims beyond the source.
-        const summaryText = firstQuote
-            ? createClipListeningGuide(normalizePublicTranscript(firstQuote.text || ''), '')
+        // A card may show a clearly labelled transcript excerpt, but never
+        // present a fragment as a generated summary.
+        const excerpt = normalizePublicTranscript(firstQuote?.text || '')
+            .replace(/\s+/g, ' ').trim();
+        const summaryText = excerpt
+            ? `影片摘錄：${excerpt.slice(0, 100)}${excerpt.length > 100 ? '…' : ''}`
             : `影片主題：${v.title}`;
 
         const targetUrl = firstQuote ? firstQuote.url : v.url;
