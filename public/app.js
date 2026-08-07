@@ -74,6 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
         })[character]);
     }
 
+    // Search shards intentionally contain only the original transcript.  A
+    // pre-written summary for all 1.27M cuts would make the free static site
+    // much larger, so make a conservative listening guide only for cuts the
+    // visitor actually opens.  It never adds claims beyond the transcript.
+    function createClipListeningGuide(text, query) {
+        const cleanText = String(text || '')
+            .replace(/\s+/g, ' ')
+            .replace(/^(?:嗯+|呃+|啊+|那個|就是|然後|其實|對|好)[，,、\s]*/u, '')
+            .trim();
+        if (!cleanText) return '這段沒有可用的逐字稿內容。';
+
+        const queryTerms = String(query || '').toLowerCase().match(/[a-z0-9]+|[\u4e00-\u9fff]{1,4}/gi) || [];
+        const phrases = cleanText.split(/[。！？!?；;]+/).map(part => part.trim()).filter(Boolean);
+        const relevant = phrases.find(phrase => queryTerms.some(term => phrase.toLowerCase().includes(term))) || phrases[0] || cleanText;
+        const preview = relevant.length > 54 ? `${relevant.slice(0, 54).replace(/[，,、\s]+$/u, '')}…` : relevant;
+        return `這段會聽到：${preview}`;
+    }
+
     // This must match build_static_search_index.py.  FNV-1a gives a stable,
     // evenly distributed shard without revealing the entire search corpus.
     function shardIdFor(term) {
@@ -546,8 +564,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 groupedMap.get(key).clips.push({
                     timestamp: r.timestamp,
                     text: r.text,
-                    summary: r.summary || r.text,
-                    topic_tag: r.topic_tag || '💡 【核心觀點】',
+                    summary: createClipListeningGuide(r.text, lastSearchQuery),
+                    topic_tag: r.topic_tag || '🎧 本段導讀',
                     match_reason: r.match_reason || `含關鍵字: ${lastSearchQuery}`,
                     url: r.url
                 });
@@ -612,7 +630,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="summary-block">
                             <div class="summary-text">${escapeHtml(clip.summary)}</div>
                         </div>
-                        <div class="quote-text">💬 原對白：「${escapeHtml(clip.text)}」</div>
+                        <div class="quote-text">📝 逐字稿原文：「${escapeHtml(clip.text)}」</div>
                     </div>
                 `;
             });
@@ -630,7 +648,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="summary-block">
                                 <div class="summary-text">${escapeHtml(clip.summary)}</div>
                             </div>
-                            <div class="quote-text">💬 原對白：「${escapeHtml(clip.text)}」</div>
+                            <div class="quote-text">📝 逐字稿原文：「${escapeHtml(clip.text)}」</div>
                         </div>
                     `;
                 });
