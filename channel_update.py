@@ -15,6 +15,7 @@ import yt_dlp
 
 from incremental_static_index import update_for_new_videos
 from build_public_paragraph_index import update_for_videos as update_paragraphs_for_videos
+from build_processing_manifest import build as build_processing_manifest
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -202,6 +203,11 @@ def main() -> int:
     atomic_json_write(MAP_FILE, existing_map)
     changed_shards = update_for_new_videos(completed)
     changed_paragraph_shards = update_paragraphs_for_videos(completed)
+    processing_manifest = build_processing_manifest()
+    (DATA / "processing_manifest.json").write_text(
+        json.dumps(processing_manifest, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
     for video_id in completed:
         state["videos"][video_id].update({"status": "deployed", "updated_at": now()})
     atomic_json_write(STATE_FILE, state)
