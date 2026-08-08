@@ -16,6 +16,8 @@ from content_quality import is_valid_public_summary
 ROOT = Path(__file__).resolve().parent
 PUBLIC = ROOT / "public"
 SHARDS = PUBLIC / "search-index"
+PARAGRAPH_SHARDS = PUBLIC / "paragraph-index"
+MAX_PARAGRAPH_INDEX_BYTES = 35 * 1024 * 1024
 
 
 def fail(message: str) -> None:
@@ -51,6 +53,34 @@ def main() -> None:
     if total_index_size > MAX_TOTAL_INDEX_BYTES:
         fail(f"static index is {total_index_size} bytes, over the deployment budget")
 
+    paragraph_manifest_path = PARAGRAPH_SHARDS / "manifest.json"
+    if not paragraph_manifest_path.exists():
+        fail("paragraph context index is missing; run build_public_paragraph_index.py")
+    paragraph_manifest = json.loads(paragraph_manifest_path.read_text(encoding="utf-8"))
+    paragraph_files = list(PARAGRAPH_SHARDS.glob("*.json.gz"))
+    if paragraph_manifest.get("shards") != SHARD_COUNT or len(paragraph_files) != SHARD_COUNT:
+        fail("paragraph index shard count does not match the static deployment contract")
+    paragraph_size = sum(path.stat().st_size for path in paragraph_files)
+    if paragraph_size > MAX_PARAGRAPH_INDEX_BYTES:
+        fail(f"paragraph context index is {paragraph_size} bytes, over the deployment budget")
+    checked_paragraphs = 0
+    for path in paragraph_files:
+        with gzip.open(path, "rt", encoding="utf-8") as handle:
+            shard = json.load(handle)
+        for video_id, paragraphs in shard.items():
+            if not isinstance(video_id, str) or len(video_id) != 11 or not isinstance(paragraphs, list):
+                fail(f"invalid paragraph shard record: {path.name}")
+            for paragraph in paragraphs:
+                if not paragraph.get("id", "").startswith(f"{video_id}:"):
+                    fail(f"paragraph has invalid provenance id: {path.name}")
+                if float(paragraph.get("end", -1)) < float(paragraph.get("start", 0)):
+                    fail(f"paragraph has inverted timestamps: {paragraph['id']}")
+                if len(str(paragraph.get("transcript", ""))) < 24:
+                    fail(f"paragraph is too short to replace a search excerpt: {paragraph['id']}")
+                checked_paragraphs += 1
+    if checked_paragraphs != paragraph_manifest.get("paragraphs"):
+        fail("paragraph manifest count does not match the generated files")
+
     for term in ("光圈", "鏡頭", "a74", "iso"):
         hits = load_shard(term).get(term)
         if not hits:
@@ -81,6 +111,8 @@ def main() -> None:
         fail("search clips still present transcript fragments as summaries")
     if "isTitleMatch: true" not in app_source:
         fail("title matches are not explicitly separated from transcript clips")
+    if "attachParagraphContexts(results)" not in app_source or "完整逐字稿段落" not in app_source:
+        fail("search UI does not resolve hits to complete paragraph transcripts")
     for category_id, video in category_video_pairs:
         summary = video.get("ai_summary", "")
         if not is_valid_public_summary(summary, video["title"]):
@@ -91,7 +123,8 @@ def main() -> None:
     print(
         f"PASS: {len(videos)} videos; {manifest['terms']:,} search terms; "
         f"{SHARD_COUNT} shards; max {MAX_HITS_PER_TERM} hits/term; "
-        f"{total_index_size / 1024 / 1024:.1f} MiB total"
+        f"{total_index_size / 1024 / 1024:.1f} MiB search + "
+        f"{paragraph_size / 1024 / 1024:.1f} MiB paragraph context"
     )
 
 

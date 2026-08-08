@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const MAX_CACHED_SHARDS = 24;
     const MAX_SEARCH_RESULTS = 80;
     let videosById = null;
+    const paragraphShardCache = new Map();
+    const MAX_CACHED_PARAGRAPH_SHARDS = 32;
 
     // Keep this list deliberately small and client-side.  The index itself is
     // pre-built, so expanding a query only means downloading a few tiny shards.
@@ -150,6 +152,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Search shards contain small ASR cuts solely to locate a timestamp.  The
+    // public card must instead show this independently-built paragraph context.
+    // Keep the video-id hash in sync with build_public_paragraph_index.py.
+    function paragraphShardIdFor(videoId) {
+        let hash = 0x811c9dc5;
+        for (let i = 0; i < videoId.length; i += 1) {
+            hash ^= videoId.charCodeAt(i);
+            hash = Math.imul(hash, 0x01000193);
+        }
+        return String((hash >>> 0) & 511).padStart(3, '0');
+    }
+
+    async function loadParagraphsForVideo(videoId) {
+        const shardId = paragraphShardIdFor(videoId);
+        if (!paragraphShardCache.has(shardId)) {
+            const pending = (async () => {
+                const response = await fetch(`/paragraph-index/${shardId}.json.gz`);
+                if (!response.ok) throw new Error(`Paragraph index unavailable (${response.status})`);
+                if (!('DecompressionStream' in window)) throw new Error('This browser cannot read the paragraph index.');
+                return JSON.parse(await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).text());
+            })();
+            paragraphShardCache.set(shardId, pending);
+            while (paragraphShardCache.size > MAX_CACHED_PARAGRAPH_SHARDS) {
+                paragraphShardCache.delete(paragraphShardCache.keys().next().value);
+            }
+        }
+        const shard = await paragraphShardCache.get(shardId);
+        return shard[videoId] || [];
+    }
+
+    function paragraphAt(paragraphs, start) {
+        const point = Number(start) || 0;
+        return paragraphs.find(item => point >= item.start && point <= item.end + 1)
+            || paragraphs.reduce((nearest, item) => (!nearest || Math.abs(item.start - point) < Math.abs(nearest.start - point) ? item : nearest), null);
+    }
+
+    async function attachParagraphContexts(results) {
+        const transcriptResults = results.filter(item => !item.isTitleMatch);
+        await Promise.all(transcriptResults.map(async item => {
+            try {
+                const paragraph = paragraphAt(await loadParagraphsForVideo(item.video_id), item.start);
+                if (!paragraph) return;
+                item.paragraph_id = paragraph.id;
+                item.timestamp = formatTimestamp(paragraph.start);
+                item.url = `https://www.youtube.com/watch?v=${item.video_id}&t=${Math.floor(paragraph.start)}s`;
+                item.transcript = normalizePublicTranscript(paragraph.transcript);
+                item.summary = paragraph.summary || '';
+            } catch (error) {
+                // A failed optional context request must not hide a search hit.
+                // The UI labels this fallback as a locating excerpt, never a transcript.
+                item.transcript = '';
+            }
+        }));
+        return results;
+    }
+
+    function formatTimestamp(seconds) {
+        const value = Math.max(0, Math.floor(Number(seconds) || 0));
+        return `${String(Math.floor(value / 60)).padStart(2, '0')}:${String(value % 60).padStart(2, '0')}`;
+    }
+
     function allVideosById() {
         if (videosById) return videosById;
         const videos = new Map();
@@ -228,9 +291,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         item = {
                             score: 0,
                             hitGroups: new Set(),
+                            video_id: videoId,
                             video_title: video.title,
                             timestamp,
-                            text: displayText,
+                            start: Number(start) || 0,
+                            locating_excerpt: displayText,
                             summary: '',
                             topic_tag: topicTag(displayText),
                             match_reason: `含關鍵字: ${query}`,
@@ -251,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        return [...scored.values()]
+        const results = [...scored.values()]
             .map(item => {
                 if (item.hitGroups) {
                     const allMatched = item.hitGroups.size === totalTerms;
@@ -265,6 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .sort((a, b) => b.score - a.score)
             .slice(0, MAX_SEARCH_RESULTS);
+        return attachParagraphContexts(results);
     }
 
     function initTheme() {
@@ -551,7 +617,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (match) vId = match[1];
 
             const key = vId || r.video_title;
-            const clipText = r.text || '';
+            const clipText = r.transcript || r.locating_excerpt || '';
 
             if (filterVideoByCategory(r.video_title, clipText, currentCategory, r)) {
                 if (!groupedMap.has(key)) {
@@ -570,8 +636,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 groupedMap.get(key).clips.push({
                     timestamp: r.timestamp,
-                    text: r.text,
-                    topic_tag: r.topic_tag || '🎧 本段導讀',
+                    transcript: r.transcript || '',
+                    locating_excerpt: r.locating_excerpt || '',
+                    summary: r.summary || '',
+                    topic_tag: r.topic_tag || '段落上下文',
                     match_reason: r.match_reason || `含關鍵字: ${lastSearchQuery}`,
                     url: r.url
                 });
@@ -633,7 +701,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="ts-link">▶️ ${clip.timestamp} 點播</span>
                         </div>
                         <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
-                        <div class="quote-text">📝 逐字稿原文：「${escapeHtml(clip.text)}」</div>
+                        ${clip.summary ? `<div class="match-reason-pill">💡 本段摘要：${escapeHtml(clip.summary)}</div>` : ''}
+                        <div class="quote-text">${clip.transcript ? `📝 完整逐字稿段落：「${escapeHtml(clip.transcript)}」` : `🔎 命中片段（完整段落載入失敗）：「${escapeHtml(clip.locating_excerpt)}」`}</div>
                     </div>
                 `;
             });
@@ -648,7 +717,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="ts-link">▶️ ${clip.timestamp} 點播</span>
                             </div>
                             <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
-                            <div class="quote-text">📝 逐字稿原文：「${escapeHtml(clip.text)}」</div>
+                            ${clip.summary ? `<div class="match-reason-pill">💡 本段摘要：${escapeHtml(clip.summary)}</div>` : ''}
+                            <div class="quote-text">${clip.transcript ? `📝 完整逐字稿段落：「${escapeHtml(clip.transcript)}」` : `🔎 命中片段（完整段落載入失敗）：「${escapeHtml(clip.locating_excerpt)}」`}</div>
                         </div>
                     `;
                 });
@@ -664,7 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.clips.length === 0 && item.titleMatch) {
                 clipsHtml = `<div class="clips-wrapper"><div class="clip-node">
                     <div class="match-reason-pill">📌 影片標題符合「${escapeHtml(lastSearchQuery)}」</div>
-                    <div class="quote-text">尚未定位到對應的逐字稿時間點；點擊卡片可直接開啟影片。</div>
+                    <div class="quote-text">這是影片標題符合搜尋字，不代表已定位到影片內的逐字稿段落；點擊卡片可直接開啟影片。</div>
                 </div></div>`;
             }
 

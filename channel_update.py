@@ -14,6 +14,7 @@ from pathlib import Path
 import yt_dlp
 
 from incremental_static_index import update_for_new_videos
+from build_public_paragraph_index import update_for_videos as update_paragraphs_for_videos
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -200,10 +201,15 @@ def main() -> int:
 
     atomic_json_write(MAP_FILE, existing_map)
     changed_shards = update_for_new_videos(completed)
+    changed_paragraph_shards = update_paragraphs_for_videos(completed)
     for video_id in completed:
         state["videos"][video_id].update({"status": "deployed", "updated_at": now()})
     atomic_json_write(STATE_FILE, state)
-    print(f"Updated {len(completed)} videos across {changed_shards} static shards.", flush=True)
+    print(
+        f"Updated {len(completed)} videos across {changed_shards} search shards "
+        f"and {changed_paragraph_shards} paragraph shards.",
+        flush=True,
+    )
     return 0
 
 

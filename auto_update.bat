@@ -28,7 +28,7 @@ echo.
 echo [5/7] Pushing to GitHub...
 REM Only publish the static deploy output. Do not accidentally commit cookies,
 REM audio, raw transcripts, or local databases with `git add .`.
-git add public/catalog.json public/search-index data/oka_video_summaries.json
+git add public/catalog.json public/search-index public/paragraph-index data/oka_video_summaries.json data/oka_youtube_map.json
 git diff --cached --quiet
 if errorlevel 1 (
     git commit -m "auto: refresh static search index"
