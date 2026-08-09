@@ -106,6 +106,19 @@ def main() -> None:
     titles = [str(video["title"]).strip() for video in videos]
     if len(titles) != len(set(titles)):
         fail("catalog contains duplicate public video titles")
+    processing_path = ROOT / "data" / "processing_manifest.json"
+    if not processing_path.exists():
+        fail("processing manifest is missing")
+    processing = json.loads(processing_path.read_text(encoding="utf-8"))
+    processing_videos = processing.get("videos", {})
+    catalog_ids = {video["id"] for video in videos}
+    if set(processing_videos) != catalog_ids:
+        fail("processing manifest does not cover exactly the catalog videos")
+    allowed_statuses = {"complete", "no_transcript_expected", "incomplete"}
+    if any(record.get("status") not in allowed_statuses for record in processing_videos.values()):
+        fail("processing manifest contains an unknown video status")
+    if processing.get("counts", {}).get("covered") != len(videos):
+        fail("not every catalog video is either content-complete or human-reviewed as non-verbal")
     app_source = (PUBLIC / "app.js").read_text(encoding="utf-8")
     if "summary: createClipListeningGuide(r.text, lastSearchQuery)" in app_source:
         fail("search clips still present transcript fragments as summaries")

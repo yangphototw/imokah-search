@@ -24,6 +24,7 @@ RAG = ROOT / "data" / "oka_rag_index.json"
 TRANSCRIPTS = ROOT / "data" / "transcripts"
 SEARCH_INDEX = PUBLIC / "search-index"
 OUTPUT = ROOT / "data" / "processing_manifest.json"
+EXEMPTIONS = ROOT / "data" / "transcript_exemptions.json"
 
 
 def canonical_hash(value) -> str:
@@ -85,11 +86,23 @@ def searchable_ids() -> set[str]:
     return ids
 
 
+def approved_exemptions() -> dict[str, dict]:
+    if not EXEMPTIONS.exists():
+        return {}
+    payload = json.loads(EXEMPTIONS.read_text(encoding="utf-8"))
+    return {
+        video_id: record
+        for video_id, record in payload.get("videos", {}).items()
+        if isinstance(record, dict) and record.get("status") == "approved"
+    }
+
+
 def build() -> dict:
     videos = catalog_videos()
     sources = source_hashes()
     paragraphs = paragraph_records()
     searchable = searchable_ids()
+    exemptions = approved_exemptions()
     records = {}
     for video_id, video in sorted(videos.items()):
         source_hash, source_kind = sources.get(video_id, ("", "missing"))
@@ -97,6 +110,7 @@ def build() -> dict:
         paragraph_hash = canonical_hash(paragraph_entries) if paragraph_entries else ""
         approved = sum(1 for entry in paragraph_entries if entry.get("summary"))
         complete = bool(source_hash and video_id in searchable and paragraph_entries)
+        exemption = exemptions.get(video_id)
         records[video_id] = {
             "title_hash": canonical_hash(video.get("title", "")),
             "source_hash": source_hash,
@@ -105,7 +119,8 @@ def build() -> dict:
             "paragraph_hash": paragraph_hash,
             "paragraphs": len(paragraph_entries),
             "approved_summaries": approved,
-            "status": "complete" if complete else "incomplete",
+            "status": "complete" if complete else ("no_transcript_expected" if exemption else "incomplete"),
+            "transcript_exemption": exemption or None,
         }
     return {
         "version": 1,
@@ -113,6 +128,8 @@ def build() -> dict:
         "counts": {
             "catalog": len(videos),
             "complete": sum(record["status"] == "complete" for record in records.values()),
+            "no_transcript_expected": sum(record["status"] == "no_transcript_expected" for record in records.values()),
+            "covered": sum(record["status"] != "incomplete" for record in records.values()),
             "missing_source": sum(not record["source_hash"] for record in records.values()),
             "missing_search": sum(not record["search_indexed"] for record in records.values()),
             "missing_paragraphs": sum(not record["paragraphs"] for record in records.values()),
@@ -128,7 +145,7 @@ def main() -> None:
     if not args.check:
         OUTPUT.write_text(json.dumps(manifest, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(json.dumps(manifest["counts"], ensure_ascii=False))
-    if args.check and manifest["counts"]["complete"] != manifest["counts"]["catalog"]:
+    if args.check and manifest["counts"]["covered"] != manifest["counts"]["catalog"]:
         raise SystemExit("processing manifest reports incomplete catalog videos")
 
 

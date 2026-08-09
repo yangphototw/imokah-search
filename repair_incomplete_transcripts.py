@@ -52,7 +52,7 @@ def main() -> int:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     selected = args.ids or [
         video_id for video_id, record in manifest["videos"].items()
-        if record.get("status") != "complete"
+        if record.get("status") == "incomplete"
     ]
     if args.limit:
         selected = selected[:args.limit]
@@ -80,7 +80,7 @@ def main() -> int:
         print(f"Updated {search_shards} search shards and {paragraph_shards} paragraph shards.", flush=True)
     final = write_manifest()
     print(json.dumps(final["counts"], ensure_ascii=False), flush=True)
-    return 0 if final["counts"]["complete"] == final["counts"]["catalog"] else 1
+    return 0 if final["counts"]["covered"] == final["counts"]["catalog"] else 1
 
 
 if __name__ == "__main__":

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "videos": {
+    "03RvrMjSZS0": {"status": "approved", "kind": "photo_showcase", "note": "無人聲，照片展示"},
+    "1tfjblRBVEM": {"status": "approved", "kind": "travel_montage", "note": "無人聲，旅行片段"},
+    "AOVWFv-yr-g": {"status": "approved", "kind": "creative_short", "note": "無人聲"},
+    "EoIanCkE3CY": {"status": "approved", "kind": "visual_feature", "note": "無人聲"},
+    "F-eVjQ0Q6Dc": {"status": "approved", "kind": "visual_feature", "note": "無人聲"},
+    "p6r4_s5zYCY": {"status": "approved", "kind": "visual_feature", "note": "無人聲"},
+    "qkeD4QVk098": {"status": "approved", "kind": "travel_montage", "note": "無人聲"},
+    "rJE1NYYUJQw": {"status": "approved", "kind": "greeting", "note": "無人聲"},
+    "wIrDnnyQJak": {"status": "approved", "kind": "travel_montage", "note": "無人聲"},
+    "zkpAQy8RC5s": {"status": "approved", "kind": "event_ambient", "note": "活動紀錄，以環境音為主"}
+  }
+}
