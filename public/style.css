@@ -614,6 +614,15 @@ body {
     color: var(--text-secondary);
 }
 
+.search-highlight {
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--accent-primary) 32%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-primary) 58%, transparent);
+    border-radius: 3px;
+    padding: 0 2px;
+    font-weight: 700;
+}
+
 .fold-btn {
     background: transparent;
     border: 1px dashed var(--border-subtle);

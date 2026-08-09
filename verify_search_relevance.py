@@ -34,9 +34,13 @@ def paragraph_text(video_id: str, start: float) -> str:
     fail(f"search hit has no matching paragraph: {video_id} at {start}")
 
 
-def title_matches_groups(title: str, groups: list[list[str]]) -> bool:
+def matching_title_group_indexes(title: str, groups: list[list[str]]) -> list[int]:
     normalized = title.lower().replace(" ", "").replace("-", "").replace("_", "")
-    return all(any(term.replace(" ", "").replace("-", "").replace("_", "") in normalized for term in group) for group in groups)
+    return [
+        index
+        for index, group in enumerate(groups)
+        if any(term.replace(" ", "").replace("-", "").replace("_", "") in normalized for term in group)
+    ]
 
 
 def main() -> None:
@@ -65,20 +69,21 @@ def main() -> None:
     if len(false_positive_titles) != 2:
         fail("known false-positive titles are no longer available for the regression check")
     gr3_street_groups = [["gr3", "griii", "gr iii", "gr 3"], ["街拍", "快照", "snap", "street photography", "掃街", "抓拍"]]
-    if any(title_matches_groups(title, gr3_street_groups) for title in false_positive_titles):
-        fail("a partial title still qualifies as a GR3 street-photography match")
+    if any(matching_title_group_indexes(title, gr3_street_groups) != [1] for title in false_positive_titles):
+        fail("known partial title no longer resolves to only the street-photography term")
 
     app = (PUBLIC / "app.js").read_text(encoding="utf-8")
     required = (
-        "if (matchesAllTermGroups(title, termGroups))",
-        ".filter(item => item.isTitleMatch || matchesAllTermGroups(item.transcript, termGroups))",
+        "matchingTermGroupIndexes(title, termGroups)",
+        "item.matched_terms = matchedTerms",
+        "highlightSearchTerms(clip.transcript, clip.highlight_terms)",
         "'接拍': '街拍'",
         "const KNOWN_QUERY_TERMS",
     )
     if any(fragment not in app for fragment in required):
-        fail("browser search no longer enforces the relevance contract")
+        fail("browser search no longer preserves its matched-term contract")
 
-    print("PASS: title, paragraph, and source-fingerprint relevance checks")
+    print("PASS: title labels, paragraph context, highlights, and source-fingerprint checks")
 
 
 if __name__ == "__main__":

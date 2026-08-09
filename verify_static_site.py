@@ -134,10 +134,12 @@ def main() -> None:
         fail("title matches are not explicitly separated from transcript clips")
     if "attachParagraphContexts(results)" not in app_source or "完整逐字稿段落" not in app_source:
         fail("search UI does not resolve hits to complete paragraph transcripts")
-    if "if (matchesAllTermGroups(title, termGroups))" not in app_source:
-        fail("title-only search results can still be partial matches")
-    if ".filter(item => item.isTitleMatch || matchesAllTermGroups(item.transcript, termGroups))" not in app_source:
-        fail("multi-term transcript search results are not constrained to one paragraph")
+    if "matchingTermGroupIndexes(title, termGroups)" not in app_source:
+        fail("title cards do not retain the exact matched query terms")
+    if "item.match_is_complete = matchedIndexes.length === totalTerms" not in app_source:
+        fail("search results do not distinguish complete from partial matches")
+    if "highlightSearchTerms(clip.transcript, clip.highlight_terms)" not in app_source:
+        fail("transcript search terms are not visibly highlighted")
     for category_id, video in category_video_pairs:
         summary = video.get("ai_summary", "")
         if not is_valid_public_summary(summary, video["title"]):

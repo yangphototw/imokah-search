@@ -82,15 +82,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return QUERY_NORMALIZATION[term] || term;
     }
 
-    function splitSearchQuery(query) {
-        const normalized = query.trim().toLowerCase()
-            .replace(/\bgr\s*iii\s*x\b/g, 'gr3x')
-            .replace(/\bgr\s*iii\b/g, 'gr3')
-            .replace(/\bgr\s*3\s*x\b/g, 'gr3x')
-            .replace(/\bgr\s*3\b/g, 'gr3');
-        const terms = normalized.split(/\s+/).filter(Boolean).flatMap(token => {
+    // Preserve the visitor's wording alongside the canonical lookup term.
+    // For example, "GRIII 接拍" becomes [{ term: "gr3", label: "GRIII" },
+    // { term: "街拍", label: "接拍" }].  The label is what we show on each
+    // result card, so a partial hit can never be presented as the whole query.
+    function parseSearchQuery(query) {
+        const rawTokens = String(query || '').trim().split(/\s+/).filter(Boolean);
+        const parts = [];
+
+        rawTokens.forEach(rawToken => {
+            const normalized = rawToken.toLowerCase()
+                .replace(/^gr\s*iii\s*x$/i, 'gr3x')
+                .replace(/^gr\s*iii$/i, 'gr3')
+                .replace(/^gr\s*3\s*x$/i, 'gr3x')
+                .replace(/^gr\s*3$/i, 'gr3');
             const split = [];
-            let remaining = token;
+            let remaining = normalized;
+
             while (remaining) {
                 const known = KNOWN_QUERY_TERMS.find(candidate => remaining.startsWith(candidate));
                 if (!known) {
@@ -100,9 +108,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 split.push(normalizeQueryTerm(known));
                 remaining = remaining.slice(known.length);
             }
-            return split;
+
+            split.forEach(term => {
+                if (!parts.some(part => part.term === term)) {
+                    parts.push({
+                        term,
+                        // An unspaced compound has no unambiguous raw label for
+                        // each part, so use its canonical, readable term instead.
+                        label: split.length === 1 ? rawToken : term
+                    });
+                }
+            });
         });
-        return [...new Set(terms)].slice(0, 4);
+
+        return parts.slice(0, 4);
     }
 
     function expandTerms(term) {
@@ -114,9 +133,47 @@ document.addEventListener('DOMContentLoaded', () => {
         return String(value || '').toLowerCase().replace(/[\s\-_]/g, '');
     }
 
-    function matchesAllTermGroups(text, termGroups) {
+    function matchingTermGroupIndexes(text, termGroups) {
         const content = normalizeForSearchMatch(text);
-        return termGroups.every(group => group.some(term => content.includes(normalizeForSearchMatch(term))));
+        return termGroups.flatMap((group, index) => (
+            group.some(term => content.includes(normalizeForSearchMatch(term))) ? [index] : []
+        ));
+    }
+
+    function labelsForIndexes(indexes, queryParts) {
+        return indexes.map(index => queryParts[index]?.label).filter(Boolean);
+    }
+
+    // Highlight only aliases which literally occur in the displayed text.
+    // Search matching also ignores spacing/hyphens, but inventing a highlight
+    // at a non-literal location would be visually misleading.
+    function literalMatchedTerms(text, termGroups, indexes) {
+        const lowerText = String(text || '').toLowerCase();
+        const matches = indexes.flatMap(index => termGroups[index]
+            .filter(term => lowerText.includes(String(term).toLowerCase())));
+        return [...new Set(matches)].sort((a, b) => b.length - a.length);
+    }
+
+    function escapeRegExp(value) {
+        return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function highlightSearchTerms(text, terms) {
+        const source = String(text || '');
+        const uniqueTerms = [...new Set((terms || []).filter(Boolean))]
+            .sort((a, b) => String(b).length - String(a).length);
+        if (!source || uniqueTerms.length === 0) return escapeHtml(source);
+
+        const expression = new RegExp(uniqueTerms.map(escapeRegExp).join('|'), 'giu');
+        let html = '';
+        let offset = 0;
+        for (const match of source.matchAll(expression)) {
+            const start = match.index ?? 0;
+            html += escapeHtml(source.slice(offset, start));
+            html += `<mark class="search-highlight">${escapeHtml(match[0])}</mark>`;
+            offset = start + match[0].length;
+        }
+        return html + escapeHtml(source.slice(offset));
     }
 
     function escapeHtml(value) {
@@ -290,9 +347,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function staticSearch(query) {
-        const subQueries = splitSearchQuery(query);
-        if (subQueries.length === 0) return [];
-        const termGroups = subQueries.map(expandTerms);
+        const queryParts = parseSearchQuery(query);
+        if (queryParts.length === 0) return [];
+        const termGroups = queryParts.map(part => expandTerms(part.term));
         const terms = [...new Set(termGroups.flat())];
         const shards = await Promise.all([...new Set(terms.map(shardIdFor))].map(loadSearchShard));
         const index = new Map();
@@ -302,22 +359,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const scored = new Map();
         const totalTerms = termGroups.length;
 
-        // A title-only card is permissible only when every requested concept
-        // occurs in its title.  Partial title matches used to be labelled as
-        // complete matches, which produced false positives such as a generic
-        // street-photography video for a "GR3 街拍" search.
+        // Preserve useful partial results, but record exactly which requested
+        // concepts each title contains.  A generic street-photography title
+        // must say "標題符合『接拍』", never "符合『GRIII 接拍』".
         videos.forEach(video => {
             const title = (video.title || '').toLowerCase();
-            if (matchesAllTermGroups(title, termGroups)) {
+            const matchedIndexes = matchingTermGroupIndexes(title, termGroups);
+            if (matchedIndexes.length > 0) {
+                const matchedTerms = labelsForIndexes(matchedIndexes, queryParts);
+                const isCompleteMatch = matchedIndexes.length === totalTerms;
                 const key = `${video.id}_title`;
                 scored.set(key, {
-                    score: 2000000,
+                    score: (isCompleteMatch ? 2000000 : 100000) + (matchedIndexes.length * 10000),
                     video_title: video.title,
                     timestamp: '00:00',
                     text: video.title,
                     summary: '',
                     topic_tag: '📌 【標題專題討論】',
-                    match_reason: `🏆 「${query}」主題精華影片`,
+                    match_reason: `影片標題符合「${matchedTerms.join('、')}」`,
+                    matched_terms: matchedTerms,
+                    highlight_terms: literalMatchedTerms(video.title, termGroups, matchedIndexes),
+                    match_is_complete: isCompleteMatch,
                     url: video.url,
                     type: '標題精確匹配',
                     isTitleMatch: true,
@@ -348,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             locating_excerpt: displayText,
                             summary: '',
                             topic_tag: topicTag(displayText),
-                            match_reason: `段落符合「${query}」`,
+                            match_reason: '',
                             url: `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(Number(start) || 0)}s`,
                             type: '對白同義詞檢索',
                             isTitleMatch: false,
@@ -372,7 +434,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const allMatched = item.hitGroups.size === totalTerms;
                     if (allMatched) {
                         item.score += 1000000;
-                        item.match_reason = `🏆 「${query}」主題精華影片`;
                     }
                     delete item.hitGroups;
                 }
@@ -382,7 +443,20 @@ document.addEventListener('DOMContentLoaded', () => {
             .slice(0, MAX_SEARCH_RESULTS);
         const results = await attachParagraphContexts(candidates);
         return results
-            .filter(item => item.isTitleMatch || matchesAllTermGroups(item.transcript, termGroups))
+            .map(item => {
+                if (item.isTitleMatch) return item;
+
+                const matchedIndexes = matchingTermGroupIndexes(item.transcript, termGroups);
+                if (matchedIndexes.length === 0) return null;
+                const matchedTerms = labelsForIndexes(matchedIndexes, queryParts);
+                item.matched_terms = matchedTerms;
+                item.highlight_terms = literalMatchedTerms(item.transcript, termGroups, matchedIndexes);
+                item.match_is_complete = matchedIndexes.length === totalTerms;
+                item.match_reason = `逐字稿段落符合「${matchedTerms.join('、')}」`;
+                return item;
+            })
+            .filter(Boolean)
+            .sort((a, b) => Number(b.match_is_complete) - Number(a.match_is_complete) || b.score - a.score)
             .slice(0, MAX_SEARCH_RESULTS);
     }
 
@@ -680,11 +754,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         publish_date: r.publish_date || '',
                         is_member_only: checkIsMember(r),
                         titleMatch: false,
+                        titleMatchedTerms: [],
+                        titleMatchIsComplete: false,
                         clips: []
                     });
                 }
                 if (r.isTitleMatch) {
-                    groupedMap.get(key).titleMatch = true;
+                    const group = groupedMap.get(key);
+                    group.titleMatch = true;
+                    group.titleMatchedTerms = r.matched_terms || [];
+                    group.titleMatchIsComplete = Boolean(r.match_is_complete);
                     return;
                 }
                 groupedMap.get(key).clips.push({
@@ -694,6 +773,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     summary: r.summary || '',
                     topic_tag: r.topic_tag || '段落上下文',
                     match_reason: r.match_reason || `含關鍵字: ${lastSearchQuery}`,
+                    highlight_terms: r.highlight_terms || [],
                     url: r.url
                 });
             }
@@ -744,7 +824,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const visibleClips = item.clips.slice(0, INITIAL_SHOW);
             const hiddenClips = item.clips.slice(INITIAL_SHOW);
 
+            const titleMatchedTerms = item.titleMatchedTerms.length
+                ? item.titleMatchedTerms.join('、')
+                : lastSearchQuery;
             let clipsHtml = '<div class="clips-wrapper">';
+            if (item.titleMatch) {
+                clipsHtml += `
+                    <div class="clip-node title-match-node">
+                        <div class="match-reason-pill">📌 影片標題符合「${escapeHtml(titleMatchedTerms)}」</div>
+                        <div class="quote-text">${item.titleMatchIsComplete
+                            ? '標題包含所有搜尋詞；若找到已定位的逐字稿段落，會列在下方。'
+                            : '這是部分搜尋詞符合的標題，不代表影片內同時談到完整搜尋條件；點擊卡片可直接開啟影片。'}</div>
+                    </div>
+                `;
+            }
             
             visibleClips.forEach(clip => {
                 clipsHtml += `
@@ -755,7 +848,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
                         ${clip.summary ? `<div class="match-reason-pill">💡 本段摘要：${escapeHtml(clip.summary)}</div>` : ''}
-                        <div class="quote-text">${clip.transcript ? `📝 完整逐字稿段落：「${escapeHtml(clip.transcript)}」` : `🔎 命中片段（完整段落載入失敗）：「${escapeHtml(clip.locating_excerpt)}」`}</div>
+                        <div class="quote-text">${clip.transcript ? `📝 完整逐字稿段落：「${highlightSearchTerms(clip.transcript, clip.highlight_terms)}」` : `🔎 命中片段（完整段落載入失敗）：「${escapeHtml(clip.locating_excerpt)}」`}</div>
                     </div>
                 `;
             });
@@ -771,7 +864,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
                             ${clip.summary ? `<div class="match-reason-pill">💡 本段摘要：${escapeHtml(clip.summary)}</div>` : ''}
-                            <div class="quote-text">${clip.transcript ? `📝 完整逐字稿段落：「${escapeHtml(clip.transcript)}」` : `🔎 命中片段（完整段落載入失敗）：「${escapeHtml(clip.locating_excerpt)}」`}</div>
+                            <div class="quote-text">${clip.transcript ? `📝 完整逐字稿段落：「${highlightSearchTerms(clip.transcript, clip.highlight_terms)}」` : `🔎 命中片段（完整段落載入失敗）：「${escapeHtml(clip.locating_excerpt)}」`}</div>
                         </div>
                     `;
                 });
@@ -784,12 +877,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             clipsHtml += '</div>';
-            if (item.clips.length === 0 && item.titleMatch) {
-                clipsHtml = `<div class="clips-wrapper"><div class="clip-node">
-                    <div class="match-reason-pill">📌 影片標題符合「${escapeHtml(lastSearchQuery)}」</div>
-                    <div class="quote-text">這是影片標題符合搜尋字，不代表已定位到影片內的逐字稿段落；點擊卡片可直接開啟影片。</div>
-                </div></div>`;
-            }
 
             card.innerHTML = `
                 <div class="thumb-container">
