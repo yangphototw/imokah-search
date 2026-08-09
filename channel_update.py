@@ -219,8 +219,11 @@ def main() -> int:
         raise SystemExit("No new transcript passed validation; deployment was not changed")
 
     atomic_json_write(MAP_FILE, existing_map)
-    changed_shards = update_for_new_videos(completed)
+    # The search index is built from the published paragraph context.  Refresh
+    # paragraphs first so a new search hit and its displayed transcript are
+    # guaranteed to refer to the same text.
     changed_paragraph_shards = update_paragraphs_for_videos(completed)
+    changed_shards = update_for_new_videos(completed)
     processing_manifest = build_processing_manifest()
     (DATA / "processing_manifest.json").write_text(
         json.dumps(processing_manifest, ensure_ascii=False, separators=(",", ":")),

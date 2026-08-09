@@ -26,42 +26,97 @@ document.addEventListener('DOMContentLoaded', () => {
     const paragraphShardCache = new Map();
     const MAX_CACHED_PARAGRAPH_SHARDS = 32;
 
-    // Keep this list deliberately small and client-side.  The index itself is
-    // pre-built, so expanding a query only means downloading a few tiny shards.
-    const CAMERA_SYNONYMS = {
-        'iso': ['iso', '感光度', '感光', '高感', '噪點'],
-        '感光度': ['感光度', 'iso', '感光', '高感', '噪點'],
-        '高感': ['高感', 'iso', '感光度', '噪點', '夜拍', '夜景'],
-        '噪點': ['噪點', 'iso', '高感', '感光度', '降噪'],
-        '光圈': ['光圈', 'aperture', 'f值', 'f1.4', 'f1.8', 'f2.8', '大光圈', '小光圈', '景深', '散景', '虛化'],
-        '景深': ['景深', '光圈', '虛化', '散景', '背景虛化'],
-        '虛化': ['虛化', '景深', '散景', '光圈'],
-        '快門': ['快門', 'shutter', '快門速度', '電子快門', '機械快門'],
-        '慢快門': ['慢快門', '慢速快門', '長曝', '長時間曝光', '車軌', '流水', '腳架'],
-        '長曝': ['長曝', '長時間曝光', '慢快門', '慢速快門', '腳架', '車軌', '流水'],
-        '底片': ['底片', '底片相機', '膠卷', '底片膠卷', '135底片', '120底片'],
-        '底片模擬': ['底片模擬', '富士底片模擬', 'film simulation', 'classic neg', '底片配方'],
-        '對焦': ['對焦', 'focus', '眼對焦', '追焦', '手動對焦', 'af', 'mf'],
-        '白平衡': ['白平衡', 'wb', '色溫', 'k值', '偏色'],
-        '定焦': ['定焦', '35mm', '50mm', '85mm', '大光圈定焦'],
-        '變焦': ['變焦', '24-70', '70-200', '24-105'],
-        '富士': ['富士', 'fuji', 'fujifilm', 'x100v', 'x100vi', 'x-t5', 'x-e4', 'gfx'],
-        '索尼': ['索尼', 'sony', 'a74', 'a7iv', 'a7m4', 'a7r5', 'a7c', 'fx3'],
-        '尼康': ['尼康', 'nikon', 'zf', 'z8', 'z9', 'z6', 'zfc'],
-        '理光': ['理光', 'ricoh', 'gr3', 'griii', 'gr3x', 'gr'],
-        '佳能': ['佳能', 'canon', 'r5', 'r6', 'r6ii', 'r8', 'eos r'],
-        '萊卡': ['萊卡', '徠卡', 'leica', 'm10', 'm11', 'q2', 'q3'],
-        '蔡司': ['蔡司', 'zeiss', '蔡絲', 'carl zeiss'],
+    // These are spelling and naming aliases, not broad topical associations.
+    // A search for "GR3 街拍" must not be satisfied by a video that mentions
+    // only street photography.  Related concepts (for example ISO and noise)
+    // stay separate so multi-term queries retain their AND meaning.
+    const SEARCH_ALIASES = {
+        'iso': ['iso', '感光度'],
+        '高感': ['高感', '高iso', '高感光度'],
+        '噪點': ['噪點', '雜訊'],
+        '光圈': ['光圈', 'aperture', 'f值'],
+        '景深': ['景深', 'depth of field'],
+        '虛化': ['虛化', '背景虛化'],
+        '快門': ['快門', 'shutter', '快門速度'],
+        '慢快門': ['慢快門', '慢速快門'],
+        '長曝': ['長曝', '長時間曝光'],
+        '底片': ['底片', '膠卷'],
+        '底片模擬': ['底片模擬', 'film simulation'],
+        '對焦': ['對焦', 'focus', '自動對焦', 'af'],
+        '追焦': ['追焦', '連續對焦'],
+        '眼對焦': ['眼對焦', '眼部對焦'],
+        '白平衡': ['白平衡', 'white balance', 'wb'],
+        '富士': ['富士', 'fuji', 'fujifilm'],
+        '索尼': ['索尼', 'sony'],
+        '尼康': ['尼康', 'nikon'],
+        'ricoh': ['ricoh', '理光'],
+        '佳能': ['佳能', 'canon'],
+        '萊卡': ['萊卡', '徠卡', 'leica'],
+        '蔡司': ['蔡司', 'zeiss', 'carl zeiss'],
         'cpl': ['cpl', '偏光鏡', '偏振鏡'],
         'nd': ['nd', '減光鏡'],
         '街拍': ['街拍', '快照', 'snap', 'street photography', '掃街', '抓拍'],
-        '調色': ['調色', '修圖', 'lightroom', 'lut', '色調', '後製', 'hsl'],
-        '鏡頭': ['鏡頭', '焦段', '副廠', '騰龍', '適馬', '卡口']
+        '調色': ['調色', 'color grading'],
+        '鏡頭': ['鏡頭', 'lens'],
+        'gr3': ['gr3', 'griii', 'gr iii', 'gr 3'],
+        'gr3x': ['gr3x', 'griiix', 'gr iiix', 'gr 3x']
     };
 
+    const QUERY_NORMALIZATION = {
+        '接拍': '街拍',
+        'griii': 'gr3',
+        'gr iii': 'gr3',
+        'gr 3': 'gr3',
+        'griiix': 'gr3x',
+        'gr iiix': 'gr3x',
+        'gr 3x': 'gr3x',
+        '理光': 'ricoh'
+    };
+
+    const KNOWN_QUERY_TERMS = [...new Set([
+        ...Object.keys(SEARCH_ALIASES),
+        ...Object.keys(QUERY_NORMALIZATION)
+    ])].sort((a, b) => b.length - a.length);
+
+    function normalizeQueryTerm(term) {
+        return QUERY_NORMALIZATION[term] || term;
+    }
+
+    function splitSearchQuery(query) {
+        const normalized = query.trim().toLowerCase()
+            .replace(/\bgr\s*iii\s*x\b/g, 'gr3x')
+            .replace(/\bgr\s*iii\b/g, 'gr3')
+            .replace(/\bgr\s*3\s*x\b/g, 'gr3x')
+            .replace(/\bgr\s*3\b/g, 'gr3');
+        const terms = normalized.split(/\s+/).filter(Boolean).flatMap(token => {
+            const split = [];
+            let remaining = token;
+            while (remaining) {
+                const known = KNOWN_QUERY_TERMS.find(candidate => remaining.startsWith(candidate));
+                if (!known) {
+                    split.push(normalizeQueryTerm(remaining));
+                    break;
+                }
+                split.push(normalizeQueryTerm(known));
+                remaining = remaining.slice(known.length);
+            }
+            return split;
+        });
+        return [...new Set(terms)].slice(0, 4);
+    }
+
     function expandTerms(term) {
-        const normalized = term.trim().toLowerCase();
-        return [...new Set([normalized, ...(CAMERA_SYNONYMS[normalized] || [])])];
+        const normalized = normalizeQueryTerm(term.trim().toLowerCase());
+        return [...new Set([normalized, ...(SEARCH_ALIASES[normalized] || [])])];
+    }
+
+    function normalizeForSearchMatch(value) {
+        return String(value || '').toLowerCase().replace(/[\s\-_]/g, '');
+    }
+
+    function matchesAllTermGroups(text, termGroups) {
+        const content = normalizeForSearchMatch(text);
+        return termGroups.every(group => group.some(term => content.includes(normalizeForSearchMatch(term))));
     }
 
     function escapeHtml(value) {
@@ -199,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.url = `https://www.youtube.com/watch?v=${item.video_id}&t=${Math.floor(paragraph.start)}s`;
                 item.transcript = normalizePublicTranscript(paragraph.transcript);
                 item.summary = paragraph.summary || '';
+                item.topic_tag = topicTag(item.transcript);
             } catch (error) {
                 // A failed optional context request must not hide a search hit.
                 // The UI labels this fallback as a locating excerpt, never a transcript.
@@ -234,7 +290,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function staticSearch(query) {
-        const subQueries = query.trim().toLowerCase().split(/\s+/).filter(Boolean).slice(0, 4);
+        const subQueries = splitSearchQuery(query);
+        if (subQueries.length === 0) return [];
         const termGroups = subQueries.map(expandTerms);
         const terms = [...new Set(termGroups.flat())];
         const shards = await Promise.all([...new Set(terms.map(shardIdFor))].map(loadSearchShard));
@@ -245,29 +302,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const scored = new Map();
         const totalTerms = termGroups.length;
 
-        // Title matches are small enough to rank in the browser and give users
-        // useful results even when a transcript has no matching time segment.
+        // A title-only card is permissible only when every requested concept
+        // occurs in its title.  Partial title matches used to be labelled as
+        // complete matches, which produced false positives such as a generic
+        // street-photography video for a "GR3 街拍" search.
         videos.forEach(video => {
             const title = (video.title || '').toLowerCase();
-            let hits = 0;
-            let score = 0;
-            termGroups.forEach((group, position) => {
-                if (group.some(term => title.includes(term))) {
-                    hits += 1;
-                    score += 10000 * (10 ** (totalTerms - position - 1));
-                }
-            });
-            if (hits) {
-                const allMatched = hits === totalTerms;
+            if (matchesAllTermGroups(title, termGroups)) {
                 const key = `${video.id}_title`;
                 scored.set(key, {
-                    score: (allMatched ? 2000000 : 0) + score,
+                    score: 2000000,
                     video_title: video.title,
                     timestamp: '00:00',
                     text: video.title,
                     summary: '',
                     topic_tag: '📌 【標題專題討論】',
-                    match_reason: allMatched ? `🏆 「${query}」主題精華影片` : `含關鍵字: ${query}`,
+                    match_reason: `🏆 「${query}」主題精華影片`,
                     url: video.url,
                     type: '標題精確匹配',
                     isTitleMatch: true,
@@ -298,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             locating_excerpt: displayText,
                             summary: '',
                             topic_tag: topicTag(displayText),
-                            match_reason: `含關鍵字: ${query}`,
+                            match_reason: `段落符合「${query}」`,
                             url: `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(Number(start) || 0)}s`,
                             type: '對白同義詞檢索',
                             isTitleMatch: false,
@@ -316,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        const results = [...scored.values()]
+        const candidates = [...scored.values()]
             .map(item => {
                 if (item.hitGroups) {
                     const allMatched = item.hitGroups.size === totalTerms;
@@ -330,7 +380,10 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .sort((a, b) => b.score - a.score)
             .slice(0, MAX_SEARCH_RESULTS);
-        return attachParagraphContexts(results);
+        const results = await attachParagraphContexts(candidates);
+        return results
+            .filter(item => item.isTitleMatch || matchesAllTermGroups(item.transcript, termGroups))
+            .slice(0, MAX_SEARCH_RESULTS);
     }
 
     function initTheme() {
@@ -466,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let videos = [];
         if (catId === 'all') {
-            sectionTitle.textContent = '全頻道熱門觀點與精選影片';
+            sectionTitle.textContent = '全頻道影片資料庫';
             encyclopediaData.categories.forEach(cat => {
                 videos.push(...cat.videos);
             });
@@ -482,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        resultCount.textContent = `共 ${videos.length} 部影片專題`;
+        resultCount.textContent = `共 ${videos.length} 部影片`;
         renderVideoCards(videos);
     }
 
@@ -492,17 +545,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const thumbUrl = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
         const firstQuote = (v.sample_quotes && v.sample_quotes.length > 0) ? v.sample_quotes[0] : null;
-        const tsText = firstQuote ? firstQuote.timestamp : '00:00';
         
-        // A card may show a clearly labelled transcript excerpt, but never
-        // present a fragment as a generated summary.
         const excerpt = normalizePublicTranscript(firstQuote?.text || '')
             .replace(/\s+/g, ' ').trim();
-        const summaryText = excerpt
-            ? `影片摘錄：${excerpt.slice(0, 100)}${excerpt.length > 100 ? '…' : ''}`
+        const titleText = normalizePublicTranscript(v.title || '').replace(/\s+/g, ' ').trim();
+        const hasTranscriptExcerpt = Boolean(excerpt && excerpt !== titleText);
+        const tsText = hasTranscriptExcerpt ? firstQuote.timestamp : '00:00';
+        const summaryText = hasTranscriptExcerpt
+            ? `逐字稿摘錄：${excerpt.slice(0, 100)}${excerpt.length > 100 ? '…' : ''}`
             : `影片主題：${v.title}`;
 
-        const targetUrl = firstQuote ? firstQuote.url : v.url;
+        const targetUrl = hasTranscriptExcerpt ? firstQuote.url : v.url;
 
         const isMember = checkIsMember(v);
         const badgeHtml = isMember 
@@ -659,7 +712,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const catLabel = catNames[currentCategory] || '';
         sectionTitle.textContent = `搜尋「${lastSearchQuery}」 ‧ ${catLabel}`;
-        resultCount.textContent = `共 ${groupedVideos.length} 部符合分類影片專題`;
+        resultCount.textContent = `共 ${groupedVideos.length} 部符合條件的影片`;
 
         videoGrid.innerHTML = '';
         if (groupedVideos.length === 0) {

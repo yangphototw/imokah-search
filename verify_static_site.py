@@ -6,9 +6,11 @@ from pathlib import Path
 
 from build_static_search_index import (
     MAX_HITS_PER_TERM,
+    MAX_HITS_PER_VIDEO_PER_TERM,
     MAX_SHARD_BYTES,
     MAX_TOTAL_INDEX_BYTES,
     SHARD_COUNT,
+    paragraph_index_fingerprint,
     shard_id,
 )
 from content_quality import is_valid_public_summary
@@ -39,10 +41,16 @@ def main() -> None:
         fail("static assets are missing; run build_static_search_index.py first")
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    if manifest.get("shards") != SHARD_COUNT:
+    if manifest.get("version") != 3 or manifest.get("shards") != SHARD_COUNT:
         fail(f"manifest shard count is {manifest.get('shards')}, expected {SHARD_COUNT}")
     if manifest.get("max_hits_per_term") != MAX_HITS_PER_TERM:
         fail("manifest does not enforce the expected per-term result limit")
+    if manifest.get("max_hits_per_video_per_term") != MAX_HITS_PER_VIDEO_PER_TERM:
+        fail("manifest does not enforce the expected per-video result limit")
+    if manifest.get("source") != "paragraph-index":
+        fail("search index is not sourced from published paragraph context")
+    if manifest.get("paragraph_index_sha256") != paragraph_index_fingerprint():
+        fail("search index is stale relative to paragraph context")
     if len(list(SHARDS.glob("*.json.gz"))) != SHARD_COUNT:
         fail("generated shard file count does not match manifest")
     shard_files = list(SHARDS.glob("*.json.gz"))
@@ -126,6 +134,10 @@ def main() -> None:
         fail("title matches are not explicitly separated from transcript clips")
     if "attachParagraphContexts(results)" not in app_source or "完整逐字稿段落" not in app_source:
         fail("search UI does not resolve hits to complete paragraph transcripts")
+    if "if (matchesAllTermGroups(title, termGroups))" not in app_source:
+        fail("title-only search results can still be partial matches")
+    if ".filter(item => item.isTitleMatch || matchesAllTermGroups(item.transcript, termGroups))" not in app_source:
+        fail("multi-term transcript search results are not constrained to one paragraph")
     for category_id, video in category_video_pairs:
         summary = video.get("ai_summary", "")
         if not is_valid_public_summary(summary, video["title"]):

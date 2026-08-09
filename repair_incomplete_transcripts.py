@@ -75,8 +75,8 @@ def main() -> int:
             print(f"FAILED {video_id}: {error}", flush=True)
 
     if completed:
-        search_shards = update_for_new_videos(completed)
         paragraph_shards = update_paragraphs(completed)
+        search_shards = update_for_new_videos(completed)
         print(f"Updated {search_shards} search shards and {paragraph_shards} paragraph shards.", flush=True)
     final = write_manifest()
     print(json.dumps(final["counts"], ensure_ascii=False), flush=True)

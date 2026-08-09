@@ -1,4 +1,4 @@
-"""Update only the CDN search shards touched by newly transcribed videos."""
+"""Update only the CDN search shards touched by newly published paragraphs."""
 
 import gzip
 import json
@@ -8,11 +8,19 @@ import tempfile
 from collections import defaultdict
 from pathlib import Path
 
-from build_static_search_index import MAX_HITS_PER_TERM, PUBLIC, SHARD_COUNT, shard_id
+from build_static_search_index import (
+    MAX_HITS_PER_TERM,
+    MAX_HITS_PER_VIDEO_PER_TERM,
+    PUBLIC,
+    SHARD_COUNT,
+    paragraph_index_fingerprint,
+    shard_id,
+)
+from build_public_paragraph_index import shard_id_for_video
 
 ROOT = Path(__file__).resolve().parent
-TRANSCRIPTS = ROOT / "data" / "transcripts"
 SHARDS = PUBLIC / "search-index"
+PARAGRAPH_SHARDS = PUBLIC / "paragraph-index"
 MANIFEST = SHARDS / "manifest.json"
 CATALOG = PUBLIC / "catalog.json"
 TOKEN_PATTERN = re.compile(r"[a-zA-Z0-9]+|[\u4e00-\u9fa5]{1,4}")
@@ -41,8 +49,8 @@ def atomic_json_write(path: Path, payload: dict) -> None:
         raise
 
 
-def tokens_for_chunk(chunk: dict) -> set[str]:
-    content = f"{chunk.get('text', '')} {chunk.get('video_title', '')}".lower()
+def tokens_for_paragraph(paragraph: dict) -> set[str]:
+    content = str(paragraph.get("transcript", "")).lower()
     return set(TOKEN_PATTERN.findall(content))
 
 
@@ -57,32 +65,38 @@ def build_video_hits(video_ids: list[str]) -> tuple[dict[str, list[list]], set[i
     touched_shards: set[int] = set()
 
     for video_id in video_ids:
-        transcript = TRANSCRIPTS / f"{video_id}_transcript.json"
-        if not transcript.exists():
-            raise FileNotFoundError(f"Transcript missing for {video_id}: {transcript}")
-        chunks = json.loads(transcript.read_text(encoding="utf-8"))
-        for chunk in chunks:
+        paragraph_path = PARAGRAPH_SHARDS / f"{shard_id_for_video(video_id):03d}.json.gz"
+        if not paragraph_path.exists():
+            raise FileNotFoundError(f"Paragraph index missing for {video_id}: {paragraph_path}")
+        with gzip.open(paragraph_path, "rt", encoding="utf-8") as handle:
+            paragraphs = json.load(handle).get(video_id)
+        if paragraphs is None:
+            raise FileNotFoundError(f"Paragraph context missing for {video_id}")
+        for paragraph in paragraphs:
+            start = float(paragraph.get("start", 0) or 0)
             hit = [
-                chunk.get("video_id", video_id),
-                chunk.get("timestamp", "00:00"),
-                chunk.get("text", ""),
-                chunk.get("start", 0),
+                video_id,
+                f"{int(start // 60):02d}:{int(start % 60):02d}",
+                "",
+                start,
             ]
-            for term in tokens_for_chunk(chunk):
+            for term in tokens_for_paragraph(paragraph):
                 term_hits[term].append(hit)
                 touched_shards.add(shard_id(term))
     return term_hits, touched_shards
 
 
 def merge_hits(new_hits: list[list], existing_hits: list[list]) -> list[list]:
-    """Prefer fresh clips, remove duplicates, and preserve the CDN size budget."""
+    """Prefer fresh paragraphs while preserving result diversity and size limits."""
     merged = []
     seen = set()
+    per_video = defaultdict(int)
     for hit in new_hits + existing_hits:
         key = (hit[0], hit[1])
-        if key not in seen:
+        if key not in seen and per_video[hit[0]] < MAX_HITS_PER_VIDEO_PER_TERM:
             seen.add(key)
             merged.append(hit)
+            per_video[hit[0]] += 1
             if len(merged) == MAX_HITS_PER_TERM:
                 break
     return merged
@@ -122,10 +136,13 @@ def refresh_manifest() -> None:
         file_counts[filename] = len(shard)
         total_terms += len(shard)
     manifest = {
-        "version": 2,
+        "version": 3,
         "shards": SHARD_COUNT,
         "terms": total_terms,
         "max_hits_per_term": MAX_HITS_PER_TERM,
+        "max_hits_per_video_per_term": MAX_HITS_PER_VIDEO_PER_TERM,
+        "source": "paragraph-index",
+        "paragraph_index_sha256": paragraph_index_fingerprint(),
         "files": file_counts,
     }
     atomic_json_write(MANIFEST, manifest)
@@ -146,7 +163,10 @@ def update_for_new_videos(video_ids: list[str]) -> int:
     for number, additions in grouped_terms.items():
         shard = load_shard(number)
         for term, hits in additions.items():
-            shard[term] = merge_hits(hits, shard.get(term, []))
+            # New-video ingestion is normally append-only.  Still remove any
+            # old copy for an id being refreshed before merging its paragraphs.
+            prior = [hit for hit in shard.get(term, []) if hit[0] not in video_ids]
+            shard[term] = merge_hits(hits, prior)
         atomic_json_gzip_write(SHARDS / f"{number:03d}.json.gz", shard)
 
     rebuild_catalog()

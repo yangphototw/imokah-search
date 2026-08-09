@@ -1,31 +1,35 @@
-"""Build CDN-friendly static search shards for the browser-only search UI.
+"""Build the CDN-friendly paragraph search index used by the static site.
 
-The generated .json.gz files are intentionally served as ordinary binary assets.
-app.js decompresses only the few shards needed for a query, avoiding Vercel
-Function memory and cold-start costs entirely.
+The public paragraph index is the single published transcript source of truth.
+This builder deliberately indexes those paragraphs directly instead of looking
+up offsets in the old, separately persisted RAG inverted index.  The old
+scheme could become stale after a transcript rebuild and point a keyword at a
+different video's sentence.
 """
 
+from __future__ import annotations
+
 import gzip
+import hashlib
 import json
+import os
+import re
 import shutil
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-
 PUBLIC = ROOT / "public"
 SHARD_DIR = PUBLIC / "search-index"
+PARAGRAPH_DIR = PUBLIC / "paragraph-index"
 NEXT_SHARD_DIR = PUBLIC / ".search-index-next"
 BACKUP_SHARD_DIR = PUBLIC / ".search-index-backup"
-NEXT_CATALOG = PUBLIC / ".catalog.next.json"
 SHARD_COUNT = 512
-# A static site must bound both download size and client-side decompression.
-# More than a dozen clips for one exact term provides little additional value
-# because title matches and synonym expansion still contribute extra results.
 MAX_HITS_PER_TERM = 12
-# Deployment regression budgets.  Static assets should remain comfortably
-# below free-hosting limits and cheap to decompress on a phone.
+MAX_HITS_PER_VIDEO_PER_TERM = 2
 MAX_SHARD_BYTES = 1 * 1024 * 1024
 MAX_TOTAL_INDEX_BYTES = 100 * 1024 * 1024
+TOKEN_PATTERN = re.compile(r"[a-zA-Z0-9]+|[\u4e00-\u9fa5]{1,4}")
 
 
 def shard_id(term: str) -> int:
@@ -43,9 +47,52 @@ def shard_id(term: str) -> int:
     return value & (SHARD_COUNT - 1)
 
 
-def write_json_gzip(path: Path, value) -> None:
-    with gzip.open(path, "wt", encoding="utf-8", compresslevel=9) as handle:
-        json.dump(value, handle, ensure_ascii=False, separators=(",", ":"))
+def paragraph_index_fingerprint() -> str:
+    """Hash every published paragraph asset to make stale search builds fail QA."""
+    files = [PARAGRAPH_DIR / "manifest.json", *sorted(PARAGRAPH_DIR.glob("*.json.gz"))]
+    if len(files) != SHARD_COUNT + 1 or not files[0].exists():
+        raise FileNotFoundError("Paragraph index is incomplete; run build_public_paragraph_index.py first")
+    digest = hashlib.sha256()
+    for path in files:
+        digest.update(path.name.encode("utf-8"))
+        with path.open("rb") as handle:
+            for block in iter(lambda: handle.read(1024 * 1024), b""):
+                digest.update(block)
+    return digest.hexdigest()
+
+
+def tokens_for_text(text: str) -> set[str]:
+    return set(TOKEN_PATTERN.findall(str(text or "").lower()))
+
+
+def format_timestamp(start: float) -> str:
+    seconds = max(0, int(float(start or 0)))
+    return f"{seconds // 60:02d}:{seconds % 60:02d}"
+
+
+def iter_published_paragraphs():
+    for path in sorted(PARAGRAPH_DIR.glob("*.json.gz")):
+        with gzip.open(path, "rt", encoding="utf-8") as handle:
+            shard = json.load(handle)
+        for video_id, paragraphs in shard.items():
+            for paragraph in paragraphs:
+                yield video_id, paragraph
+
+
+def append_hit(bucket: dict[str, list[list]], term: str, hit: list) -> None:
+    hits = bucket.setdefault(term, [])
+    if len(hits) >= MAX_HITS_PER_TERM:
+        return
+    video_id = hit[0]
+    if sum(existing[0] == video_id for existing in hits) >= MAX_HITS_PER_VIDEO_PER_TERM:
+        return
+    hits.append(hit)
+
+
+def write_json_gzip(path: Path, value: dict) -> None:
+    with path.open("wb") as raw:
+        with gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as archive:
+            archive.write(json.dumps(value, ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
 
 
 def prepare_output_directory() -> None:
@@ -54,22 +101,19 @@ def prepare_output_directory() -> None:
         BACKUP_SHARD_DIR.rename(SHARD_DIR)
     elif SHARD_DIR.exists() and BACKUP_SHARD_DIR.exists():
         shutil.rmtree(BACKUP_SHARD_DIR)
-
     if NEXT_SHARD_DIR.exists():
         shutil.rmtree(NEXT_SHARD_DIR)
     NEXT_SHARD_DIR.mkdir(parents=True)
 
 
 def activate_output() -> None:
-    """Swap a complete build in only after every shard and catalog has been written."""
+    """Swap a complete build in only after every shard has been written."""
     if BACKUP_SHARD_DIR.exists():
         shutil.rmtree(BACKUP_SHARD_DIR)
     if SHARD_DIR.exists():
         SHARD_DIR.rename(BACKUP_SHARD_DIR)
-
     try:
         NEXT_SHARD_DIR.rename(SHARD_DIR)
-        NEXT_CATALOG.replace(PUBLIC / "catalog.json")
     except Exception:
         if not SHARD_DIR.exists() and BACKUP_SHARD_DIR.exists():
             BACKUP_SHARD_DIR.rename(SHARD_DIR)
@@ -83,46 +127,32 @@ def main() -> None:
     if SHARD_COUNT <= 0 or SHARD_COUNT & (SHARD_COUNT - 1):
         raise SystemExit("SHARD_COUNT must be a positive power of two")
 
+    source_fingerprint = paragraph_index_fingerprint()
+    print("Building search terms from published paragraph context…", flush=True)
+    buckets: list[dict[str, list[list]]] = [dict() for _ in range(SHARD_COUNT)]
+    paragraphs = 0
+    for video_id, paragraph in iter_published_paragraphs():
+        text = str(paragraph.get("transcript", ""))
+        start = float(paragraph.get("start", 0) or 0)
+        # The searchable paragraph itself is fetched only after a match.  Do
+        # not repeat it under every term here: that would multiply static CDN
+        # size and mobile memory use by hundreds of megabytes.
+        hit = [video_id, format_timestamp(start), "", start]
+        for term in tokens_for_text(text):
+            append_hit(buckets[shard_id(term)], term, hit)
+        paragraphs += 1
+
     prepare_output_directory()
-    rag_index_file = ROOT / "data" / "oka_rag_index.json"
-    inverted_index_file = ROOT / "data" / "oka_inverted_index.json"
-    if not rag_index_file.exists() or not inverted_index_file.exists():
-        raise SystemExit("Missing RAG source files; rebuild the RAG and inverted indexes first")
-
-    print("Loading RAG index and Inverted index…", flush=True)
-    with rag_index_file.open("r", encoding="utf-8") as f:
-        chunks = json.load(f)
-    with inverted_index_file.open("r", encoding="utf-8") as f:
-        inv_map = json.load(f)
-
-    buckets = [{} for _ in range(SHARD_COUNT)]
-    for term, indices in inv_map.items():
-        normalized_term = term.lower()
-        bucket = buckets[shard_id(normalized_term)]
-        hits = []
-        # The old builder copied every occurrence of a common word.  A single
-        # term could therefore create a 10+ MiB shard and freeze a browser.
-        for idx in indices[:MAX_HITS_PER_TERM]:
-            c = chunks[idx]
-            v_id = c.get('video_id') or c.get('source')
-            hits.append([v_id, c.get('timestamp', '00:00'), c.get('text', ''), c.get('start', 0)])
-        
-        if normalized_term in bucket:
-            bucket[normalized_term].extend(hits)
-        else:
-            bucket[normalized_term] = hits
-
-    # Drop source containers before serialising so the output stage keeps the
-    # lowest practical peak memory for an offline build.
-    del inv_map
-    del chunks
-
     print(f"Writing {SHARD_COUNT} compressed shards…", flush=True)
     manifest = {
-        "version": 2,
+        "version": 3,
         "shards": SHARD_COUNT,
         "terms": 0,
+        "paragraphs": paragraphs,
         "max_hits_per_term": MAX_HITS_PER_TERM,
+        "max_hits_per_video_per_term": MAX_HITS_PER_VIDEO_PER_TERM,
+        "source": "paragraph-index",
+        "paragraph_index_sha256": source_fingerprint,
         "files": {},
     }
     for number, bucket in enumerate(buckets):
@@ -131,18 +161,16 @@ def main() -> None:
         manifest["terms"] += len(bucket)
         manifest["files"][filename] = len(bucket)
         buckets[number] = None
-
-    # Build the initial page's data once at build time rather than during a
-    # request.  It lets Vercel cache catalog.json as a normal static asset.
-    from web_server import build_encyclopedia_data
-    with NEXT_CATALOG.open("w", encoding="utf-8") as handle:
-        json.dump(build_encyclopedia_data(), handle, ensure_ascii=False, separators=(",", ":"))
     with (NEXT_SHARD_DIR / "manifest.json").open("w", encoding="utf-8") as handle:
         json.dump(manifest, handle, ensure_ascii=False, separators=(",", ":"))
 
     total_size = sum(path.stat().st_size for path in NEXT_SHARD_DIR.glob("*.json.gz"))
     activate_output()
-    print(f"Done: {manifest['terms']:,} terms, {total_size / 1024 / 1024:.1f} MiB compressed", flush=True)
+    print(
+        f"Done: {manifest['terms']:,} terms from {paragraphs:,} paragraphs, "
+        f"{total_size / 1024 / 1024:.1f} MiB compressed",
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

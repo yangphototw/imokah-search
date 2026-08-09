@@ -40,7 +40,12 @@ python verify_markdown_knowledge_base.py
 if errorlevel 1 goto :error
 
 echo.
-echo [8/9] Pushing to GitHub...
+echo [8/9] Verifying search relevance...
+python verify_search_relevance.py
+if errorlevel 1 goto :error
+
+echo.
+echo [9/9] Pushing to GitHub...
 REM Only publish the static deploy output. Do not accidentally commit cookies,
 REM audio, raw transcripts, or local databases with `git add .`.
 git add public/catalog.json public/search-index public/paragraph-index data/oka_video_summaries.json data/oka_youtube_map.json data/processing_manifest.json knowledge
