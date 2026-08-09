@@ -93,7 +93,24 @@ def rebuild_catalog() -> None:
     # data until this small catalog has to be regenerated.
     from web_server import build_encyclopedia_data
 
-    atomic_json_write(CATALOG, build_encyclopedia_data())
+    catalog = build_encyclopedia_data()
+    # The legacy catalog generator may collapse several historical titles into
+    # one generic label.  Restore only proven collisions from the source map;
+    # this keeps future incremental updates from reintroducing duplicates.
+    source_path = ROOT / "data" / "oka_youtube_map.json"
+    source = json.loads(source_path.read_text(encoding="utf-8")) if source_path.exists() else {}
+    by_title: dict[str, list[dict]] = defaultdict(list)
+    for category in catalog.get("categories", []):
+        for video in category.get("videos", []):
+            by_title[str(video.get("title", "")).strip()].append(video)
+    for title, videos in by_title.items():
+        if len(videos) < 2:
+            continue
+        for video in videos:
+            replacement = str(source.get(video.get("id", ""), {}).get("title", "")).strip()
+            if replacement and replacement != title:
+                video["title"] = replacement
+    atomic_json_write(CATALOG, catalog)
 
 
 def refresh_manifest() -> None:

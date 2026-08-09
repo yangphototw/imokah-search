@@ -1,1 +1,1 @@
-{"version":1,"shards":512,"paragraphs":59678,"approved_summaries":0,"schema":"video-id -> [{id,start,end,transcript,summary?}]"}
+{"version":1,"shards":512,"paragraphs":59776,"approved_summaries":0,"schema":"video-id -> [{id,start,end,transcript,summary?}]"}

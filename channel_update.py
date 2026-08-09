@@ -7,22 +7,26 @@ receives the small static public/ output after all validation passes.
 import argparse
 import json
 import os
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-import yt_dlp
+ROOT = Path(__file__).resolve().parent
+LOCAL_PACKAGES = ROOT / ".python-packages"
+if LOCAL_PACKAGES.is_dir():
+    sys.path.insert(0, str(LOCAL_PACKAGES))
 
 from incremental_static_index import update_for_new_videos
 from build_public_paragraph_index import update_for_videos as update_paragraphs_for_videos
 from build_processing_manifest import build as build_processing_manifest
 
-ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 MAP_FILE = DATA / "oka_youtube_map.json"
 STATE_FILE = DATA / "update_state.json"
 AUDIO_DIR = DATA / "audio_cache"
 TRANSCRIPT_DIR = DATA / "transcripts"
+AUDIO_LIBRARY = Path(r"F:\AI_Youtube\MP3\OK")
 CHANNEL_PAGES = (
     "https://www.youtube.com/@imokahhhh/videos",
     "https://www.youtube.com/@imokahhhh/shorts",
@@ -67,6 +71,8 @@ def discovery_options() -> dict:
 
 
 def discover_videos() -> dict[str, dict]:
+    import yt_dlp
+
     videos = {}
     with yt_dlp.YoutubeDL(discovery_options()) as ydl:
         for page in CHANNEL_PAGES:
@@ -99,6 +105,12 @@ def download_audio(video: dict) -> Path:
     expected = AUDIO_DIR / f"{video['id']}.mp3"
     if expected.exists():
         return expected
+    # Prefer the owner's existing local archive.  This avoids a network
+    # download and lets failed historical transcripts be repaired offline.
+    if AUDIO_LIBRARY.is_dir():
+        local_matches = sorted(AUDIO_LIBRARY.glob(f"Oka_{video['id']}.*"))
+        if local_matches:
+            return local_matches[0]
     options = {
         "format": "ba/b",
         "outtmpl": str(AUDIO_DIR / f"{video['id']}.%(ext)s"),
@@ -125,7 +137,13 @@ def download_audio(video: dict) -> Path:
 
 def transcribe(video: dict, model) -> list[dict]:
     audio = download_audio(video)
-    segments, _ = model.transcribe(str(audio), language="zh", vad_filter=True)
+    # VAD has repeatedly discarded speech in historical live and music-heavy
+    # uploads.  For offline batch transcription, accuracy is preferable to
+    # this small speed saving; paragraphing removes the resulting silence.
+    segments, _ = model.transcribe(
+        str(audio), language="zh", vad_filter=False,
+        beam_size=5, condition_on_previous_text=True,
+    )
     chunks = []
     for segment in segments:
         text = segment.text.strip()
