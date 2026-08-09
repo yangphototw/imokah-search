@@ -64,6 +64,17 @@ run_full_transcript_review.bat
 
 這會依序以 `small`、`medium`、`large-v3` 重聽標記段落；每段完成即安全寫入本機審核紀錄，重跑只會補缺少的模型結果。它不會直接改寫原始逐字稿：只有三模型支持或頻道身分校正支持的候選，才會進入待套用的校正帳本。可隨時執行 `python quality_baseline.py --write` 查看目前覆蓋率、音檔複核與摘要重寫進度。
 
+### 本機模型快取
+
+本專案的 Hugging Face、ModelScope、Torch 與 pip 快取都固定在 `.cache/`，不會再寫入 C 槽。已在 C 槽、且正被 GPU 校對程序使用的 Whisper 模型，請待校對完成後先檢視、再安全搬移：
+
+```bat
+python migrate_project_model_caches.py
+python migrate_project_model_caches.py --move
+```
+
+此工具只會搬移 `small`、`medium` 與 `large-v3` 三個已知的本專案 Whisper 快取，絕不清空或覆寫其他使用者快取。
+
 ### 增量更新與自動排程
 
 新影片的下載、Whisper 轉錄與索引更新都在本機執行；Vercel 只接收通過驗證的

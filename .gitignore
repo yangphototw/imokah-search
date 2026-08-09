@@ -24,6 +24,8 @@ data/transcript_correction_ledger.json
 data/quality_baseline.json
 data/current_youtube_title_audit.json
 .python-packages/
+.cache/
+.venv-punctuation/
 logs/
 scratch/
 

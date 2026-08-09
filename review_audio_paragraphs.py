@@ -13,6 +13,9 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+from project_cache import configure_project_cache
+
+configure_project_cache()
 sys.path.insert(0, str(ROOT / ".python-packages"))
 os.environ["PATH"] = os.pathsep.join([
     str(ROOT / ".python-packages" / "nvidia" / "cublas" / "bin"),
