@@ -64,6 +64,23 @@ run_full_transcript_review.bat
 
 這會依序以 `small`、`medium`、`large-v3` 重聽標記段落；每段完成即安全寫入本機審核紀錄，重跑只會補缺少的模型結果。它不會直接改寫原始逐字稿：只有三模型支持或頻道身分校正支持的候選，才會進入待套用的校正帳本。可隨時執行 `python quality_baseline.py --write` 查看目前覆蓋率、音檔複核與摘要重寫進度。
 
+### 逐字稿標點恢復（本機草稿帳本）
+
+在音檔校對完成、文字校正已套用後，才可用本機的 `ct-punc` 模型恢復閱讀用標點：
+
+```bat
+.\.venv-punctuation\Scripts\python.exe restore_transcript_punctuation.py --build-ledger --sample --limit 50
+.\.venv-punctuation\Scripts\python.exe restore_transcript_punctuation.py --build-ledger --batch-size 128
+```
+
+每筆帳本都保存「原文、模型輸出、顯示文字、來源 SHA-256」。模型若增刪或替換任何非標點字元，該段會被拒絕；即使模型將 `OK` 正規化為 `Ok`，畫面仍會保留原始的 `OK`。帳本預設為 `draft`，`build_public_paragraph_index.py` 會完全忽略它；只有全頻道覆蓋完成、人工抽查後，才可明確核准：
+
+```bat
+.\.venv-punctuation\Scripts\python.exe restore_transcript_punctuation.py --approve-for-publication --approval-note "人工抽查完成：填入審核範圍與日期"
+```
+
+核准指令會拒絕不完整、過期或被模型改字的紀錄。核准後才重新執行靜態部署流程，讓標點進入公開段落索引。
+
 ### 本機模型快取
 
 本專案的 Hugging Face、ModelScope、Torch 與 pip 快取都固定在 `.cache/`，不會再寫入 C 槽。已在 C 槽、且正被 GPU 校對程序使用的 Whisper 模型，請待校對完成後先檢視、再安全搬移：
