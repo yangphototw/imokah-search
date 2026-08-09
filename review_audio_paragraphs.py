@@ -29,6 +29,11 @@ from faster_whisper import WhisperModel
 AUDIT = ROOT / "data" / "transcript_paragraph_audit.json.gz"
 REVIEWS = ROOT / "data" / "transcript_audio_reviews.json"
 AUDIO_ROOT = Path(r"F:\AI_Youtube\MP3\OK")
+# Every review clip is capped below 45 seconds.  400 generated tokens leaves
+# ample room for conversational Mandarin while avoiding the Python 3.14 /
+# faster-whisper path that incorrectly adds an integer to None when the
+# library default for max_new_tokens is used.
+MAX_NEW_TOKENS = 400
 
 
 def audio_path(video_id: str) -> Path | None:
@@ -54,6 +59,27 @@ def atomic_write_reviews(reviews: dict, path: Path = REVIEWS) -> None:
 def load_audit() -> list[dict]:
     with gzip.open(AUDIT, "rt", encoding="utf-8") as handle:
         return json.load(handle)["paragraphs"]
+
+
+def transcribe_clip(model: WhisperModel, audio: str, clip: str):
+    """Transcribe one bounded review clip with Python-3.14-safe options."""
+    return model.transcribe(
+        audio,
+        language="zh",
+        vad_filter=True,
+        clip_timestamps=clip,
+        beam_size=5,
+        # A review clip is evidence for one paragraph.  Decoding VAD
+        # subsegments independently prevents prior token accumulation from
+        # overflowing Whisper's fixed 448-token context window under the
+        # Python 3.14 stack.
+        condition_on_previous_text=False,
+        # An explicit empty string avoids the broken None initial-prompt path.
+        initial_prompt="",
+        # Explicitly avoid the broken None max_new_tokens path seen in the
+        # local faster-whisper build under Python 3.14.
+        max_new_tokens=MAX_NEW_TOKENS,
+    )
 
 
 def main() -> None:
@@ -155,15 +181,7 @@ def main() -> None:
             if not review or name in review["asr"]:
                 continue
             clip = f"{review['clip_start']:.2f},{review['clip_end']:.2f}"
-            segments, _ = model.transcribe(
-                review["audio_path"], language="zh", vad_filter=True,
-                clip_timestamps=clip, beam_size=5,
-                # faster-whisper running under the local Python 3.14 stack
-                # can mis-handle its default None prompt after many clips.
-                # An explicit empty string takes the documented string path
-                # and keeps the transcription content unchanged.
-                initial_prompt="",
-            )
+            segments, _ = transcribe_clip(model, review["audio_path"], clip)
             review["asr"][name] = "".join(segment.text.strip() for segment in segments)
             review["reviewed_at"] = datetime.now(timezone.utc).isoformat()
             atomic_write_reviews(existing)
