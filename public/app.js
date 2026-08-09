@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.matched_terms = matchedTerms;
                 item.highlight_terms = literalMatchedTerms(item.transcript, termGroups, matchedIndexes);
                 item.match_is_complete = matchedIndexes.length === totalTerms;
-                item.match_reason = `逐字稿段落符合「${matchedTerms.join('、')}」`;
+                item.match_reason = `逐字稿提到「${matchedTerms.join('、')}」`;
                 return item;
             })
             .filter(Boolean)
@@ -779,7 +779,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const groupedVideos = Array.from(groupedMap.values());
+        // A partial title hit is a useful ranking signal only when the same
+        // video also has a timestamped transcript hit.  Showing it by itself
+        // produces a card that cannot answer the visitor's question (for
+        // example, a title containing 「街拍」 for a multi-term query).  Keep
+        // complete title matches as a last-resort discovery path, but never
+        // present a partial title-only match as if it were a useful clip.
+        const groupedVideos = Array.from(groupedMap.values()).filter(item => (
+            item.clips.length > 0 || item.titleMatchIsComplete
+        ));
 
         const catNames = {
             'all': '全頻道專題',
@@ -828,13 +836,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? item.titleMatchedTerms.join('、')
                 : lastSearchQuery;
             let clipsHtml = '<div class="clips-wrapper">';
-            if (item.titleMatch) {
+            // If the title and transcript both match, the timestamped clips
+            // below are the useful evidence; do not waste space repeating a
+            // generic title-match disclaimer.  A complete title-only match is
+            // retained, but labelled honestly as having no timestamp yet.
+            if (item.titleMatch && item.clips.length === 0) {
                 clipsHtml += `
                     <div class="clip-node title-match-node">
                         <div class="match-reason-pill">📌 影片標題符合「${escapeHtml(titleMatchedTerms)}」</div>
-                        <div class="quote-text">${item.titleMatchIsComplete
-                            ? '標題包含所有搜尋詞；若找到已定位的逐字稿段落，會列在下方。'
-                            : '這是部分搜尋詞符合的標題，不代表影片內同時談到完整搜尋條件；點擊卡片可直接開啟影片。'}</div>
+                        <div class="quote-text">標題包含所有搜尋詞；目前尚未找到可定位的逐字稿時間點。</div>
                     </div>
                 `;
             }
