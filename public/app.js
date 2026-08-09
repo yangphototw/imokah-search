@@ -338,12 +338,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function topicTag(text) {
         const content = (text || '').toLowerCase();
-        if (['光圈', 'aperture', '景深', '虛化', '散景'].some(term => content.includes(term))) return '📷 【光圈與景深控制】';
-        if (['iso', '感光度', '高感', '噪點'].some(term => content.includes(term))) return '🎨 【ISO 與感光度表現】';
-        if (['快門', 'shutter'].some(term => content.includes(term))) return '⏱️ 【快門速度與動態】';
-        if (['對焦', '追焦', '眼對焦'].some(term => content.includes(term))) return '🎯 【對焦性能與反應】';
-        if (['鏡頭', '焦段', '35mm', '50mm', '85mm'].some(term => content.includes(term))) return '📷 【鏡頭搭配與焦段選擇】';
-        return '💡 【核心觀點與建議】';
+        if (['光圈', 'aperture', '景深', '虛化', '散景'].some(term => content.includes(term))) return '光圈與景深';
+        if (['iso', '感光度', '高感', '噪點'].some(term => content.includes(term))) return 'ISO 與感光度';
+        if (['快門', 'shutter'].some(term => content.includes(term))) return '快門與動態';
+        if (['對焦', '追焦', '眼對焦'].some(term => content.includes(term))) return '對焦';
+        if (['鏡頭', '焦段', '35mm', '50mm', '85mm'].some(term => content.includes(term))) return '鏡頭與焦段';
+        return '對話段落';
     }
 
     async function staticSearch(query) {
@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initTheme() {
-        const savedTheme = localStorage.getItem('ppvi-theme') || 'dark';
+        const savedTheme = localStorage.getItem('ppvi-theme') || 'light';
         setTheme(savedTheme);
     }
 
@@ -473,10 +473,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const icon = themeToggleBtn.querySelector('.theme-icon');
             const text = themeToggleBtn.querySelector('.theme-text');
             if (theme === 'light') {
-                if (icon) icon.textContent = '☀️';
+                if (icon) icon.textContent = '☀';
                 if (text) text.textContent = '亮色模式';
             } else {
-                if (icon) icon.textContent = '🌙';
+                if (icon) icon.textContent = '☾';
                 if (text) text.textContent = '深色模式';
             }
         }
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const uniqueMap = new Map();
             videos.forEach(v => uniqueMap.set(v.id, v));
-            const uniqueVideos = Array.from(uniqueMap.values());
+            videos = Array.from(uniqueMap.values());
         } else {
             const catObj = encyclopediaData.categories.find(c => c.id === catId);
             if (catObj) {
@@ -636,13 +636,13 @@ document.addEventListener('DOMContentLoaded', () => {
             ? '<span class="badge-tag member-only">會員獨家</span>' 
             : '<span class="badge-tag public-free">公開影片</span>';
 
-        const dateHtml = v.publish_date ? `<span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.85;">📅 ${escapeHtml(v.publish_date)}</span>` : '';
+        const dateHtml = v.publish_date ? `<span class="card-date">發布 ${escapeHtml(v.publish_date)}</span>` : '';
 
         card.innerHTML = `
             <div class="thumb-container">
                 <img class="card-thumb" src="${thumbUrl}" alt="${escapeHtml(v.title)}" loading="lazy">
                 ${badgeHtml}
-                <span class="ts-badge">▶️ ${tsText} 點播</span>
+                <span class="ts-badge">${hasTranscriptExcerpt ? `從 ${tsText}` : '影片開頭'}</span>
             </div>
             <div class="card-content">
                 ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
@@ -791,11 +791,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const catNames = {
             'all': '全頻道專題',
-            'daily': '📸 日常影片 (外出拍照)',
-            'gear': '📷 器材評測 (介紹器材)',
-            'live': '🎙️ 直播存檔 (八點半與週報)',
-            'member_review': '👑 會員評圖 (每月評圖)',
-            'book': '📚 讀書會 (攝影集介紹)'
+            'daily': '日常影片',
+            'gear': '器材評測',
+            'live': '直播存檔',
+            'member_review': '會員評圖',
+            'book': '讀書會'
         };
 
         const catLabel = catNames[currentCategory] || '';
@@ -823,10 +823,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let featureBadgeHtml = '';
             if (item.clips.length >= 3) {
-                featureBadgeHtml = `<span class="featured-label">🏆 「${lastSearchQuery}」主題精華</span>`;
+                featureBadgeHtml = `<span class="featured-label">「${lastSearchQuery}」主題精華</span>`;
             }
 
-            const dateHtml = item.publish_date ? `<span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.85;">📅 ${escapeHtml(item.publish_date)}</span>` : '';
+            const dateHtml = item.publish_date ? `<span class="card-date">發布 ${escapeHtml(item.publish_date)}</span>` : '';
 
             const INITIAL_SHOW = 2;
             const visibleClips = item.clips.slice(0, INITIAL_SHOW);
@@ -843,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.titleMatch && item.clips.length === 0) {
                 clipsHtml += `
                     <div class="clip-node title-match-node">
-                        <div class="match-reason-pill">📌 影片標題符合「${escapeHtml(titleMatchedTerms)}」</div>
+                        <div class="match-reason-pill">影片標題符合「${escapeHtml(titleMatchedTerms)}」</div>
                         <div class="quote-text">標題包含所有搜尋詞；目前尚未找到可定位的逐字稿時間點。</div>
                     </div>
                 `;
@@ -854,11 +854,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="clip-node" data-url="${escapeHtml(clip.url)}">
                         <div class="clip-meta">
                             <span class="topic-label">${escapeHtml(clip.topic_tag)}</span>
-                            <span class="ts-link">▶️ ${clip.timestamp} 點播</span>
+                            <span class="ts-link">${clip.timestamp}</span>
                         </div>
-                        <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
-                        ${clip.summary ? `<div class="match-reason-pill">💡 本段摘要：${escapeHtml(clip.summary)}</div>` : ''}
-                        <div class="quote-text">${clip.transcript ? `📝 完整逐字稿段落：「${highlightSearchTerms(clip.transcript, clip.highlight_terms)}」` : `🔎 命中片段（完整段落載入失敗）：「${escapeHtml(clip.locating_excerpt)}」`}</div>
+                        <div class="match-reason-pill">${escapeHtml(clip.match_reason)}</div>
+                        ${clip.summary ? `<div class="match-reason-pill clip-summary">摘要：${escapeHtml(clip.summary)}</div>` : ''}
+                        <div class="quote-text">${clip.transcript ? `逐字稿：${highlightSearchTerms(clip.transcript, clip.highlight_terms)}` : `命中片段（完整段落載入失敗）：${escapeHtml(clip.locating_excerpt)}`}</div>
                     </div>
                 `;
             });
@@ -870,11 +870,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="clip-node" data-url="${escapeHtml(clip.url)}">
                             <div class="clip-meta">
                                 <span class="topic-label">${escapeHtml(clip.topic_tag)}</span>
-                                <span class="ts-link">▶️ ${clip.timestamp} 點播</span>
+                            <span class="ts-link">${clip.timestamp}</span>
                             </div>
-                            <div class="match-reason-pill">🎯 ${escapeHtml(clip.match_reason)}</div>
-                            ${clip.summary ? `<div class="match-reason-pill">💡 本段摘要：${escapeHtml(clip.summary)}</div>` : ''}
-                            <div class="quote-text">${clip.transcript ? `📝 完整逐字稿段落：「${highlightSearchTerms(clip.transcript, clip.highlight_terms)}」` : `🔎 命中片段（完整段落載入失敗）：「${escapeHtml(clip.locating_excerpt)}」`}</div>
+                            <div class="match-reason-pill">${escapeHtml(clip.match_reason)}</div>
+                            ${clip.summary ? `<div class="match-reason-pill clip-summary">摘要：${escapeHtml(clip.summary)}</div>` : ''}
+                            <div class="quote-text">${clip.transcript ? `逐字稿：${highlightSearchTerms(clip.transcript, clip.highlight_terms)}` : `命中片段（完整段落載入失敗）：${escapeHtml(clip.locating_excerpt)}`}</div>
                         </div>
                     `;
                 });
@@ -892,7 +892,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="thumb-container">
                     <img class="card-thumb" src="${thumbUrl}" alt="${escapeHtml(item.video_title)}" loading="lazy">
                     ${badgeHtml}
-                    <span class="ts-badge">${item.clips.length ? `共 ${item.clips.length} 個重點對話` : '標題符合'}</span>
+                    <span class="ts-badge">${item.clips.length ? `${item.clips.length} 個可定位片段` : '標題符合'}</span>
                 </div>
                 <div class="card-content">
                     ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
