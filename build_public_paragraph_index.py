@@ -101,6 +101,20 @@ def public_paragraphs(video_id: str, chunks: list[dict], approved: dict[str, str
     return output
 
 
+def prefer_current_transcripts(by_video: dict[str, list[dict]], transcript_dir: Path = TRANSCRIPTS) -> None:
+    """Replace historical RAG chunks with the current local transcript source.
+
+    The RAG corpus is useful as a fallback for archived material, but a full
+    rebuild must never silently discard later transcript corrections merely
+    because the same video id already exists in that corpus.
+    """
+    for transcript_path in transcript_dir.glob("*_transcript.json"):
+        video_id = transcript_path.name.removesuffix("_transcript.json")
+        transcript_chunks = json.loads(transcript_path.read_text(encoding="utf-8"))
+        if transcript_chunks:
+            by_video[video_id] = transcript_chunks
+
+
 def build() -> tuple[int, int]:
     chunks = json.loads(RAG_INDEX.read_text(encoding="utf-8"))
     by_video: dict[str, list[dict]] = defaultdict(list)
@@ -108,17 +122,10 @@ def build() -> tuple[int, int]:
         video_id = str(chunk.get("video_id", ""))
         if video_id:
             by_video[video_id].append(chunk)
-    # A scheduled update can have already written a transcript while the large
-    # historical RAG corpus is intentionally left untouched.  Include those
-    # incremental transcripts so a newly deployed search hit never lacks its
-    # paragraph context.
-    for transcript_path in TRANSCRIPTS.glob("*_transcript.json"):
-        video_id = transcript_path.name.removesuffix("_transcript.json")
-        if video_id in by_video:
-            continue
-        transcript_chunks = json.loads(transcript_path.read_text(encoding="utf-8"))
-        if transcript_chunks:
-            by_video[video_id].extend(transcript_chunks)
+    # Local transcripts are the current source of truth.  This replacement
+    # preserves post-RAG corrections during a full rebuild; the historical
+    # RAG corpus remains only as a fallback when a local transcript is absent.
+    prefer_current_transcripts(by_video)
 
     approved = load_approved_summaries()
     shards: dict[int, dict[str, list[dict]]] = defaultdict(dict)

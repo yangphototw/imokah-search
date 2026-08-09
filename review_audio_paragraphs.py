@@ -9,6 +9,7 @@ import gzip
 import json
 import os
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -32,6 +33,19 @@ def audio_path(video_id: str) -> Path | None:
     if candidate.exists():
         return candidate
     return next(iter((ROOT / "data" / "audio_cache").glob(f"{video_id}.*")), None)
+
+
+def atomic_write_reviews(reviews: dict, path: Path = REVIEWS) -> None:
+    """Prevent quality reports from reading a half-written review ledger."""
+    descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.stem}.", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+            json.dump(reviews, handle, ensure_ascii=False, indent=2)
+            handle.write("\n")
+        Path(temporary_name).replace(path)
+    except Exception:
+        Path(temporary_name).unlink(missing_ok=True)
+        raise
 
 
 def load_audit() -> list[dict]:
@@ -59,7 +73,10 @@ def main() -> None:
     requested_ids = {value.strip() for value in (args.ids or "").split(",") if value.strip()}
     def needs_requested_models(paragraph: dict) -> bool:
         prior = existing.get(paragraph["id"], {})
-        if prior.get("audio_status") == "unavailable":
+        # Audio files can arrive after an earlier review run.  Re-check the
+        # source instead of permanently excluding a paragraph based on stale
+        # "unavailable" metadata.
+        if prior.get("audio_status") == "unavailable" and not audio_path(paragraph["video_id"]):
             return False
         prior_asr = prior.get("asr", {})
         return any(name not in prior_asr for name in model_names)
@@ -89,7 +106,7 @@ def main() -> None:
             "asr": {},
         }
     if unavailable and not args.dry_run:
-        REVIEWS.write_text(json.dumps(existing, ensure_ascii=False, indent=2), encoding="utf-8")
+        atomic_write_reviews(existing)
     pending = [p for p in pending if p not in unavailable]
     print(f"Pending: {len(pending)}; audio missing: {len(missing)}")
     if args.dry_run:
@@ -138,10 +155,15 @@ def main() -> None:
             segments, _ = model.transcribe(
                 review["audio_path"], language="zh", vad_filter=True,
                 clip_timestamps=clip, beam_size=5,
+                # faster-whisper running under the local Python 3.14 stack
+                # can mis-handle its default None prompt after many clips.
+                # An explicit empty string takes the documented string path
+                # and keeps the transcription content unchanged.
+                initial_prompt="",
             )
             review["asr"][name] = "".join(segment.text.strip() for segment in segments)
             review["reviewed_at"] = datetime.now(timezone.utc).isoformat()
-            REVIEWS.write_text(json.dumps(existing, ensure_ascii=False, indent=2), encoding="utf-8")
+            atomic_write_reviews(existing)
             print(f"Reviewed {paragraph['id']} with {name}")
         del model
         gc.collect()

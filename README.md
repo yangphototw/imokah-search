@@ -56,6 +56,14 @@ python verify_search_relevance.py
 瀏覽器只會下載與查詢關鍵字相符的分片；Vercel 因此只需提供 CDN 靜態檔案，沒有
 Serverless 記憶體、冷啟動或函式逾時問題。
 
+### 全量逐字稿品質校對（本機 GPU）
+
+```bat
+run_full_transcript_review.bat
+```
+
+這會依序以 `small`、`medium`、`large-v3` 重聽標記段落；每段完成即安全寫入本機審核紀錄，重跑只會補缺少的模型結果。它不會直接改寫原始逐字稿：只有三模型支持或頻道身分校正支持的候選，才會進入待套用的校正帳本。可隨時執行 `python quality_baseline.py --write` 查看目前覆蓋率、音檔複核與摘要重寫進度。
+
 ### 增量更新與自動排程
 
 新影片的下載、Whisper 轉錄與索引更新都在本機執行；Vercel 只接收通過驗證的
