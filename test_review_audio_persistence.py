@@ -3,7 +3,13 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
 
-from review_audio_paragraphs import MAX_NEW_TOKENS, atomic_write_reviews, transcribe_clip
+from review_audio_paragraphs import (
+    MAX_NEW_TOKENS,
+    atomic_write_reviews,
+    disable_incompatible_console_progress,
+    transcribe_clip,
+)
+from tqdm import tqdm
 
 
 class ReviewAudioPersistenceTests(unittest.TestCase):
@@ -36,6 +42,12 @@ class ReviewAudioPersistenceTests(unittest.TestCase):
         self.assertFalse(model.options["condition_on_previous_text"])
         self.assertEqual(model.options["max_new_tokens"], MAX_NEW_TOKENS)
         self.assertIsInstance(model.options["max_new_tokens"], int)
+
+    def test_hidden_review_disables_incompatible_progress_monitor(self):
+        tqdm.monitor_interval = 10
+        disable_incompatible_console_progress()
+
+        self.assertEqual(tqdm.monitor_interval, 0)
 
 
 if __name__ == "__main__":

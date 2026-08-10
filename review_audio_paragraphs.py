@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import atexit
 from datetime import datetime, timezone
 import gc
 import gzip
@@ -25,6 +26,7 @@ os.environ["PATH"] = os.pathsep.join([
 ])
 
 from faster_whisper import WhisperModel
+from tqdm import tqdm
 
 AUDIT = ROOT / "data" / "transcript_paragraph_audit.json.gz"
 REVIEWS = ROOT / "data" / "transcript_audio_reviews.json"
@@ -34,6 +36,27 @@ AUDIO_ROOT = Path(r"F:\AI_Youtube\MP3\OK")
 # faster-whisper path that incorrectly adds an integer to None when the
 # library default for max_new_tokens is used.
 MAX_NEW_TOKENS = 400
+
+
+def disable_incompatible_console_progress() -> None:
+    """Avoid Python-3.14 failures from hidden tqdm/colorama progress output.
+
+    The review runs hidden and explicitly requests no progress output, so the
+    monitor thread and colorama atexit hook add no value.  Under Python 3.14
+    both can emit errors that make the batch file treat a completed review pass
+    as failed.
+    """
+    tqdm.monitor_interval = 0
+    try:
+        from colorama import deinit
+        from colorama.initialise import reset_all
+    except ImportError:
+        return
+    atexit.unregister(reset_all)
+    deinit()
+
+
+disable_incompatible_console_progress()
 
 
 def audio_path(video_id: str) -> Path | None:
