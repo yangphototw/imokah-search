@@ -346,6 +346,43 @@ document.addEventListener('DOMContentLoaded', () => {
         return '對話段落';
     }
 
+    function compareSearchResultTiers(a, b) {
+        return Number(b.isTitleMatch) - Number(a.isTitleMatch)
+            || (b.matched_count || 0) - (a.matched_count || 0)
+            || b.score - a.score;
+    }
+
+    function selectSearchResultsByTier(items, totalTerms) {
+        // Reserve space for every source and match-count tier.  Otherwise a
+        // broad partial title term (such as 「街拍」) can consume all 80 slots
+        // before the visitor ever sees a full transcript match.
+        const perTierLimit = Math.max(1, Math.floor(
+            MAX_SEARCH_RESULTS / Math.max(1, totalTerms * 2)
+        ));
+        const selected = [];
+        const selectedItems = new Set();
+        const add = item => {
+            if (!selectedItems.has(item) && selected.length < MAX_SEARCH_RESULTS) {
+                selectedItems.add(item);
+                selected.push(item);
+            }
+        };
+
+        [true, false].forEach(isTitleMatch => {
+            for (let matchedCount = totalTerms; matchedCount >= 1; matchedCount -= 1) {
+                items
+                    .filter(item => item.isTitleMatch === isTitleMatch && item.matched_count === matchedCount)
+                    .sort(compareSearchResultTiers)
+                    .slice(0, perTierLimit)
+                    .forEach(add);
+            }
+        });
+
+        // Use any spare capacity without changing the displayed hierarchy.
+        items.sort(compareSearchResultTiers).forEach(add);
+        return selected.sort(compareSearchResultTiers);
+    }
+
     async function staticSearch(query) {
         const queryParts = parseSearchQuery(query);
         if (queryParts.length === 0) return [];
@@ -378,6 +415,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     topic_tag: '📌 【標題專題討論】',
                     match_reason: `影片標題符合「${matchedTerms.join('、')}」`,
                     matched_terms: matchedTerms,
+                    matched_count: matchedIndexes.length,
+                    total_query_terms: totalTerms,
                     highlight_terms: literalMatchedTerms(video.title, termGroups, matchedIndexes),
                     match_is_complete: isCompleteMatch,
                     url: video.url,
@@ -428,19 +467,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        const candidates = [...scored.values()]
+        const scoredCandidates = [...scored.values()]
             .map(item => {
                 if (item.hitGroups) {
                     const allMatched = item.hitGroups.size === totalTerms;
                     if (allMatched) {
                         item.score += 1000000;
                     }
+                    item.matched_count = item.hitGroups.size;
+                    item.total_query_terms = totalTerms;
                     delete item.hitGroups;
                 }
                 return item;
             })
-            .sort((a, b) => b.score - a.score)
-            .slice(0, MAX_SEARCH_RESULTS);
+            .sort((a, b) => b.score - a.score);
+        const candidates = selectSearchResultsByTier(scoredCandidates, totalTerms);
         const results = await attachParagraphContexts(candidates);
         return results
             .map(item => {
@@ -450,13 +491,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (matchedIndexes.length === 0) return null;
                 const matchedTerms = labelsForIndexes(matchedIndexes, queryParts);
                 item.matched_terms = matchedTerms;
+                item.matched_count = matchedIndexes.length;
+                item.total_query_terms = totalTerms;
                 item.highlight_terms = literalMatchedTerms(item.transcript, termGroups, matchedIndexes);
                 item.match_is_complete = matchedIndexes.length === totalTerms;
-                item.match_reason = `逐字稿提到「${matchedTerms.join('、')}」`;
+                item.match_reason = `逐字稿命中 ${matchedIndexes.length}/${totalTerms} 個搜尋詞：「${matchedTerms.join('、')}」`;
                 return item;
             })
             .filter(Boolean)
-            .sort((a, b) => Number(b.match_is_complete) - Number(a.match_is_complete) || b.score - a.score)
+            // Keep the result hierarchy stable: every title tier first, from
+            // most to least query terms; then transcript evidence in the same
+            // order.  Partial matches remain useful without masquerading as a
+            // complete multi-term result.
+            .sort(compareSearchResultTiers)
             .slice(0, MAX_SEARCH_RESULTS);
     }
 
@@ -755,6 +802,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         is_member_only: checkIsMember(r),
                         titleMatch: false,
                         titleMatchedTerms: [],
+                        titleMatchedCount: 0,
+                        totalQueryTerms: 0,
                         titleMatchIsComplete: false,
                         clips: []
                     });
@@ -763,6 +812,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const group = groupedMap.get(key);
                     group.titleMatch = true;
                     group.titleMatchedTerms = r.matched_terms || [];
+                    group.titleMatchedCount = r.matched_count || group.titleMatchedTerms.length;
+                    group.totalQueryTerms = r.total_query_terms || group.titleMatchedCount;
                     group.titleMatchIsComplete = Boolean(r.match_is_complete);
                     return;
                 }
@@ -779,15 +830,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // A partial title hit is a useful ranking signal only when the same
-        // video also has a timestamped transcript hit.  Showing it by itself
-        // produces a card that cannot answer the visitor's question (for
-        // example, a title containing 「街拍」 for a multi-term query).  Keep
-        // complete title matches as a last-resort discovery path, but never
-        // present a partial title-only match as if it were a useful clip.
-        const groupedVideos = Array.from(groupedMap.values()).filter(item => (
-            item.clips.length > 0 || item.titleMatchIsComplete
-        ));
+        // Keep every title tier.  The source result order is already:
+        // title all terms -> title partial tiers -> transcript all terms ->
+        // transcript partial tiers.  Grouping only merges evidence belonging
+        // to the same video; it must not discard a useful partial title match.
+        const groupedVideos = Array.from(groupedMap.values());
 
         const catNames = {
             'all': '全頻道專題',
@@ -835,16 +882,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const titleMatchedTerms = item.titleMatchedTerms.length
                 ? item.titleMatchedTerms.join('、')
                 : lastSearchQuery;
+            const titleMatchDescription = `標題命中 ${item.titleMatchedCount}/${item.totalQueryTerms} 個搜尋詞：「${titleMatchedTerms}」`;
             let clipsHtml = '<div class="clips-wrapper">';
-            // If the title and transcript both match, the timestamped clips
-            // below are the useful evidence; do not waste space repeating a
-            // generic title-match disclaimer.  A complete title-only match is
-            // retained, but labelled honestly as having no timestamp yet.
-            if (item.titleMatch && item.clips.length === 0) {
+            // Title and transcript are distinct evidence sources.  Keep the
+            // title tier visible even when the video also has transcript hits.
+            if (item.titleMatch) {
                 clipsHtml += `
                     <div class="clip-node title-match-node">
-                        <div class="match-reason-pill">影片標題符合「${escapeHtml(titleMatchedTerms)}」</div>
-                        <div class="quote-text">標題包含所有搜尋詞；目前尚未找到可定位的逐字稿時間點。</div>
+                        <div class="match-reason-pill">${escapeHtml(titleMatchDescription)}</div>
+                        ${item.clips.length === 0
+                            ? `<div class="quote-text">${item.titleMatchIsComplete ? '標題包含所有搜尋詞' : '標題只符合部分搜尋詞'}；目前尚未找到可定位的逐字稿時間點。</div>`
+                            : ''}
                     </div>
                 `;
             }

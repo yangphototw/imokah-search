@@ -132,7 +132,12 @@ def main() -> None:
         fail("search clips still present transcript fragments as summaries")
     if "isTitleMatch: true" not in app_source:
         fail("title matches are not explicitly separated from transcript clips")
-    if "attachParagraphContexts(results)" not in app_source or "完整逐字稿段落" not in app_source:
+    required_paragraph_context = (
+        "attachParagraphContexts(candidates)",
+        "item.transcript = normalizePublicTranscript(paragraph.transcript)",
+        "paragraphAt(await loadParagraphsForVideo(item.video_id), item.start)",
+    )
+    if any(fragment not in app_source for fragment in required_paragraph_context):
         fail("search UI does not resolve hits to complete paragraph transcripts")
     if "matchingTermGroupIndexes(title, termGroups)" not in app_source:
         fail("title cards do not retain the exact matched query terms")
