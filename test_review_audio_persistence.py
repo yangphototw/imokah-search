@@ -5,10 +5,12 @@ import unittest
 
 from review_audio_paragraphs import (
     MAX_NEW_TOKENS,
+    SilentProgress,
     atomic_write_reviews,
     disable_incompatible_console_progress,
     transcribe_clip,
 )
+import faster_whisper.transcribe as faster_whisper_transcribe
 from tqdm import tqdm
 
 
@@ -40,6 +42,7 @@ class ReviewAudioPersistenceTests(unittest.TestCase):
         self.assertEqual(model.audio, "audio.webm")
         self.assertEqual(model.options["initial_prompt"], "")
         self.assertFalse(model.options["condition_on_previous_text"])
+        self.assertFalse(model.options["log_progress"])
         self.assertEqual(model.options["max_new_tokens"], MAX_NEW_TOKENS)
         self.assertIsInstance(model.options["max_new_tokens"], int)
 
@@ -48,6 +51,7 @@ class ReviewAudioPersistenceTests(unittest.TestCase):
         disable_incompatible_console_progress()
 
         self.assertEqual(tqdm.monitor_interval, 0)
+        self.assertIs(faster_whisper_transcribe.tqdm, SilentProgress)
 
 
 if __name__ == "__main__":

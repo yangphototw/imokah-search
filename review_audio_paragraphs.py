@@ -26,6 +26,7 @@ os.environ["PATH"] = os.pathsep.join([
 ])
 
 from faster_whisper import WhisperModel
+import faster_whisper.transcribe as faster_whisper_transcribe
 from tqdm import tqdm
 
 AUDIT = ROOT / "data" / "transcript_paragraph_audit.json.gz"
@@ -38,6 +39,26 @@ AUDIO_ROOT = Path(r"F:\AI_Youtube\MP3\OK")
 MAX_NEW_TOKENS = 400
 
 
+class SilentProgress:
+    """No-op replacement for faster-whisper's hidden progress bar.
+
+    tqdm creates its monitor thread in ``__new__`` before its ``disable`` flag
+    is processed.  Python 3.14 cannot run that monitor reliably in this local
+    dependency stack, so merely passing ``log_progress=False`` is insufficient.
+    The review never exposes progress output; faster-whisper only calls update
+    and close on this object.
+    """
+
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
+    def update(self, *args, **kwargs) -> None:
+        pass
+
+    def close(self) -> None:
+        pass
+
+
 def disable_incompatible_console_progress() -> None:
     """Avoid Python-3.14 failures from hidden tqdm/colorama progress output.
 
@@ -47,6 +68,7 @@ def disable_incompatible_console_progress() -> None:
     as failed.
     """
     tqdm.monitor_interval = 0
+    faster_whisper_transcribe.tqdm = SilentProgress
     try:
         from colorama import deinit
         from colorama.initialise import reset_all
@@ -92,6 +114,7 @@ def transcribe_clip(model: WhisperModel, audio: str, clip: str):
         vad_filter=True,
         clip_timestamps=clip,
         beam_size=5,
+        log_progress=False,
         # A review clip is evidence for one paragraph.  Decoding VAD
         # subsegments independently prevents prior token accumulation from
         # overflowing Whisper's fixed 448-token context window under the
