@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人工校閱摘要｜我都OK啊</title>
+    <meta name="description" content="《我都OK啊》影片摘要：逐字稿證據校對與頻道方人工核可內容均標示來源。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container review-page">
+        <header class="top-header">
+            <a class="back-link" href="index.html">← 回到影片搜尋</a>
+            <div class="header-right">
+                <button id="themeToggleBtn" class="theme-toggle-btn" title="切換亮色/暗色主題">
+                    <span class="theme-icon" aria-hidden="true">☀</span>
+                    <span class="theme-text">亮色模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="review-hero">
+                <p class="review-eyebrow">人工校閱 · 來源透明</p>
+                <h1 class="type-lvl-1">已完成摘要的影片</h1>
+                <p class="type-lvl-4-sub">逐字稿校對摘要可直接查看核對時間點；頻道方人工核可摘要會明確標示，不會假裝附有逐字稿證據。</p>
+            </section>
+
+            <section class="review-toolbar" aria-label="審查影片篩選">
+                <label class="review-filter-label" for="reviewFilter">篩選已校閱影片</label>
+                <input id="reviewFilter" class="review-filter" type="search" placeholder="搜尋標題或摘要" autocomplete="off">
+                <p id="reviewCount" class="type-lvl-5-count" aria-live="polite">載入資料中…</p>
+            </section>
+
+            <section id="reviewGrid" class="review-grid" aria-live="polite"></section>
+
+            <section class="review-hero" aria-labelledby="exceptionHeading">
+                <p class="review-eyebrow">誠實例外</p>
+                <h2 id="exceptionHeading" class="type-lvl-2">待逐字稿修復的影片</h2>
+                <p class="type-lvl-4-sub">這些影片目前尚無可公開的摘要；不會以標題或推測代替內容。</p>
+                <p id="exceptionCount" class="type-lvl-5-count" aria-live="polite">載入例外資料中…</p>
+                <div id="exceptionGrid" class="review-grid" aria-live="polite"></div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>逐字稿證據與頻道方人工核可摘要皆會標示來源；未核可內容不以自動生成文字冒充。</p>
+        </footer>
+    </div>
+    <script src="approved-video-summaries.js?v=3"></script>
+    <script src="review.js?v=3"></script>
+</body>
+</html>

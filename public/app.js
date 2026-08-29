@@ -207,19 +207,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Search shards intentionally contain only the original transcript.  A
     // pre-written summary for all 1.27M cuts would make the free static site
     // much larger, so make a conservative listening guide only for cuts the
-    // visitor actually opens.  It never adds claims beyond the transcript.
+    // visitor actually opens.  It is an extractive preview, never a claim
+    // beyond the timestamped transcript.
     function createClipListeningGuide(text, query) {
         const cleanText = String(text || '')
             .replace(/\s+/g, ' ')
             .replace(/^(?:嗯+|呃+|啊+|那個|就是|然後|其實|對|好)[，,、\s]*/u, '')
             .trim();
-        if (!cleanText) return '這段沒有可用的逐字稿內容。';
+        if (!cleanText) return '沒有可用的逐字稿內容。';
 
         const queryTerms = String(query || '').toLowerCase().match(/[a-z0-9]+|[\u4e00-\u9fff]{1,4}/gi) || [];
         const phrases = cleanText.split(/[。！？!?；;]+/).map(part => part.trim()).filter(Boolean);
         const relevant = phrases.find(phrase => queryTerms.some(term => phrase.toLowerCase().includes(term))) || phrases[0] || cleanText;
         const preview = relevant.length > 54 ? `${relevant.slice(0, 54).replace(/[，,、\s]+$/u, '')}…` : relevant;
-        return `這段會聽到：${preview}`;
+        return preview;
     }
 
     // This must match build_static_search_index.py.  FNV-1a gives a stable,
@@ -310,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.timestamp = formatTimestamp(paragraph.start);
                 item.url = `https://www.youtube.com/watch?v=${item.video_id}&t=${Math.floor(paragraph.start)}s`;
                 item.transcript = normalizePublicTranscript(paragraph.transcript);
-                item.summary = paragraph.summary || '';
+                item.listening_guide = paragraph.summary || createClipListeningGuide(item.transcript, lastSearchQuery);
                 item.topic_tag = topicTag(item.transcript);
             } catch (error) {
                 // A failed optional context request must not hide a search hit.
@@ -411,7 +412,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     video_title: video.title,
                     timestamp: '00:00',
                     text: video.title,
-                    summary: '',
                     topic_tag: '📌 【標題專題討論】',
                     match_reason: `影片標題符合「${matchedTerms.join('、')}」`,
                     matched_terms: matchedTerms,
@@ -447,7 +447,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             timestamp,
                             start: Number(start) || 0,
                             locating_excerpt: displayText,
-                            summary: '',
                             topic_tag: topicTag(displayText),
                             match_reason: '',
                             url: `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(Number(start) || 0)}s`,
@@ -665,18 +664,6 @@ document.addEventListener('DOMContentLoaded', () => {
         card.className = 'video-card';
         
         const thumbUrl = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
-        const firstQuote = (v.sample_quotes && v.sample_quotes.length > 0) ? v.sample_quotes[0] : null;
-        
-        const excerpt = normalizePublicTranscript(firstQuote?.text || '')
-            .replace(/\s+/g, ' ').trim();
-        const titleText = normalizePublicTranscript(v.title || '').replace(/\s+/g, ' ').trim();
-        const hasTranscriptExcerpt = Boolean(excerpt && excerpt !== titleText);
-        const tsText = hasTranscriptExcerpt ? firstQuote.timestamp : '00:00';
-        const summaryText = hasTranscriptExcerpt
-            ? `逐字稿摘錄：${excerpt.slice(0, 100)}${excerpt.length > 100 ? '…' : ''}`
-            : `影片主題：${v.title}`;
-
-        const targetUrl = hasTranscriptExcerpt ? firstQuote.url : v.url;
 
         const isMember = checkIsMember(v);
         const badgeHtml = isMember 
@@ -689,19 +676,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="thumb-container">
                 <img class="card-thumb" src="${thumbUrl}" alt="${escapeHtml(v.title)}" loading="lazy">
                 ${badgeHtml}
-                <span class="ts-badge">${hasTranscriptExcerpt ? `從 ${tsText}` : '影片開頭'}</span>
             </div>
             <div class="card-content">
                 ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
                 <h3 class="type-lvl-3-title" title="${escapeHtml(v.title)}">${escapeHtml(v.title)}</h3>
-                <div class="summary-block">
-                    <div class="summary-text">${escapeHtml(summaryText)}</div>
-                </div>
             </div>
         `;
 
         card.addEventListener('click', () => {
-            window.open(targetUrl, '_blank');
+            window.open(v.url, '_blank');
         });
         
         return card;
@@ -821,7 +804,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     timestamp: r.timestamp,
                     transcript: r.transcript || '',
                     locating_excerpt: r.locating_excerpt || '',
-                    summary: r.summary || '',
+                    listening_guide: r.listening_guide || '',
                     topic_tag: r.topic_tag || '段落上下文',
                     match_reason: r.match_reason || `含關鍵字: ${lastSearchQuery}`,
                     highlight_terms: r.highlight_terms || [],
@@ -905,7 +888,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="ts-link">${clip.timestamp}</span>
                         </div>
                         <div class="match-reason-pill">${escapeHtml(clip.match_reason)}</div>
-                        ${clip.summary ? `<div class="match-reason-pill clip-summary">摘要：${escapeHtml(clip.summary)}</div>` : ''}
+                        ${clip.listening_guide ? `<div class="match-reason-pill clip-summary">這段會聽到：${escapeHtml(clip.listening_guide)}</div>` : ''}
                         <div class="quote-text">${clip.transcript ? `逐字稿：${highlightSearchTerms(clip.transcript, clip.highlight_terms)}` : `命中片段（完整段落載入失敗）：${escapeHtml(clip.locating_excerpt)}`}</div>
                     </div>
                 `;
@@ -921,7 +904,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="ts-link">${clip.timestamp}</span>
                             </div>
                             <div class="match-reason-pill">${escapeHtml(clip.match_reason)}</div>
-                            ${clip.summary ? `<div class="match-reason-pill clip-summary">摘要：${escapeHtml(clip.summary)}</div>` : ''}
+                            ${clip.listening_guide ? `<div class="match-reason-pill clip-summary">這段會聽到：${escapeHtml(clip.listening_guide)}</div>` : ''}
                             <div class="quote-text">${clip.transcript ? `逐字稿：${highlightSearchTerms(clip.transcript, clip.highlight_terms)}` : `命中片段（完整段落載入失敗）：${escapeHtml(clip.locating_excerpt)}`}</div>
                         </div>
                     `;
