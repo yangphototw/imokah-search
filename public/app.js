@@ -204,23 +204,51 @@ document.addEventListener('DOMContentLoaded', () => {
         return text;
     }
 
-    // Search shards intentionally contain only the original transcript.  A
-    // pre-written summary for all 1.27M cuts would make the free static site
-    // much larger, so make a conservative listening guide only for cuts the
-    // visitor actually opens.  It is an extractive preview, never a claim
-    // beyond the timestamped transcript.
-    function createClipListeningGuide(text, query) {
-        const cleanText = String(text || '')
-            .replace(/\s+/g, ' ')
-            .replace(/^(?:嗯+|呃+|啊+|那個|就是|然後|其實|對|好)[，,、\s]*/u, '')
-            .trim();
-        if (!cleanText) return '沒有可用的逐字稿內容。';
+    // Keep a search card easy to scan.  The full paragraph remains the source
+    // for matching and its timestamp remains clickable; this only chooses a
+    // short, read-only display excerpt around the literal matched terms.
+    function createSearchExcerpt(text, matchedTerms) {
+        const source = String(text || '').replace(/\s+/g, ' ').trim();
+        if (!source) return '';
 
-        const queryTerms = String(query || '').toLowerCase().match(/[a-z0-9]+|[\u4e00-\u9fff]{1,4}/gi) || [];
-        const phrases = cleanText.split(/[。！？!?；;]+/).map(part => part.trim()).filter(Boolean);
-        const relevant = phrases.find(phrase => queryTerms.some(term => phrase.toLowerCase().includes(term))) || phrases[0] || cleanText;
-        const preview = relevant.length > 54 ? `${relevant.slice(0, 54).replace(/[，,、\s]+$/u, '')}…` : relevant;
-        return preview;
+        const terms = [...new Set((matchedTerms || [])
+            .map(term => String(term || '').trim())
+            .filter(Boolean))];
+        const lowerSource = source.toLowerCase();
+        const positions = terms
+            .map(term => lowerSource.indexOf(term.toLowerCase()))
+            .filter(position => position >= 0);
+        const anchor = positions.length ? Math.min(...positions) : 0;
+        const sentences = source.match(/[^。！？!?]+[。！？!?]?/gu) || [source];
+
+        let cursor = 0;
+        const candidate = sentences
+            .map(sentence => {
+                const value = sentence.trim();
+                const start = source.indexOf(sentence, cursor);
+                cursor = Math.max(cursor, start + sentence.length);
+                const matchedCount = terms.filter(term => value.toLowerCase().includes(term.toLowerCase())).length;
+                const distance = start >= 0 ? Math.abs(start - anchor) : Number.MAX_SAFE_INTEGER;
+                return { value, matchedCount, distance };
+            })
+            .filter(item => item.value)
+            .sort((a, b) => b.matchedCount - a.matchedCount || a.distance - b.distance)[0];
+
+        const sentence = candidate?.value || source;
+        // A normal sentence is the best outcome: complete, readable, and
+        // directly tied to the match.  Keep a little room for spoken Chinese.
+        if (sentence.length <= 52) return sentence;
+
+        // Some ASR paragraphs lack sentence punctuation.  Do not fabricate a
+        // sentence boundary: show a compact window around the match instead.
+        const sentencePositions = terms
+            .map(term => sentence.toLowerCase().indexOf(term.toLowerCase()))
+            .filter(position => position >= 0);
+        const sentenceAnchor = sentencePositions.length ? Math.min(...sentencePositions) : 0;
+        const start = Math.max(0, sentenceAnchor - 12);
+        const end = Math.min(sentence.length, sentenceAnchor + 32);
+        const excerpt = sentence.slice(start, end).replace(/^[，、；;\s]+|[，、；;\s]+$/gu, '');
+        return `${start > 0 ? '…' : ''}${excerpt}${end < sentence.length ? '…' : ''}`;
     }
 
     // This must match build_static_search_index.py.  FNV-1a gives a stable,
@@ -311,7 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.timestamp = formatTimestamp(paragraph.start);
                 item.url = `https://www.youtube.com/watch?v=${item.video_id}&t=${Math.floor(paragraph.start)}s`;
                 item.transcript = normalizePublicTranscript(paragraph.transcript);
-                item.listening_guide = paragraph.summary || createClipListeningGuide(item.transcript, lastSearchQuery);
                 item.topic_tag = topicTag(item.transcript);
             } catch (error) {
                 // A failed optional context request must not hide a search hit.
@@ -424,7 +451,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     isTitleMatch: true,
                     category: video.category,
                     publish_date: video.publish_date,
-                    is_member_only: video.is_member_only
+                    is_member_only: video.is_member_only,
+                    summary: video.ai_summary || ''
                 });
             }
         });
@@ -454,7 +482,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             isTitleMatch: false,
                             category: video.category,
                             publish_date: video.publish_date,
-                            is_member_only: video.is_member_only
+                            is_member_only: video.is_member_only,
+                            summary: video.ai_summary || ''
                         };
                         scored.set(key, item);
                     }
@@ -495,6 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.highlight_terms = literalMatchedTerms(item.transcript, termGroups, matchedIndexes);
                 item.match_is_complete = matchedIndexes.length === totalTerms;
                 item.match_reason = `逐字稿命中 ${matchedIndexes.length}/${totalTerms} 個搜尋詞：「${matchedTerms.join('、')}」`;
+                item.transcript_excerpt = createSearchExcerpt(item.transcript, item.highlight_terms);
                 return item;
             })
             .filter(Boolean)
@@ -788,11 +818,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         titleMatchedCount: 0,
                         totalQueryTerms: 0,
                         titleMatchIsComplete: false,
+                        summary: r.summary || '',
                         clips: []
                     });
                 }
+                const group = groupedMap.get(key);
+                if (!group.summary && r.summary) group.summary = r.summary;
                 if (r.isTitleMatch) {
-                    const group = groupedMap.get(key);
                     group.titleMatch = true;
                     group.titleMatchedTerms = r.matched_terms || [];
                     group.titleMatchedCount = r.matched_count || group.titleMatchedTerms.length;
@@ -803,8 +835,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 groupedMap.get(key).clips.push({
                     timestamp: r.timestamp,
                     transcript: r.transcript || '',
+                    transcript_excerpt: r.transcript_excerpt || '',
                     locating_excerpt: r.locating_excerpt || '',
-                    listening_guide: r.listening_guide || '',
                     topic_tag: r.topic_tag || '段落上下文',
                     match_reason: r.match_reason || `含關鍵字: ${lastSearchQuery}`,
                     highlight_terms: r.highlight_terms || [],
@@ -866,6 +898,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? item.titleMatchedTerms.join('、')
                 : lastSearchQuery;
             const titleMatchDescription = `標題命中 ${item.titleMatchedCount}/${item.totalQueryTerms} 個搜尋詞：「${titleMatchedTerms}」`;
+            const summaryHtml = item.summary
+                ? `<div class="summary-block"><div class="summary-label">影片摘要</div><div class="summary-text">${escapeHtml(item.summary)}</div></div>`
+                : '';
             let clipsHtml = '<div class="clips-wrapper">';
             // Title and transcript are distinct evidence sources.  Keep the
             // title tier visible even when the video also has transcript hits.
@@ -888,8 +923,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="ts-link">${clip.timestamp}</span>
                         </div>
                         <div class="match-reason-pill">${escapeHtml(clip.match_reason)}</div>
-                        ${clip.listening_guide ? `<div class="match-reason-pill clip-summary">這段會聽到：${escapeHtml(clip.listening_guide)}</div>` : ''}
-                        <div class="quote-text">${clip.transcript ? `逐字稿：${highlightSearchTerms(clip.transcript, clip.highlight_terms)}` : `命中片段（完整段落載入失敗）：${escapeHtml(clip.locating_excerpt)}`}</div>
+                        <div class="quote-text">${clip.transcript ? `逐字稿：${highlightSearchTerms(clip.transcript_excerpt || clip.transcript, clip.highlight_terms)}` : `命中片段（完整段落載入失敗）：${escapeHtml(createSearchExcerpt(clip.locating_excerpt, clip.highlight_terms))}`}</div>
                     </div>
                 `;
             });
@@ -904,8 +938,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="ts-link">${clip.timestamp}</span>
                             </div>
                             <div class="match-reason-pill">${escapeHtml(clip.match_reason)}</div>
-                            ${clip.listening_guide ? `<div class="match-reason-pill clip-summary">這段會聽到：${escapeHtml(clip.listening_guide)}</div>` : ''}
-                            <div class="quote-text">${clip.transcript ? `逐字稿：${highlightSearchTerms(clip.transcript, clip.highlight_terms)}` : `命中片段（完整段落載入失敗）：${escapeHtml(clip.locating_excerpt)}`}</div>
+                            <div class="quote-text">${clip.transcript ? `逐字稿：${highlightSearchTerms(clip.transcript_excerpt || clip.transcript, clip.highlight_terms)}` : `命中片段（完整段落載入失敗）：${escapeHtml(createSearchExcerpt(clip.locating_excerpt, clip.highlight_terms))}`}</div>
                         </div>
                     `;
                 });
@@ -929,6 +962,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${dateHtml ? `<div style="margin-bottom: 6px;">${dateHtml}</div>` : ''}
                     ${featureBadgeHtml}
                     <h3 class="type-lvl-3-title">${escapeHtml(item.video_title)}</h3>
+                    ${summaryHtml}
                     ${clipsHtml}
                 </div>
             `;

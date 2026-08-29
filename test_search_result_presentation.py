@@ -43,6 +43,24 @@ class SearchResultPresentationTests(unittest.TestCase):
     def test_transcript_match_copy_promises_a_real_mention(self):
         self.assertIn("逐字稿命中 ${matchedIndexes.length}/${totalTerms} 個搜尋詞", self.source)
 
+    def test_search_results_show_the_curated_video_summary_once_per_video(self):
+        self.assertIn("summary: video.ai_summary || ''", self.source)
+        self.assertIn('summary-label">影片摘要</div>', self.source)
+        self.assertIn("${summaryHtml}", self.source)
+
+    def test_transcript_matches_use_a_compact_keyword_centered_excerpt(self):
+        self.assertIn("function createSearchExcerpt(text, matchedTerms)", self.source)
+        self.assertIn("item.transcript_excerpt = createSearchExcerpt", self.source)
+        self.assertIn("clip.transcript_excerpt || clip.transcript", self.source)
+        self.assertNotIn("這段會聽到：", self.source)
+
+    def test_browse_cards_do_not_show_unprovenanced_excerpt_as_a_summary(self):
+        # Browse cards remain deliberately compact.  Search cards resolve to
+        # the timestamped paragraph index, so a legacy catalog quote cannot be
+        # mistaken for either a transcript or a curated listening guide.
+        self.assertNotIn("const firstQuote =", self.source)
+        self.assertNotIn("逐字稿摘錄：${excerpt", self.source)
+
 
 if __name__ == "__main__":
     unittest.main()

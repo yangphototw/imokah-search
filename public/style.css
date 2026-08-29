@@ -582,8 +582,16 @@ input:focus-visible {
     background: var(--panel-soft);
     border-left: 2px solid var(--border-strong);
     color: var(--text-secondary);
-    margin-top: auto;
+    margin: 0 0 0.85rem;
     padding: 0.72rem 0.82rem;
+}
+
+.summary-label {
+    color: var(--text-muted);
+    font-size: var(--type-lvl5);
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.28rem;
 }
 
 .summary-text {
@@ -655,12 +663,6 @@ input:focus-visible {
     font-weight: 650;
     line-height: 1.55;
     margin-bottom: 0.5rem;
-}
-
-.clip-summary {
-    border-left: 2px solid var(--accent-primary);
-    color: var(--text-primary);
-    padding-left: 0.5rem;
 }
 
 .quote-text {
