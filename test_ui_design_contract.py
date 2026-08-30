@@ -32,6 +32,11 @@ class VisualSystemTests(unittest.TestCase):
     def test_all_category_deduplicates_before_rendering(self):
         self.assertIn("videos = Array.from(uniqueMap.values())", APP)
 
+    def test_browse_lists_are_sorted_by_newest_publish_date(self):
+        self.assertIn("function compareVideosByPublishDate(a, b)", APP)
+        self.assertIn("videos.sort(compareVideosByPublishDate);", APP)
+        self.assertIn("dateB.localeCompare(dateA)", APP)
+
     def test_site_identity_has_a_named_tab_and_custom_icon(self):
         self.assertIn("<title>複習都OK | 我都OK啊頻道資料庫</title>", HTML)
         self.assertIn('href="favicon.svg?v=20260830"', HTML)

@@ -658,6 +658,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return kw.some(k => t.includes(k));
     }
 
+    function compareVideosByPublishDate(a, b) {
+        const dateA = String(a?.publish_date || '');
+        const dateB = String(b?.publish_date || '');
+        // ISO dates sort lexicographically. Blank dates deliberately come
+        // last, so unrecorded metadata never jumps ahead of new uploads.
+        if (dateA !== dateB) return dateB.localeCompare(dateA);
+        return String(a?.title || '').localeCompare(String(b?.title || ''));
+    }
+
     function renderCategory(catId) {
         if (!encyclopediaData) return;
         currentCategory = catId;
@@ -684,6 +693,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 videos = catObj.videos;
             }
         }
+
+        videos.sort(compareVideosByPublishDate);
 
         resultCount.textContent = `共 ${videos.length} 部影片`;
         renderVideoCards(videos);
