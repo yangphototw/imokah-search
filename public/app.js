@@ -634,7 +634,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!res.ok) throw new Error('API request failed');
             encyclopediaData = await res.json();
             videosById = null;
-            const statusText = document.querySelector('.status-pill span:last-child');
+            const statusText = document.querySelector('[data-video-count]');
             const totalVideos = encyclopediaData?.channel_info?.total_videos;
             if (statusText && Number.isInteger(totalVideos)) {
                 statusText.textContent = `${totalVideos.toLocaleString('zh-TW')} 部影片資料庫在線`;

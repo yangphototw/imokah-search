@@ -187,6 +187,20 @@ input:focus-visible {
     padding: 0.42rem 0.75rem;
 }
 
+.status-count {
+    white-space: nowrap;
+}
+
+.status-updated {
+    border-left: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 650;
+    line-height: 1;
+    padding-left: 0.5rem;
+    white-space: nowrap;
+}
+
 .live-dot {
     background: var(--accent-primary);
     border-radius: 50%;
@@ -273,16 +287,32 @@ input:focus-visible {
 
 .random-hero-btn,
 .random-btn {
+    align-items: center;
     background: transparent;
     border: 1px solid var(--border-strong);
     border-radius: 999px;
     color: var(--text-secondary);
     cursor: pointer;
+    display: inline-flex;
+    gap: 0.55rem;
     font-size: var(--type-lvl5);
     font-weight: 650;
     letter-spacing: 0.04em;
-    padding: 0.55rem 0.9rem;
+    padding: 0.5rem 0.85rem;
     transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.random-dice {
+    fill: currentColor;
+    flex: 0 0 auto;
+    height: 1.3rem;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    width: 1.3rem;
+}
+
+.random-dice rect {
+    fill: var(--accent-subtle);
 }
 
 .random-hero-btn:hover,
@@ -945,6 +975,10 @@ input:focus-visible {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+
+    .status-updated {
+        display: none;
     }
 
     .tags-row {

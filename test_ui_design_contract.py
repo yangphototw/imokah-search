@@ -32,6 +32,22 @@ class VisualSystemTests(unittest.TestCase):
     def test_all_category_deduplicates_before_rendering(self):
         self.assertIn("videos = Array.from(uniqueMap.values())", APP)
 
+    def test_site_identity_has_a_named_tab_and_custom_icon(self):
+        self.assertIn("<title>複習都OK | 我都OK啊頻道資料庫</title>", HTML)
+        self.assertIn('href="favicon.svg?v=20260830"', HTML)
+        self.assertTrue((ROOT / "public" / "favicon.svg").is_file())
+
+    def test_hero_and_online_status_use_the_review_identity(self):
+        self.assertIn("<h1 class=\"type-lvl-1\">複習都OK</h1>", HTML)
+        self.assertIn('data-video-count', HTML)
+        self.assertIn("更新至 2026/08/30", HTML)
+        self.assertIn("querySelector('[data-video-count]')", APP)
+
+    def test_random_video_control_has_dice_on_both_sides(self):
+        self.assertIn("隨機影片", HTML)
+        self.assertEqual(HTML.count('class="random-dice"'), 2)
+        self.assertIn("height: 1.3rem", CSS)
+
 
 if __name__ == "__main__":
     unittest.main()

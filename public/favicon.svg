@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>複習都OK</title>
+  <defs>
+    <linearGradient id="ground" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#30302c"/>
+      <stop offset="1" stop-color="#171715"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#ground)"/>
+  <path d="M17 18.5c5.1-2.5 10.4-1.6 15 2.1v25.3c-4.6-3.7-9.9-4.6-15-2.1V18.5Z" fill="#fffaf0"/>
+  <path d="M47 18.5c-5.1-2.5-10.4-1.6-15 2.1v25.3c4.6-3.7 9.9-4.6 15-2.1V18.5Z" fill="#e9c583"/>
+  <path d="m23.2 31.9 4.2 4.2 10.4-11" fill="none" stroke="#925814" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="45.5" cy="42.5" r="8.5" fill="#925814" stroke="#fffaf0" stroke-width="2.5"/>
+  <path d="m41.7 42.5 2.5 2.5 5.2-5.5" fill="none" stroke="#fffaf0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+</svg>

@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我都OK啊｜道慈老師影片搜尋</title>
+    <title>複習都OK | 我都OK啊頻道資料庫</title>
     <meta name="description" content="《我都OK啊》頻道影片搜尋，支援攝影主題關鍵字搜尋與 YouTube 時間跳轉。">
+    <meta name="theme-color" content="#1c1c1a">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260830">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +29,8 @@
             <div class="header-left">
                 <div class="status-pill">
                     <span class="live-dot"></span>
-                    <span>正在載入影片資料庫...</span>
+                    <span class="status-count" data-video-count>正在載入影片資料庫...</span>
+                    <span class="status-updated">更新至 2026/08/30</span>
                 </div>
             </div>
             <div class="header-right">
@@ -41,11 +44,24 @@
 
         <!-- 主標題區段 (Strict Typography Hierarchy) -->
         <section class="hero-section">
-            <h1 class="type-lvl-1">我都OK啊 ‧ 攝影知識庫</h1>
+            <h1 class="type-lvl-1">複習都OK</h1>
             <p class="type-lvl-4-sub">輸入器材、參數或攝影主題，搜尋全頻道影片與可回查的逐字稿段落</p>
             <div class="random-action-row">
                 <button id="randomBtn" class="random-hero-btn" title="隨機抽取一部道慈老師影片">
-                    隨機選片
+                    <svg class="random-dice" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                        <rect x="3.5" y="3.5" width="17" height="17" rx="4.2"></rect>
+                        <circle cx="8.2" cy="8.2" r="1.25"></circle>
+                        <circle cx="15.8" cy="15.8" r="1.25"></circle>
+                    </svg>
+                    <span>隨機影片</span>
+                    <svg class="random-dice" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                        <rect x="3.5" y="3.5" width="17" height="17" rx="4.2"></rect>
+                        <circle cx="8.1" cy="8.1" r="1.15"></circle>
+                        <circle cx="15.9" cy="8.1" r="1.15"></circle>
+                        <circle cx="12" cy="12" r="1.15"></circle>
+                        <circle cx="8.1" cy="15.9" r="1.15"></circle>
+                        <circle cx="15.9" cy="15.9" r="1.15"></circle>
+                    </svg>
                 </button>
             </div>
         </section>
