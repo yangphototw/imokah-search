@@ -63,6 +63,7 @@ async function main() {
     let checkedPassages = 0;
     let reused = 0;
     let unchangedUnreviewed = 0;
+    const unchangedBacklog = [];
     const regainedUseful = [];
     const droppedUseful = [];
     const removedWeakTopThree = [];
@@ -120,6 +121,11 @@ async function main() {
                 // This was already outside the first review's coverage.  It
                 // has not changed, so charging for it again saves no tokens.
                 unchangedUnreviewed += 1;
+                unchangedBacklog.push({query: old.query, rank: item.rank, id: item.id,
+                    title: item.title, paragraph_ids: item.paragraph_ids.slice(0, 2),
+                    excerpt: item.first_excerpt, previous_verdict: verdict?.verdict || null,
+                    previous_reason: verdict?.reason || null,
+                    previous_read_paragraphs: verdict?.paragraph_ids || []});
             } else {
                 review.push({query: old.query, rank: item.rank, id: item.id,
                     title: item.title, paragraph_ids: item.paragraph_ids.slice(0, 2),
@@ -164,6 +170,7 @@ async function main() {
         search_shards_sha256: sha(JSON.stringify(searchFingerprints))}, null, 2));
     written('results.jsonl', results.map(row => JSON.stringify(row)).join('\n') + '\n');
     written('review-queue.json', JSON.stringify(review, null, 2));
+    written('unchanged-backlog.json', JSON.stringify(unchangedBacklog, null, 2));
     written('judged-changes.json', JSON.stringify({regainedUseful, droppedUseful, removedWeakTopThree}, null, 2));
     written('summary.json', JSON.stringify(aggregate, null, 2));
     console.log(JSON.stringify(aggregate, null, 2));

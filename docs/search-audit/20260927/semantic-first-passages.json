@@ -1,0 +1,398 @@
+[
+  {
+    "query": "中央重點測光",
+    "id": "PjxIqSyVUZ4",
+    "first_paragraph_id": "PjxIqSyVUZ4:11",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "PjxIqSyVUZ4:13",
+    "reason": "首段只列測光模式名稱，應跳到後段的適用情境。"
+  },
+  {
+    "query": "矩陣測光",
+    "id": "PjxIqSyVUZ4",
+    "first_paragraph_id": "PjxIqSyVUZ4:12",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：說明 Nikon 矩陣測光與各品牌多區測光名稱、曝光判斷；逐字稿作側光。"
+  },
+  {
+    "query": "自動對焦",
+    "id": "LDUfee3eoUY",
+    "first_paragraph_id": "LDUfee3eoUY:6",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：以手動鏡實拍比較仰賴自動對焦的街拍需求與限制。"
+  },
+  {
+    "query": "自動對焦",
+    "id": "q6wmdacT8iQ",
+    "first_paragraph_id": "q6wmdacT8iQ:29",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "q6wmdacT8iQ:32",
+    "reason": "首段只提出籠子干擾對焦的問題，後段才有操作解法。"
+  },
+  {
+    "query": "自動對焦",
+    "id": "foZ8qEdauNU",
+    "first_paragraph_id": "foZ8qEdauNU:1",
+    "first_passage_verdict": "mention",
+    "video_verdict": "mention",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：鏡頭介紹只指出具備自動對焦功能，沒有教如何使用或判斷對焦。"
+  },
+  {
+    "query": "連續對焦",
+    "id": "GCC8RI2hY1U",
+    "first_paragraph_id": "GCC8RI2hY1U:18",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "GCC8RI2hY1U:19",
+    "reason": "首段預告 FC/FS 主題，次段才定義並比較。"
+  },
+  {
+    "query": "連續對焦",
+    "id": "CCSZBlRPTeo",
+    "first_paragraph_id": "CCSZBlRPTeo:96",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "CCSZBlRPTeo:97",
+    "reason": "首段只說 FC 較好用，次段才補使用情境。"
+  },
+  {
+    "query": "連續對焦",
+    "id": "wmuBjyzbujw",
+    "first_paragraph_id": "wmuBjyzbujw:4",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "wmuBjyzbujw:7",
+    "reason": "首段教 AF-S，僅列出 AF-C 名稱；後段才教連續對焦。"
+  },
+  {
+    "query": "追焦",
+    "id": "GCC8RI2hY1U",
+    "first_paragraph_id": "GCC8RI2hY1U:18",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "GCC8RI2hY1U:19",
+    "reason": "首段只預告 FC/FS，沒有追蹤對焦教學。"
+  },
+  {
+    "query": "追焦",
+    "id": "CCSZBlRPTeo",
+    "first_paragraph_id": "CCSZBlRPTeo:96",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "CCSZBlRPTeo:97",
+    "reason": "首段僅述 FC/FS 偏好，後段才談連續對焦與移動對焦點。"
+  },
+  {
+    "query": "離機閃燈",
+    "id": "Yg4KVMtGiTc",
+    "first_paragraph_id": "Yg4KVMtGiTc:0",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：離機閃教學，說明閃燈接收模式與後續設置。"
+  },
+  {
+    "query": "離機閃燈",
+    "id": "pBktCGwZOi0",
+    "first_paragraph_id": "pBktCGwZOi0:1",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": "pBktCGwZOi0:15",
+    "reason": "首段示範機頂主控閃控制離機閃，後段有拍攝取捨。"
+  },
+  {
+    "query": "離機閃燈",
+    "id": "MuRabqJuylc",
+    "first_paragraph_id": "MuRabqJuylc:16",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：解說離機閃主機、接收器與頻道配對。"
+  },
+  {
+    "query": "引閃器",
+    "id": "Yg4KVMtGiTc",
+    "first_paragraph_id": "Yg4KVMtGiTc:1",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：示範機頂觸發器與離機閃的 RF 模式、頻道設定。"
+  },
+  {
+    "query": "引閃器",
+    "id": "5vYDAQjgJyE",
+    "first_paragraph_id": "5vYDAQjgJyE:9",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": "5vYDAQjgJyE:11",
+    "reason": "首段說明無線引閃與相機品牌版本，後段詳述頻道配對。"
+  },
+  {
+    "query": "引閃器",
+    "id": "-tXsoMkJgLc",
+    "first_paragraph_id": "-tXsoMkJgLc:3",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：討論小型閃燈觸發器的實際控制功能與使用感受。"
+  },
+  {
+    "query": "環境人像",
+    "id": "-2dkaLiDmxY",
+    "first_paragraph_id": "-2dkaLiDmxY:4",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：說明廣角人像與環境融合、站位及變形控制。"
+  },
+  {
+    "query": "環境人像",
+    "id": "u3-QRtoEhdY",
+    "first_paragraph_id": "u3-QRtoEhdY:14",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：利用街頭燈籠作人像主光，提供夜間人像的現場操作。"
+  },
+  {
+    "query": "環境人像",
+    "id": "3IKU3yaa0Ak",
+    "first_paragraph_id": "3IKU3yaa0Ak:0",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段比較焦段如何帶入環境、避免變形與簡化背景。"
+  },
+  {
+    "query": "兒童攝影",
+    "id": "E_OSnaiVou8",
+    "first_paragraph_id": "E_OSnaiVou8:1",
+    "first_passage_verdict": "alternate_intent",
+    "video_verdict": "alternate_intent",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：是教兒童攝影的書籍介紹，不是如何拍攝兒童。"
+  },
+  {
+    "query": "兒童攝影",
+    "id": "HNMDw47sYd4",
+    "first_paragraph_id": "HNMDw47sYd4:3",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "HNMDw47sYd4:4",
+    "reason": "首段介紹攝影集作者和孩子，後段才談兒童寫真拍法。"
+  },
+  {
+    "query": "兒童攝影",
+    "id": "w0XGI02eU2U",
+    "first_paragraph_id": "w0XGI02eU2U:6",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "w0XGI02eU2U:7",
+    "reason": "首段描述小孩日常照片，未提出可操作拍法。"
+  },
+  {
+    "query": "街頭光影",
+    "id": "SLEZ5QV05ik",
+    "first_paragraph_id": "SLEZ5QV05ik:65",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：評圖指出街頭光影與人物同時出現時需明確突出主題。"
+  },
+  {
+    "query": "街頭光影",
+    "id": "ydbarewRdZA",
+    "first_paragraph_id": "ydbarewRdZA:12",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：示範在街頭用腳踏車輪廓及投影組織光影畫面。"
+  },
+  {
+    "query": "街頭光影",
+    "id": "QUKCGsBY5Q4",
+    "first_paragraph_id": "QUKCGsBY5Q4:24",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：談長焦特寫如何強調街頭人物被光線照到的畫面。"
+  },
+  {
+    "query": "風景構圖",
+    "id": "JCBTb2Do3aI",
+    "first_paragraph_id": "JCBTb2Do3aI:8",
+    "first_passage_verdict": "alternate_intent",
+    "video_verdict": "alternate_intent",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：討論日常街角與方形畫幅的構圖，並非風景構圖。"
+  },
+  {
+    "query": "風景構圖",
+    "id": "UjuR0f1trXI",
+    "first_paragraph_id": "UjuR0f1trXI:78",
+    "first_passage_verdict": "irrelevant",
+    "video_verdict": "irrelevant",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：回傳片段明確是人像背景構圖與修圖，只順帶說與風景不同。"
+  },
+  {
+    "query": "風景構圖",
+    "id": "eFEgyB9-HE4",
+    "first_paragraph_id": "eFEgyB9-HE4:0",
+    "first_passage_verdict": "mention",
+    "video_verdict": "mention",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：只宣傳課程有風景和構圖章節，回傳片段沒有教學。"
+  },
+  {
+    "query": "夜拍對焦",
+    "id": "tcq_IJjsuNs",
+    "first_paragraph_id": "tcq_IJjsuNs:34",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：直接教夜間星空手動找真正無限遠對焦點。"
+  },
+  {
+    "query": "夜拍對焦",
+    "id": "W2Lao8YnNcQ",
+    "first_paragraph_id": "W2Lao8YnNcQ:98",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：分析 GR 夜拍照片模糊可能由對焦或慢快門造成。"
+  },
+  {
+    "query": "夜拍對焦",
+    "id": "tJ1B81LIWWI",
+    "first_paragraph_id": "tJ1B81LIWWI:35",
+    "first_passage_verdict": "mention",
+    "video_verdict": "mention",
+    "better_paragraph_id": null,
+    "reason": "首段只有夜拍人像鏡頭建議，沒有夜間對焦。"
+  },
+  {
+    "query": "鳥類攝影",
+    "id": "GP1ZHQRnYYM",
+    "first_paragraph_id": "GP1ZHQRnYYM:0",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "GP1ZHQRnYYM:1",
+    "reason": "首段介紹拍鳥來賓，實作建議在後段。"
+  },
+  {
+    "query": "鳥類攝影",
+    "id": "1bywpzdd_Mw",
+    "first_paragraph_id": "1bywpzdd_Mw:0",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：拍鳥新手的衣著、遮蔽物與靠近鳥類方式。"
+  },
+  {
+    "query": "鳥類攝影",
+    "id": "MCJByPoEgZY",
+    "first_paragraph_id": "MCJByPoEgZY:30",
+    "first_passage_verdict": "mention",
+    "video_verdict": "mention",
+    "better_paragraph_id": null,
+    "reason": "首段猜測新機傳聞時順帶說拍鳥，沒有拍攝方法。"
+  },
+  {
+    "query": "搖攝",
+    "id": "01siF_7EEXQ",
+    "first_paragraph_id": "01siF_7EEXQ:18",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": "01siF_7EEXQ:19",
+    "reason": "首段以 F1 車速比較搖攝的快門速度；次段補橫向掃鏡。"
+  },
+  {
+    "query": "搖攝",
+    "id": "q6wmdacT8iQ",
+    "first_paragraph_id": "q6wmdacT8iQ:103",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "q6wmdacT8iQ:104",
+    "reason": "首段討論追焦照名稱，後段才說明鏡頭追隨動作。"
+  },
+  {
+    "query": "搖攝",
+    "id": "CqBxjf8H05E",
+    "first_paragraph_id": "CqBxjf8H05E:6",
+    "first_passage_verdict": "mention",
+    "video_verdict": "useful",
+    "better_paragraph_id": "CqBxjf8H05E:7",
+    "reason": "首段只有觀眾提問和名稱歧義，後段才定義搖攝。"
+  },
+  {
+    "query": "滾動快門",
+    "id": "W8M0buwx2-I",
+    "first_paragraph_id": "W8M0buwx2-I:13",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：以電風扇葉片比較機型的果凍效應，直接對應滾動快門影響。"
+  },
+  {
+    "query": "滾動快門",
+    "id": "P1V-qZn-uJs",
+    "first_paragraph_id": "P1V-qZn-uJs:22",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：比較逐行掃描與全域快門造成或消除果凍效應。"
+  },
+  {
+    "query": "滾動快門",
+    "id": "GmEmURRr9Sg",
+    "first_paragraph_id": "GmEmURRr9Sg:11",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：討論快速移動、超採樣與果凍效應的實拍取捨。"
+  },
+  {
+    "query": "底片沖洗",
+    "id": "9TlS2B_jFKE",
+    "first_paragraph_id": "9TlS2B_jFKE:97",
+    "first_passage_verdict": "mention",
+    "video_verdict": "mention",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：只提到沖洗店不同會影響底片成色，沒有沖洗或送洗方法。"
+  },
+  {
+    "query": "底片沖洗",
+    "id": "HjTiyYgp4d4",
+    "first_paragraph_id": "HjTiyYgp4d4:10",
+    "first_passage_verdict": "mention",
+    "video_verdict": "mention",
+    "better_paragraph_id": null,
+    "reason": "首段即為已審片段：僅把『喜歡沖洗底片嗎』當反問，主題是 RAW/JPEG 與色彩喜好。"
+  },
+  {
+    "query": "底片沖洗",
+    "id": "ywA_6KYXvsI",
+    "first_paragraph_id": "ywA_6KYXvsI:147",
+    "first_passage_verdict": "mention",
+    "video_verdict": "mention",
+    "better_paragraph_id": null,
+    "reason": "首段只借彩色底片沖洗談色彩史，沒有沖洗方法。"
+  },
+  {
+    "query": "Sony A7 IV",
+    "id": "23AiqYC2vnw",
+    "first_paragraph_id": "23AiqYC2vnw:12",
+    "first_passage_verdict": "useful",
+    "video_verdict": "useful",
+    "better_paragraph_id": null,
+    "reason": "首段比較 A7 IV 使用者添購 A7R V 的雙機選擇。"
+  }
+]

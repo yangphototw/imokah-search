@@ -105,6 +105,26 @@ async function regression() {
     hits = await api.staticSearch('星空 手動對焦');
     assert.equal(hits[0].video_id, target, 'complete spoken evidence ranks ahead of partial evidence');
     assert(hits[0].match_is_complete);
+
+    const filmOnly = Array.from({length: 48}, (_, i) =>
+        video(`film${String(i).padStart(7, '0')}`));
+    const stockOnly = Array.from({length: 48}, (_, i) =>
+        video(`stock${String(i).padStart(6, '0')}`));
+    const processing = video('process0001');
+    const compoundData = new Map([
+        ...filmOnly.map(item => [item.id, [paragraph(item.id, '談底片相機。', 30)]]),
+        ...stockOnly.map(item => [item.id, [paragraph(item.id, '談膠片相機。', 30)]]),
+        [processing.id, [paragraph(processing.id, '底片送沖洗店的工作流程。', 30)]]
+    ]);
+    api.configure(catalog([...filmOnly, ...stockOnly, processing]), async () => ({
+        '底片': filmOnly.map(item => [item.id, 30]),
+        '膠片': stockOnly.map(item => [item.id, 30]),
+        '沖洗': [[processing.id, 30]]
+    }), async id => compoundData.get(id) || []);
+    hits = await api.staticSearch('底片沖洗');
+    found = hits.find(hit => hit.video_id === processing.id);
+    assert(found, 'a rarer second concept must retain a candidate slot');
+    assert(found.video_match_is_complete, 'the full source phrase must be verified');
     console.log('PASS: 7 behavioral search-recall cases');
 }
 

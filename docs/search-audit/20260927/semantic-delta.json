@@ -16,7 +16,7 @@
     {"query":"引閃器","id":"5vYDAQjgJyE","paragraph_id":"5vYDAQjgJyE:11","verdict":"useful","reason":"離機閃示範引閃器與閃燈的 channel/group 配對。"},
     {"query":"引閃器","id":"-tXsoMkJgLc","paragraph_id":"-tXsoMkJgLc:3","verdict":"useful","reason":"討論小型閃燈觸發器的實際控制功能與使用感受。"},
     {"query":"環境人像","id":"-2dkaLiDmxY","paragraph_id":"-2dkaLiDmxY:4","verdict":"useful","reason":"說明廣角人像與環境融合、站位及變形控制。"},
-    {"query":"環境人像","id":"6207rX829_E","paragraph_id":"6207rX829_E:1","verdict":"useful","reason":"示範以環境 LED 照亮模特兒並利用背景光做散景。"},
+    {"query":"環境人像","id":"3IKU3yaa0Ak","paragraph_id":"3IKU3yaa0Ak:0","verdict":"useful","reason":"比較 35、50、85mm 拍人像時帶入環境、控制變形和雜亂背景的取捨。"},
     {"query":"環境人像","id":"u3-QRtoEhdY","paragraph_id":"u3-QRtoEhdY:14","verdict":"useful","reason":"利用街頭燈籠作人像主光，提供夜間人像的現場操作。"},
     {"query":"兒童攝影","id":"E_OSnaiVou8","paragraph_id":"E_OSnaiVou8:1","verdict":"alternate_intent","reason":"是教兒童攝影的書籍介紹，不是如何拍攝兒童。"},
     {"query":"兒童攝影","id":"HNMDw47sYd4","paragraph_id":"HNMDw47sYd4:4","verdict":"useful","reason":"以兒童攝影集談親子寫真的真實樣貌與少干涉拍法。"},
@@ -29,7 +29,7 @@
     {"query":"風景構圖","id":"UjuR0f1trXI","paragraph_id":"UjuR0f1trXI:78","verdict":"irrelevant","reason":"回傳片段明確是人像背景構圖與修圖，只順帶說與風景不同。"},
     {"query":"夜拍對焦","id":"tcq_IJjsuNs","paragraph_id":"tcq_IJjsuNs:34","verdict":"useful","reason":"直接教夜間星空手動找真正無限遠對焦點。"},
     {"query":"夜拍對焦","id":"W2Lao8YnNcQ","paragraph_id":"W2Lao8YnNcQ:98","verdict":"useful","reason":"分析 GR 夜拍照片模糊可能由對焦或慢快門造成。"},
-    {"query":"夜拍對焦","id":"Tm85f80ZXyg","paragraph_id":"Tm85f80ZXyg:86","verdict":"useful","reason":"說明拍立得超音波對焦在暗處的優點及前景遮擋誤判。"},
+    {"query":"夜拍對焦","id":"tJ1B81LIWWI","paragraph_id":"tJ1B81LIWWI:35","verdict":"mention","reason":"只討論偶爾夜拍人像的鏡頭選擇，沒有夜間對焦方法。"},
     {"query":"鳥類攝影","id":"GP1ZHQRnYYM","paragraph_id":"GP1ZHQRnYYM:1","verdict":"useful","reason":"拍鳥新手的衣著、帽子及接近鳥類的實作建議。"},
     {"query":"鳥類攝影","id":"1bywpzdd_Mw","paragraph_id":"1bywpzdd_Mw:0","verdict":"useful","reason":"拍鳥新手的衣著、遮蔽物與靠近鳥類方式。"},
     {"query":"鳥類攝影","id":"MCJByPoEgZY","paragraph_id":"MCJByPoEgZY:54","verdict":"mention","reason":"新品規格閒聊僅以拍鳥入門作連拍性能例子，沒有拍鳥方法。"},
@@ -41,8 +41,14 @@
     {"query":"滾動快門","id":"GmEmURRr9Sg","paragraph_id":"GmEmURRr9Sg:11","verdict":"useful","reason":"討論快速移動、超採樣與果凍效應的實拍取捨。"},
     {"query":"底片沖洗","id":"HjTiyYgp4d4","paragraph_id":"HjTiyYgp4d4:10","verdict":"mention","reason":"僅把『喜歡沖洗底片嗎』當反問，主題是 RAW/JPEG 與色彩喜好。"},
     {"query":"底片沖洗","id":"9TlS2B_jFKE","paragraph_id":"9TlS2B_jFKE:97","verdict":"mention","reason":"只提到沖洗店不同會影響底片成色，沒有沖洗或送洗方法。"},
-    {"query":"底片沖洗","id":"AcvVJzoETVY","paragraph_id":"AcvVJzoETVY:1","verdict":"irrelevant","reason":"介紹底片相機裝捲與收到成品的樂趣，沒有沖洗內容。"},
+    {"query":"底片沖洗","id":"ywA_6KYXvsI","paragraph_id":"ywA_6KYXvsI:147","verdict":"mention","reason":"只用彩色底片沖洗發展作色彩歷史例子，沒有沖洗或送洗方法。"},
     {"query":"追焦","id":"GCC8RI2hY1U","paragraph_id":"GCC8RI2hY1U:19","verdict":"useful","reason":"AF-C 持續追蹤移動主體，是追焦的一種常見意圖；此原文亦已於連續對焦查詢讀過。"},
-    {"query":"追焦","id":"CCSZBlRPTeo","paragraph_id":"CCSZBlRPTeo:97","verdict":"useful","reason":"講解 FC 連續對焦與移動對焦點，屬於追焦的 AF 追蹤意圖；此原文亦已於連續對焦查詢讀過。"}
+    {"query":"追焦","id":"CCSZBlRPTeo","paragraph_id":"CCSZBlRPTeo:97","verdict":"useful","reason":"講解 FC 連續對焦與移動對焦點，屬於追焦的 AF 追蹤意圖；此原文亦已於連續對焦查詢讀過。"},
+    {"query":"Sony A7 IV","id":"23AiqYC2vnw","paragraph_id":"23AiqYC2vnw:12","verdict":"useful","reason":"以 A7 IV 與 A7R V 搭配雙機工作的取捨，提供 A7 IV 使用者升級或補機比較；不是完整 A7 IV 評測。"}
+  ],
+  "historical_verdicts": [
+    {"query":"環境人像","id":"6207rX829_E","paragraph_id":"6207rX829_E:1","verdict":"useful","reason":"示範以環境 LED 照亮模特兒並利用背景光做散景。"},
+    {"query":"夜拍對焦","id":"Tm85f80ZXyg","paragraph_id":"Tm85f80ZXyg:86","verdict":"useful","reason":"說明拍立得超音波對焦在暗處的優點及前景遮擋誤判。"},
+    {"query":"底片沖洗","id":"AcvVJzoETVY","paragraph_id":"AcvVJzoETVY:1","verdict":"irrelevant","reason":"介紹底片相機裝捲與收到成品的樂趣，沒有沖洗內容。"}
   ]
 }

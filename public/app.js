@@ -739,6 +739,19 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         for (let matchedCount = totalTerms; matchedCount >= 1; matchedCount -= 1) {
+            if (matchedCount === 1 && totalTerms > 1) {
+                // A common first concept can fill the candidate budget before
+                // a rarer second concept reaches source verification. Reserve
+                // transcript slots for each requested concept independently.
+                for (let groupIndex = 0; groupIndex < totalTerms; groupIndex += 1) {
+                    items
+                        .filter(item => !item.isTitleMatch && item.matched_count === 1
+                            && item.matched_group_indexes?.includes(groupIndex))
+                        .sort(compareSearchResultTiers)
+                        .slice(0, perTierLimit)
+                        .forEach(add);
+                }
+            }
             [false, true].forEach(isTitleMatch => {
                 items
                     .filter(item => item.isTitleMatch === isTitleMatch && item.matched_count === matchedCount)

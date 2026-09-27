@@ -1,7 +1,7 @@
 {
   "queries": 200,
-  "verified_passage_query_pairs": 7586,
-  "returned_video_query_pairs": 6909,
+  "verified_passage_query_pairs": 7587,
+  "returned_video_query_pairs": 6836,
   "old_zero_results": [
     "中央重點測光",
     "矩陣測光",
@@ -36,12 +36,12 @@
     "滾動快門",
     "底片沖洗"
   ],
-  "changed_top_three_to_review": 43,
-  "reused_top_three_judgments": 496,
+  "changed_top_three_to_review": 44,
+  "reused_top_three_judgments": 495,
   "unchanged_top_three_without_old_judgment": 34,
-  "newly_returned_previously_judged_useful": 22,
+  "newly_returned_previously_judged_useful": 23,
   "dropped_previously_judged_useful": 2,
   "removed_weak_old_top_three": 4,
-  "newly_returned_pairs": 614,
-  "dropped_pairs": 88
+  "newly_returned_pairs": 601,
+  "dropped_pairs": 148
 }
