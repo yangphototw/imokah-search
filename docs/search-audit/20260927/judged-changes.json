@@ -1,0 +1,124 @@
+{
+  "regainedUseful": [
+    {
+      "query": "中央重點測光",
+      "id": "PjxIqSyVUZ4"
+    },
+    {
+      "query": "矩陣測光",
+      "id": "PjxIqSyVUZ4"
+    },
+    {
+      "query": "自動對焦",
+      "id": "1O5J3q2Xhgs"
+    },
+    {
+      "query": "連續對焦",
+      "id": "GCC8RI2hY1U"
+    },
+    {
+      "query": "連續對焦",
+      "id": "wmuBjyzbujw"
+    },
+    {
+      "query": "追焦",
+      "id": "GCC8RI2hY1U"
+    },
+    {
+      "query": "追焦",
+      "id": "wmuBjyzbujw"
+    },
+    {
+      "query": "離機閃燈",
+      "id": "Yg4KVMtGiTc"
+    },
+    {
+      "query": "離機閃燈",
+      "id": "89Vi3UBFnjM"
+    },
+    {
+      "query": "引閃器",
+      "id": "Yg4KVMtGiTc"
+    },
+    {
+      "query": "引閃器",
+      "id": "-tXsoMkJgLc"
+    },
+    {
+      "query": "環境人像",
+      "id": "-2dkaLiDmxY"
+    },
+    {
+      "query": "環境人像",
+      "id": "3IKU3yaa0Ak"
+    },
+    {
+      "query": "街頭光影",
+      "id": "0-0LG4yED1E"
+    },
+    {
+      "query": "街頭光影",
+      "id": "3Ne3swGkpYU"
+    },
+    {
+      "query": "夜拍對焦",
+      "id": "tcq_IJjsuNs"
+    },
+    {
+      "query": "鳥類攝影",
+      "id": "GP1ZHQRnYYM"
+    },
+    {
+      "query": "鳥類攝影",
+      "id": "1bywpzdd_Mw"
+    },
+    {
+      "query": "搖攝",
+      "id": "01siF_7EEXQ"
+    },
+    {
+      "query": "搖攝",
+      "id": "kRLMxDSWxWc"
+    },
+    {
+      "query": "滾動快門",
+      "id": "W8M0buwx2-I"
+    },
+    {
+      "query": "滾動快門",
+      "id": "GmEmURRr9Sg"
+    }
+  ],
+  "droppedUseful": [
+    {
+      "query": "自動對焦",
+      "id": "VANFqZQbkrg"
+    },
+    {
+      "query": "連續對焦",
+      "id": "01siF_7EEXQ"
+    }
+  ],
+  "removedWeakTopThree": [
+    {
+      "query": "自動對焦",
+      "id": "tcq_IJjsuNs",
+      "verdict": "irrelevant"
+    },
+    {
+      "query": "連續對焦",
+      "id": "kRLMxDSWxWc",
+      "verdict": "irrelevant"
+    },
+    {
+      "query": "焦外",
+      "id": "IZluLxMym3E",
+      "verdict": "irrelevant"
+    },
+    {
+      "query": "焦外",
+      "id": "2tFXcZmYj68",
+      "verdict": "irrelevant"
+    }
+  ]
+}

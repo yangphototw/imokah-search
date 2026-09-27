@@ -328,6 +328,13 @@ input:focus-visible {
     max-width: 52rem;
 }
 
+.search-interpretation {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0.75rem 0 0;
+}
+
 .search-bar {
     align-items: center;
     background: var(--bg-canvas);
@@ -495,6 +502,31 @@ input:focus-visible {
     display: grid;
     gap: clamp(1rem, 2vw, 1.5rem);
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+}
+
+.search-tier-divider {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    grid-column: 1 / -1;
+    margin-top: 0.35rem;
+}
+
+.search-tier-divider strong {
+    color: var(--text-primary);
+    font-size: var(--type-lvl4);
+}
+
+.search-tier-divider span {
+    color: var(--text-muted);
+    font-size: var(--type-lvl5);
+}
+
+.search-tier-divider.partial {
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 1rem;
+    padding-top: 1.25rem;
 }
 
 .video-card {

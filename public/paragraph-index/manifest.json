@@ -1,1 +1,1 @@
-{"version":2,"shards":512,"paragraphs":60045,"approved_summaries":0,"punctuated_paragraphs":59823,"source_paragraph_sha256":"596857f56275feb5849b553e1eae6e14004b53a0aecd33a6ab97470696894ea9","schema":"video-id -> [{id,start,end,transcript,summary?}]"}
+{"version":2,"shards":512,"paragraphs":60712,"approved_summaries":0,"punctuated_paragraphs":59823,"source_paragraph_sha256":"59306e586cee9e5c6532f3887cd6a9d73e77b8099c1053bb242e3c76e54c874b","schema":"video-id -> [{id,start,end,transcript,summary?}]"}

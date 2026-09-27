@@ -1,0 +1,19 @@
+{
+  "scope": "71–140，全數包內項目＋標記的補查來源；非全庫所有結果",
+  "queries": 70,
+  "counts": {
+    "packet_returned": 176,
+    "returned": 176,
+    "useful": 139,
+    "packet_missing": 101,
+    "missing": 103,
+    "should_include": 86,
+    "mention": 35,
+    "unclear": 3,
+    "irrelevant": 16,
+    "intent_ambiguity": 3,
+    "extra_items": 2
+  },
+  "full_source_unique_paragraphs": 414,
+  "errors": []
+}

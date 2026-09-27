@@ -1,0 +1,122 @@
+[
+  {
+    "id": "photo-intention",
+    "chapter": "看見與表達",
+    "title": "評照片之前，先說清楚想拍什麼",
+    "question": "可以用同一個場景，示範「先有拍攝目的」到選照片的完整過程嗎？"
+  },
+  {
+    "id": "photo-series",
+    "chapter": "看見與表達",
+    "title": "從散拍的線索，走向一組作品",
+    "question": "能用一批旅行照片，從選片、排序到刪片，做出一個小系列嗎？"
+  },
+  {
+    "id": "exposure-decision",
+    "chapter": "光線與曝光",
+    "title": "光圈、快門、ISO，先決定哪一個？",
+    "question": "能用同一個暗場，分別示範靜物、走動人物與合照的曝光取捨嗎？"
+  },
+  {
+    "id": "backlight-priority",
+    "chapter": "光線與曝光",
+    "title": "逆光時，要人物亮，還是保留背景？",
+    "question": "如果人物和夕陽都想保留，能示範現場補光與拍攝後調整的選擇過程嗎？"
+  },
+  {
+    "id": "lighting-design",
+    "chapter": "光線與曝光",
+    "title": "怎麼看出光變柔了？",
+    "question": "能固定人物與曝光，只改光源大小、距離和方向，逐張比較陰影嗎？"
+  },
+  {
+    "id": "background-cleanup",
+    "chapter": "站位與畫面",
+    "title": "人像背景太亂，除了散景還能怎麼做？",
+    "question": "如果只有套裝變焦鏡，能在同一個雜亂場景依序示範站位、角度與景深嗎？"
+  },
+  {
+    "id": "perspective-composition",
+    "chapter": "站位與畫面",
+    "title": "廣角與望遠，人物和背景會怎麼變？",
+    "question": "能分別固定站位、固定人物大小，比較換焦段和移動距離造成的差異嗎？"
+  },
+  {
+    "id": "intentional-level",
+    "chapter": "站位與畫面",
+    "title": "照片一定要水平、垂直嗎？",
+    "question": "能用同一個場景比較無意拍歪、刻意傾斜，以及如何再次拍出同樣效果嗎？"
+  },
+  {
+    "id": "focus-mode",
+    "chapter": "清楚與動態",
+    "title": "對焦模式和對焦位置，要分開想",
+    "question": "能示範同一個人物從靜止到走近鏡頭，怎麼選對焦模式與區域嗎？"
+  },
+  {
+    "id": "star-focus",
+    "chapter": "清楚與動態",
+    "title": "星空對不到焦，先練手動找焦點",
+    "question": "能在現場並排展示失焦、晃動與星點拖線的照片，逐一示範怎麼辨認和排除嗎？"
+  },
+  {
+    "id": "panning-motion",
+    "chapter": "清楚與動態",
+    "title": "運動怎麼拍？從 F1 追焦到旅行中的衝浪",
+    "question": "能從走路的人、腳踏車到汽車，設計一套逐步追焦練習嗎？"
+  },
+  {
+    "id": "portrait-feedback-loop",
+    "chapter": "人像與互動",
+    "title": "拍一段、回看，再和對方一起調整",
+    "question": "能保留現場對話，示範一次「回看照片→給具體回饋→重新拍攝」嗎？"
+  },
+  {
+    "id": "portrait-comfort",
+    "chapter": "人像與互動",
+    "title": "拍不熟悉鏡頭的人，先處理尷尬",
+    "question": "可以完整示範第一次幫素人拍照的前十分鐘：聊天、引導到第一張照片嗎？"
+  },
+  {
+    "id": "quiet-street",
+    "chapter": "旅行與現場",
+    "title": "街上沒有人，還能拍什麼？",
+    "question": "能在一條普通街道，示範十分鐘內怎麼找到三個不同的拍攝線索嗎？"
+  },
+  {
+    "id": "travel-timing",
+    "chapter": "旅行與現場",
+    "title": "旅行拍攝，時間也要留給現場",
+    "question": "如果天氣與預期不同，能示範旅行拍攝如何改題材、換位置和調整行程嗎？"
+  },
+  {
+    "id": "editing-reading-guide",
+    "chapter": "後製與完成",
+    "title": "調色參數可以直接照抄嗎？",
+    "question": "能用曝光、光線不同的三張照片，示範如何調成同一系列的感覺嗎？"
+  },
+  {
+    "id": "photo-format",
+    "chapter": "後製與完成",
+    "title": "照片要裁什麼比例？先看放在哪裡",
+    "question": "能用同一組作品，示範手機閱讀、網站與實體展出三種裁切安排嗎？"
+  },
+  {
+    "id": "camera-system-selection",
+    "chapter": "器材與選擇",
+    "title": "買相機，先試操作，也試能不能帶出門",
+    "question": "能設計一張到店試機清單，示範怎麼測自己的操作與攜帶需求嗎？"
+  },
+  {
+    "id": "travel-lens",
+    "chapter": "器材與選擇",
+    "title": "旅行帶什麼鏡頭？從環境與整套組合想",
+    "question": "能用同一趟旅行，比較只帶一顆、帶兩顆鏡頭時，實際放棄與得到哪些照片嗎？"
+  },
+  {
+    "id": "landscape-fieldwork",
+    "chapter": "旅行與現場",
+    "title": "風景怎麼拍？從水面、遠山到流動的線條",
+    "question": "能否完整示範一個風景機位：從抵達、等光到選出最後一張？"
+  }
+]

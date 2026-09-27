@@ -1,0 +1,316 @@
+[
+  {
+    "number": 161,
+    "returned": [
+      [
+        "irrelevant",
+        "原段落是人像構圖、背景不要插頭與包包勿切斷；C-Raw 是此段辨識字串，沒有 RAW 檔案內容。"
+      ],
+      [
+        "mention",
+        "只列連拍可拍153張RAW的規格，未解釋RAW檔案使用。"
+      ],
+      [
+        "useful",
+        "具體描述RAW分存SSD與HDD、JPEG卡保留至交件的備份流程。"
+      ]
+    ],
+    "extra_returned": [
+      {
+        "id": "HjTiyYgp4d4",
+        "rank": 4,
+        "full_match": true,
+        "title_only": true,
+        "verdict": "useful",
+        "reason": "專門比較RAW與JPEG的資訊、白平衡、後製空間與儲存代價；原文轉成弱檔，僅標題命中。",
+        "paragraph_ids": [
+          "HjTiyYgp4d4:1",
+          "HjTiyYgp4d4:2",
+          "HjTiyYgp4d4:3",
+          "HjTiyYgp4d4:5",
+          "HjTiyYgp4d4:6",
+          "HjTiyYgp4d4:7"
+        ],
+        "full_source_read": true,
+        "extra_source": true
+      }
+    ],
+    "missing": [],
+    "conclusion": "ranking_issue",
+    "note": "完整基線核實主題教學已列第4名，不能說漏收；卻排在第1名無關C-Raw辨識字串之後。此額外返回來源另標extra_source。"
+  },
+  {
+    "number": 162,
+    "returned": [
+      [
+        "useful",
+        "專題比較 RAW 與 JPEG，並以新相機 RAW 無法開啟時用 JPEG 的案例引入。"
+      ],
+      [
+        "useful",
+        "以JPEG副卡作RAW主卡失敗時備份，具體說明檔案工作流。"
+      ],
+      [
+        "useful",
+        "明確指出 RAW 欠曝拉亮實測不能套用JPEG，JPEG應當場曝光準確。"
+      ]
+    ],
+    "missing": [
+      [
+        "should_include",
+        "室內攝影RAW與JPEG／包圍曝光取捨，讀到燈飾細節與後製空間的解釋。",
+        [
+          "P5jCn334AIw:9",
+          "P5jCn334AIw:10"
+        ]
+      ],
+      [
+        "should_include",
+        "以重新調暖色溫的案例，比較JPEG當場定調與RAW事後調整的彈性。",
+        [
+          "8eQQf6TY3ug:28",
+          "8eQQf6TY3ug:29"
+        ]
+      ]
+    ],
+    "conclusion": "recall_issue",
+    "note": "JPEG與JPG應有穩定共同意圖；兩候選均有具體格式選擇說明。"
+  },
+  {
+    "number": 163,
+    "returned": [
+      [
+        "irrelevant",
+        "若意圖是照片後製降噪，此段無關：整段講無線麥克風收音與主動降噪；若意圖是影片收音則相關。"
+      ],
+      [
+        "irrelevant",
+        "若意圖是照片降噪，此段無關：兩檔主動降噪指麥克風環境聲音；音訊降噪本身仍是合法攝影相關詞義。"
+      ],
+      [
+        "useful",
+        "解釋 Lightroom AI降噪不支援的RAW類型與功能反灰原因。",
+        [
+          "x3rYQ6SxG9M:133",
+          "x3rYQ6SxG9M:134"
+        ]
+      ]
+    ],
+    "missing": [
+      [
+        "unclear",
+        "直播對Dual Gain僅疑問式辨認為減少雜訊並觀察顏色差別，不足以確認有降噪解說。"
+      ]
+    ],
+    "conclusion": "ranking_issue",
+    "note": "此詞有音訊／影像雙義；按本批檔案與後製的照片學習意圖，前二名屬錯義。若查詢者要影片收音，兩片則相關，不宜全域排除音訊降噪。",
+    "ambiguous_returned": [
+      "2x8oQhQr1JY",
+      "1rTmX4lV1mE"
+    ]
+  },
+  {
+    "number": 164,
+    "returned": [
+      [
+        "useful",
+        "示範銳化並提醒人像細紋、顆粒被放大的風險。"
+      ],
+      [
+        "useful",
+        "以手機照片放大100%觀察輪廓與紋理過度銳化的具體例子。"
+      ],
+      [
+        "useful",
+        "說明依輸出或網路縮圖尺寸做額外銳化，並區分真正失焦。",
+        [
+          "tipGuY2gksY:147",
+          "tipGuY2gksY:148"
+        ]
+      ]
+    ],
+    "missing": [],
+    "conclusion": "front_relevant",
+    "note": "前三筆都有實際銳化效果、風險或輸出操作觀念。"
+  },
+  {
+    "number": 165,
+    "returned": [
+      [
+        "useful",
+        "討論調色預設檔與創作風格的關係，屬調色決策主題。"
+      ],
+      [
+        "useful",
+        "說明內建色彩風格如何降低影片後製調色需求與適用對象。"
+      ],
+      [
+        "useful",
+        "Lightroom逐步調亮部、阴影、黑白點的實作教學。"
+      ]
+    ],
+    "missing": [
+      [
+        "should_include",
+        "隔玻璃拍攝偏綠時調色調往洋紅修正，具體可操作。"
+      ],
+      [
+        "should_include",
+        "評圖指出紫色過濃與內建濾鏡造成不自然色彩，提供調色的負面案例。"
+      ]
+    ],
+    "conclusion": "recall_issue",
+    "note": "兩候選皆能服務調色學習，第二筆是短評圖案例，不等同完整教學。"
+  },
+  {
+    "number": 166,
+    "returned": [
+      [
+        "useful",
+        "專門介紹亮度曲線、S曲線、黑點與高光調整。"
+      ],
+      [
+        "mention",
+        "只說曲線應在HSL之前處理，未解釋曲線怎麼調。"
+      ],
+      [
+        "irrelevant",
+        "若意圖是後製曲線，此段不適用；原文是天橋幾何曲線的構圖教學，對構圖意圖則有用。"
+      ]
+    ],
+    "missing": [
+      [
+        "should_include",
+        "實際教曲線暗部五分之一區段往下拉，以加強照片對比。"
+      ],
+      [
+        "mention",
+        "只是回答尚未講RGB曲線、未來可以安排，沒有該主題教學。"
+      ]
+    ],
+    "conclusion": "mixed_issue",
+    "note": "後製意圖有排名與召回問題；天橋曲線是合理攝影詞義但不符合此題類別，不宜把所有曲線查詢一律排除構圖。",
+    "ambiguous_returned": [
+      "EJ8iUj2iDBM"
+    ]
+  },
+  {
+    "number": 167,
+    "returned": [
+      [
+        "useful",
+        "解釋裁切改變視角與高像素裁切彈性。"
+      ],
+      [
+        "useful",
+        "比較當場構圖與事後校正裁切的工作方式，明確表示可按個人需求選。"
+      ],
+      [
+        "useful",
+        "專題討論不同照片裁切比例與敘事／展示需求。"
+      ]
+    ],
+    "missing": [
+      [
+        "should_include",
+        "示範以控制盤呼叫裁切並旋轉裁切角度，屬實際操作。"
+      ],
+      [
+        "should_include",
+        "比較先見到XPan數位裁切視野與事後裁切的構圖感受。",
+        [
+          "IqUjOKgeRHc:6",
+          "IqUjOKgeRHc:7"
+        ]
+      ]
+    ],
+    "conclusion": "recall_issue",
+    "note": "操作與預先裁切取景皆有實際內容，兩候選應納入。"
+  },
+  {
+    "number": 168,
+    "returned": [
+      [
+        "mention",
+        "僅將遮色片列為局部色溫調整的選項，重點轉向現場打燈，沒有示範遮色片。",
+        [
+          "RCsHZtVeS3I:47",
+          "RCsHZtVeS3I:48"
+        ]
+      ],
+      [
+        "useful",
+        "Photoshop主體選取、複製圖層與遮色片去背的操作解說。"
+      ],
+      [
+        "useful",
+        "用低硬度筆刷塗遮色片邊界，令合成邊緣有漸層。"
+      ]
+    ],
+    "missing": [],
+    "conclusion": "ranking_issue",
+    "note": "第一名是用途提及，後兩名有直接操作，主題深度更好。"
+  },
+  {
+    "number": 169,
+    "returned": [
+      [
+        "useful",
+        "Lightroom移除污點／物件的實際操作與限制。"
+      ],
+      [
+        "useful",
+        "Lightroom大量物件移除的操作並與Photoshop能力比較。"
+      ],
+      [
+        "useful",
+        "介紹MIDI控制盤與Lightroom連接操作，屬軟體工作流。"
+      ]
+    ],
+    "missing": [
+      [
+        "unclear",
+        "PSLR一段辨識混亂，前後切換電影與閒聊，不能確認存在Lightroom教學。",
+        [
+          "a2apPPhUltg:137",
+          "a2apPPhUltg:138"
+        ]
+      ],
+      [
+        "mention",
+        "談軟體可用中文介面協助英文不熟者，Lightroom只是例子，未有軟體操作教學。"
+      ]
+    ],
+    "conclusion": "front_relevant",
+    "note": "兩個獨立候選不足以確認必須收錄；既有前三筆相關。"
+  },
+  {
+    "number": 170,
+    "returned": [
+      [
+        "useful",
+        "Photoshop修圖選繪圖板及軟體內控制強度的具體建議。"
+      ],
+      [
+        "useful",
+        "把素材放進Photoshop做霓虹人像的實作教學。"
+      ],
+      [
+        "useful",
+        "比較Photoshop與Lightroom功能、圖層能力和是否必學的需求。"
+      ]
+    ],
+    "missing": [
+      [
+        "irrelevant",
+        "ps出現在APS鏡頭、轉接與片幅討論，並非Photoshop。"
+      ],
+      [
+        "irrelevant",
+        "PS5與PS一代指PlayStation遊戲機，原文沒有Photoshop內容。"
+      ]
+    ],
+    "conclusion": "front_relevant",
+    "note": "兩個未顯示候選皆是PS縮寫／辨識假陽性，屬候選基準問題；現有搜尋未回傳這兩片，不可列為漏收或網站錯片。"
+  }
+]

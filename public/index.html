@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260905-natural-search">
+    <link rel="stylesheet" href="site-shell.css?v=20260908">
 </head>
 <body>
     <!-- 誠實精確之 Glassmorphism 載入遮罩 -->
@@ -30,17 +31,17 @@
                 <div class="status-pill">
                     <span class="live-dot"></span>
                     <span class="status-count" data-video-count>正在載入影片資料庫...</span>
-                    <span class="status-updated">更新至 2026/08/30</span>
+                    <span class="status-updated" data-updated-date>更新日期載入中</span>
                 </div>
             </div>
             <div class="header-right">
-                <a class="review-link" href="review.html">人工校閱摘要</a>
                 <button id="themeToggleBtn" class="theme-toggle-btn" title="切換亮色/暗色主題">
                     <span class="theme-icon" aria-hidden="true">☀</span>
                     <span class="theme-text">亮色模式</span>
                 </button>
             </div>
         </header>
+        <nav class="mode-switch" aria-label="閱讀方式"><a data-mode-link="videos" href="./" aria-current="page">找影片</a><a data-mode-link="knowledge" href="wiki/roadmap.html">攝影知識地圖</a></nav>
 
         <!-- 主標題區段 (Strict Typography Hierarchy) -->
         <section class="hero-section">
@@ -70,21 +71,24 @@
         <section class="search-section">
             <div class="search-bar">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="搜尋關鍵字：Nikon Zf, GR3 街拍, 光圈景深, ISO 噪點, 底片調色..." autocomplete="off">
+                <input type="text" id="searchInput" class="search-input" aria-label="搜尋攝影問題或關鍵字" placeholder="試試：星空對不到焦怎麼辦、GR3 街拍、光圈景深" autocomplete="off">
                 <button id="clearBtn" class="clear-btn" style="display: none;" title="清除">✕</button>
                 <button id="searchBtn" class="search-btn">
                     <span id="btnText">搜尋</span>
                 </button>
             </div>
 
+            <p id="searchInterpretation" class="search-interpretation" role="status" hidden></p>
+            <div id="knowledgeSuggestions" class="knowledge-suggestions" aria-label="相關知識點" hidden></div>
+
             <!-- 熱門推薦微型標籤 -->
             <div class="tags-row">
                 <span class="tags-label">熱門專題：</span>
                 <button class="tag-pill" data-tag="Nikon Zf">Nikon Zf</button>
                 <button class="tag-pill" data-tag="GR3 街拍">GR3 街拍</button>
-                <button class="tag-pill" data-tag="ISO 噪點">ISO 感光度</button>
+                <button class="tag-pill" data-tag="ISO 感光度">ISO 感光度</button>
                 <button class="tag-pill" data-tag="光圈 景深">光圈與景深</button>
-                <button class="tag-pill" data-tag="底片調色">HSL 調色</button>
+                <button class="tag-pill" data-tag="HSL 調色">HSL 調色</button>
                 <button class="tag-pill" data-tag="蔡司 鏡頭">蔡司鏡頭</button>
             </div>
         </section>
@@ -120,6 +124,8 @@
         </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script src="knowledge-search.js?v=1"></script>
+    <script src="app.js?v=20260927-keyword-search"></script>
+    <script src="site-shell.js?v=20260911-reader"></script>
 </body>
 </html>

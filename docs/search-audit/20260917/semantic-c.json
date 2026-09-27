@@ -1,0 +1,3427 @@
+{
+  "reviewer": "c",
+  "scope": {
+    "query_numbers": [
+      141,
+      200
+    ],
+    "method": "每批10詞，讀既有摘要與包內命中對應的完整原段落；含必要相鄰段落。full_source_read 指所列段落全文，不代表整部影片。只判斷包內候選，未對全部6383影片／查詢配對做語意通過聲明。"
+  },
+  "queries": [
+    {
+      "number": 141,
+      "query": "銳利度",
+      "returned": [
+        {
+          "id": "LfAQ8-JmlgQ",
+          "verdict": "useful",
+          "reason": "提供 Lightroom 銳利度歸零以處理富士 RAW 蟲紋的操作建議。",
+          "paragraph_ids": [
+            "LfAQ8-JmlgQ:15"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "cgN5mQ_7dD8",
+          "verdict": "useful",
+          "reason": "以毛髮細節與 A7 III 實拍條件評估鏡頭銳利度。",
+          "paragraph_ids": [
+            "cgN5mQ_7dD8:20"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "QUKCGsBY5Q4",
+          "verdict": "useful",
+          "reason": "人像實拍後具體評價中央銳度，屬相關器材案例。",
+          "paragraph_ids": [
+            "QUKCGsBY5Q4:13"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "前三筆皆有具體銳度處理或實拍評價；鏡頭畫質與後製銳化是此詞合理的兩種使用情境。"
+    },
+    {
+      "number": 142,
+      "query": "解析力",
+      "returned": [
+        {
+          "id": "-7smMmln97o",
+          "verdict": "useful",
+          "reason": "介紹 MTF 解像力與反差的參考價值及不能只靠 MTF 判好壞的限制。",
+          "paragraph_ids": [
+            "-7smMmln97o:4"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "WRP3YsGExYc",
+          "verdict": "useful",
+          "reason": "實拍指出前景樹葉不易辨認的解像力不足，有可辨識的負面案例。",
+          "paragraph_ids": [
+            "WRP3YsGExYc:12"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "aVSNaS6MeNo",
+          "verdict": "useful",
+          "reason": "以鏡頭 MTF 圖解說解像力及評價鏡頭的限制，直播也有相關段落。",
+          "paragraph_ids": [
+            "aVSNaS6MeNo:157"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "解析力與解像力匹配合理；前三筆不是只靠題名。"
+    },
+    {
+      "number": 143,
+      "query": "邊角畫質",
+      "returned": [
+        {
+          "id": "qyl8WUV4Lqs",
+          "verdict": "useful",
+          "reason": "比較 23mm 與 35mm 邊角畫質，指出紅牆實拍中 35mm 邊缘較弱。",
+          "paragraph_ids": [
+            "qyl8WUV4Lqs:20",
+            "qyl8WUV4Lqs:21",
+            "qyl8WUV4Lqs:22"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "ruF4Az40BsA",
+          "verdict": "useful",
+          "reason": "討論 F2 邊角較弱並給出收至 F4–5.6 或裁切的實拍取捨。",
+          "paragraph_ids": [
+            "ruF4Az40BsA:20",
+            "ruF4Az40BsA:21",
+            "ruF4Az40BsA:22"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "D1eqLFJ8GZo",
+          "verdict": "useful",
+          "reason": "鏡頭評測明確比較二代邊角畫質相對前代的改善。",
+          "paragraph_ids": [
+            "D1eqLFJ8GZo:3"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "LDUfee3eoUY",
+          "verdict": "should_include",
+          "reason": "以廟宇複雜細節說明鏡頭從左下到右上維持銳利，直接評估邊角品質。",
+          "paragraph_ids": [
+            "LDUfee3eoUY:8"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "vmWSNb5KJyo",
+          "verdict": "should_include",
+          "reason": "老鏡邊緣不銳利時，合照構圖預留裁切空間，屬實際處理建議。",
+          "paragraph_ids": [
+            "vmWSNb5KJyo:24"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "原文使用邊角細節／邊緣不夠銳利，兩個未顯示候選皆可回答主題。"
+    },
+    {
+      "number": 144,
+      "query": "畸變",
+      "returned": [
+        {
+          "id": "vmWSNb5KJyo",
+          "verdict": "useful",
+          "reason": "解釋桶狀、枕狀變形與 Lightroom 描述檔／手動校正。",
+          "paragraph_ids": [
+            "vmWSNb5KJyo:22",
+            "vmWSNb5KJyo:17"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "m0FUGzsRpwc",
+          "verdict": "useful",
+          "reason": "合照避免廣角邊緣人物變形並改用較長焦段，屬相關實拍處理。",
+          "paragraph_ids": [
+            "m0FUGzsRpwc:7"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "dSWnG1qPzLo",
+          "verdict": "mention",
+          "reason": "只邀請觀眾再問鏡頭變形問題，前後段並無在此解答變形。",
+          "paragraph_ids": [
+            "dSWnG1qPzLo:143",
+            "dSWnG1qPzLo:142",
+            "dSWnG1qPzLo:144"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第三名只有問題提及；畸變搜尋涵蓋廣角人物邊緣變形，內容可用但不能把光學畸變與透視拉伸當完全相同概念。"
+    },
+    {
+      "number": 145,
+      "query": "暗角",
+      "returned": [
+        {
+          "id": "vmWSNb5KJyo",
+          "verdict": "useful",
+          "reason": "示範 Lightroom 添加暗角／亮角與畫面風格。",
+          "paragraph_ids": [
+            "vmWSNb5KJyo:32"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "Y6jQoiqRSPA",
+          "verdict": "useful",
+          "reason": "VSCO 暗角強度控制並解釋集中中心視線的目的。",
+          "paragraph_ids": [
+            "Y6jQoiqRSPA:16"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "TcjxOMfSF_k",
+          "verdict": "useful",
+          "reason": "實拍指出鏡頭暗角及等待數位描述檔校正的處理方向。",
+          "paragraph_ids": [
+            "TcjxOMfSF_k:9"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "前三筆涵蓋風格暗角與鏡頭暗角校正，皆符合學習需求。"
+    },
+    {
+      "number": 146,
+      "query": "色散",
+      "returned": [
+        {
+          "id": "gTU6KWlSHGc",
+          "verdict": "useful",
+          "reason": "說明 APO 設計、低色散與不依賴數位修正的器材取捨。",
+          "paragraph_ids": [
+            "gTU6KWlSHGc:2"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "FYkNcFDRyGA",
+          "verdict": "mention",
+          "reason": "僅列一片 XLD 與一片 LD 鏡片，前後段未解釋色散現象或效果。",
+          "paragraph_ids": [
+            "FYkNcFDRyGA:24",
+            "FYkNcFDRyGA:23",
+            "FYkNcFDRyGA:25"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "OLmlzjE45A0",
+          "verdict": "useful",
+          "reason": "具體比較前後景洋紅／綠色色散，及兩鏡縮光圈至 F5.6／F8 後的改善。",
+          "paragraph_ids": [
+            "OLmlzjE45A0:18"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第二名是鏡片規格列舉；第三名有明確光圈與色散案例，學習價值較高。"
+    },
+    {
+      "number": 147,
+      "query": "紫邊",
+      "returned": [
+        {
+          "id": "I6GekSOIXf0",
+          "verdict": "useful",
+          "reason": "比較 16–30 與前代抗紫邊能力，屬相關器材評價。",
+          "paragraph_ids": [
+            "I6GekSOIXf0:26"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "uzqoFzaQRzs",
+          "verdict": "mention",
+          "reason": "紫邊與散景等缺陷並列，重心是低預算鏡頭與小尺寸分享，沒有具體紫邊處理。",
+          "paragraph_ids": [
+            "uzqoFzaQRzs:97",
+            "uzqoFzaQRzs:96",
+            "uzqoFzaQRzs:98"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "PXueino3A48",
+          "verdict": "useful",
+          "reason": "評圖時具體指出照片紫邊過重，提供可辨識的負面例子，教學深度有限。",
+          "paragraph_ids": [
+            "PXueino3A48:96"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第二名僅順帶列舉，第三名是短例而非完整紫邊課程；全詞僅3個結果仍須保留。"
+    },
+    {
+      "number": 148,
+      "query": "眩光",
+      "returned": [
+        {
+          "id": "I6GekSOIXf0",
+          "verdict": "useful",
+          "reason": "明確比較新舊鏡頭抗耀光表現。",
+          "paragraph_ids": [
+            "I6GekSOIXf0:26"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "ycX8-OKallM",
+          "verdict": "useful",
+          "reason": "保護鏡對照測试的主要觀察項目包含耀光。",
+          "paragraph_ids": [
+            "ycX8-OKallM:7"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "Ooo3Wg9U_qU",
+          "verdict": "useful",
+          "reason": "解釋側光形成耀光及遮光罩抑制、刻意利用耀光的人像取捨。",
+          "paragraph_ids": [
+            "Ooo3Wg9U_qU:24"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "NEor7rgZPaU",
+          "verdict": "should_include",
+          "reason": "比較手機鏡頭面對外來光、耀光與逆光的表現，提供器材限制的具體觀點。",
+          "paragraph_ids": [
+            "NEor7rgZPaU:23"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "20hKO-P2ZR0",
+          "verdict": "mention",
+          "reason": "只以耀光、光斑作小尺寸照片辨別鏡頭差異的簡短例子，未進一步解釋。",
+          "paragraph_ids": [
+            "20hKO-P2ZR0:104",
+            "20hKO-P2ZR0:103",
+            "20hKO-P2ZR0:105"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "眩光／耀光的同義意圖合理；兩筆缺少候選只有一筆足以確認應納入。"
+    },
+    {
+      "number": 149,
+      "query": "繞射",
+      "returned": [
+        {
+          "id": "DygmxrYauUc",
+          "verdict": "useful",
+          "reason": "微距逐級收光圈示範景深與繞射造成畫質下降的取捨。",
+          "paragraph_ids": [
+            "DygmxrYauUc:56"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "hMO0nXYuvH0",
+          "verdict": "useful",
+          "reason": "用小光圈星芒及星芒鏡對照解釋繞射相關效果。",
+          "paragraph_ids": [
+            "hMO0nXYuvH0:10"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "OLmlzjE45A0",
+          "verdict": "useful",
+          "reason": "比較 F22 與 F2.8 成像並指出小光圈繞射原因。",
+          "paragraph_ids": [
+            "OLmlzjE45A0:14"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "前三笔涵蓋畫質與星芒的實際案例；此審查判主題相關性，未額外核定光學說法正確性。"
+    },
+    {
+      "number": 150,
+      "query": "呼吸效應",
+      "returned": [
+        {
+          "id": "LDUfee3eoUY",
+          "verdict": "useful",
+          "reason": "低呼吸效應與跨機身手動錄影的需求連結清楚。",
+          "paragraph_ids": [
+            "LDUfee3eoUY:5"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "ufU_vFG8euU",
+          "verdict": "useful",
+          "reason": "在鏡頭實測評價中比較其呼吸效應較一般變焦鏡小。",
+          "paragraph_ids": [
+            "ufU_vFG8euU:87",
+            "ufU_vFG8euU:86",
+            "ufU_vFG8euU:88"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "FpjPrbgr3WE",
+          "verdict": "useful",
+          "reason": "針對錄影鏡頭對焦時的呼吸效應抑制進行評價。",
+          "paragraph_ids": [
+            "FpjPrbgr3WE:7"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "前三筆均有針對呼吸效應的評測內容；第二筆主要為簡短比較。"
+    },
+    {
+      "number": 151,
+      "query": "全片幅",
+      "returned": [
+        {
+          "id": "pLB4SFLUHCo",
+          "verdict": "useful",
+          "reason": "以感光元件尺寸解釋全片幅基準與 APS-C／中片幅視角換算。",
+          "paragraph_ids": [
+            "pLB4SFLUHCo:6"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "K-orNVhKF4c",
+          "verdict": "useful",
+          "reason": "實際並排比較感光元件大小並討論畫質與使用取捨。",
+          "paragraph_ids": [
+            "K-orNVhKF4c:5"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "zpkHhhz7D60",
+          "verdict": "useful",
+          "reason": "入門全片幅相機的暗部對焦、辨識與操作實用評測。",
+          "paragraph_ids": [
+            "zpkHhhz7D60:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "ChlwMDbVjGU",
+          "verdict": "mention",
+          "reason": "以全片幅淺景深作背景引入，實際段落轉向光圈、焦段及距離，沒有進一步比較片幅。",
+          "paragraph_ids": [
+            "ChlwMDbVjGU:5",
+            "ChlwMDbVjGU:6",
+            "ChlwMDbVjGU:7"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "dSWnG1qPzLo",
+          "verdict": "should_include",
+          "reason": "依預算區分全片幅與 APS-C 機身的購買選擇，有具體條件。",
+          "paragraph_ids": [
+            "dSWnG1qPzLo:43"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "一個候選有實際全片幅選購判斷，另一個只是景深教學的引言；不把95個候選数視為漏收成立数。"
+    },
+    {
+      "number": 152,
+      "query": "APS-C",
+      "returned": [
+        {
+          "id": "5LyD98Bh_Zc",
+          "verdict": "useful",
+          "reason": "專門解釋 APS-C 專用鏡頭為何仍需換算等效視角。",
+          "paragraph_ids": [
+            "5LyD98Bh_Zc:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "pLB4SFLUHCo",
+          "verdict": "useful",
+          "reason": "解釋 APS-C 尺寸、視角與全片幅鏡頭換用概念。",
+          "paragraph_ids": [
+            "pLB4SFLUHCo:4"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "Z5_Lez8VqLs",
+          "verdict": "useful",
+          "reason": "討論 APS-C 名稱以及 Nikon 系統鏡頭選擇不足的使用問題。",
+          "paragraph_ids": [
+            "Z5_Lez8VqLs:73"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "oZF8t3FIqdk",
+          "verdict": "should_include",
+          "reason": "A1 錄影評測明確說明 4K 可 APS-C 裁切及與 A7S III 的差異。",
+          "paragraph_ids": [
+            "oZF8t3FIqdk:15"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "e-5OCc4mMb4",
+          "verdict": "should_include",
+          "reason": "對預算有限、想換全片幅者提出賣掉舊 APS-C 補預算的條件建議。",
+          "paragraph_ids": [
+            "e-5OCc4mMb4:69",
+            "e-5OCc4mMb4:70",
+            "e-5OCc4mMb4:71"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "裁切模式與器材升級取捨皆為 APS-C 的合法延伸使用，不只是標題提及。"
+    },
+    {
+      "number": 153,
+      "query": "M4/3",
+      "returned": [
+        {
+          "id": "GrFx0Zzy7XI",
+          "verdict": "useful",
+          "reason": "比較 M4/3 大光圈鏡頭體積、ISO 弱項與畫質的取捨。",
+          "paragraph_ids": [
+            "GrFx0Zzy7XI:1"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "uNheiK-Mnmw",
+          "verdict": "useful",
+          "reason": "GH5 II 實測重心是 M4/3 操作、防震、高 ISO 等系統優劣。",
+          "paragraph_ids": [
+            "uNheiK-Mnmw:1"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "18SsibPzTjM",
+          "verdict": "useful",
+          "reason": "後段確有 OM-3、GH7 的觀眾評比與榜單限制說明，不只開場列類別。",
+          "paragraph_ids": [
+            "18SsibPzTjM:79",
+            "18SsibPzTjM:162",
+            "18SsibPzTjM:163",
+            "18SsibPzTjM:167"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "AA73H39siB4",
+          "verdict": "should_include",
+          "reason": "用小包可帶一機多顆小定焦的實際配置說明 M4/3 體積優勢。",
+          "paragraph_ids": [
+            "AA73H39siB4:12"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "aenrQyqENbY",
+          "verdict": "mention",
+          "reason": "僅回答仍有人使用、體積小與外國頻道流行，未給操作或選購細節。",
+          "paragraph_ids": [
+            "aenrQyqENbY:40",
+            "aenrQyqENbY:39",
+            "aenrQyqENbY:41",
+            "aenrQyqENbY:42",
+            "aenrQyqENbY:43"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第三名初段只是分類，回讀後段可確認有相關機型評比；只確認一個未顯示候選應納入。"
+    },
+    {
+      "number": 154,
+      "query": "中片幅",
+      "returned": [
+        {
+          "id": "5eLlDlQda1A",
+          "verdict": "useful",
+          "reason": "GFX100RF 中片幅定焦機的使用／購買心得，是相關器材評測。",
+          "paragraph_ids": [
+            "5eLlDlQda1A:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "18SsibPzTjM",
+          "verdict": "useful",
+          "reason": "有 GFX100RF 體積、價位與隨身中片幅定位的比較及觀眾榜單。",
+          "paragraph_ids": [
+            "18SsibPzTjM:77",
+            "18SsibPzTjM:150",
+            "18SsibPzTjM:151",
+            "18SsibPzTjM:152",
+            "18SsibPzTjM:163",
+            "18SsibPzTjM:164",
+            "18SsibPzTjM:166",
+            "18SsibPzTjM:167"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "773BrzLo3Oo",
+          "verdict": "useful",
+          "reason": "中片幅成本背景與 GFX50S 紀實使用評價皆切合主題。",
+          "paragraph_ids": [
+            "773BrzLo3Oo:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "20hKO-P2ZR0",
+          "verdict": "mention",
+          "reason": "只提醒富士另有中片幅且可調色，沒有進一步中片幅特性或用法。",
+          "paragraph_ids": [
+            "20hKO-P2ZR0:92"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "IlUczXZiWno",
+          "verdict": "should_include",
+          "reason": "比較 GFX100RF 與 RX1R III 的相近客群及隨身中片幅拍攝樂趣。",
+          "paragraph_ids": [
+            "IlUczXZiWno:98"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "原文核實一個有購買定位比較的候選；中片幅三字的單純提及不足以推薦。"
+    },
+    {
+      "number": 155,
+      "query": "感光元件",
+      "returned": [
+        {
+          "id": "-XPFNHkC-GM",
+          "verdict": "useful",
+          "reason": "將半堆疊感光元件連結至預拍、連拍與降低果凍效應。",
+          "paragraph_ids": [
+            "-XPFNHkC-GM:1"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "NhaVwmaT5Ns",
+          "verdict": "useful",
+          "reason": "解釋部分堆疊感光元件對電子快門及錄影果凍的改善。",
+          "paragraph_ids": [
+            "NhaVwmaT5Ns:2"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "jUdza5FKw_o",
+          "verdict": "useful",
+          "reason": "相機選購時感光元件尺寸與預算的關係，有明確決策條件。",
+          "paragraph_ids": [
+            "jUdza5FKw_o:11"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "5T5vFZT40EM",
+          "verdict": "should_include",
+          "reason": "二手驗機具體建議檢查感光元件刮痕、乾淨程度及損傷。",
+          "paragraph_ids": [
+            "5T5vFZT40EM:18"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "dXOGOlFY1Rw",
+          "verdict": "unclear",
+          "reason": "對新相機是否沿用 M 系列感光元件僅說我猜，無可確認的感光元件知識。",
+          "paragraph_ids": [
+            "dXOGOlFY1Rw:6"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "感光元件也包含保養／驗機的合法學習意圖；純推測零件來源不能當證實。"
+    },
+    {
+      "number": 156,
+      "query": "動態範圍",
+      "returned": [
+        {
+          "id": "w5H7GKm-NYw",
+          "verdict": "useful",
+          "reason": "說明 C-Log3 與影片動態範圍、顏色還原的實拍體驗。",
+          "paragraph_ids": [
+            "w5H7GKm-NYw:14"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "vgODW9R-gJ8",
+          "verdict": "useful",
+          "reason": "回答兩機動態範圍差異，並交代平常曝光準確、少拉曝光的使用前提。",
+          "paragraph_ids": [
+            "vgODW9R-gJ8:140",
+            "vgODW9R-gJ8:141",
+            "vgODW9R-gJ8:142"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "OQJCIvaf_PM",
+          "verdict": "useful",
+          "reason": "明確解釋寬容度與 RAW 可保留亮暗範圍，以及跨機比較的用途。",
+          "paragraph_ids": [
+            "OQJCIvaf_PM:110",
+            "OQJCIvaf_PM:99"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "iNakLzgKCIs",
+          "verdict": "should_include",
+          "reason": "以寬容度為起點討論低 ISO 欠曝後拉亮與 RAW 實測，能回答動態範圍的應用。",
+          "paragraph_ids": [
+            "iNakLzgKCIs:3",
+            "iNakLzgKCIs:4",
+            "iNakLzgKCIs:5"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "4Oy4nLLH8RY",
+          "verdict": "should_include",
+          "reason": "逆光案例說明寬容度高時壓天空、提膚色以縮小反差的後製取捨。",
+          "paragraph_ids": [
+            "4Oy4nLLH8RY:102",
+            "4Oy4nLLH8RY:103",
+            "4Oy4nLLH8RY:104"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "兩個未顯示候選使用寬容度一詞，均有實際亮暗保留或修圖解釋。"
+    },
+    {
+      "number": 157,
+      "query": "機身防手震",
+      "returned": [
+        {
+          "id": "cYp1WXLHTOI",
+          "verdict": "mention",
+          "reason": "只列 X100VI 防震6級規格並表示不知道實際強不強，後文轉向售價推測。",
+          "paragraph_ids": [
+            "cYp1WXLHTOI:16",
+            "cYp1WXLHTOI:17",
+            "cYp1WXLHTOI:18"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "NZztOrl-XEY",
+          "verdict": "useful",
+          "reason": "明確示範35mm鏡头與機身防震搭配、一秒手持曝光及窗格清楚的結果。",
+          "paragraph_ids": [
+            "NZztOrl-XEY:17",
+            "NZztOrl-XEY:18",
+            "NZztOrl-XEY:19"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "18SsibPzTjM",
+          "verdict": "useful",
+          "reason": "以24mm小光圈手持夜景說明機身防震對慢快門的幫助。",
+          "paragraph_ids": [
+            "18SsibPzTjM:35"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第一名只有新增規格和未測疑問，第二名有直接實測，前排學習價值差異明顯。"
+    },
+    {
+      "number": 158,
+      "query": "電子快門",
+      "returned": [
+        {
+          "id": "FbpV3t6Xiu4",
+          "verdict": "useful",
+          "reason": "Sigma BF 純電子快門的使用限制是評測中的實際取捨。",
+          "paragraph_ids": [
+            "FbpV3t6Xiu4:23"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "sB2ztzbhYDM",
+          "verdict": "useful",
+          "reason": "解釋全電子與電子前簾、機械快門構造及頻閃差異。",
+          "paragraph_ids": [
+            "sB2ztzbhYDM:30"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "5qlEaTeHFqw",
+          "verdict": "useful",
+          "reason": "用螺旋槳變形引入電子快門果凍效應原理。",
+          "paragraph_ids": [
+            "5qlEaTeHFqw:7"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "Hgad7_YLCRg",
+          "verdict": "should_include",
+          "reason": "後段直接說明室內防頻閃與需要無聲時選電子快門的取捨。",
+          "paragraph_ids": [
+            "Hgad7_YLCRg:92",
+            "Hgad7_YLCRg:93",
+            "Hgad7_YLCRg:94"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "n_OrAw4J2oE",
+          "verdict": "mention",
+          "reason": "只列電子40張與機械12張連拍數字，缺乏電子快門使用解釋。",
+          "paragraph_ids": [
+            "n_OrAw4J2oE:98"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第一筆候選原截段只是問題，回讀才確認後段有電子快門選擇情境。"
+    },
+    {
+      "number": 159,
+      "query": "機械快門",
+      "returned": [
+        {
+          "id": "IXZbTN9PjOw",
+          "verdict": "useful",
+          "reason": "老市場燈管拍攝案例建議使用機械快門避免頻閃。",
+          "paragraph_ids": [
+            "IXZbTN9PjOw:7"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "sB2ztzbhYDM",
+          "verdict": "useful",
+          "reason": "解說機械前後簾與電子前簾的運作區分。",
+          "paragraph_ids": [
+            "sB2ztzbhYDM:29"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "U7V0aIPH2kE",
+          "verdict": "useful",
+          "reason": "婚禮燈光頻閃與錄影收音情境下設定機械／電子快門切換。",
+          "paragraph_ids": [
+            "U7V0aIPH2kE:3"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "dSWnG1qPzLo",
+          "verdict": "unclear",
+          "reason": "R8 是否有機械快門及電子前簾果凍問題仍在問答猜測，主持人自承不熟，不能當穩定教學。",
+          "paragraph_ids": [
+            "dSWnG1qPzLo:28",
+            "dSWnG1qPzLo:29",
+            "dSWnG1qPzLo:30"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "n-aXy5OHmdo",
+          "verdict": "should_include",
+          "reason": "具體指出電子快門頻閃及果凍缺點，說明通常選機械快門的理由。",
+          "paragraph_ids": [
+            "n-aXy5OHmdo:30"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "確認一個使用取捨候選應納入；另一候選原文帶有未釐清機型前提，不予肯定。"
+    },
+    {
+      "number": 160,
+      "query": "滾動快門",
+      "returned": [],
+      "missing": [
+        {
+          "id": "W8M0buwx2-I",
+          "verdict": "should_include",
+          "reason": "以拍攝風扇葉片比較果凍效應與前代差異，直接呈現滾動讀出變形的評測。",
+          "paragraph_ids": [
+            "W8M0buwx2-I:13"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "GmEmURRr9Sg",
+          "verdict": "should_include",
+          "reason": "FX30 與 FX3／A7 IV 果凍效應比較，說明快速移動與超採樣畫質的取捨。",
+          "paragraph_ids": [
+            "GmEmURRr9Sg:11"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "零結果不等於無資料。兩個已讀候選均是果凍效應的具體比較；此詞應考慮與果凍效應的語意關聯，未核定其餘24筆候選。"
+    },
+    {
+      "number": 161,
+      "query": "RAW",
+      "returned": [
+        {
+          "id": "ZG6E5yKxoak",
+          "verdict": "irrelevant",
+          "reason": "原段落是人像構圖、背景不要插頭與包包勿切斷；C-Raw 是此段辨識字串，沒有 RAW 檔案內容。",
+          "paragraph_ids": [
+            "ZG6E5yKxoak:63"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "rvzsKV_1ArY",
+          "verdict": "mention",
+          "reason": "只列連拍可拍153張RAW的規格，未解釋RAW檔案使用。",
+          "paragraph_ids": [
+            "rvzsKV_1ArY:30"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "o05AXiSlogA",
+          "verdict": "useful",
+          "reason": "具體描述RAW分存SSD與HDD、JPEG卡保留至交件的備份流程。",
+          "paragraph_ids": [
+            "o05AXiSlogA:112"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        },
+        {
+          "id": "HjTiyYgp4d4",
+          "rank": 4,
+          "full_match": true,
+          "title_only": true,
+          "verdict": "useful",
+          "reason": "專門比較RAW與JPEG的資訊、白平衡、後製空間與儲存代價；原文轉成弱檔，僅標題命中。",
+          "paragraph_ids": [
+            "HjTiyYgp4d4:1",
+            "HjTiyYgp4d4:2",
+            "HjTiyYgp4d4:3",
+            "HjTiyYgp4d4:5",
+            "HjTiyYgp4d4:6",
+            "HjTiyYgp4d4:7"
+          ],
+          "full_source_read": true,
+          "extra_source": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "完整基線核實主題教學已列第4名，不能說漏收；卻排在第1名無關C-Raw辨識字串之後。此額外返回來源另標extra_source。"
+    },
+    {
+      "number": 162,
+      "query": "JPEG",
+      "returned": [
+        {
+          "id": "HjTiyYgp4d4",
+          "verdict": "useful",
+          "reason": "專題比較 RAW 與 JPEG，並以新相機 RAW 無法開啟時用 JPEG 的案例引入。",
+          "paragraph_ids": [
+            "HjTiyYgp4d4:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "Sbo05ufD_hE",
+          "verdict": "useful",
+          "reason": "以JPEG副卡作RAW主卡失敗時備份，具體說明檔案工作流。",
+          "paragraph_ids": [
+            "Sbo05ufD_hE:5"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "iNakLzgKCIs",
+          "verdict": "useful",
+          "reason": "明確指出 RAW 欠曝拉亮實測不能套用JPEG，JPEG應當場曝光準確。",
+          "paragraph_ids": [
+            "iNakLzgKCIs:8"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "P5jCn334AIw",
+          "verdict": "should_include",
+          "reason": "室內攝影RAW與JPEG／包圍曝光取捨，讀到燈飾細節與後製空間的解釋。",
+          "paragraph_ids": [
+            "P5jCn334AIw:8",
+            "P5jCn334AIw:9",
+            "P5jCn334AIw:10"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "8eQQf6TY3ug",
+          "verdict": "should_include",
+          "reason": "以重新調暖色溫的案例，比較JPEG當場定調與RAW事後調整的彈性。",
+          "paragraph_ids": [
+            "8eQQf6TY3ug:27",
+            "8eQQf6TY3ug:28",
+            "8eQQf6TY3ug:29"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "JPEG與JPG應有穩定共同意圖；兩候選均有具體格式選擇說明。"
+    },
+    {
+      "number": 163,
+      "query": "降噪",
+      "returned": [
+        {
+          "id": "2x8oQhQr1JY",
+          "verdict": "irrelevant",
+          "reason": "若意圖是照片後製降噪，此段無關：整段講無線麥克風收音與主動降噪；若意圖是影片收音則相關。",
+          "paragraph_ids": [
+            "2x8oQhQr1JY:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true,
+          "intent_ambiguity": true
+        },
+        {
+          "id": "1rTmX4lV1mE",
+          "verdict": "irrelevant",
+          "reason": "若意圖是照片降噪，此段無關：兩檔主動降噪指麥克風環境聲音；音訊降噪本身仍是合法攝影相關詞義。",
+          "paragraph_ids": [
+            "1rTmX4lV1mE:0"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true,
+          "intent_ambiguity": true
+        },
+        {
+          "id": "x3rYQ6SxG9M",
+          "verdict": "useful",
+          "reason": "解釋 Lightroom AI降噪不支援的RAW類型與功能反灰原因。",
+          "paragraph_ids": [
+            "x3rYQ6SxG9M:132",
+            "x3rYQ6SxG9M:133",
+            "x3rYQ6SxG9M:134"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "81zwtg3mFQI",
+          "verdict": "unclear",
+          "reason": "直播對Dual Gain僅疑問式辨認為減少雜訊並觀察顏色差別，不足以確認有降噪解說。",
+          "paragraph_ids": [
+            "81zwtg3mFQI:114"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "ranking_issue",
+      "note": "此詞有音訊／影像雙義；按本批檔案與後製的照片學習意圖，前二名屬錯義。若查詢者要影片收音，兩片則相關，不宜全域排除音訊降噪。"
+    },
+    {
+      "number": 164,
+      "query": "銳化",
+      "returned": [
+        {
+          "id": "Y6jQoiqRSPA",
+          "verdict": "useful",
+          "reason": "示範銳化並提醒人像細紋、顆粒被放大的風險。",
+          "paragraph_ids": [
+            "Y6jQoiqRSPA:10"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "wJcS7VK_LZ0",
+          "verdict": "useful",
+          "reason": "以手機照片放大100%觀察輪廓與紋理過度銳化的具體例子。",
+          "paragraph_ids": [
+            "wJcS7VK_LZ0:9"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "tipGuY2gksY",
+          "verdict": "useful",
+          "reason": "說明依輸出或網路縮圖尺寸做額外銳化，並區分真正失焦。",
+          "paragraph_ids": [
+            "tipGuY2gksY:146",
+            "tipGuY2gksY:147",
+            "tipGuY2gksY:148"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "前三筆都有實際銳化效果、風險或輸出操作觀念。"
+    },
+    {
+      "number": 165,
+      "query": "調色",
+      "returned": [
+        {
+          "id": "Xf--gH81PoA",
+          "verdict": "useful",
+          "reason": "討論調色預設檔與創作風格的關係，屬調色決策主題。",
+          "paragraph_ids": [
+            "Xf--gH81PoA:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "-gLBJBy5rx8",
+          "verdict": "useful",
+          "reason": "說明內建色彩風格如何降低影片後製調色需求與適用對象。",
+          "paragraph_ids": [
+            "-gLBJBy5rx8:8"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "dcZa17Q4O3I",
+          "verdict": "useful",
+          "reason": "Lightroom逐步調亮部、阴影、黑白點的實作教學。",
+          "paragraph_ids": [
+            "dcZa17Q4O3I:4"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "eP_O2p8sBts",
+          "verdict": "should_include",
+          "reason": "隔玻璃拍攝偏綠時調色調往洋紅修正，具體可操作。",
+          "paragraph_ids": [
+            "eP_O2p8sBts:51"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "cTo2pYx_2b4",
+          "verdict": "should_include",
+          "reason": "評圖指出紫色過濃與內建濾鏡造成不自然色彩，提供調色的負面案例。",
+          "paragraph_ids": [
+            "cTo2pYx_2b4:35"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "兩候選皆能服務調色學習，第二筆是短評圖案例，不等同完整教學。"
+    },
+    {
+      "number": 166,
+      "query": "曲線",
+      "returned": [
+        {
+          "id": "ako7Y8blJ2k",
+          "verdict": "useful",
+          "reason": "專門介紹亮度曲線、S曲線、黑點與高光調整。",
+          "paragraph_ids": [
+            "ako7Y8blJ2k:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "tfseVMxwMmI",
+          "verdict": "mention",
+          "reason": "只說曲線應在HSL之前處理，未解釋曲線怎麼調。",
+          "paragraph_ids": [
+            "tfseVMxwMmI:7"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "EJ8iUj2iDBM",
+          "verdict": "irrelevant",
+          "reason": "若意圖是後製曲線，此段不適用；原文是天橋幾何曲線的構圖教學，對構圖意圖則有用。",
+          "paragraph_ids": [
+            "EJ8iUj2iDBM:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true,
+          "intent_ambiguity": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "MYG0jz77grA",
+          "verdict": "should_include",
+          "reason": "實際教曲線暗部五分之一區段往下拉，以加強照片對比。",
+          "paragraph_ids": [
+            "MYG0jz77grA:93"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "1GYZ9Qn3p3U",
+          "verdict": "mention",
+          "reason": "只是回答尚未講RGB曲線、未來可以安排，沒有該主題教學。",
+          "paragraph_ids": [
+            "1GYZ9Qn3p3U:101"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "後製意圖有排名與召回問題；天橋曲線是合理攝影詞義但不符合此題類別，不宜把所有曲線查詢一律排除構圖。"
+    },
+    {
+      "number": 167,
+      "query": "裁切",
+      "returned": [
+        {
+          "id": "Zsl2Su3nllo",
+          "verdict": "useful",
+          "reason": "解釋裁切改變視角與高像素裁切彈性。",
+          "paragraph_ids": [
+            "Zsl2Su3nllo:10"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "mj1f-htv62M",
+          "verdict": "useful",
+          "reason": "比較當場構圖與事後校正裁切的工作方式，明確表示可按個人需求選。",
+          "paragraph_ids": [
+            "mj1f-htv62M:142"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "q9UIPtVU388",
+          "verdict": "useful",
+          "reason": "專題討論不同照片裁切比例與敘事／展示需求。",
+          "paragraph_ids": [
+            "q9UIPtVU388:1"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "KZcbNouaW5c",
+          "verdict": "should_include",
+          "reason": "示範以控制盤呼叫裁切並旋轉裁切角度，屬實際操作。",
+          "paragraph_ids": [
+            "KZcbNouaW5c:8"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "IqUjOKgeRHc",
+          "verdict": "should_include",
+          "reason": "比較先見到XPan數位裁切視野與事後裁切的構圖感受。",
+          "paragraph_ids": [
+            "IqUjOKgeRHc:5",
+            "IqUjOKgeRHc:6",
+            "IqUjOKgeRHc:7"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "操作與預先裁切取景皆有實際內容，兩候選應納入。"
+    },
+    {
+      "number": 168,
+      "query": "遮色片",
+      "returned": [
+        {
+          "id": "RCsHZtVeS3I",
+          "verdict": "mention",
+          "reason": "僅將遮色片列為局部色溫調整的選項，重點轉向現場打燈，沒有示範遮色片。",
+          "paragraph_ids": [
+            "RCsHZtVeS3I:46",
+            "RCsHZtVeS3I:47",
+            "RCsHZtVeS3I:48"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "KViDgfnVeDM",
+          "verdict": "useful",
+          "reason": "Photoshop主體選取、複製圖層與遮色片去背的操作解說。",
+          "paragraph_ids": [
+            "KViDgfnVeDM:67"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "mRA7foiJqWc",
+          "verdict": "useful",
+          "reason": "用低硬度筆刷塗遮色片邊界，令合成邊緣有漸層。",
+          "paragraph_ids": [
+            "mRA7foiJqWc:27"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第一名是用途提及，後兩名有直接操作，主題深度更好。"
+    },
+    {
+      "number": 169,
+      "query": "Lightroom",
+      "returned": [
+        {
+          "id": "JEZlvUcbMKM",
+          "verdict": "useful",
+          "reason": "Lightroom移除污點／物件的實際操作與限制。",
+          "paragraph_ids": [
+            "JEZlvUcbMKM:17"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "vmWSNb5KJyo",
+          "verdict": "useful",
+          "reason": "Lightroom大量物件移除的操作並與Photoshop能力比較。",
+          "paragraph_ids": [
+            "vmWSNb5KJyo:42"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "KZcbNouaW5c",
+          "verdict": "useful",
+          "reason": "介紹MIDI控制盤與Lightroom連接操作，屬軟體工作流。",
+          "paragraph_ids": [
+            "KZcbNouaW5c:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "a2apPPhUltg",
+          "verdict": "unclear",
+          "reason": "PSLR一段辨識混亂，前後切換電影與閒聊，不能確認存在Lightroom教學。",
+          "paragraph_ids": [
+            "a2apPPhUltg:136",
+            "a2apPPhUltg:137",
+            "a2apPPhUltg:138"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "eD8kDPMmws4",
+          "verdict": "mention",
+          "reason": "談軟體可用中文介面協助英文不熟者，Lightroom只是例子，未有軟體操作教學。",
+          "paragraph_ids": [
+            "eD8kDPMmws4:25"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "front_relevant",
+      "note": "兩個獨立候選不足以確認必須收錄；既有前三筆相關。"
+    },
+    {
+      "number": 170,
+      "query": "Photoshop",
+      "returned": [
+        {
+          "id": "nk83MCZ2uio",
+          "verdict": "useful",
+          "reason": "Photoshop修圖選繪圖板及軟體內控制強度的具體建議。",
+          "paragraph_ids": [
+            "nk83MCZ2uio:50"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "mRA7foiJqWc",
+          "verdict": "useful",
+          "reason": "把素材放進Photoshop做霓虹人像的實作教學。",
+          "paragraph_ids": [
+            "mRA7foiJqWc:22"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "P5jCn334AIw",
+          "verdict": "useful",
+          "reason": "比較Photoshop與Lightroom功能、圖層能力和是否必學的需求。",
+          "paragraph_ids": [
+            "P5jCn334AIw:124"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "8UwrFdUfBmY",
+          "verdict": "irrelevant",
+          "reason": "ps出現在APS鏡頭、轉接與片幅討論，並非Photoshop。",
+          "paragraph_ids": [
+            "8UwrFdUfBmY:38"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "5DlfsJ2Lz4o",
+          "verdict": "irrelevant",
+          "reason": "PS5與PS一代指PlayStation遊戲機，原文沒有Photoshop內容。",
+          "paragraph_ids": [
+            "5DlfsJ2Lz4o:13"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "front_relevant",
+      "note": "兩個未顯示候選皆是PS縮寫／辨識假陽性，屬候選基準問題；現有搜尋未回傳這兩片，不可列為漏收或網站錯片。"
+    },
+    {
+      "number": 171,
+      "query": "腳架",
+      "returned": [
+        {
+          "id": "Ptv0ZNMXBbw",
+          "verdict": "useful",
+          "reason": "專題從星空等需求、穩定支撐到腳架選購條件展開。",
+          "paragraph_ids": [
+            "Ptv0ZNMXBbw:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "576wXLhK9xE",
+          "verdict": "useful",
+          "reason": "具體介紹雙雲台、承重、直幅錄影等腳架使用功能。",
+          "paragraph_ids": [
+            "576wXLhK9xE:0"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "966l209q0MA",
+          "verdict": "useful",
+          "reason": "討論腳架價格、品質與新手預算的實際選購困難。",
+          "paragraph_ids": [
+            "966l209q0MA:132",
+            "966l209q0MA:133",
+            "966l209q0MA:134"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "mj1f-htv62M",
+          "verdict": "should_include",
+          "reason": "除了贊助開場，後段有實際拆開腳架手把、取出內藏螺絲起子配件的操作。",
+          "paragraph_ids": [
+            "mj1f-htv62M:94",
+            "mj1f-htv62M:95",
+            "mj1f-htv62M:96",
+            "mj1f-htv62M:97"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "PXKgp-TzUBo",
+          "verdict": "should_include",
+          "reason": "室內空間攝影提出機身搭等效16–35與脚架的具體入門配置。",
+          "paragraph_ids": [
+            "PXKgp-TzUBo:20"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "兩候選有配件操作或使用情境；不是只因贊助／器材名稱而認定相關。"
+    },
+    {
+      "number": 172,
+      "query": "ND",
+      "returned": [
+        {
+          "id": "ZC5dzB249WA",
+          "verdict": "useful",
+          "reason": "濾鏡購買指南直接討論減光鏡品質與曝光限制下的需要。",
+          "paragraph_ids": [
+            "ZC5dzB249WA:11"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "zWG4S05FnU4",
+          "verdict": "useful",
+          "reason": "ND與黑柔濾鏡實拍評測，內容包含延長快門與錄影曝光調整。",
+          "paragraph_ids": [
+            "zWG4S05FnU4:1"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "GUaxnHwmh9U",
+          "verdict": "useful",
+          "reason": "提供ND2–32磁吸濾鏡與Pocket4／4P搭配限制的具體器材資訊。",
+          "paragraph_ids": [
+            "GUaxnHwmh9U:2"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "A62FHf7mSE4",
+          "verdict": "mention",
+          "reason": "只說遮光罩有開口可調減光／偏光鏡，重心是微距鏡規格。",
+          "paragraph_ids": [
+            "A62FHf7mSE4:14"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "fleU4tmOSsI",
+          "verdict": "should_include",
+          "reason": "強日光下以錄影減光鏡對照拍照快門／光圈限制，明確交代ND使用情境。",
+          "paragraph_ids": [
+            "fleU4tmOSsI:8"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "確認一個可用ND案例；微距鏡開口設計只是附帶提及。"
+    },
+    {
+      "number": 173,
+      "query": "CPL",
+      "returned": [
+        {
+          "id": "egTlJse1fy4",
+          "verdict": "useful",
+          "reason": "直接解釋偏光鏡用途並教旋轉前框觀察反光變化。",
+          "paragraph_ids": [
+            "egTlJse1fy4:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "hMO0nXYuvH0",
+          "verdict": "useful",
+          "reason": "濾鏡專題包含CPL與ND二合一器材及其用途教學。",
+          "paragraph_ids": [
+            "hMO0nXYuvH0:14"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "GUaxnHwmh9U",
+          "verdict": "useful",
+          "reason": "介紹偏光濾鏡套件與雲台／轉接底座相容性，屬具體器材使用資訊。",
+          "paragraph_ids": [
+            "GUaxnHwmh9U:2"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "前三筆相關；第三筆偏向配件相容性，第一筆更適合原理與操作入門。"
+    },
+    {
+      "number": 174,
+      "query": "保護鏡",
+      "returned": [
+        {
+          "id": "ycX8-OKallM",
+          "verdict": "useful",
+          "reason": "保護鏡專題包含UV用途變化與碰撞保護經驗及實測。",
+          "paragraph_ids": [
+            "ycX8-OKallM:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "dtqClxW0HW0",
+          "verdict": "useful",
+          "reason": "磁吸保護鏡與其他濾鏡拆裝的便利性、使用取捨。",
+          "paragraph_ids": [
+            "dtqClxW0HW0:1"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "hMO0nXYuvH0",
+          "verdict": "useful",
+          "reason": "直接介紹保護鏡／UV濾鏡及保護鏡頭的用途。",
+          "paragraph_ids": [
+            "hMO0nXYuvH0:2"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "e-5OCc4mMb4",
+          "verdict": "should_include",
+          "reason": "以鏡頭價格、保護鏡成本及低品質降低畫質分析要不要裝。",
+          "paragraph_ids": [
+            "e-5OCc4mMb4:1",
+            "e-5OCc4mMb4:2",
+            "e-5OCc4mMb4:3",
+            "e-5OCc4mMb4:4"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "HWjJ0M4GriA",
+          "verdict": "should_include",
+          "reason": "以受損鏡頭與敲擊保護鏡示範代鏡頭承受損傷的作用。",
+          "paragraph_ids": [
+            "HWjJ0M4GriA:49"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "兩個直播皆有可用保護鏡論述，需回讀開場後才能核實第一候選。"
+    },
+    {
+      "number": 175,
+      "query": "快門線",
+      "returned": [
+        {
+          "id": "4Oy4nLLH8RY",
+          "verdict": "useful",
+          "reason": "區分單純觸發與縮時電子快門線，並討論手機APP替代方案。",
+          "paragraph_ids": [
+            "4Oy4nLLH8RY:84"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "YakfnlayaX0",
+          "verdict": "unclear",
+          "reason": "只短暫摸過機身，對螺紋能否觸發、需電子線多用好像／應該，未確認相容性。",
+          "paragraph_ids": [
+            "YakfnlayaX0:65",
+            "YakfnlayaX0:64",
+            "YakfnlayaX0:66"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "Tof9e8a7GZY",
+          "verdict": "useful",
+          "reason": "搖黑卡長曝操作中指出快門線有助掌握時間點。",
+          "paragraph_ids": [
+            "Tof9e8a7GZY:57"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "needs_review",
+      "note": "第二名是未驗證的兼容性猜測；其他兩筆有用途與選型內容，暫不把第二筆當可確信教學。"
+    },
+    {
+      "number": 176,
+      "query": "遮光罩",
+      "returned": [
+        {
+          "id": "Ooo3Wg9U_qU",
+          "verdict": "useful",
+          "reason": "直接解釋遮光罩阻擋周邊雜光，以及人像刻意保留耀光的選擇。",
+          "paragraph_ids": [
+            "Ooo3Wg9U_qU:23"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "0QsSR2DaJr8",
+          "verdict": "mention",
+          "reason": "僅玩笑回答沒有使用遮光罩，隨即轉向鋼彈話題。",
+          "paragraph_ids": [
+            "0QsSR2DaJr8:98"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "raBkI6zpZTE",
+          "verdict": "irrelevant",
+          "reason": "若意圖是鏡頭遮光罩，此段不適用；原文比較直打／跳燈與離閃的燈具控光附件，燈具遮光罩則是另一合理攝影詞義。",
+          "paragraph_ids": [
+            "raBkI6zpZTE:12"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true,
+          "intent_ambiguity": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "按镜頭配件的查詢意圖，第二名無解說、第三名不同對象；原文均已讀。"
+    },
+    {
+      "number": 177,
+      "query": "記憶卡",
+      "returned": [
+        {
+          "id": "5z3wPV8xIEA",
+          "verdict": "mention",
+          "reason": "整支是忘帶卡就拿走路人相機記憶卡的笑話，沒有可用的卡片應變教學。",
+          "paragraph_ids": [
+            "5z3wPV8xIEA:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "rt-Hrkw7Izg",
+          "verdict": "useful",
+          "reason": "婚禮按流程分多張記憶卡，解釋分散故障風險的配置。",
+          "paragraph_ids": [
+            "rt-Hrkw7Izg:44"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "cmXJVnvX3JY",
+          "verdict": "useful",
+          "reason": "用500D不支援128GB的實例引入SD卡規格與舊機相容性。",
+          "paragraph_ids": [
+            "cmXJVnvX3JY:24"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "-iztGCNuVdw",
+          "verdict": "should_include",
+          "reason": "具體指出老機CF卡與SD轉CF的相容／轉接使用取捨。",
+          "paragraph_ids": [
+            "-iztGCNuVdw:21"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "NZztOrl-XEY",
+          "verdict": "should_include",
+          "reason": "R5的8K與4K120需CFexpress、只有SD會限制錄影功能，具體且可用。",
+          "paragraph_ids": [
+            "NZztOrl-XEY:20"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第一名雖題名高度相關卻是玩笑；兩個未顯示候選有實際格式與速度相容性資訊。"
+    },
+    {
+      "number": 178,
+      "query": "電池",
+      "returned": [
+        {
+          "id": "yaR-s5a0I_o",
+          "verdict": "useful",
+          "reason": "實際示範原廠手把邊緣阻碍抽出電池的操作問題。",
+          "paragraph_ids": [
+            "yaR-s5a0I_o:20"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "81zwtg3mFQI",
+          "verdict": "mention",
+          "reason": "只在機身規格串列中猜測換新電池後續航應該較好，沒有實測。",
+          "paragraph_ids": [
+            "81zwtg3mFQI:9"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "W8M0buwx2-I",
+          "verdict": "useful",
+          "reason": "比較新舊電池容量與既有電池相容成本，且有使用感受。",
+          "paragraph_ids": [
+            "W8M0buwx2-I:5"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "zElQHQ0WEuU",
+          "verdict": "should_include",
+          "reason": "實際討論快展手把裝上後仍可拆換電池的便利性。",
+          "paragraph_ids": [
+            "zElQHQ0WEuU:3"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "a2apPPhUltg",
+          "verdict": "should_include",
+          "reason": "比較A6400升A6700的小電池到大電池及續航改善，列入升級判斷。",
+          "paragraph_ids": [
+            "a2apPPhUltg:26"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第二名是規格式推測；兩個候選有電池更換或續航的具體器材決策。"
+    },
+    {
+      "number": 179,
+      "query": "相機背帶",
+      "returned": [
+        {
+          "id": "QOiaGr-k5kY",
+          "verdict": "useful",
+          "reason": "背帶專門試用，重心為背負與快取方式的操作。",
+          "paragraph_ids": [
+            "QOiaGr-k5kY:2"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "YOPYVYD8-7Y",
+          "verdict": "useful",
+          "reason": "针对背帶撞身與擋翻轉螢幕，提供底部固定背帶及登山背包卡扣做法。",
+          "paragraph_ids": [
+            "YOPYVYD8-7Y:78",
+            "YOPYVYD8-7Y:79",
+            "YOPYVYD8-7Y:80"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "RCsHZtVeS3I",
+          "verdict": "useful",
+          "reason": "區分掛脖、斜背、腕帶與底部固定設計，屬簡短選擇討論。",
+          "paragraph_ids": [
+            "RCsHZtVeS3I:29",
+            "RCsHZtVeS3I:30",
+            "RCsHZtVeS3I:31"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "Rkv91mh2isY",
+          "verdict": "should_include",
+          "reason": "後段明確提醒雙手同時操作兩機時應有背帶避免滑落，是拍攝案例中的使用理由。",
+          "paragraph_ids": [
+            "Rkv91mh2isY:3",
+            "Rkv91mh2isY:2",
+            "Rkv91mh2isY:4",
+            "Rkv91mh2isY:5",
+            "Rkv91mh2isY:6",
+            "Rkv91mh2isY:7"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "sWdBfdFgv5c",
+          "verdict": "irrelevant",
+          "reason": "背帶是攝影包的肩帶鬆脫，並非相機背帶；不能用單詞背帶就判漏收。",
+          "paragraph_ids": [
+            "sWdBfdFgv5c:0"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "一個候選回讀後確認與相機背帶有用；另一個是攝影包配件的候選錯義。"
+    },
+    {
+      "number": 180,
+      "query": "照片備份",
+      "returned": [
+        {
+          "id": "B8MuiRkwtj0",
+          "verdict": "useful",
+          "reason": "逐步示範把iPhone照片選取並複製到外接隨身碟與資料夾。",
+          "paragraph_ids": [
+            "B8MuiRkwtj0:16",
+            "B8MuiRkwtj0:14"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "pXsSB5cNReo",
+          "verdict": "useful",
+          "reason": "說明雙卡分散風險，以及備份／出檔完成後才格式化的流程。",
+          "paragraph_ids": [
+            "pXsSB5cNReo:116",
+            "pXsSB5cNReo:113"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "o05AXiSlogA",
+          "verdict": "useful",
+          "reason": "前段有RAW存SSD/HDD、JPEG留卡至交件的完整備份安排；117段笑話非唯一內容。",
+          "paragraph_ids": [
+            "o05AXiSlogA:117",
+            "o05AXiSlogA:110",
+            "o05AXiSlogA:112"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "Sbo05ufD_hE",
+          "verdict": "should_include",
+          "reason": "備份專題且原段落說明RAW主卡、JPEG備卡作故障回復，符合照片備份。",
+          "paragraph_ids": [
+            "Sbo05ufD_hE:0",
+            "Sbo05ufD_hE:5"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "2y9RcVWZSMw",
+          "verdict": "should_include",
+          "reason": "說明雙卡故障備援、RAW/JPEG卡槽配置與分卡降低損失的實際工作流程。",
+          "paragraph_ids": [
+            "2y9RcVWZSMw:31",
+            "2y9RcVWZSMw:32",
+            "2y9RcVWZSMw:33",
+            "2y9RcVWZSMw:34",
+            "2y9RcVWZSMw:35",
+            "2y9RcVWZSMw:36",
+            "2y9RcVWZSMw:37"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "明確的照片／檔案備份專題未顯示；單看第一個命中片段可能誤判第三名，已回用讀過的112原段核實。"
+    },
+    {
+      "number": 181,
+      "query": "底片",
+      "returned": [
+        {
+          "id": "tc2G1E0UyDU",
+          "verdict": "useful",
+          "reason": "以數位相機示範底片色調模擬，是底片風格的延伸內容；不是實體底片操作。",
+          "paragraph_ids": [
+            "tc2G1E0UyDU:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "AcvVJzoETVY",
+          "verdict": "useful",
+          "reason": "具體介紹半格底片張數、直幅、過片與拍攝模式。",
+          "paragraph_ids": [
+            "AcvVJzoETVY:0"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "aZtKxUXjCEI",
+          "verdict": "useful",
+          "reason": "從舊底片機漏光經驗介紹新半格機的實際使用。",
+          "paragraph_ids": [
+            "aZtKxUXjCEI:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "toHzB9VwQJo",
+          "verdict": "should_include",
+          "reason": "說明底片成本與沖洗外包使後端不可完全控制，屬是否選用底片的實際取捨。",
+          "paragraph_ids": [
+            "toHzB9VwQJo:77"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "0oxtLk1BuP4",
+          "verdict": "mention",
+          "reason": "主要討論X half模擬底片的儀式感與玩笑，沒有實體底片操作或性能解釋。",
+          "paragraph_ids": [
+            "0oxtLk1BuP4:14"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "底片可含色彩風格與實體媒材兩種方向；前三筆第一名偏前者，其餘偏後者。確認一筆送洗與成本取捨候選。"
+    },
+    {
+      "number": 182,
+      "query": "底片模擬",
+      "returned": [
+        {
+          "id": "tc2G1E0UyDU",
+          "verdict": "useful",
+          "reason": "對底片模擬專用轉盤的實際體驗，並有不同场景的配方示範。",
+          "paragraph_ids": [
+            "tc2G1E0UyDU:20"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "773BrzLo3Oo",
+          "verdict": "mention",
+          "reason": "只把底片模擬列在機身規格中，沒有介紹模擬色彩或設定。",
+          "paragraph_ids": [
+            "773BrzLo3Oo:3"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "DhqtNKNGhhE",
+          "verdict": "useful",
+          "reason": "回答不想用風格模擬練基本功時，選standard並調好曝光白平衡。",
+          "paragraph_ids": [
+            "DhqtNKNGhhE:40",
+            "DhqtNKNGhhE:41",
+            "DhqtNKNGhhE:42"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第二名只是功能列舉；第三名雖短且對提問感到疑惑，仍提出可執行的設定方向。"
+    },
+    {
+      "number": 183,
+      "query": "底片掃描",
+      "returned": [
+        {
+          "id": "_h11gXyDU0Y",
+          "verdict": "useful",
+          "reason": "主題包含底片掃描器／翻拍裝置的完整實作。",
+          "paragraph_ids": [
+            "_h11gXyDU0Y:1"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "zlQec6ygGtE",
+          "verdict": "useful",
+          "reason": "說明可掃正負片、不同尺寸與自行翻拍後製的複雜度。",
+          "paragraph_ids": [
+            "zlQec6ygGtE:2"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "6opf1K8bQi4",
+          "verdict": "useful",
+          "reason": "示範135底片軌道、插入掃描與RGB／亮度調整。",
+          "paragraph_ids": [
+            "6opf1K8bQi4:6"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "E3P3YvL8Wdw",
+          "verdict": "mention",
+          "reason": "只提醒底片作品投稿要先掃描上傳，未說明掃描方法。",
+          "paragraph_ids": [
+            "E3P3YvL8Wdw:58"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "ljo8grIdU0s",
+          "verdict": "should_include",
+          "reason": "實際用相機翻拍底片並反轉亮暗曲線得到正像，是掃描後處理的可用教學。",
+          "paragraph_ids": [
+            "ljo8grIdU0s:32"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "有一筆翻拍負片曲線處理漏收；投稿格式提醒不能算掃描教學。"
+    },
+    {
+      "number": 184,
+      "query": "底片沖洗",
+      "returned": [],
+      "missing": [
+        {
+          "id": "9TlS2B_jFKE",
+          "verdict": "mention",
+          "reason": "將沖洗店不同列為底片顏色不同的因素，主題是直出概念，未講沖洗方法。",
+          "paragraph_ids": [
+            "9TlS2B_jFKE:97"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "0oxtLk1BuP4",
+          "verdict": "irrelevant",
+          "reason": "原文在講X half數位底片模式檔案未經APP匯出即格式化；沖洗實體底片只是比喻。",
+          "paragraph_ids": [
+            "0oxtLk1BuP4:21",
+            "0oxtLk1BuP4:19",
+            "0oxtLk1BuP4:20"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "6fyy7AOfxKo",
+          "verdict": "should_include",
+          "reason": "職業使用底片需把後端交沖洗店，並介紹固定國內外合作廠商的工作方式，能支援送洗取捨學習；不是沖洗藥水步驟。",
+          "paragraph_ids": [
+            "6fyy7AOfxKo:92",
+            "6fyy7AOfxKo:93",
+            "6fyy7AOfxKo:94"
+          ],
+          "full_source_read": true,
+          "extra_source": true
+        },
+        {
+          "id": "tcq_IJjsuNs",
+          "verdict": "mention",
+          "reason": "主要說底片放相遮罩與加減曝光後製，沖洗只是流程起點；沒有實際沖洗流程。",
+          "paragraph_ids": [
+            "tcq_IJjsuNs:87",
+            "tcq_IJjsuNs:88",
+            "tcq_IJjsuNs:89"
+          ],
+          "full_source_read": true,
+          "extra_source": true
+        },
+        {
+          "id": "HVYUB1dXsZg",
+          "verdict": "mention",
+          "reason": "借何藩三角陰影談底片暗房後製，未具體區分沖洗與放相手法，不能當沖洗操作課。",
+          "paragraph_ids": [
+            "HVYUB1dXsZg:14",
+            "HVYUB1dXsZg:15",
+            "HVYUB1dXsZg:16"
+          ],
+          "full_source_read": true,
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "零結果；包內2候選未能證實沖洗教學。額外從基線選讀3候選，只有送洗控制與合作店家取捨一筆可納入；仍未找到化學沖洗步驟，不能聲稱9筆皆應收錄。"
+    },
+    {
+      "number": 185,
+      "query": "GR3",
+      "returned": [
+        {
+          "id": "n_OrAw4J2oE",
+          "verdict": "useful",
+          "reason": "按GR3是隨身備機還是主力工具討論升級GR4的條件。",
+          "paragraph_ids": [
+            "n_OrAw4J2oE:64"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "cpHoDP2Fkl8",
+          "verdict": "useful",
+          "reason": "比較GR3在當時價格下降後的隨身街拍購買價值。",
+          "paragraph_ids": [
+            "cpHoDP2Fkl8:1"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "yqod5EsLVGg",
+          "verdict": "useful",
+          "reason": "GR3／GR3x按鍵與快拍距離的直接操作教學。",
+          "paragraph_ids": [
+            "yqod5EsLVGg:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "ozC26tkz658",
+          "verdict": "should_include",
+          "reason": "回讀確認不只是GR系列歷史：明確比较GR3與GR4的體積、ADJ操作及升級理由。",
+          "paragraph_ids": [
+            "ozC26tkz658:0",
+            "ozC26tkz658:1",
+            "ozC26tkz658:2",
+            "ozC26tkz658:3",
+            "ozC26tkz658:4",
+            "ozC26tkz658:5",
+            "ozC26tkz658:6",
+            "ozC26tkz658:12",
+            "ozC26tkz658:13",
+            "ozC26tkz658:14"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "HWjJ0M4GriA",
+          "verdict": "mention",
+          "reason": "只拿GR3作類單眼定義的疑問例子，主持人也未確認分類。",
+          "paragraph_ids": [
+            "HWjJ0M4GriA:43"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "GR4評測有足夠GR3對照與升級判斷，不能單憑不同型號排除；另一候選則只是名稱列舉。"
+    },
+    {
+      "number": 186,
+      "query": "GR3x",
+      "returned": [
+        {
+          "id": "w_bkG77wWUA",
+          "verdict": "useful",
+          "reason": "GR3x旅行使用、尺寸、操作與畫質的第一手體驗。",
+          "paragraph_ids": [
+            "w_bkG77wWUA:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "tBOXsTq3Etc",
+          "verdict": "useful",
+          "reason": "直接比較GR3與GR3x視角，依日常題材選擇。",
+          "paragraph_ids": [
+            "tBOXsTq3Etc:0"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "_mOQza6sAmQ",
+          "verdict": "useful",
+          "reason": "GR3／GR3x選購與街拍實測專題。",
+          "paragraph_ids": [
+            "_mOQza6sAmQ:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "o35EMCRDBrE",
+          "verdict": "should_include",
+          "reason": "將GR3x放在較長視角隨身機組，解釋與28mm組的視角、裁切取捨。",
+          "paragraph_ids": [
+            "o35EMCRDBrE:21",
+            "o35EMCRDBrE:22",
+            "o35EMCRDBrE:23"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "-ANEOSLlzUU",
+          "verdict": "should_include",
+          "reason": "以旅行便利度、可變焦比較RX100M7與GR3x，有明確選購條件。",
+          "paragraph_ids": [
+            "-ANEOSLlzUU:11"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "兩個候選都是正確機型的比較／選購內容。"
+    },
+    {
+      "number": 187,
+      "query": "X100VI",
+      "returned": [
+        {
+          "id": "-J1C-fBRsX4",
+          "verdict": "useful",
+          "reason": "比較X100VI固定鏡頭轉換焦段所需拆保護鏡的實際操作與其他機身取捨。",
+          "paragraph_ids": [
+            "-J1C-fBRsX4:17"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "SMB0bC_Hi7Y",
+          "verdict": "useful",
+          "reason": "X100VI直接操作與4020萬像素裁切空間說明。",
+          "paragraph_ids": [
+            "SMB0bC_Hi7Y:1"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "cYp1WXLHTOI",
+          "verdict": "useful",
+          "reason": "直播討論X100VI新增感光元件、防震與定價的購買取捨。",
+          "paragraph_ids": [
+            "cYp1WXLHTOI:7",
+            "cYp1WXLHTOI:16",
+            "cYp1WXLHTOI:17",
+            "cYp1WXLHTOI:18"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "三筆皆正確機型；第三名不能只看開場婚禮軼事，已有讀過的規格與定位段落支持。"
+    },
+    {
+      "number": 188,
+      "query": "XT5",
+      "returned": [
+        {
+          "id": "yo8kz1NJtgc",
+          "verdict": "useful",
+          "reason": "XT5與XT50規格、外觀和操作差別的直接選購比較。",
+          "paragraph_ids": [
+            "yo8kz1NJtgc:85"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "pwdEXvhcFAg",
+          "verdict": "useful",
+          "reason": "實拍比較XT5三向螢幕與XT4低角度操作。",
+          "paragraph_ids": [
+            "pwdEXvhcFAg:6"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "DJRVC8ue7Xs",
+          "verdict": "mention",
+          "reason": "只回應會不會抽XT5及發表前流出消息，後續轉R6II，未在所讀段提供XT5評測。",
+          "paragraph_ids": [
+            "DJRVC8ue7Xs:5",
+            "DJRVC8ue7Xs:6",
+            "DJRVC8ue7Xs:7"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "wf5ALVnyM-I",
+          "verdict": "should_include",
+          "reason": "把XT5作為第二個可換鏡系統時，討論鏡頭等持續投入的實際選購成本。",
+          "paragraph_ids": [
+            "wf5ALVnyM-I:48"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "i6I21mr6VkI",
+          "verdict": "unclear",
+          "reason": "XT5觀景窗鍍膜脫落為觀眾匿名說法；主持人表示聽過但未見實物，不能核定實測內容。",
+          "paragraph_ids": [
+            "i6I21mr6VkI:142",
+            "i6I21mr6VkI:143",
+            "i6I21mr6VkI:144"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第三名前排為抽獎玩笑；一筆可用系統選購取捨未收，另一筆是待查證故障傳聞。"
+    },
+    {
+      "number": 189,
+      "query": "Nikon Zf",
+      "returned": [
+        {
+          "id": "75afsR3Tzfg",
+          "verdict": "useful",
+          "reason": "Nikon Zf專題介紹復古操作與功能，為正確型號。",
+          "paragraph_ids": [
+            "75afsR3Tzfg:5",
+            "75afsR3Tzfg:0"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "yaR-s5a0I_o",
+          "verdict": "useful",
+          "reason": "Zf长期使用、握感與原廠手把的直接評測。",
+          "paragraph_ids": [
+            "yaR-s5a0I_o:1"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "fUAYB2nCW1o",
+          "verdict": "mention",
+          "reason": "器材展訪客說想看／買Zf及售罄，沒有給出具體Zf使用理由。",
+          "paragraph_ids": [
+            "fUAYB2nCW1o:3",
+            "fUAYB2nCW1o:2"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        },
+        {
+          "id": "Bl2xQsviTr4",
+          "verdict": "irrelevant",
+          "reason": "所讀主題是Nikon 1 V3，不是Zf；此筆rank7且full_match=false，網站已列部分符合。",
+          "paragraph_ids": [
+            "Bl2xQsviTr4:1"
+          ],
+          "full_source_read": true,
+          "rank": 7,
+          "full_match": false
+        },
+        {
+          "id": "8sD0SbuEEqk",
+          "verdict": "irrelevant",
+          "reason": "所讀為Z50II搭鏡与握把操作，不是Zf；此筆rank8且full_match=false，網站已列部分符合。",
+          "paragraph_ids": [
+            "8sD0SbuEEqk:4"
+          ],
+          "full_source_read": true,
+          "rank": 8,
+          "full_match": false
+        }
+      ],
+      "missing": [
+        {
+          "id": "o05AXiSlogA",
+          "verdict": "mention",
+          "reason": "只是轉述適配ZF與XH2老鏡問題，主持人自承少涉獵並請觀眾推薦。",
+          "paragraph_ids": [
+            "o05AXiSlogA:64"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "F3H4vY3Madg",
+          "verdict": "should_include",
+          "reason": "回讀確認Zf原廠手把仍握感不足、機身重與單手困難的親身評價。",
+          "paragraph_ids": [
+            "F3H4vY3Madg:5",
+            "F3H4vY3Madg:6",
+            "F3H4vY3Madg:7"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "前3名中一筆弱提及；另兩筆錯型號在部分符合區而非假稱完整命中。一個真正Zf握感候選漏收。"
+    },
+    {
+      "number": 190,
+      "query": "Sony A7 IV",
+      "returned": [
+        {
+          "id": "olGrrGDiQE8",
+          "verdict": "useful",
+          "reason": "A7IV操作與照片／影片混合使用者定位的直接評測。",
+          "paragraph_ids": [
+            "olGrrGDiQE8:7",
+            "olGrrGDiQE8:1"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "MCJByPoEgZY",
+          "verdict": "useful",
+          "reason": "新機發表比較中指出A7IV果凍效應與白平衡弱項，對了解舊機有限度的參考價值。",
+          "paragraph_ids": [
+            "MCJByPoEgZY:35",
+            "MCJByPoEgZY:3"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "s0wEM0vz3_M",
+          "verdict": "mention",
+          "reason": "主題是FX2設定，僅說內核與A7IV相近、此前拍過A7IV影片，非A7IV操作教學。",
+          "paragraph_ids": [
+            "s0wEM0vz3_M:1",
+            "s0wEM0vz3_M:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        },
+        {
+          "id": "W8M0buwx2-I",
+          "verdict": "irrelevant",
+          "reason": "主題是A7RVI評測與A1II比較，非A7IV；rank6且full_match=false已標部分符合。",
+          "paragraph_ids": [
+            "W8M0buwx2-I:0"
+          ],
+          "full_source_read": true,
+          "rank": 6,
+          "full_match": false
+        },
+        {
+          "id": "aPoMpt96Iao",
+          "verdict": "irrelevant",
+          "reason": "主題為A7V自訂設定，非A7IV；rank7且full_match=false已標部分符合。",
+          "paragraph_ids": [
+            "aPoMpt96Iao:0"
+          ],
+          "full_source_read": true,
+          "rank": 7,
+          "full_match": false
+        }
+      ],
+      "missing": [
+        {
+          "id": "hlxdtwRp6uk",
+          "verdict": "should_include",
+          "reason": "以A7IV右側自訂鍵示範單手操作，可直接幫助該型號使用者。",
+          "paragraph_ids": [
+            "hlxdtwRp6uk:10"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "lbcJhE7tFtc",
+          "verdict": "should_include",
+          "reason": "半年使用後比較A7IV與A7III，依預算提供升級或買二手的條件建議。",
+          "paragraph_ids": [
+            "lbcJhE7tFtc:10",
+            "lbcJhE7tFtc:11",
+            "lbcJhE7tFtc:12"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第三名主體是其他機種；部分符合尾部又有兩個其他型號。兩候選原文A74確實為A7IV，具體操作與選購被漏收。"
+    },
+    {
+      "number": 191,
+      "query": "攝影眼",
+      "returned": [
+        {
+          "id": "9TlS2B_jFKE",
+          "verdict": "mention",
+          "reason": "只讀到攝影眼的提問，隨即改問婚禮拍攝，未提供觀察或視覺訓練內容。",
+          "paragraph_ids": [
+            "9TlS2B_jFKE:20"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "iNakLzgKCIs",
+          "verdict": "irrelevant",
+          "reason": "原文攝影眼鏡接續數位相機眼鏡的歷史，語境是相機演進與曝光；沒有攝影眼觀察力教學。",
+          "paragraph_ids": [
+            "iNakLzgKCIs:1",
+            "iNakLzgKCIs:2",
+            "iNakLzgKCIs:3"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "YFwhg1iXA3w",
+          "verdict": "useful",
+          "reason": "選景時示範先找明顯顏色、黃色路障與草地，直接展示攝影觀察方法。",
+          "paragraph_ids": [
+            "YFwhg1iXA3w:3"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第一名僅問題提及、第二名為辨識字串誤命中；第三名有明確選景觀察。只核定包內三筆。"
+    },
+    {
+      "number": 192,
+      "query": "觀察",
+      "returned": [
+        {
+          "id": "xznKmy4U6dA",
+          "verdict": "useful",
+          "reason": "先定拍攝主題，再依能否放入人物選擇光線、角度與背景的觀察方法。",
+          "paragraph_ids": [
+            "xznKmy4U6dA:2"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "LSDs2Val8WE",
+          "verdict": "useful",
+          "reason": "從Alex Webb作品說明觀察、瞬間反應與複雜構圖所需經驗。",
+          "paragraph_ids": [
+            "LSDs2Val8WE:15"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "blOgCAX4cdY",
+          "verdict": "useful",
+          "reason": "以反覆街拍、看普通照片了解自己為主軸，展示持續觀察的做法。",
+          "paragraph_ids": [
+            "blOgCAX4cdY:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "DJRVC8ue7Xs",
+          "verdict": "should_include",
+          "reason": "觀展時對照繪畫與攝影，觀察光線如何雕塑細節，具體說明觀看方法。",
+          "paragraph_ids": [
+            "DJRVC8ue7Xs:29"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "SvHBAPJhTkA",
+          "verdict": "should_include",
+          "reason": "校園拍攝示範觀察環境亮度、冷暖光及受光差異形成構圖。",
+          "paragraph_ids": [
+            "SvHBAPJhTkA:16"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "兩候選皆有具體觀察對象與方法，值得出現在此詞。"
+    },
+    {
+      "number": 193,
+      "query": "拍攝主題",
+      "returned": [
+        {
+          "id": "N7j1irzbJWs",
+          "verdict": "mention",
+          "reason": "主要介紹線上課架構新增找拍攝主題章節，未在所讀段解釋怎麼選主題。",
+          "paragraph_ids": [
+            "N7j1irzbJWs:9"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "UlNh-LLb_qE",
+          "verdict": "useful",
+          "reason": "評圖具體指出主題前景遮擋及如何讓有趣主題更清楚。",
+          "paragraph_ids": [
+            "UlNh-LLb_qE:32",
+            "UlNh-LLb_qE:3"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "1-BYz7h8swg",
+          "verdict": "useful",
+          "reason": "從場景常有攝影師入鏡，提出專拍攝影師拍人的系列主題方向。",
+          "paragraph_ids": [
+            "1-BYz7h8swg:80",
+            "1-BYz7h8swg:33"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "6Kd7bFZ8kNI",
+          "verdict": "should_include",
+          "reason": "以旅行中偶然發現十字路口題材、延伸故事成攝影集，示範主題如何產生。",
+          "paragraph_ids": [
+            "6Kd7bFZ8kNI:9",
+            "6Kd7bFZ8kNI:6",
+            "6Kd7bFZ8kNI:7",
+            "6Kd7bFZ8kNI:8"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "DF0yM9-gpI8",
+          "verdict": "should_include",
+          "reason": "直接回應沒有明確主題能否成為好照片，以圖庫、個人與觀眾需求區分判斷。",
+          "paragraph_ids": [
+            "DF0yM9-gpI8:103",
+            "DF0yM9-gpI8:104",
+            "DF0yM9-gpI8:105"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第一名是課程章節介紹，後兩名有實際解題；兩個未顯示候選也有主題形成或主題必要性的討論。"
+    },
+    {
+      "number": 194,
+      "query": "攝影練習",
+      "returned": [
+        {
+          "id": "qcVIhKGhR-Y",
+          "verdict": "useful",
+          "reason": "回讀後釐清先決定想拍什麼、需要参数判斷／打燈／構圖哪項技能，再選練習方法。",
+          "paragraph_ids": [
+            "qcVIhKGhR-Y:183",
+            "qcVIhKGhR-Y:184",
+            "qcVIhKGhR-Y:185"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "j47jFrdksNw",
+          "verdict": "useful",
+          "reason": "雖然精確詞命中的是節目名攝影練習生，另有慢快門先停再拉相機的具體練習方法。",
+          "paragraph_ids": [
+            "j47jFrdksNw:96",
+            "j47jFrdksNw:39"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "WsC0dj15wJE",
+          "verdict": "should_include",
+          "reason": "教用九宮格某條線對齊現場水平，能直接練習減少水平偏差。",
+          "paragraph_ids": [
+            "WsC0dj15wJE:102"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "z5e7fipGll4",
+          "verdict": "should_include",
+          "reason": "把模仿已拍過的題材當練習起點，並鼓勵理解為何拍攝、避免受固定題材限制。",
+          "paragraph_ids": [
+            "z5e7fipGll4:113",
+            "z5e7fipGll4:114",
+            "z5e7fipGll4:115"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅2個返回，但兩個未顯示候選有可操作的水平練習與學習方法；不能把206個獨立候選全算漏收。"
+    },
+    {
+      "number": 195,
+      "query": "攝影集",
+      "returned": [
+        {
+          "id": "tN7deDpD1TQ",
+          "verdict": "useful",
+          "reason": "讀攝影集中的日常生活記錄，連結到自己選擇地方代表性題材的方法。",
+          "paragraph_ids": [
+            "tN7deDpD1TQ:19"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "Iw4trpoYBwE",
+          "verdict": "useful",
+          "reason": "具體介紹多本攝影集與作品特色，供讀者選讀。",
+          "paragraph_ids": [
+            "Iw4trpoYBwE:1"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "MGayJfpLN1w",
+          "verdict": "useful",
+          "reason": "專門介紹川島小鳥明星，包含創作題材與長期拍攝背景。",
+          "paragraph_ids": [
+            "MGayJfpLN1w:0"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "upV8hbfuSwA",
+          "verdict": "should_include",
+          "reason": "攝影集讀書會透過私寫真討論攝影師與被攝者關係，以及自然人像的呈現。",
+          "paragraph_ids": [
+            "upV8hbfuSwA:0",
+            "upV8hbfuSwA:2",
+            "upV8hbfuSwA:3",
+            "upV8hbfuSwA:4"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "4M8UAV-XSrY",
+          "verdict": "should_include",
+          "reason": "明確介紹Martin Parr攝影集、代表作與選讀理由，為攝影集主題内容。",
+          "paragraph_ids": [
+            "4M8UAV-XSrY:0",
+            "4M8UAV-XSrY:1",
+            "4M8UAV-XSrY:2",
+            "4M8UAV-XSrY:3"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "兩個讀書會是明確攝影集內容，並非只是書名或泛泛提及。"
+    },
+    {
+      "number": 196,
+      "query": "作品集",
+      "returned": [
+        {
+          "id": "_VaYzGjQOYc",
+          "verdict": "useful",
+          "reason": "透過川內倫子的影像串聯，討論如何編排自己的作品集。",
+          "paragraph_ids": [
+            "_VaYzGjQOYc:2"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "aZtKxUXjCEI",
+          "verdict": "useful",
+          "reason": "提出以一卷底片限定張數完成作品、或朋友輪流拍成旅行合集的創作方式。",
+          "paragraph_ids": [
+            "aZtKxUXjCEI:4",
+            "aZtKxUXjCEI:5",
+            "aZtKxUXjCEI:6"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "cTo2pYx_2b4",
+          "verdict": "useful",
+          "reason": "提醒混用裁切比例可能影響作品集整體編排，屬具體整理取捨。",
+          "paragraph_ids": [
+            "cTo2pYx_2b4:31",
+            "cTo2pYx_2b4:29",
+            "cTo2pYx_2b4:30"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "第二、三名是短小的作品集規劃案例，第一名則最集中在編排方法；不把不同深度等同完整課程。"
+    },
+    {
+      "number": 197,
+      "query": "系列作品",
+      "returned": [
+        {
+          "id": "ffeKv8LpHqk",
+          "verdict": "useful",
+          "reason": "後段介紹長期在不同國家拍動物園北極熊的同一系列，說明題材與觀眾解讀。",
+          "paragraph_ids": [
+            "ffeKv8LpHqk:33",
+            "ffeKv8LpHqk:34",
+            "ffeKv8LpHqk:35",
+            "ffeKv8LpHqk:36",
+            "ffeKv8LpHqk:37",
+            "ffeKv8LpHqk:38"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "6Kd7bFZ8kNI",
+          "verdict": "useful",
+          "reason": "以旅行途中發展出十字路口系列說明系列形成方式。",
+          "paragraph_ids": [
+            "6Kd7bFZ8kNI:6",
+            "6Kd7bFZ8kNI:7",
+            "6Kd7bFZ8kNI:8"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "0-0LG4yED1E",
+          "verdict": "useful",
+          "reason": "以空無一人的遊樂器材作系列實例，給出日常街拍可持續觀察的主題。",
+          "paragraph_ids": [
+            "0-0LG4yED1E:1"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "x9p0GB5h7aw",
+          "verdict": "irrelevant",
+          "reason": "系列指老相機介紹節目的更新與出一集，不是照片的系列作品。",
+          "paragraph_ids": [
+            "x9p0GB5h7aw:151"
+          ],
+          "full_source_read": true
+        },
+        {
+          "id": "QcJz0JwyQNg",
+          "verdict": "should_include",
+          "reason": "評圖直接指出系列缺乏頭尾故事、混用望遠視覺與其他照片不一致。",
+          "paragraph_ids": [
+            "QcJz0JwyQNg:7",
+            "QcJz0JwyQNg:8",
+            "QcJz0JwyQNg:9"
+          ],
+          "full_source_read": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "一個候選有明確系列編排建議；另一個是節目系列，屬候選基準不同意思。"
+    },
+    {
+      "number": 198,
+      "query": "敘事",
+      "returned": [
+        {
+          "id": "Hoj-6BKKGlI",
+          "verdict": "useful",
+          "reason": "討論把拍片經驗、節奏與影像敘事方式帶進平面攝影。",
+          "paragraph_ids": [
+            "Hoj-6BKKGlI:8"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "q9UIPtVU388",
+          "verdict": "useful",
+          "reason": "用2.35:1裁切移除不支撐故事的上下雜物，具體說明敘事與構圖取捨。",
+          "paragraph_ids": [
+            "q9UIPtVU388:111"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "SRHjfg05sn0",
+          "verdict": "useful",
+          "reason": "以婚禮只用35mm可能錯過瞬間與不同視角的敘事，解釋鏡頭選擇的影響。",
+          "paragraph_ids": [
+            "SRHjfg05sn0:5"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "三筆分別為敘事方法、裁切與現場視角的相關實例。"
+    },
+    {
+      "number": 199,
+      "query": "評圖",
+      "returned": [
+        {
+          "id": "1-BYz7h8swg",
+          "verdict": "useful",
+          "reason": "評圖直播依作品主題檢視照片，並給出組合、色彩和曝光建議。",
+          "paragraph_ids": [
+            "1-BYz7h8swg:39"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "EKsAdB7_mqo",
+          "verdict": "useful",
+          "reason": "說明現場與線上評圖如何確認投稿者程度及希望討論的問題。",
+          "paragraph_ids": [
+            "EKsAdB7_mqo:26"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "eZ0qIfdxut4",
+          "verdict": "useful",
+          "reason": "回讀確認有具體評圖：臉部陰影比例與夕陽白平衡的調整建議。",
+          "paragraph_ids": [
+            "eZ0qIfdxut4:0",
+            "eZ0qIfdxut4:15",
+            "eZ0qIfdxut4:16",
+            "eZ0qIfdxut4:17"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "第三名開場雖為閒聊，實際有直接評圖段落；不以首段閒聊誤判整片。"
+    },
+    {
+      "number": 200,
+      "query": "選片",
+      "returned": [
+        {
+          "id": "eD8kDPMmws4",
+          "verdict": "mention",
+          "reason": "談婚紗店加選照片、精修等加價營運，未解釋攝影師如何挑選照片。",
+          "paragraph_ids": [
+            "eD8kDPMmws4:144"
+          ],
+          "full_source_read": true,
+          "rank": 1,
+          "full_match": true
+        },
+        {
+          "id": "3bmuQYwT1TU",
+          "verdict": "useful",
+          "reason": "運動拍攝事前做功課與提高按快門準確度，可減少數千張挑片負擔。",
+          "paragraph_ids": [
+            "3bmuQYwT1TU:108"
+          ],
+          "full_source_read": true,
+          "rank": 2,
+          "full_match": true
+        },
+        {
+          "id": "dXOGOlFY1Rw",
+          "verdict": "irrelevant",
+          "reason": "原文選片幅是在問R10是APS還是全片幅，為片幅辨識字串，不是選片。",
+          "paragraph_ids": [
+            "dXOGOlFY1Rw:62"
+          ],
+          "full_source_read": true,
+          "rank": 3,
+          "full_match": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第三名為明確不同語意的誤命中；第一名是選片費用提及，第二名有實際挑片工作量觀念。"
+    }
+  ]
+}

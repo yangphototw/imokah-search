@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "points": [
+    {
+      "id": "photo-intention",
+      "hub": "creative",
+      "display_title": "評照片之前，先說清楚想拍什麼",
+      "lead": "把「好不好看」變成可以討論的拍攝目的。",
+      "keywords": [
+        "主題",
+        "表達",
+        "評圖",
+        "拍什麼",
+        "作品意圖"
+      ],
+      "questions": [
+        "不知道要拍什麼",
+        "照片哪裡不好",
+        "老師覺得好看嗎"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=photo-intention"
+    },
+    {
+      "id": "photo-series",
+      "hub": "creative",
+      "display_title": "從散拍的線索，走向一組作品",
+      "lead": "攝影主題也可能在持續拍攝中浮現。",
+      "keywords": [
+        "系列",
+        "攝影集",
+        "主題",
+        "作品集",
+        "靈感"
+      ],
+      "questions": [
+        "一堆照片怎麼變成作品",
+        "找不到攝影主題",
+        "怎麼做攝影集"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=photo-series"
+    },
+    {
+      "id": "exposure-decision",
+      "hub": "light",
+      "display_title": "光圈、快門、ISO，先決定哪一個？",
+      "lead": "從老師的實例，讀三個參數如何互相配合。",
+      "keywords": [
+        "曝光",
+        "光圈",
+        "快門",
+        "ISO",
+        "M模式",
+        "參數"
+      ],
+      "questions": [
+        "參數怎麼調",
+        "照片太暗怎麼辦",
+        "M模式好難"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=exposure-decision"
+    },
+    {
+      "id": "backlight-priority",
+      "hub": "light",
+      "display_title": "逆光時，要人物亮，還是保留背景？",
+      "lead": "同一個逆光場景，可以有不同的曝光選擇。",
+      "keywords": [
+        "逆光",
+        "測光",
+        "剪影",
+        "人臉太暗",
+        "背景過曝"
+      ],
+      "questions": [
+        "逆光人很黑",
+        "背後太亮臉太暗",
+        "怎麼拍剪影"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=backlight-priority"
+    },
+    {
+      "id": "lighting-design",
+      "hub": "light",
+      "display_title": "怎麼看出光變柔了？",
+      "lead": "跟著柔光罩與日常用品的示範，觀察陰影變化。",
+      "keywords": [
+        "柔光",
+        "硬光",
+        "光線",
+        "柔光罩",
+        "陰影",
+        "打燈"
+      ],
+      "questions": [
+        "打燈影子很硬",
+        "柔光罩怎麼用",
+        "光太硬怎麼辦"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=lighting-design"
+    },
+    {
+      "id": "background-cleanup",
+      "hub": "composition",
+      "display_title": "人像背景太亂，除了散景還能怎麼做？",
+      "lead": "比較鏡頭選擇與現場遮擋的兩種例子。",
+      "keywords": [
+        "背景",
+        "雜亂",
+        "人像",
+        "散景",
+        "背景太亂",
+        "背景很亂"
+      ],
+      "questions": [
+        "人像背景很亂",
+        "背景亂七八糟",
+        "人物不突出"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=background-cleanup"
+    },
+    {
+      "id": "perspective-composition",
+      "hub": "composition",
+      "display_title": "廣角與望遠，人物和背景會怎麼變？",
+      "lead": "從片中的距離與取景例子，讀視角的差異。",
+      "keywords": [
+        "透視",
+        "廣角",
+        "望遠",
+        "壓縮",
+        "焦段",
+        "距離"
+      ],
+      "questions": [
+        "背景怎麼看起來很近",
+        "廣角和長焦差在哪",
+        "人物比例怪怪的"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=perspective-composition"
+    },
+    {
+      "id": "intentional-level",
+      "hub": "composition",
+      "display_title": "照片一定要水平、垂直嗎？",
+      "lead": "先學會控制，再決定怎麼改變。",
+      "keywords": [
+        "水平",
+        "垂直",
+        "歪斜",
+        "構圖",
+        "傾斜"
+      ],
+      "questions": [
+        "照片一定要水平嗎",
+        "故意拍歪可以嗎",
+        "水平線歪了"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=intentional-level"
+    },
+    {
+      "id": "focus-mode",
+      "hub": "focus",
+      "display_title": "對焦模式和對焦位置，要分開想",
+      "lead": "讀老師如何說明 AF-S、AF-C 與對焦點。",
+      "keywords": [
+        "對焦",
+        "AFC",
+        "AFS",
+        "AF-C",
+        "AF-S",
+        "對不到焦",
+        "自動對焦"
+      ],
+      "questions": [
+        "自動對焦一直跑",
+        "白牆對不到焦",
+        "AFS和AFC怎麼選"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=focus-mode"
+    },
+    {
+      "id": "star-focus",
+      "hub": "focus",
+      "display_title": "星空對不到焦，先練手動找焦點",
+      "lead": "保留老師的操作提醒，也保留他對題材經驗的說明。",
+      "keywords": [
+        "星空",
+        "對焦",
+        "手動對焦",
+        "無限遠",
+        "對不到焦"
+      ],
+      "questions": [
+        "星空對不到焦怎麼辦",
+        "拍星星無法對焦",
+        "無限遠要轉到底嗎"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=star-focus"
+    },
+    {
+      "id": "panning-motion",
+      "hub": "focus",
+      "display_title": "運動怎麼拍？從 F1 追焦到旅行中的衝浪",
+      "lead": "拍運動時，清楚凝結與保留速度感是兩種不同的畫面選擇。老師第一次到 F1 現場拍攝的經驗，從直線與彎道的快門差異，一路談到跟隨動作與器材輔助；旅行拍衝浪的例子，則補上了距離與拍攝目標的差別。",
+      "keywords": [
+        "運動",
+        "賽事",
+        "賽車",
+        "F1",
+        "追焦",
+        "動態",
+        "速度感",
+        "衝浪",
+        "慢快門"
+      ],
+      "questions": [
+        "怎麼拍速度感",
+        "追焦快門多少",
+        "車子背景拉線"
+      ],
+      "subjects": [
+        "sports"
+      ],
+      "url": "/wiki/#point=panning-motion"
+    },
+    {
+      "id": "portrait-feedback-loop",
+      "hub": "portrait",
+      "display_title": "拍一段、回看，再和對方一起調整",
+      "lead": "自然的人像怎麼拍？在一場戶外動態人像示範裡，老師先看對方怎麼動，再試拍、回看、調整。連拍只是其中一環；從服裝能做的動作，到最後要留下的光線，都要一起考慮。",
+      "keywords": [
+        "人像",
+        "連拍",
+        "動作",
+        "回饋",
+        "拍攝節奏"
+      ],
+      "questions": [
+        "連拍就能拍到自然表情嗎",
+        "人像動作怎麼調整",
+        "拍照節奏"
+      ],
+      "subjects": [
+        "portrait",
+        "travel"
+      ],
+      "url": "/wiki/#point=portrait-feedback-loop"
+    },
+    {
+      "id": "portrait-comfort",
+      "hub": "portrait",
+      "display_title": "拍不熟悉鏡頭的人，先處理尷尬",
+      "lead": "讀素人人像評圖中的提醒。",
+      "keywords": [
+        "人像",
+        "素人",
+        "尷尬",
+        "表情",
+        "溝通",
+        "自然"
+      ],
+      "questions": [
+        "拍照很尷尬",
+        "朋友不會擺姿勢",
+        "人像表情僵硬"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=portrait-comfort"
+    },
+    {
+      "id": "quiet-street",
+      "hub": "fieldwork",
+      "display_title": "街上沒有人，還能拍什麼？",
+      "lead": "從安靜的街景，找值得停下來看的東西。",
+      "keywords": [
+        "街拍",
+        "散步",
+        "無人街景",
+        "公園",
+        "觀察"
+      ],
+      "questions": [
+        "街上沒人怎麼拍",
+        "散步不知道拍什麼",
+        "沒有模特可以拍什麼"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=quiet-street"
+    },
+    {
+      "id": "travel-timing",
+      "hub": "fieldwork",
+      "display_title": "旅行拍攝，時間也要留給現場",
+      "lead": "旅行拍照的準備，不只是一份景點清單。從河口湖的清晨，到札幌電視塔底下的雜亂背景，老師的示範讓我們看到：抵達的時間、留給現場的餘裕，以及怎麼安排人與景，會一起決定帶回來的照片。",
+      "keywords": [
+        "旅行",
+        "河口湖",
+        "風景",
+        "時間",
+        "天氣",
+        "倒影"
+      ],
+      "questions": [
+        "富士山拍不到怎麼辦",
+        "旅行拍照怎麼安排時間",
+        "湖面倒影何時拍"
+      ],
+      "subjects": [
+        "travel",
+        "landscape"
+      ],
+      "url": "/wiki/#point=travel-timing"
+    },
+    {
+      "id": "editing-reading-guide",
+      "hub": "editing",
+      "display_title": "調色參數可以直接照抄嗎？",
+      "lead": "先看手上的照片，再理解老師的調整理由。",
+      "keywords": [
+        "調色",
+        "修圖",
+        "VSCO",
+        "Lightroom",
+        "參數",
+        "濾鏡"
+      ],
+      "questions": [
+        "照抄參數不好看",
+        "濾鏡套了不一樣",
+        "怎麼修成日系"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=editing-reading-guide"
+    },
+    {
+      "id": "photo-format",
+      "hub": "editing",
+      "display_title": "照片要裁什麼比例？先看放在哪裡",
+      "lead": "從老師對發表方式的討論，讀裁切的考量。",
+      "keywords": [
+        "裁切",
+        "比例",
+        "輸出",
+        "發表",
+        "橫幅",
+        "直幅"
+      ],
+      "questions": [
+        "照片一定要3比2嗎",
+        "IG照片被裁掉",
+        "作品比例怎麼選"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=photo-format"
+    },
+    {
+      "id": "camera-system-selection",
+      "hub": "gear",
+      "display_title": "買相機，先試操作，也試能不能帶出門",
+      "lead": "把重量、體積與操作習慣放回選擇裡。",
+      "keywords": [
+        "相機",
+        "器材",
+        "操作",
+        "攜帶",
+        "體積",
+        "重量"
+      ],
+      "questions": [
+        "相機太重不想帶",
+        "新手買相機怎麼選",
+        "小相機比較好嗎"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=camera-system-selection"
+    },
+    {
+      "id": "travel-lens",
+      "hub": "gear",
+      "display_title": "旅行帶什麼鏡頭？從環境與整套組合想",
+      "lead": "先讀選擇理由，再看影片中的焦段例子。",
+      "keywords": [
+        "鏡頭",
+        "旅行",
+        "焦段",
+        "預算",
+        "街道",
+        "搭配"
+      ],
+      "questions": [
+        "出國帶什麼鏡頭",
+        "35還是24適合旅遊",
+        "一機兩鏡怎麼配"
+      ],
+      "subjects": [],
+      "url": "/wiki/#point=travel-lens"
+    },
+    {
+      "id": "landscape-fieldwork",
+      "hub": "fieldwork",
+      "display_title": "風景怎麼拍？從水面、遠山到流動的線條",
+      "lead": "拍風景不是把所有景物都塞進一張照片。老師在旅行分享中，會為平靜水面提早抵達，也會用望遠鏡頭看遠處的山；到了曝光教學，又把水珠和流水線條放在一起比較。想留下的景象不同，等待、取景和參數也跟著改變。",
+      "keywords": [
+        "風景",
+        "山景",
+        "遠山",
+        "倒影",
+        "湖面",
+        "流水",
+        "風光",
+        "望遠風景"
+      ],
+      "questions": [
+        "拍風景一定要廣角嗎",
+        "湖面倒影怎麼拍",
+        "風景攝影要注意什麼"
+      ],
+      "subjects": [
+        "landscape",
+        "travel"
+      ],
+      "url": "/wiki/#point=landscape-fieldwork"
+    }
+  ]
+}

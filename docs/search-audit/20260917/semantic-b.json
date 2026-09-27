@@ -1,0 +1,3756 @@
+{
+  "reviewer": "b",
+  "scope": "71–140；只對指定 review 包的全部返回及未顯示候選做有限語意抽查。full_source_read 表示已讀所列原段落，並非整部影片。",
+  "queries": [
+    {
+      "number": 71,
+      "query": "閃燈",
+      "returned": [
+        {
+          "id": "89Vi3UBFnjM",
+          "verdict": "useful",
+          "reason": "比較新手標準閃燈、燈頭調整及離機功能。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "89Vi3UBFnjM:74",
+            "89Vi3UBFnjM:75",
+            "89Vi3UBFnjM:76"
+          ]
+        },
+        {
+          "id": "Yg4KVMtGiTc",
+          "verdict": "useful",
+          "reason": "直接教離機閃的接收與發射設定。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "Yg4KVMtGiTc:0"
+          ]
+        },
+        {
+          "id": "NVgvP2KAUG0",
+          "verdict": "useful",
+          "reason": "新手直打、跳燈與相機設定教學。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "NVgvP2KAUG0:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "xJp9-djAxtU",
+          "verdict": "should_include",
+          "reason": "後段比較機頂直打／跳燈與離機側光、逆光的用途。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "xJp9-djAxtU:108",
+            "xJp9-djAxtU:109"
+          ]
+        },
+        {
+          "id": "VXyAGy2tl-g",
+          "verdict": "should_include",
+          "reason": "實拍比較閃燈出力與 ISO 對環境光及直打風格的影響。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "VXyAGy2tl-g:5",
+            "VXyAGy2tl-g:12",
+            "VXyAGy2tl-g:13",
+            "VXyAGy2tl-g:14"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "兩部未顯示候選均有實質閃燈內容；首個候選的代表段落只是開題，後文才有教學。"
+    },
+    {
+      "number": 72,
+      "query": "TTL",
+      "returned": [
+        {
+          "id": "NVgvP2KAUG0",
+          "verdict": "useful",
+          "reason": "示範 TTL 預閃測光與曝光結果。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "NVgvP2KAUG0:6"
+          ]
+        },
+        {
+          "id": "Yg4KVMtGiTc",
+          "verdict": "useful",
+          "reason": "示範從觸發器切換 TTL 與手動。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "Yg4KVMtGiTc:2"
+          ]
+        },
+        {
+          "id": "MuRabqJuylc",
+          "verdict": "useful",
+          "reason": "解釋 TTL 自動测光與曝光補償。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "MuRabqJuylc:1"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 73,
+      "query": "跳燈",
+      "returned": [
+        {
+          "id": "NVgvP2KAUG0",
+          "verdict": "useful",
+          "reason": "直打與跳燈入門教學。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "NVgvP2KAUG0:0"
+          ]
+        },
+        {
+          "id": "pO9ZoqV6c2U",
+          "verdict": "useful",
+          "reason": "以 V-flat 大面積反射減少明顯閃燈反光點。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "pO9ZoqV6c2U:18"
+          ]
+        },
+        {
+          "id": "Bl2xQsviTr4",
+          "verdict": "mention",
+          "reason": "只說 V3 內閃可撥動以便跳燈，未提供跳燈拍攝方法。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "Bl2xQsviTr4:8",
+            "Bl2xQsviTr4:9",
+            "Bl2xQsviTr4:10"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "xJp9-djAxtU",
+          "verdict": "should_include",
+          "reason": "說明活動紀錄可用機頂跳燈取得均勻亮度，並比較離機用途。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "xJp9-djAxtU:108",
+            "xJp9-djAxtU:109"
+          ]
+        },
+        {
+          "id": "CqBxjf8H05E",
+          "verdict": "mention",
+          "reason": "介紹 60W LED 燈大小時順帶說目前右前方用跳燈。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "CqBxjf8H05E:79",
+            "CqBxjf8H05E:80",
+            "CqBxjf8H05E:81"
+          ]
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "前三有僅列功能的結果，同時漏掉有選擇判斷的段落。"
+    },
+    {
+      "number": 74,
+      "query": "離機閃燈",
+      "returned": [],
+      "missing": [
+        {
+          "id": "Yg4KVMtGiTc",
+          "verdict": "should_include",
+          "reason": "完整示範離機閃由觸發器控制出力／模式，並比較柔光。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "Yg4KVMtGiTc:1",
+            "Yg4KVMtGiTc:2"
+          ]
+        },
+        {
+          "id": "89Vi3UBFnjM",
+          "verdict": "should_include",
+          "reason": "以可離機、可調燈頭及分組功能說明新手選燈理由。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "89Vi3UBFnjM:75",
+            "89Vi3UBFnjM:76"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "零結果但離機閃教學存在；『離機閃燈』與『離機閃』表述未接起。"
+    },
+    {
+      "number": 75,
+      "query": "閃燈補償",
+      "returned": [
+        {
+          "id": "Yg4KVMtGiTc",
+          "verdict": "useful",
+          "reason": "比較 TTL 在加柔光罩後維持相近亮度，提及補償設零。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "Yg4KVMtGiTc:7"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "MuRabqJuylc",
+          "verdict": "should_include",
+          "reason": "說明機身與閃燈曝光補償的連動及調整位置。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "MuRabqJuylc:2"
+          ]
+        },
+        {
+          "id": "hJBWSCrfwVA",
+          "verdict": "mention",
+          "reason": "討論 Nikon 按鍵重複指定閃光燈補償，未教如何補償。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "hJBWSCrfwVA:5"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 76,
+      "query": "高速同步",
+      "returned": [
+        {
+          "id": "fleU4tmOSsI",
+          "verdict": "useful",
+          "reason": "比較傳統高速同步出力下降與全域快門同步的差別。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "fleU4tmOSsI:10",
+            "fleU4tmOSsI:11",
+            "fleU4tmOSsI:12"
+          ]
+        },
+        {
+          "id": "jXCa-l78Qnc",
+          "verdict": "mention",
+          "reason": "明言高速同步的實拍留在下一集，此段是預告。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "jXCa-l78Qnc:0",
+            "jXCa-l78Qnc:1"
+          ]
+        },
+        {
+          "id": "SwADdqrmxEE",
+          "verdict": "unclear",
+          "reason": "文字稱高速同步，但實作參數為 1/200 秒並談短閃光凝結，無法確認是否真正教 HSS。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "SwADdqrmxEE:3",
+            "SwADdqrmxEE:4",
+            "SwADdqrmxEE:5",
+            "SwADdqrmxEE:6"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第二名僅預告；第三名混用或轉寫錯誤須核實，不能把閃光凝結直接當 HSS。"
+    },
+    {
+      "number": 77,
+      "query": "後簾同步",
+      "returned": [
+        {
+          "id": "K3T9GH8xcLg",
+          "verdict": "useful",
+          "reason": "原文雖轉成『後聯』，仍明確說明在曝光結束閃光及 REAR 設定。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "K3T9GH8xcLg:0",
+            "K3T9GH8xcLg:1",
+            "K3T9GH8xcLg:2",
+            "K3T9GH8xcLg:3",
+            "K3T9GH8xcLg:4"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "題名命中有效；零原詞段落是後簾轉写成後聯，不能據此判無內容。"
+    },
+    {
+      "number": 78,
+      "query": "柔光罩",
+      "returned": [
+        {
+          "id": "Yg4KVMtGiTc",
+          "verdict": "useful",
+          "reason": "實測柔光罩的減光與閃燈出力調整。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "Yg4KVMtGiTc:5"
+          ]
+        },
+        {
+          "id": "2YkCdT6BzJM",
+          "verdict": "useful",
+          "reason": "雙層布與柔光罩效果比較可教柔光原理。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "2YkCdT6BzJM:7"
+          ]
+        },
+        {
+          "id": "wlCnPc4VgPg",
+          "verdict": "useful",
+          "reason": "以大柔光罩解釋面積與硬柔光差異。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "wlCnPc4VgPg:6"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 79,
+      "query": "反光板",
+      "returned": [
+        {
+          "id": "GQBVinlWLmE",
+          "verdict": "useful",
+          "reason": "反光板種類、反射和應用的直接入門教學。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "GQBVinlWLmE:2"
+          ]
+        },
+        {
+          "id": "HhwT8wo5Bks",
+          "verdict": "useful",
+          "reason": "後文比較銀白混合面的光質並提出入門選擇。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "HhwT8wo5Bks:100",
+            "HhwT8wo5Bks:101",
+            "HhwT8wo5Bks:102"
+          ]
+        },
+        {
+          "id": "-iztGCNuVdw",
+          "verdict": "useful",
+          "reason": "另有戶外反光板補光的使用者技巧限制與離機閃替代建議。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "-iztGCNuVdw:149",
+            "-iztGCNuVdw:150"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "第三名顯示段落講單眼反光鏡，詞義錯位；但同片 149–150 段確有補光反板判斷，因此不排除整片，宜改證據落點。"
+    },
+    {
+      "number": 80,
+      "query": "引閃器",
+      "returned": [],
+      "missing": [
+        {
+          "id": "Yg4KVMtGiTc",
+          "verdict": "should_include",
+          "reason": "具體教觸發器／閃燈的發射接收、RF 及相同頻道。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "Yg4KVMtGiTc:1"
+          ]
+        },
+        {
+          "id": "-tXsoMkJgLc",
+          "verdict": "should_include",
+          "reason": "實際比較小型觸發器並示範出力、群組及同步設定介面。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "-tXsoMkJgLc:3",
+            "-tXsoMkJgLc:4",
+            "-tXsoMkJgLc:5"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "零結果但閃燈觸發器的明確同義內容存在。"
+    },
+    {
+      "number": 81,
+      "query": "人像",
+      "returned": [
+        {
+          "id": "IXZbTN9PjOw",
+          "verdict": "useful",
+          "reason": "以鐵橋壓縮與焦段安排人物，為實地人像案例。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "IXZbTN9PjOw:19"
+          ]
+        },
+        {
+          "id": "huZaWJHm7UE",
+          "verdict": "useful",
+          "reason": "專門拆解陰天散步人像的場景與光線。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "huZaWJHm7UE:0"
+          ]
+        },
+        {
+          "id": "1W3DRYqTkYY",
+          "verdict": "useful",
+          "reason": "京都景點實際尋光、避人拍人像。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "1W3DRYqTkYY:9"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "HphVKNlgQqc",
+          "verdict": "should_include",
+          "reason": "人像實拍比較長焦淺景深、窄視角避人與低光 F2 的用途。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "HphVKNlgQqc:13",
+            "HphVKNlgQqc:15",
+            "HphVKNlgQqc:16",
+            "HphVKNlgQqc:17",
+            "HphVKNlgQqc:19"
+          ]
+        },
+        {
+          "id": "HWjJ0M4GriA",
+          "verdict": "should_include",
+          "reason": "聖誕樹人像的避人角度、補光及現場光／剪影選擇。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "HWjJ0M4GriA:7",
+            "HWjJ0M4GriA:8",
+            "HWjJ0M4GriA:30"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 82,
+      "query": "環境人像",
+      "returned": [],
+      "missing": [
+        {
+          "id": "-2dkaLiDmxY",
+          "verdict": "should_include",
+          "reason": "14mm 人像明確要求與環境融合，並注意人物變形。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "-2dkaLiDmxY:4"
+          ]
+        },
+        {
+          "id": "3IKU3yaa0Ak",
+          "verdict": "should_include",
+          "reason": "以叮叮車、彩虹村具體比較帶入環境的人像焦段。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "3IKU3yaa0Ak:0"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "零結果但環境與人物關係的直接實拍解說存在；不要求原文出現完整術語。"
+    },
+    {
+      "number": 83,
+      "query": "街頭人像",
+      "returned": [
+        {
+          "id": "ZG6E5yKxoak",
+          "verdict": "useful",
+          "reason": "街頭人像評圖具體討論被攝者知情的一致性、背景及系列主題。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "ZG6E5yKxoak:18",
+            "ZG6E5yKxoak:19",
+            "ZG6E5yKxoak:20"
+          ]
+        },
+        {
+          "id": "VeGb_6zj6p4",
+          "verdict": "useful",
+          "reason": "解釋街头人像與街拍的界線及拍攝方式。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "VeGb_6zj6p4:100"
+          ]
+        },
+        {
+          "id": "Xk5SwBHKodM",
+          "verdict": "useful",
+          "reason": "比較直面路人的人像拍法與攝影者自身界線。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "Xk5SwBHKodM:51",
+            "Xk5SwBHKodM:52",
+            "Xk5SwBHKodM:53"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "01siF_7EEXQ",
+          "verdict": "should_include",
+          "reason": "在淡水街道用超長焦安排人物與建築背景，包含站位困難。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "01siF_7EEXQ:9"
+          ]
+        },
+        {
+          "id": "23AiqYC2vnw",
+          "verdict": "should_include",
+          "reason": "展示點測光連動臉部對焦，明確延伸到街頭快速拍人的操作。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "23AiqYC2vnw:17",
+            "23AiqYC2vnw:18",
+            "23AiqYC2vnw:19"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 84,
+      "query": "人像構圖",
+      "returned": [
+        {
+          "id": "2lSfdtU_otw",
+          "verdict": "useful",
+          "reason": "半身構圖留白與緊裁切的可用比較。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "2lSfdtU_otw:12"
+          ]
+        },
+        {
+          "id": "toHzB9VwQJo",
+          "verdict": "mention",
+          "reason": "結尾宣傳別篇人像構圖內容，未在命中段落教構圖。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "toHzB9VwQJo:171",
+            "toHzB9VwQJo:172"
+          ]
+        },
+        {
+          "id": "B-yVonMMpz8",
+          "verdict": "mention",
+          "reason": "僅推薦另一個 YouTube 頻道，未解釋構圖。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "B-yVonMMpz8:106",
+            "B-yVonMMpz8:107",
+            "B-yVonMMpz8:108"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "s_6GWs5uK0I",
+          "verdict": "should_include",
+          "reason": "直接示範人物不要總置中、改用九宮格與側面前景。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "s_6GWs5uK0I:4",
+            "s_6GWs5uK0I:5",
+            "s_6GWs5uK0I:6"
+          ]
+        },
+        {
+          "id": "sx_OtaZUEGs",
+          "verdict": "should_include",
+          "reason": "人像評圖有前後景線條連結及邊緣裁切的具體建議。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "sx_OtaZUEGs:18",
+            "sx_OtaZUEGs:19",
+            "sx_OtaZUEGs:20"
+          ]
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第二、三名是宣傳／轉介，卻漏掉直接人像構圖教學。"
+    },
+    {
+      "number": 85,
+      "query": "人像鏡頭",
+      "returned": [
+        {
+          "id": "n01o9FU9kb8",
+          "verdict": "useful",
+          "reason": "後文以人像變換角度說明鏡頭重量取捨並分享實拍表現。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "n01o9FU9kb8:14",
+            "n01o9FU9kb8:15",
+            "n01o9FU9kb8:16"
+          ]
+        },
+        {
+          "id": "FoEEa1Zm8Zc",
+          "verdict": "useful",
+          "reason": "按預算搭配 APS-C 人像定焦鏡。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "FoEEa1Zm8Zc:10",
+            "FoEEa1Zm8Zc:11"
+          ]
+        },
+        {
+          "id": "ADzcr_DEleA",
+          "verdict": "useful",
+          "reason": "直接解釋 85mm 為何適合人像及光圈效果。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "ADzcr_DEleA:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "KNfRylSJOjI",
+          "verdict": "should_include",
+          "reason": "手機標準廣角的人像取景與環境量，提供鏡頭視角的具體用法。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "KNfRylSJOjI:1"
+          ]
+        },
+        {
+          "id": "A62FHf7mSE4",
+          "verdict": "should_include",
+          "reason": "直接比較微距鏡與一般人像鏡的對焦與拍攝距离取捨。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "A62FHf7mSE4:15"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第一名首段命中跨越『人像／鏡頭』語界，但後段仍有實質人像鏡頭評測；手機鏡頭候選屬較廣義相關。"
+    },
+    {
+      "number": 86,
+      "query": "擺姿",
+      "returned": [
+        {
+          "id": "QcJz0JwyQNg",
+          "verdict": "mention",
+          "reason": "主要要求拍熟練 model 時挑戰構圖，沒有教擺姿或修正姿勢。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "QcJz0JwyQNg:210",
+            "QcJz0JwyQNg:211",
+            "QcJz0JwyQNg:212"
+          ]
+        },
+        {
+          "id": "YstwdzrKi20",
+          "verdict": "useful",
+          "reason": "以 Arbus 肖像討論先解釋、讓對象安心再擺姿，以及觀者解讀。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "YstwdzrKi20:17",
+            "YstwdzrKi20:18",
+            "YstwdzrKi20:19"
+          ]
+        },
+        {
+          "id": "XohKq-3jH_Y",
+          "verdict": "useful",
+          "reason": "明確比較引導擺姿與抓拍／修正 model 動作兩條路。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "XohKq-3jH_Y:21"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "sx_OtaZUEGs",
+          "verdict": "should_include",
+          "reason": "評圖中具體以抬下巴改變臉部受光，屬姿勢修正。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "sx_OtaZUEGs:18",
+            "sx_OtaZUEGs:20"
+          ]
+        },
+        {
+          "id": "mpBtUgqYLGM",
+          "verdict": "should_include",
+          "reason": "依害羞或活潑客人決定動作引導、情境設定或抓拍。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "mpBtUgqYLGM:103",
+            "mpBtUgqYLGM:104",
+            "mpBtUgqYLGM:105"
+          ]
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 87,
+      "query": "表情",
+      "returned": [
+        {
+          "id": "0QsSR2DaJr8",
+          "verdict": "useful",
+          "reason": "說明如何分工照顧表情、構圖與髮型服裝，對現場捕捉有用。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "0QsSR2DaJr8:104",
+            "0QsSR2DaJr8:105",
+            "0QsSR2DaJr8:106"
+          ]
+        },
+        {
+          "id": "cTo2pYx_2b4",
+          "verdict": "useful",
+          "reason": "建議連續拍攝、聊天與微調動作以捕捉自然表情。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "cTo2pYx_2b4:40"
+          ]
+        },
+        {
+          "id": "lM9EFlZ2sp8",
+          "verdict": "useful",
+          "reason": "提出婚禮迎賓是捕捉真實強烈反應的時段與限制。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "lM9EFlZ2sp8:26"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "QcJz0JwyQNg",
+          "verdict": "should_include",
+          "reason": "評圖指出表情瞬間約差 0.3 秒，能作時機選擇案例。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "QcJz0JwyQNg:210"
+          ]
+        },
+        {
+          "id": "AZGWw1SU5yU",
+          "verdict": "mention",
+          "reason": "朗讀對時尚姿態與表情的讚賞，缺乏具體表情操作或比較。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "AZGWw1SU5yU:26",
+            "AZGWw1SU5yU:27",
+            "AZGWw1SU5yU:28"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 88,
+      "query": "眼神",
+      "returned": [
+        {
+          "id": "5CU0IZGBtpQ",
+          "verdict": "useful",
+          "reason": "回答柔光罩形狀如何改變眼睛反射的眼神光。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "5CU0IZGBtpQ:78",
+            "5CU0IZGBtpQ:79",
+            "5CU0IZGBtpQ:80"
+          ]
+        },
+        {
+          "id": "-X6ic_UGLXY",
+          "verdict": "unclear",
+          "reason": "唯一『眼神』命中语句不通，前後是街拍向人像延伸與玩笑，疑轉寫詞，無法核實眼神教學。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "-X6ic_UGLXY:91",
+            "-X6ic_UGLXY:92",
+            "-X6ic_UGLXY:93"
+          ]
+        },
+        {
+          "id": "8eQQf6TY3ug",
+          "verdict": "mention",
+          "reason": "只把角色眼神列為故事感的一種來源，未展開眼神處理。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "8eQQf6TY3ug:180",
+            "8eQQf6TY3ug:181",
+            "8eQQf6TY3ug:182"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "mfwCHwnx2Ro",
+          "verdict": "mention",
+          "reason": "活動主持找 Discord 連結時提到大家眼神，非攝影內容。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "mfwCHwnx2Ro:35"
+          ]
+        },
+        {
+          "id": "n-aXy5OHmdo",
+          "verdict": "should_include",
+          "reason": "明確要求團體合照眼睛看同一台相機並說明避免旁人分散視線。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "n-aXy5OHmdo:84"
+          ]
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "眼神光是合理鄰近主題；第二名疑轉寫、第三名僅列舉，漏掉具體合照視線控制。"
+    },
+    {
+      "number": 89,
+      "query": "兒童攝影",
+      "returned": [],
+      "missing": [
+        {
+          "id": "tipGuY2gksY",
+          "verdict": "mention",
+          "reason": "『小孩』是靠街拍收入養育子女的生活成本例子；兒童樂園也不能直接等同兒童攝影。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "tipGuY2gksY:46"
+          ]
+        },
+        {
+          "id": "54QYL3ZHHF8",
+          "verdict": "should_include",
+          "reason": "具體談拍陌生兒童應先問、拍背影或不可辨識遠景的選擇與界線。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "54QYL3ZHHF8:34",
+            "54QYL3ZHHF8:35",
+            "54QYL3ZHHF8:36"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "候選規則『小孩＋拍』過寬，220 個候選不可全當漏收；此包只證實第二支有兒童拍攝注意事項，不是兒童擺姿教學。"
+    },
+    {
+      "number": 90,
+      "query": "合照",
+      "returned": [
+        {
+          "id": "m0FUGzsRpwc",
+          "verdict": "useful",
+          "reason": "專門合照教學，交代適用於正式合照的情境。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "m0FUGzsRpwc:0"
+          ]
+        },
+        {
+          "id": "NV20O3X2NIg",
+          "verdict": "useful",
+          "reason": "示範利用翻轉全景讓拍攝者與朋友同時入鏡。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "NV20O3X2NIg:4",
+            "NV20O3X2NIg:5",
+            "NV20O3X2NIg:6"
+          ]
+        },
+        {
+          "id": "-avNQ_mfAKI",
+          "verdict": "useful",
+          "reason": "以出遊合照為直接實拍教學主題。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "-avNQ_mfAKI:1"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "n-aXy5OHmdo",
+          "verdict": "should_include",
+          "reason": "說明正式合照所有人看相機，以及避免旁人分散賓客視線。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "n-aXy5OHmdo:84"
+          ]
+        },
+        {
+          "id": "Mkzz9WWOZtU",
+          "verdict": "should_include",
+          "reason": "婚禮流程空檔主動安排家人合照並找合適光線位置。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "Mkzz9WWOZtU:70"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 91,
+      "query": "街拍",
+      "returned": [
+        {
+          "id": "l9_Cg05mOlQ",
+          "verdict": "useful",
+          "reason": "札幌散步街拍照片逐張拆解。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "l9_Cg05mOlQ:0"
+          ]
+        },
+        {
+          "id": "ydbarewRdZA",
+          "verdict": "useful",
+          "reason": "專門提出新手可開始的六種街拍題材。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "ydbarewRdZA:0"
+          ]
+        },
+        {
+          "id": "8oWqofUdmDE",
+          "verdict": "useful",
+          "reason": "曼谷市場及巷道實拍街拍案例。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "8oWqofUdmDE:3"
+          ]
+        },
+        {
+          "id": "rdK8uV7Sk8Q",
+          "verdict": "irrelevant",
+          "reason": "若意圖是紀實街頭觀察，本片不對題；原文是在台中街道環境引導 model 移動與抓拍，屬街頭人像的另一種需求，不能對廣義街拍一律判錯片。",
+          "full_source_read": true,
+          "rank": 19,
+          "paragraph_ids": [
+            "rdK8uV7Sk8Q:0",
+            "rdK8uV7Sk8Q:1"
+          ],
+          "extra_source": true,
+          "intent_ambiguity": true,
+          "original_reviewer_reason": "兩段完整短片都是安排 model 重複動作的引導；『抓拍』擴張到街拍，未教觀察街頭。",
+          "principal_review": "主 Agent 回讀全片兩段後確認場景與意圖範圍，將本項改列不同意圖，不納入無條件錯片統計。"
+        }
+      ],
+      "missing": [
+        {
+          "id": "VeGb_6zj6p4",
+          "verdict": "should_include",
+          "reason": "說明旅行變焦鏡重量、浮動光圈對街拍反應與節奏的影響。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "VeGb_6zj6p4:30",
+            "VeGb_6zj6p4:31",
+            "VeGb_6zj6p4:32"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "Xk5SwBHKodM",
+          "verdict": "should_include",
+          "reason": "專門論述街頭攝影定義與拍攝界線，並有實際攝影師拍法案例。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "Xk5SwBHKodM:0",
+            "Xk5SwBHKodM:51",
+            "Xk5SwBHKodM:52",
+            "Xk5SwBHKodM:53"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "前排相關；第19名把引導 model 抓拍擴張為街拍，且另漏實質街拍討論。 主審補充：第19名是街道環境中的人像引導；紀實掃街與街頭人像需求須區分，不列無條件錯片。"
+    },
+    {
+      "number": 92,
+      "query": "掃街",
+      "returned": [
+        {
+          "id": "l9_Cg05mOlQ",
+          "verdict": "useful",
+          "reason": "散步觀察夜間街道、人物與亮暗，符合掃街意圖。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "l9_Cg05mOlQ:0"
+          ]
+        },
+        {
+          "id": "ydbarewRdZA",
+          "verdict": "useful",
+          "reason": "六種街拍觀察與題材可直接用於掃街。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "ydbarewRdZA:0"
+          ]
+        },
+        {
+          "id": "8oWqofUdmDE",
+          "verdict": "useful",
+          "reason": "市場巷道散步拍攝符合掃街。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "8oWqofUdmDE:3"
+          ]
+        },
+        {
+          "id": "rdK8uV7Sk8Q",
+          "verdict": "irrelevant",
+          "reason": "若意圖是紀實街頭觀察，本片不對題；原文是在台中街道環境引導 model 移動與抓拍，屬街頭人像的另一種需求，不能對廣義街拍一律判錯片。",
+          "full_source_read": true,
+          "rank": 19,
+          "paragraph_ids": [
+            "rdK8uV7Sk8Q:0",
+            "rdK8uV7Sk8Q:1"
+          ],
+          "extra_source": true,
+          "intent_ambiguity": true,
+          "original_reviewer_reason": "內容是安排 model 移動並抓拍，沒有掃街觀察教學。",
+          "principal_review": "主 Agent 回讀全片兩段後確認場景與意圖範圍，將本項改列不同意圖，不納入無條件錯片統計。"
+        }
+      ],
+      "missing": [
+        {
+          "id": "VeGb_6zj6p4",
+          "verdict": "should_include",
+          "reason": "比較街上拍摄時器材體積、光圈與操作速度。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "VeGb_6zj6p4:30",
+            "VeGb_6zj6p4:31",
+            "VeGb_6zj6p4:32"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "Xk5SwBHKodM",
+          "verdict": "should_include",
+          "reason": "街頭攝影的拍摄取向與界線可用於掃街。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "Xk5SwBHKodM:0",
+            "Xk5SwBHKodM:51",
+            "Xk5SwBHKodM:52",
+            "Xk5SwBHKodM:53"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "僅涵蓋本包抽查項目。 主審補充：第19名是街道環境中的人像引導；紀實掃街與街頭人像需求須區分，不列無條件錯片。"
+    },
+    {
+      "number": 93,
+      "query": "抓拍",
+      "returned": [
+        {
+          "id": "l9_Cg05mOlQ",
+          "verdict": "useful",
+          "reason": "原文示範等人經過發光門的瞬間，以及看見黑白衣群後迅速抬機拍攝。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "l9_Cg05mOlQ:14",
+            "l9_Cg05mOlQ:16",
+            "l9_Cg05mOlQ:17"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "ydbarewRdZA",
+          "verdict": "useful",
+          "reason": "以人物走入窄光束及突發火勢示範捕捉瞬間。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "ydbarewRdZA:6",
+            "ydbarewRdZA:7"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "8oWqofUdmDE",
+          "verdict": "useful",
+          "reason": "以深景深及提高 ISO 保持高速快門，支持隨手抓起相機即拍。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "8oWqofUdmDE:4",
+            "8oWqofUdmDE:5"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "ouQmLQkmkPY",
+          "verdict": "should_include",
+          "reason": "家庭抓拍攝影集的生活碎片與強烈真實感，是抓拍作品的分析案例。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "ouQmLQkmkPY:1",
+            "ouQmLQkmkPY:2"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "TcjxOMfSF_k",
+          "verdict": "should_include",
+          "reason": "說明超廣角抓拍預留裁切與畫質容錯。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "TcjxOMfSF_k:14"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "自動 potential_drift 60 不等於60部無關；本包前三回查皆有抓拍方法或案例。"
+    },
+    {
+      "number": 94,
+      "query": "快照",
+      "returned": [
+        {
+          "id": "l9_Cg05mOlQ",
+          "verdict": "useful",
+          "reason": "明說順手抬機隨拍，並解釋直覺選景與黑白高反差效果。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "l9_Cg05mOlQ:10",
+            "l9_Cg05mOlQ:16",
+            "l9_Cg05mOlQ:17"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "ydbarewRdZA",
+          "verdict": "useful",
+          "reason": "以路人及突發情景的短暫瞬間說明快速拍攝。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "ydbarewRdZA:6",
+            "ydbarewRdZA:7"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "8oWqofUdmDE",
+          "verdict": "useful",
+          "reason": "提供預設深景深、高速快門以便隨手拍的具體做法。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "8oWqofUdmDE:4",
+            "8oWqofUdmDE:5"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "cpHoDP2Fkl8",
+          "verdict": "should_include",
+          "reason": "比較 GR 單手隨身與 Snap 拍攝定位，對快照選機有用。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "cpHoDP2Fkl8:18"
+          ]
+        },
+        {
+          "id": "nGlCUzGduBI",
+          "verdict": "should_include",
+          "reason": "從 40mm 小型鏡、自然視角及實際順手度解釋日常快照適用性。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "nGlCUzGduBI:5",
+            "nGlCUzGduBI:6",
+            "nGlCUzGduBI:7"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "快照可涵蓋街頭與家庭；未出現原詞不表示不相關，但不能與所有街拍無條件等同。"
+    },
+    {
+      "number": 95,
+      "query": "決定性瞬間",
+      "returned": [
+        {
+          "id": "T5Pu5B2_tEc",
+          "verdict": "useful",
+          "reason": "反思以決定性瞬間概括布列松的限制。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "T5Pu5B2_tEc:9"
+          ]
+        },
+        {
+          "id": "X0-3iJlRBHg",
+          "verdict": "useful",
+          "reason": "直接解釋成就畫面的瞬間與敘事的區別。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "X0-3iJlRBHg:122"
+          ]
+        },
+        {
+          "id": "ydbarewRdZA",
+          "verdict": "useful",
+          "reason": "具體以路人穿越光束示範決定性瞬間。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "ydbarewRdZA:6"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 96,
+      "query": "街頭攝影",
+      "returned": [
+        {
+          "id": "3Ne3swGkpYU",
+          "verdict": "useful",
+          "reason": "專門介紹街頭攝影定義及形式。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "3Ne3swGkpYU:0"
+          ]
+        },
+        {
+          "id": "Xk5SwBHKodM",
+          "verdict": "useful",
+          "reason": "街頭攝影的定義、風格與界線討論。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "Xk5SwBHKodM:0"
+          ]
+        },
+        {
+          "id": "ydbarewRdZA",
+          "verdict": "useful",
+          "reason": "六種街拍題材的直接教學。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "ydbarewRdZA:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "MWAjdcDrHFs",
+          "verdict": "should_include",
+          "reason": "實際討論街拍與偷拍的心態及拍攝邊界。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "MWAjdcDrHFs:114",
+            "MWAjdcDrHFs:117",
+            "MWAjdcDrHFs:118"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "F3H4vY3Madg",
+          "verdict": "should_include",
+          "reason": "以街拍名作的色彩及人物行為分析畫面的趣味。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "F3H4vY3Madg:21",
+            "F3H4vY3Madg:22"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第一個候選原選段只是抱怨用語，回查真正討論在114–118段。"
+    },
+    {
+      "number": 97,
+      "query": "街頭光影",
+      "returned": [],
+      "missing": [
+        {
+          "id": "0-0LG4yED1E",
+          "verdict": "should_include",
+          "reason": "街上捕捉光影並利用反光鏡建立自我與城市空間的畫面。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "0-0LG4yED1E:4"
+          ]
+        },
+        {
+          "id": "3Ne3swGkpYU",
+          "verdict": "should_include",
+          "reason": "分析透過雨滴、玻璃、反射與色塊形成街頭抽象畫面。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "3Ne3swGkpYU:24"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "完整術語零結果，但兩部都有街頭光影的直接例子。"
+    },
+    {
+      "number": 98,
+      "query": "雨天街拍",
+      "returned": [
+        {
+          "id": "-tXsoMkJgLc",
+          "verdict": "mention",
+          "reason": "只讀出雨天街拍提問，下一段转到單手操作及閃燈，未見回答。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "-tXsoMkJgLc:111",
+            "-tXsoMkJgLc:112",
+            "-tXsoMkJgLc:113"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "zyE_JSNQUQs",
+          "verdict": "useful",
+          "reason": "具體建議雨滴、均勻光線下色塊與反射並提供作品參考。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "zyE_JSNQUQs:100"
+          ]
+        },
+        {
+          "id": "W5GziN-5_oI",
+          "verdict": "useful",
+          "reason": "指出雨傘可構成新畫面並建議從高角度取景。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "W5GziN-5_oI:159"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "-o-FkYftCVo",
+          "verdict": "mention",
+          "reason": "只是行程回顧中交錯提夜景街拍與鎌倉毛毛雨，沒有雨天拍法。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "-o-FkYftCVo:15"
+          ]
+        },
+        {
+          "id": "-X6ic_UGLXY",
+          "verdict": "should_include",
+          "reason": "雨街評圖以人物與可愛雨傘反差作具體題材建議。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "-X6ic_UGLXY:107",
+            "-X6ic_UGLXY:108",
+            "-X6ic_UGLXY:109"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 99,
+      "query": "街拍鏡頭",
+      "returned": [
+        {
+          "id": "McCAolHx1uQ",
+          "verdict": "useful",
+          "reason": "不同價位超廣角鏡頭用街拍實測比較。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "McCAolHx1uQ:5"
+          ]
+        },
+        {
+          "id": "S2bsPLxp_HU",
+          "verdict": "useful",
+          "reason": "35mm 在曼谷街道的實地使用與取景。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "S2bsPLxp_HU:2"
+          ]
+        },
+        {
+          "id": "yaR-s5a0I_o",
+          "verdict": "useful",
+          "reason": "討論街拍小鏡頭與 Zf 握持配重的選擇。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "yaR-s5a0I_o:11"
+          ]
+        },
+        {
+          "id": "cHljnsRV4Hg",
+          "verdict": "irrelevant",
+          "reason": "全文聚焦城市特色的觀察與文化比較，未談街拍鏡頭選擇或使用。",
+          "full_source_read": true,
+          "rank": 25,
+          "paragraph_ids": [
+            "cHljnsRV4Hg:0",
+            "cHljnsRV4Hg:10",
+            "cHljnsRV4Hg:16",
+            "cHljnsRV4Hg:22",
+            "cHljnsRV4Hg:25"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "N7j1irzbJWs",
+          "verdict": "irrelevant",
+          "reason": "介紹旅行攝影課程架構及製作經歷，沒有鏡頭教學。",
+          "full_source_read": true,
+          "rank": 26,
+          "paragraph_ids": [
+            "N7j1irzbJWs:0",
+            "N7j1irzbJWs:7",
+            "N7j1irzbJWs:8",
+            "N7j1irzbJWs:9",
+            "N7j1irzbJWs:12"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "cZ3dcckpXkk",
+          "verdict": "should_include",
+          "reason": "20–40mm 街頭速寫焦段、複雜構圖及小機身搭配的直接評測。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "cZ3dcckpXkk:12",
+            "cZ3dcckpXkk:13",
+            "cZ3dcckpXkk:14"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "LDUfee3eoUY",
+          "verdict": "should_include",
+          "reason": "說明 35mm 手動鏡的長對焦行程會妨礙即時街拍，屬實質適用性判斷。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "LDUfee3eoUY:6"
+          ]
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第25、26名只符合街拍部分，不能滿足鏡頭學習意圖；網站部分符合標記本身不是假稱完整命中。"
+    },
+    {
+      "number": 100,
+      "query": "盲拍",
+      "returned": [
+        {
+          "id": "kIDgLCWGJS0",
+          "verdict": "useful",
+          "reason": "說明熟悉焦段、胸口握持及盲拍自動對焦的限制。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "kIDgLCWGJS0:1",
+            "kIDgLCWGJS0:2",
+            "kIDgLCWGJS0:3"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "z5xuJupB3tQ",
+          "verdict": "useful",
+          "reason": "以28mm示範熟悉視角、固定握持與光線變化時重設曝光。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "z5xuJupB3tQ:73",
+            "z5xuJupB3tQ:76",
+            "z5xuJupB3tQ:77",
+            "z5xuJupB3tQ:78"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "HISAt4OKEz8",
+          "verdict": "useful",
+          "reason": "市場評圖建議以盲拍降低旁觀感並提醒回來校正水平。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "HISAt4OKEz8:32",
+            "HISAt4OKEz8:33",
+            "HISAt4OKEz8:34"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 101,
+      "query": "風景",
+      "returned": [
+        {
+          "id": "RCsHZtVeS3I",
+          "verdict": "useful",
+          "reason": "藉陰天長江沿岸作品說明風景仍可有低飽和與霧氣特色。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "RCsHZtVeS3I:69",
+            "RCsHZtVeS3I:70",
+            "RCsHZtVeS3I:71"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "jIT6BCMbTQg",
+          "verdict": "useful",
+          "reason": "以風景類比賽作品說明風景不只大山大水。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "jIT6BCMbTQg:127",
+            "jIT6BCMbTQg:128",
+            "jIT6BCMbTQg:129"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "oebmyjjtUd0",
+          "verdict": "useful",
+          "reason": "圍繞投稿風景照與旅行拍攝心得的訪談。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "oebmyjjtUd0:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "FwUvjKOda14",
+          "verdict": "should_include",
+          "reason": "後段橘色風景評圖具體比較色彩點綴、對比色與光線。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "FwUvjKOda14:123",
+            "FwUvjKOda14:125",
+            "FwUvjKOda14:126"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "2--HGOa2YRw",
+          "verdict": "should_include",
+          "reason": "北海道風景取景點與移動安排，並交代現場白樺景物的變化。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "2--HGOa2YRw:7",
+            "2--HGOa2YRw:8",
+            "2--HGOa2YRw:9"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 102,
+      "query": "山景",
+      "returned": [
+        {
+          "id": "a3kFRp_B5-Q",
+          "verdict": "useful",
+          "reason": "長焦拍攝安排人物與後方山景，是山景納入畫面的案例。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "a3kFRp_B5-Q:3"
+          ]
+        },
+        {
+          "id": "tipGuY2gksY",
+          "verdict": "useful",
+          "reason": "討論保留山景時的人物與背景亮度、焦段及角度取捨。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "tipGuY2gksY:100",
+            "tipGuY2gksY:101",
+            "tipGuY2gksY:102"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "8eQQf6TY3ug",
+          "verdict": "unclear",
+          "reason": "結尾『菜絲攝山景片兩萬』語句疑為眼鏡或鏡片轉寫，無法核實山景拍攝內容。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "8eQQf6TY3ug:215",
+            "8eQQf6TY3ug:216"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "needs_review",
+      "note": "前兩筆有山景畫面案例；第三筆疑轉寫假命中。"
+    },
+    {
+      "number": 103,
+      "query": "海景",
+      "returned": [
+        {
+          "id": "whSJ64LmNaY",
+          "verdict": "useful",
+          "reason": "後文解釋海景系列的世界海洋相連與跨時間觀看的創作觀念。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "whSJ64LmNaY:29",
+            "whSJ64LmNaY:30"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "-o-FkYftCVo",
+          "verdict": "mention",
+          "reason": "行程回顧只說鎌倉有山海景，沒有海景拍攝判斷。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "-o-FkYftCVo:15"
+          ]
+        },
+        {
+          "id": "2--HGOa2YRw",
+          "verdict": "useful",
+          "reason": "具體介紹室蘭海景展望台、地形高低与可取景位置。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "2--HGOa2YRw:42",
+            "2--HGOa2YRw:43",
+            "2--HGOa2YRw:44"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 104,
+      "query": "日出",
+      "returned": [
+        {
+          "id": "76P_CfsDw10",
+          "verdict": "mention",
+          "reason": "主要是出海口看日出的旅遊紀錄與玩笑，所讀原文沒有日出拍攝方法。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "76P_CfsDw10:0",
+            "76P_CfsDw10:2",
+            "76P_CfsDw10:4",
+            "76P_CfsDw10:5",
+            "76P_CfsDw10:6",
+            "76P_CfsDw10:7",
+            "76P_CfsDw10:8"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "2--HGOa2YRw",
+          "verdict": "useful",
+          "reason": "比較日出或夕陽從樹旁經過時的取景機會。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "2--HGOa2YRw:13"
+          ]
+        },
+        {
+          "id": "rGE3d3LLT1g",
+          "verdict": "useful",
+          "reason": "依海邊、城市與盆地遮擋安排日出拍攝時間。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "rGE3d3LLT1g:88"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "GcDfQ9s-kUU",
+          "verdict": "mention",
+          "reason": "中午到和平島開玩笑等日出，沒有展開日出拍法。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "GcDfQ9s-kUU:7"
+          ]
+        },
+        {
+          "id": "NzztlpWdIpE",
+          "verdict": "should_include",
+          "reason": "以花蓮漁民的照片說明季節日出方位、燈塔前景及對位構圖。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "NzztlpWdIpE:3",
+            "NzztlpWdIpE:4"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第一名有日出場景但教學價值弱；漏掉具體日出前景與方位案例。"
+    },
+    {
+      "number": 105,
+      "query": "日落",
+      "returned": [
+        {
+          "id": "MlEfEoVBrts",
+          "verdict": "irrelevant",
+          "reason": "日落燈是人像用投影燈具，並非自然日落風景攝影。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "MlEfEoVBrts:0",
+            "MlEfEoVBrts:1"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "rGE3d3LLT1g",
+          "verdict": "useful",
+          "reason": "明確安排日落前後兩小時，解釋日落後城市燈光與天色的拍攝價值。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "rGE3d3LLT1g:90",
+            "rGE3d3LLT1g:91",
+            "rGE3d3LLT1g:92"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "2--HGOa2YRw",
+          "verdict": "useful",
+          "reason": "以湖岸住宿方向及到達時間說明日出日落能否拍到的取捨。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "2--HGOa2YRw:56"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第一名是詞內命中另一種器材，不應當作日落風景主題前排。"
+    },
+    {
+      "number": 106,
+      "query": "雲海",
+      "returned": [
+        {
+          "id": "6fyy7AOfxKo",
+          "verdict": "mention",
+          "reason": "只交代人在武界、隔天拍雲海婚紗的行程，沒有雲海取景說明。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "6fyy7AOfxKo:3",
+            "6fyy7AOfxKo:4",
+            "6fyy7AOfxKo:5"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "Hgad7_YLCRg",
+          "verdict": "useful",
+          "reason": "評圖以雲海中山頭如孤島、電塔配色和前景簡化給出具體建議。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "Hgad7_YLCRg:158",
+            "Hgad7_YLCRg:159",
+            "Hgad7_YLCRg:160"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "RCsHZtVeS3I",
+          "verdict": "useful",
+          "reason": "指出武界與十月雲海季，屬有限但可用的拍攝時地線索。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "RCsHZtVeS3I:47",
+            "RCsHZtVeS3I:48"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "首位僅行程提及；第三位只支持當時分享的時地線索，非現況天氣保證。"
+    },
+    {
+      "number": 107,
+      "query": "瀑布",
+      "returned": [
+        {
+          "id": "whSJ64LmNaY",
+          "verdict": "useful",
+          "reason": "分析瀑布作品的圖文關係及選擇特定瀑布背後的歷史意義。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "whSJ64LmNaY:14",
+            "whSJ64LmNaY:15",
+            "whSJ64LmNaY:16"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "XohKq-3jH_Y",
+          "verdict": "useful",
+          "reason": "具體指出前景樹枝搶走瀑布主體，屬構圖修正。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "XohKq-3jH_Y:132",
+            "XohKq-3jH_Y:133"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "8XWMLj2eIw8",
+          "verdict": "useful",
+          "reason": "法羅瀑布、教堂與山谷實地取景，並說明西向光線時段。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "8XWMLj2eIw8:9"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "front_relevant",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 108,
+      "query": "流水",
+      "returned": [
+        {
+          "id": "Mkzz9WWOZtU",
+          "verdict": "irrelevant",
+          "reason": "命中電子票券流水號，另一處是引用小橋流水的旅遊印象；均非流水拍攝方法。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "Mkzz9WWOZtU:47",
+            "Mkzz9WWOZtU:125"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "eK4STuJ1Nkg",
+          "verdict": "irrelevant",
+          "reason": "命中流水席，討論婚禮工作人員用餐安排。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "eK4STuJ1Nkg:44",
+            "eK4STuJ1Nkg:46"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "sHbjk5bYpzs",
+          "verdict": "irrelevant",
+          "reason": "命中鏡頭工廠流水線與品管，非流動水景。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "sHbjk5bYpzs:8",
+            "sHbjk5bYpzs:23"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "前三全是詞義／詞內匹配錯位，不能以有原詞判通過。"
+    },
+    {
+      "number": 109,
+      "query": "倒影",
+      "returned": [
+        {
+          "id": "ZG6E5yKxoak",
+          "verdict": "useful",
+          "reason": "後段明確評水面反射中建築傾斜與變形修正。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "ZG6E5yKxoak:40"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "mpBtUgqYLGM",
+          "verdict": "useful",
+          "reason": "討論藉倒影組合兩側人物，並建議重疊以增添趣味。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "mpBtUgqYLGM:46"
+          ]
+        },
+        {
+          "id": "_02wrWKituI",
+          "verdict": "useful",
+          "reason": "琉璃光院實拍說明把相機貼近反射表面才形成倒影構圖。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "_02wrWKituI:27",
+            "_02wrWKituI:28",
+            "_02wrWKituI:29"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "ezHRW6jmbEY",
+          "verdict": "should_include",
+          "reason": "說明港灣夜景將遊輪與水面倒影一同構圖的拍攝機會。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "ezHRW6jmbEY:71",
+            "ezHRW6jmbEY:72",
+            "ezHRW6jmbEY:73"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "H2KdqgjIgOo",
+          "verdict": "should_include",
+          "reason": "另有台南運河等待載人船經過、與上下光線及水中倒影搭配的案例。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "H2KdqgjIgOo:142"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第二候選原選段其實以投影陰影為主；回查142段才找到真正水面倒影案例。"
+    },
+    {
+      "number": 110,
+      "query": "風景構圖",
+      "returned": [],
+      "missing": [
+        {
+          "id": "4NTcRjT7m_U",
+          "verdict": "should_include",
+          "reason": "以左海右山與橋梁畫面說明模仿風景构图時應分析的美感與選點。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "4NTcRjT7m_U:33",
+            "4NTcRjT7m_U:34",
+            "4NTcRjT7m_U:35"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "sx_OtaZUEGs",
+          "verdict": "should_include",
+          "reason": "風景初學評圖提出簡化城市橋梁構圖及校正水平。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "sx_OtaZUEGs:90",
+            "sx_OtaZUEGs:91",
+            "sx_OtaZUEGs:92"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "零結果但兩部回查皆有風景構圖的實質分析或修正。"
+    },
+    {
+      "number": 111,
+      "query": "夜景",
+      "returned": [
+        {
+          "id": "aU4NkHfzJpc",
+          "verdict": "useful",
+          "reason": "專門旅行城市夜景與器材配置教學。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "aU4NkHfzJpc:0"
+          ]
+        },
+        {
+          "id": "pwu4OGU-p4o",
+          "verdict": "useful",
+          "reason": "日本販賣機現場光的夜景人像直接教學。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "pwu4OGU-p4o:0"
+          ]
+        },
+        {
+          "id": "AqQ_2MjlpGE",
+          "verdict": "useful",
+          "reason": "單支光棒的夜景人像實拍教學。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "AqQ_2MjlpGE:1"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "2--HGOa2YRw",
+          "verdict": "should_include",
+          "reason": "介紹藻岩山觀景台與室蘭工廠夜景可取景地形；雖當次未拍夜景，選點仍有用。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "2--HGOa2YRw:31",
+            "2--HGOa2YRw:32",
+            "2--HGOa2YRw:33",
+            "2--HGOa2YRw:44"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "ARfpY7tSFv0",
+          "verdict": "should_include",
+          "reason": "依實拍夜景高 ISO 表現建議換較合適機身或大光圈定焦。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "ARfpY7tSFv0:21",
+            "ARfpY7tSFv0:22",
+            "ARfpY7tSFv0:23"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 112,
+      "query": "星空",
+      "returned": [
+        {
+          "id": "tcq_IJjsuNs",
+          "verdict": "useful",
+          "reason": "專題解釋星空曝光參數與500法則。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "tcq_IJjsuNs:6"
+          ]
+        },
+        {
+          "id": "ARfpY7tSFv0",
+          "verdict": "useful",
+          "reason": "後文比較14mm大光圈與16–35mm F2.8的星空用途。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "ARfpY7tSFv0:116",
+            "ARfpY7tSFv0:121",
+            "ARfpY7tSFv0:122"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "6QQjepAQz6Q",
+          "verdict": "useful",
+          "reason": "說明Tekapo的低照明環境與星空取景時機。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "6QQjepAQz6Q:18",
+            "6QQjepAQz6Q:20",
+            "6QQjepAQz6Q:21"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "Tof9e8a7GZY",
+          "verdict": "should_include",
+          "reason": "星空人像明確比較20與35mm及補光亮度需求。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "Tof9e8a7GZY:73",
+            "Tof9e8a7GZY:74",
+            "Tof9e8a7GZY:75"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "oC8osRH2ALA",
+          "verdict": "irrelevant",
+          "reason": "全部命中是食物『仰望星空派』的飲食閒聊。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "oC8osRH2ALA:124",
+            "oC8osRH2ALA:127",
+            "oC8osRH2ALA:128",
+            "oC8osRH2ALA:137"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第二候選是候選生成的詞義假陽性，不能列為漏收。"
+    },
+    {
+      "number": 113,
+      "query": "星軌",
+      "returned": [
+        {
+          "id": "tcq_IJjsuNs",
+          "verdict": "useful",
+          "reason": "說明延長曝光會形成星軌，與拍單顆星星的曝光選擇不同。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "tcq_IJjsuNs:10",
+            "tcq_IJjsuNs:11"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "Tof9e8a7GZY",
+          "verdict": "mention",
+          "reason": "星軌僅被點名及表示個人不偏好；實際討論主體是星空人像閃燈同步。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "Tof9e8a7GZY:92",
+            "Tof9e8a7GZY:93",
+            "Tof9e8a7GZY:94"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "0jWgEyjPu74",
+          "verdict": "mention",
+          "reason": "表示沒用底片拍過星軌，請觀眾看聊天室討論，未提供星軌方法。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "0jWgEyjPu74:104",
+            "0jWgEyjPu74:105",
+            "0jWgEyjPu74:106"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "第一名可作概念比較；後兩名欠缺實质星軌教學，不因否定句本身排除。"
+    },
+    {
+      "number": 114,
+      "query": "銀河",
+      "returned": [
+        {
+          "id": "Pl488YT4o-Y",
+          "verdict": "mention",
+          "reason": "銀河是能否研究新題材的自我檢視例子，僅列應做哪些功課，未回答銀河拍法。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "Pl488YT4o-Y:10",
+            "Pl488YT4o-Y:11",
+            "Pl488YT4o-Y:12"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "6QQjepAQz6Q",
+          "verdict": "useful",
+          "reason": "實拍庫克山被微光照亮同時保留銀河，交代單張與F2.8鏡頭的條件。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "6QQjepAQz6Q:21",
+            "6QQjepAQz6Q:35",
+            "6QQjepAQz6Q:36"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "tnOQermfQeA",
+          "verdict": "mention",
+          "reason": "只回應自己未專門拍銀河，沒有拍法、比較或案例。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "tnOQermfQeA:99",
+            "tnOQermfQeA:100"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 115,
+      "query": "光害",
+      "returned": [
+        {
+          "id": "kQDOkei0ShI",
+          "verdict": "useful",
+          "reason": "回答拍星空選址時可用暗空／光害地圖找地點。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "kQDOkei0ShI:131"
+          ]
+        },
+        {
+          "id": "tcq_IJjsuNs",
+          "verdict": "mention",
+          "reason": "明說先不談光害地圖，隨即轉到星空焦段需求。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "tcq_IJjsuNs:13",
+            "tcq_IJjsuNs:14",
+            "tcq_IJjsuNs:15"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "2CYrTc_oTdY",
+          "verdict": "useful",
+          "reason": "以河口湖光害說明星空拍攝地點的限制。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "2CYrTc_oTdY:85"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 116,
+      "query": "藍調時刻",
+      "returned": [
+        {
+          "id": "1-BYz7h8swg",
+          "verdict": "useful",
+          "reason": "以城市天空作藍調時刻光線的評圖範例。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "1-BYz7h8swg:14",
+            "1-BYz7h8swg:15"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "2CYrTc_oTdY",
+          "verdict": "useful",
+          "reason": "指出湖岸旅館密度可在藍調時刻提供較多燈光。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "2CYrTc_oTdY:62"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "PIGxma76upw",
+          "verdict": "mention",
+          "reason": "僅提比賽藍色時刻作品與投稿，沒有解釋該時段的拍攝。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "PIGxma76upw:155"
+          ]
+        }
+      ],
+      "conclusion": "front_relevant",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 117,
+      "query": "夜拍對焦",
+      "returned": [],
+      "missing": [
+        {
+          "id": "tcq_IJjsuNs",
+          "verdict": "should_include",
+          "reason": "直接教晚上拍星空切手動對焦，無限遠不能一味轉到盡頭。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "tcq_IJjsuNs:34"
+          ]
+        },
+        {
+          "id": "ue6wW-TBRgc",
+          "verdict": "mention",
+          "reason": "只概括說 Z5 II 夜間對焦不錯，後文是夜景補光，沒有對焦操作或具體測試。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "ue6wW-TBRgc:22",
+            "ue6wW-TBRgc:23",
+            "ue6wW-TBRgc:24"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "至少第一部是明確夜間對焦教學；不能把每個同段出現夜景與對焦的候選全算漏收。"
+    },
+    {
+      "number": 118,
+      "query": "車軌",
+      "returned": [
+        {
+          "id": "raBkI6zpZTE",
+          "verdict": "useful",
+          "reason": "評帶列車長曝的高架橋照片，提出現代橋梁與老屋對比、配重的判斷。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "raBkI6zpZTE:29",
+            "raBkI6zpZTE:32"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "z5e7fipGll4",
+          "verdict": "mention",
+          "reason": "只是指出照片後面有車軌，實際批評的是銳利星芒。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "z5e7fipGll4:141"
+          ]
+        },
+        {
+          "id": "SfeFHpQF5DQ",
+          "verdict": "mention",
+          "reason": "只有『車軌不錯』等快速評語，缺少構圖或操作說明。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "SfeFHpQF5DQ:173"
+          ]
+        }
+      ],
+      "missing": [],
+      "conclusion": "ranking_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 119,
+      "query": "煙火",
+      "returned": [
+        {
+          "id": "kxnyPW9HQ2E",
+          "verdict": "mention",
+          "reason": "只在日本旅遊旺季話題中提煙火季，未教拍攝。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "kxnyPW9HQ2E:68"
+          ]
+        },
+        {
+          "id": "Vshz3npQY30",
+          "verdict": "useful",
+          "reason": "說明手機連線延遲會妨礙煙火時機，建議實體按鈕。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "Vshz3npQY30:36"
+          ]
+        },
+        {
+          "id": "jpSWmwecp0Y",
+          "verdict": "useful",
+          "reason": "日本煙火需先確認座位、固定拍攝角度與腳架限制。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "jpSWmwecp0Y:14"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "-SRkZxaOrWQ",
+          "verdict": "irrelevant",
+          "reason": "談市場販售、過年施放與噪音火災，未涉及煙火攝影。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "-SRkZxaOrWQ:31",
+            "-SRkZxaOrWQ:32",
+            "-SRkZxaOrWQ:33",
+            "-SRkZxaOrWQ:133",
+            "-SRkZxaOrWQ:134",
+            "-SRkZxaOrWQ:135",
+            "-SRkZxaOrWQ:169",
+            "-SRkZxaOrWQ:172",
+            "-SRkZxaOrWQ:173"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "j47jFrdksNw",
+          "verdict": "should_include",
+          "reason": "比較亮煙火的手持快拍與長曝需腳架，並提醒場地腳架規則。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "j47jFrdksNw:70",
+            "j47jFrdksNw:71",
+            "j47jFrdksNw:72"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 120,
+      "query": "光繪",
+      "returned": [],
+      "missing": [],
+      "conclusion": "no_evidence",
+      "note": "本包零返回且無候選，保留『光繪』一詞，不推定全庫一定沒有相關內容。"
+    },
+    {
+      "number": 121,
+      "query": "運動攝影",
+      "returned": [
+        {
+          "id": "3bmuQYwT1TU",
+          "verdict": "useful",
+          "reason": "運動攝影專題，介紹各類比賽、媒體位置與拍攝安排。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "3bmuQYwT1TU:5"
+          ]
+        },
+        {
+          "id": "YYzVI3jki-c",
+          "verdict": "irrelevant",
+          "reason": "實際回答運動相機／運動攝影機產品與衝浪紀錄，未談運動賽事攝影。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "YYzVI3jki-c:100",
+            "YYzVI3jki-c:101",
+            "YYzVI3jki-c:102"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "JQJyWKKyYwc",
+          "verdict": "mention",
+          "reason": "僅建議先確認壯年運動會能否帶相機及詢問專業攝影師，缺少拍攝解說。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "JQJyWKKyYwc:109",
+            "JQJyWKKyYwc:110"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "01siF_7EEXQ",
+          "verdict": "should_include",
+          "reason": "比較180–600mm在野生動物、運動與賽車拍攝的焦段和對焦需求。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "01siF_7EEXQ:4"
+          ]
+        },
+        {
+          "id": "aaFyGoEaUnU",
+          "verdict": "should_include",
+          "reason": "比較M43用於運動攝影的焦距優勢與高ISO、反應速度、續航限制。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "aaFyGoEaUnU:63",
+            "aaFyGoEaUnU:64"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第二候選初始命中是運動品牌商業案，回讀後另外找到真正運動攝影段落；不是依候選詞直接認定漏收。"
+    },
+    {
+      "number": 122,
+      "query": "賽車",
+      "returned": [
+        {
+          "id": "01siF_7EEXQ",
+          "verdict": "useful",
+          "reason": "以F1現場案例說明焦段、慢快門與跟隨賽車的拍法。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "01siF_7EEXQ:18",
+            "01siF_7EEXQ:19",
+            "01siF_7EEXQ:20"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "IaEJyoLbXW4",
+          "verdict": "useful",
+          "reason": "鈴鹿現場拍攝指南，介紹練習賽勘景、自由席取景位置及直線段慢快門。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "IaEJyoLbXW4:27",
+            "IaEJyoLbXW4:46",
+            "IaEJyoLbXW4:49"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "kRLMxDSWxWc",
+          "verdict": "useful",
+          "reason": "用賽車攝影作品解說曝光期間持續追隨車輛、保留清楚主體與拖曳背景。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "kRLMxDSWxWc:4",
+            "kRLMxDSWxWc:5",
+            "kRLMxDSWxWc:6"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "dXOGOlFY1Rw",
+          "verdict": "irrelevant",
+          "reason": "內容是伊香保頭文字D路線的自駕旅行與客戶GTR回憶，未教賽車或賽車攝影。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "dXOGOlFY1Rw:102",
+            "dXOGOlFY1Rw:103",
+            "dXOGOlFY1Rw:104"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "4dnPBipv3ZQ",
+          "verdict": "mention",
+          "reason": "以賽車形容舞台光線和線條效果，實際主題是樂團照片構圖。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "4dnPBipv3ZQ:8",
+            "4dnPBipv3ZQ:9",
+            "4dnPBipv3ZQ:10"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "front_relevant",
+      "note": "前三名均有實質內容；兩個候選未證實應增收，候選基準不能當答案。"
+    },
+    {
+      "number": 123,
+      "query": "飛羽",
+      "returned": [
+        {
+          "id": "01siF_7EEXQ",
+          "verdict": "useful",
+          "reason": "題名命中之外，原文實際比較拍鳥用長鏡頭的焦距、價格與對焦需求。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "01siF_7EEXQ:4"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "GP1ZHQRnYYM",
+          "verdict": "should_include",
+          "reason": "教接近鳥類時衣服與帽子如何減少干擾，並介紹新手賞鳥拍攝地點。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "GP1ZHQRnYYM:1",
+            "GP1ZHQRnYYM:2",
+            "GP1ZHQRnYYM:3"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "1bywpzdd_Mw",
+          "verdict": "should_include",
+          "reason": "具體示範拍白鷺鷥時避開亮色衣服、利用帽子及遮蔽物接近。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "1bywpzdd_Mw:0"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 124,
+      "query": "鳥類攝影",
+      "returned": [],
+      "missing": [
+        {
+          "id": "GP1ZHQRnYYM",
+          "verdict": "should_include",
+          "reason": "講解拍鳥的低干擾接近方式、衣帽選擇和新手拍攝地點。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "GP1ZHQRnYYM:1",
+            "GP1ZHQRnYYM:2",
+            "GP1ZHQRnYYM:3"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "1bywpzdd_Mw",
+          "verdict": "should_include",
+          "reason": "以白鷺鷥示範利用遮蔽、衣服和帽子接近鳥類。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "1bywpzdd_Mw:0"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "零返回，但有兩部原文確認的鳥類拍攝教學。"
+    },
+    {
+      "number": 125,
+      "query": "寵物攝影",
+      "returned": [
+        {
+          "id": "Ir7tzmSPRX8",
+          "verdict": "mention",
+          "reason": "只提未來想辦寵物失敗照比賽，尚未提供拍攝教學或作品分析。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "Ir7tzmSPRX8:23"
+          ]
+        },
+        {
+          "id": "EECreH08t8U",
+          "verdict": "mention",
+          "reason": "回應觀眾希望拍寵物教學，討論借狗與未來拍片，並非當下教學。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "EECreH08t8U:58",
+            "EECreH08t8U:59"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "1Th2Ax-LUcQ",
+          "verdict": "useful",
+          "reason": "提供進入寵物攝影工作的具體途徑：找專業攝影師當助理、累積經驗與作品。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "1Th2Ax-LUcQ:106",
+            "1Th2Ax-LUcQ:107",
+            "1Th2Ax-LUcQ:108"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "06kfXJtGO70",
+          "verdict": "should_include",
+          "reason": "以犬隻攝影書分析大小、顏色、人物局部與狗的動作如何形成趣味畫面。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "06kfXJtGO70:6",
+            "06kfXJtGO70:7",
+            "06kfXJtGO70:8"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "2SPJPfWVq4s",
+          "verdict": "irrelevant",
+          "reason": "『外貓／歪貓』是婚禮攝影師稱呼，非貓或其他寵物攝影內容。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "2SPJPfWVq4s:1",
+            "2SPJPfWVq4s:7",
+            "2SPJPfWVq4s:9"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第三名有職涯入門價值，非拍摄操作；另一候選因攝影師名稱含貓而誤入候選。"
+    },
+    {
+      "number": 126,
+      "query": "昆蟲",
+      "returned": [
+        {
+          "id": "OLmlzjE45A0",
+          "verdict": "useful",
+          "reason": "說明近距離拍昆蟲使用對焦範圍限制功能的用途。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "OLmlzjE45A0:4"
+          ]
+        },
+        {
+          "id": "JhtavBVs6VE",
+          "verdict": "useful",
+          "reason": "解說微距鏡頭工作距離對昆蟲與攝影師的影響。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "JhtavBVs6VE:8"
+          ]
+        },
+        {
+          "id": "EECreH08t8U",
+          "verdict": "useful",
+          "reason": "回答拍昆蟲時閃燈最低出力仍過強的問題。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "EECreH08t8U:87"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "j47jFrdksNw",
+          "verdict": "should_include",
+          "reason": "建議先研究昆蟲種類、習性、出現時間和地點，再安排拍攝。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "j47jFrdksNw:108",
+            "j47jFrdksNw:109"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "Tof9e8a7GZY",
+          "verdict": "should_include",
+          "reason": "以螢火蟲現場長曝與閃燈衝突討論共同拍攝時避免妨礙別人的做法。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "Tof9e8a7GZY:99",
+            "Tof9e8a7GZY:100",
+            "Tof9e8a7GZY:101"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "螢火蟲段落支持拍攝現場共處議題；不延伸認定閃燈對昆蟲的生態影響。"
+    },
+    {
+      "number": 127,
+      "query": "微距",
+      "returned": [
+        {
+          "id": "OLmlzjE45A0",
+          "verdict": "useful",
+          "reason": "微距鏡頭實測，涵蓋放大率、焦段、對焦與防手震。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "OLmlzjE45A0:0"
+          ]
+        },
+        {
+          "id": "Z5gE0Up8Ot4",
+          "verdict": "useful",
+          "reason": "手機微距與相機微距的景深、對焦及畫質實際比較。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "Z5gE0Up8Ot4:1"
+          ]
+        },
+        {
+          "id": "XcLXkriF9NY",
+          "verdict": "useful",
+          "reason": "微距90mm與70–200mm近攝能力的專題比較。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "XcLXkriF9NY:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "1O5J3q2Xhgs",
+          "verdict": "should_include",
+          "reason": "實測放大率與最近對焦限制，解釋DMF輔助手動對焦與增距鏡的近攝效果。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "1O5J3q2Xhgs:3",
+            "1O5J3q2Xhgs:4",
+            "1O5J3q2Xhgs:8",
+            "1O5J3q2Xhgs:9"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "tipGuY2gksY",
+          "verdict": "should_include",
+          "reason": "解釋1:1及1:2放大率，建議先設放大率，再移動身體做手動對焦。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "tipGuY2gksY:110",
+            "tipGuY2gksY:111"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 128,
+      "query": "近拍",
+      "returned": [
+        {
+          "id": "D1eqLFJ8GZo",
+          "verdict": "useful",
+          "reason": "比較16–35mm鏡頭最近對焦距離縮短帶來的近攝能力。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "D1eqLFJ8GZo:3"
+          ]
+        },
+        {
+          "id": "BuxRtn9njKs",
+          "verdict": "useful",
+          "reason": "說明20mm靠近拍人像的變形及與35mm的畫面差異，對近距離人像有用。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "BuxRtn9njKs:18"
+          ],
+          "intent_ambiguity": true
+        },
+        {
+          "id": "br_I3MxjHbo",
+          "verdict": "irrelevant",
+          "reason": "命中出自『附近拍照』跨詞相連；實際是台北車站夜景人像地點介紹，並非近拍。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "br_I3MxjHbo:3",
+            "br_I3MxjHbo:4",
+            "br_I3MxjHbo:5"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "GGEYcwzZFSQ",
+          "verdict": "irrelevant",
+          "reason": "原段在談Google街景截圖的照片；『接近拍鳥』是街景相關辨識與切詞誤會，非近距離拍攝方法。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "GGEYcwzZFSQ:96",
+            "GGEYcwzZFSQ:97",
+            "GGEYcwzZFSQ:98"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "i6I21mr6VkI",
+          "verdict": "should_include",
+          "reason": "建議靠近拍兩人合照，再利用高畫素裁出個人照；是近距離人像方法，若專指微距則不適用。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "i6I21mr6VkI:74"
+          ],
+          "intent_ambiguity": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "近拍可指微距或靠近拍攝的人像；需區分合理攝影意圖。『附近拍照』則是明確跨詞誤中。"
+    },
+    {
+      "number": 129,
+      "query": "生態攝影",
+      "returned": [
+        {
+          "id": "B-yVonMMpz8",
+          "verdict": "useful",
+          "reason": "討論觀察自然、不干擾動物與反對擺拍的生態攝影立場。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "B-yVonMMpz8:121"
+          ]
+        },
+        {
+          "id": "tipGuY2gksY",
+          "verdict": "useful",
+          "reason": "解釋生態攝影職涯與市場工作的限制。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "tipGuY2gksY:49"
+          ]
+        },
+        {
+          "id": "z5e7fipGll4",
+          "verdict": "mention",
+          "reason": "只是以穿著與帽子談生態攝影師的外觀刻板印象，沒有實際拍攝內容。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "z5e7fipGll4:20",
+            "z5e7fipGll4:21",
+            "z5e7fipGll4:22"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "Vshz3npQY30",
+          "verdict": "should_include",
+          "reason": "依白天生態拍攝的光線與攜帶重量需求，比較G2與GM2鏡頭選擇。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "Vshz3npQY30:14"
+          ]
+        },
+        {
+          "id": "576wXLhK9xE",
+          "verdict": "irrelevant",
+          "reason": "『生態系』是腳架快拆配件F38產品系統，未談自然生態攝影。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "576wXLhK9xE:0",
+            "576wXLhK9xE:1"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第二候選是器材配件生態系的詞義假陽性。"
+    },
+    {
+      "number": 130,
+      "query": "搖攝",
+      "returned": [],
+      "missing": [
+        {
+          "id": "01siF_7EEXQ",
+          "verdict": "should_include",
+          "reason": "實際F1案例以1/200秒與彎道約1/40秒說明水平跟隨車輛、穩定移動及連拍，是搖攝操作。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "01siF_7EEXQ:18",
+            "01siF_7EEXQ:19",
+            "01siF_7EEXQ:20"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "kRLMxDSWxWc",
+          "verdict": "should_include",
+          "reason": "直接解說曝光期間持續跟隨賽車，讓車維持相同畫面位置，形成清晰主體及拖曳背景。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "kRLMxDSWxWc:4",
+            "kRLMxDSWxWc:5",
+            "kRLMxDSWxWc:6"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "原包零返回且無候選；本批讀賽車原文時確認兩部搖攝教學，作為額外來源列入，非原包候選。"
+    },
+    {
+      "number": 131,
+      "query": "廣角",
+      "returned": [
+        {
+          "id": "Ji-fXVPAKOg",
+          "verdict": "useful",
+          "reason": "以人像與建築解釋廣角透視、距離與背景保留方式。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "Ji-fXVPAKOg:0"
+          ]
+        },
+        {
+          "id": "gFHBrVJsNOs",
+          "verdict": "useful",
+          "reason": "專題示範廣角站位、近景與斜角如何影響畫面張力。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "gFHBrVJsNOs:1"
+          ]
+        },
+        {
+          "id": "r1YK3egbyCY",
+          "verdict": "useful",
+          "reason": "16mm鏡頭的星空、室內與人像實拍評測。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "r1YK3egbyCY:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "wfU8qQWKv2k",
+          "verdict": "should_include",
+          "reason": "固定人物構圖，實拍24、35、50、70mm並改變距離，示範廣角與其他焦段差異。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "wfU8qQWKv2k:3",
+            "wfU8qQWKv2k:4",
+            "wfU8qQWKv2k:5"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "KNfRylSJOjI",
+          "verdict": "should_include",
+          "reason": "教手機廣角人像盡量放中間，減少邊緣變形，並與較長焦段比較。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "KNfRylSJOjI:4"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 132,
+      "query": "超廣角",
+      "returned": [
+        {
+          "id": "w4SqCoojYnQ",
+          "verdict": "useful",
+          "reason": "以狹小空間全身人像、近距前景和夜拍示範超廣角的用途。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "w4SqCoojYnQ:7"
+          ]
+        },
+        {
+          "id": "7BSGdZjDnqc",
+          "verdict": "useful",
+          "reason": "11–20mm超廣角評測，解釋等效視角、重量與全幅裁切使用。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "7BSGdZjDnqc:6"
+          ]
+        },
+        {
+          "id": "rqyn66yq2G0",
+          "verdict": "useful",
+          "reason": "以12–24mm夜景人像示範帶入建築、控制變形與補光。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "rqyn66yq2G0:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "wJcS7VK_LZ0",
+          "verdict": "mention",
+          "reason": "只是把超廣角列在手機焦段範圍內，實際建議是用手機探索喜好，未具體教超廣角使用。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "wJcS7VK_LZ0:25",
+            "wJcS7VK_LZ0:26"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "2a2J6tNXdmA",
+          "verdict": "should_include",
+          "reason": "以教堂與大景實拍解釋20mm常已足夠，並比較14–16mm的前景效果及構圖難度。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "2a2J6tNXdmA:26",
+            "2a2J6tNXdmA:27",
+            "2a2J6tNXdmA:28"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "不因建議新手暫不需要更廣就排除；它是實質的超廣角需求比較。"
+    },
+    {
+      "number": 133,
+      "query": "標準鏡",
+      "returned": [
+        {
+          "id": "mj1f-htv62M",
+          "verdict": "mention",
+          "reason": "僅說腳架承重較適合一般標準鏡，主題是腳架，沒有標準鏡的拍攝解說。",
+          "full_source_read": true,
+          "rank": 1,
+          "paragraph_ids": [
+            "mj1f-htv62M:102",
+            "mj1f-htv62M:103"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "fIcEJp9On6U",
+          "verdict": "useful",
+          "reason": "比較標準鏡搭長焦與單支旅遊鏡的光圈、對焦性能取捨，可供鏡頭組合選擇。",
+          "full_source_read": true,
+          "rank": 2,
+          "paragraph_ids": [
+            "fIcEJp9On6U:110",
+            "fIcEJp9On6U:111"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "ZzvOxzmhmqs",
+          "verdict": "mention",
+          "reason": "只是列舉可換鏡頭機身能購買標準、望遠、定焦等鏡頭，未講標準鏡本身。",
+          "full_source_read": true,
+          "rank": 3,
+          "paragraph_ids": [
+            "ZzvOxzmhmqs:9",
+            "ZzvOxzmhmqs:10"
+          ],
+          "extra_source": true
+        }
+      ],
+      "missing": [
+        {
+          "id": "geEb5BT-uhc",
+          "verdict": "should_include",
+          "reason": "比較35–150mm與24–70mm標準變焦的視角範圍及紀錄用途；屬標準焦段變焦鏡意圖，若只指50mm標準定焦則需區分。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "geEb5BT-uhc:4",
+            "geEb5BT-uhc:5"
+          ],
+          "extra_source": true,
+          "intent_ambiguity": true
+        },
+        {
+          "id": "mdSMOTu9ukE",
+          "verdict": "should_include",
+          "reason": "用人像照片保留的建築比例、拍攝距離及虛化程度推測標準焦段的畫面效果。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "mdSMOTu9ukE:12",
+            "mdSMOTu9ukE:13"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "mixed_issue",
+      "note": "第一、三名僅帶過；標準鏡可能指標準定焦或標準焦段變焦，新增候選已限定其意圖。"
+    },
+    {
+      "number": 134,
+      "query": "望遠",
+      "returned": [
+        {
+          "id": "6wVnE38zdpg",
+          "verdict": "useful",
+          "reason": "望遠鏡選擇專題，區分旅行與特定遠距題材並比較攜帶負擔。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "6wVnE38zdpg:7"
+          ]
+        },
+        {
+          "id": "N0qTPTHHNtY",
+          "verdict": "useful",
+          "reason": "入門超望遠實拍評測，提供遠距視角、畫質與防震經驗。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "N0qTPTHHNtY:2"
+          ]
+        },
+        {
+          "id": "z5e7fipGll4",
+          "verdict": "useful",
+          "reason": "依拍攝目標說明旅行何時值得攜帶望遠鏡頭。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "z5e7fipGll4:39"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "gFHBrVJsNOs",
+          "verdict": "should_include",
+          "reason": "以建築與一排車輪示範望遠拍攝距離、透視大小差異，以及遠處畫面的密集效果。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "gFHBrVJsNOs:12",
+            "gFHBrVJsNOs:23",
+            "gFHBrVJsNOs:24",
+            "gFHBrVJsNOs:28"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "3IYp6amebho",
+          "verdict": "should_include",
+          "reason": "比較大範圍變焦與70–180mm大光圈長焦的目的差異，再依補長焦需求提出選擇。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "3IYp6amebho:77",
+            "3IYp6amebho:78"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 135,
+      "query": "定焦",
+      "returned": [
+        {
+          "id": "gX9BVCunw-M",
+          "verdict": "useful",
+          "reason": "依隨身性與焦段整理Sony G定焦鏡用途。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "gX9BVCunw-M:0"
+          ]
+        },
+        {
+          "id": "Jb81zOnRyPo",
+          "verdict": "useful",
+          "reason": "比較單鏡40mm、双鏡24+50mm及其他G定焦配置。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "Jb81zOnRyPo:0"
+          ]
+        },
+        {
+          "id": "yVDKWyit-_w",
+          "verdict": "useful",
+          "reason": "依婚禮、低光、人像需求比較GM定焦鏡。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "yVDKWyit-_w:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "KIkVSGbbzJ4",
+          "verdict": "should_include",
+          "reason": "依50mm偏好、輕鬆旅行與街拍需求，建議一機一兩顆小定焦的組合。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "KIkVSGbbzJ4:33"
+          ]
+        },
+        {
+          "id": "uk2de8H9XyA",
+          "verdict": "should_include",
+          "reason": "討論APS系統建置時，大光圈定焦的供應、價格與體積取捨。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "uk2de8H9XyA:1",
+            "uk2de8H9XyA:3",
+            "uk2de8H9XyA:4",
+            "uk2de8H9XyA:5"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第二候選是當年產品線的鏡頭選擇討論；可搜尋的舊內容不等於現行購買建議。"
+    },
+    {
+      "number": 136,
+      "query": "變焦",
+      "returned": [
+        {
+          "id": "zsZinw67M9E",
+          "verdict": "useful",
+          "reason": "解釋十倍旅遊變焦的方便與畫質、光圈穩定性取捨。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "zsZinw67M9E:1"
+          ]
+        },
+        {
+          "id": "h3C9dxAHe5c",
+          "verdict": "useful",
+          "reason": "新手鏡頭指南直接比較定焦、變焦與恆定光圈。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "h3C9dxAHe5c:1"
+          ]
+        },
+        {
+          "id": "ScihrL-XGa4",
+          "verdict": "useful",
+          "reason": "依旅行、街拍、錄影與近攝需求比較G系列變焦鏡。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "ScihrL-XGa4:0"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "unLwF1JI2XE",
+          "verdict": "should_include",
+          "reason": "以16–25mm廣角變焦實拍，說明固定站位改變焦段的取景差異及與標準變焦的搭配。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "unLwF1JI2XE:3",
+            "unLwF1JI2XE:4",
+            "unLwF1JI2XE:5"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "gFj6IPBQ3uU",
+          "verdict": "should_include",
+          "reason": "具體解釋手机85–125mm光學變焦如何維持感光元件成像範圍，與裁切不同。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "gFj6IPBQ3uU:2"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 137,
+      "query": "焦段",
+      "returned": [
+        {
+          "id": "5CU0IZGBtpQ",
+          "verdict": "useful",
+          "reason": "依錯位構圖、工整畫面及街頭穿搭主體比較廣角、50mm與較長焦段。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "5CU0IZGBtpQ:115"
+          ]
+        },
+        {
+          "id": "IZluLxMym3E",
+          "verdict": "useful",
+          "reason": "解釋變焦可快速比較不同視角，再找出符合自身拍攝意圖的焦段。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "IZluLxMym3E:32"
+          ]
+        },
+        {
+          "id": "tcq_IJjsuNs",
+          "verdict": "useful",
+          "reason": "以500法則說明焦段如何改變星空可用曝光時間。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "tcq_IJjsuNs:17"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "dSWnG1qPzLo",
+          "verdict": "should_include",
+          "reason": "比較APS與全幅使用同一鏡頭時的裁切視角，說明焦段選擇受片幅影響。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "dSWnG1qPzLo:47"
+          ]
+        },
+        {
+          "id": "jbIf4_vT_B0",
+          "verdict": "should_include",
+          "reason": "依城市壓縮感、拍鳥與攜帶重量比較長端範圍，並建議從常用照片選定焦焦段。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "jbIf4_vT_B0:27",
+            "jbIf4_vT_B0:33",
+            "jbIf4_vT_B0:36",
+            "jbIf4_vT_B0:37"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 138,
+      "query": "大光圈",
+      "returned": [
+        {
+          "id": "GtZf-UPmPJ0",
+          "verdict": "useful",
+          "reason": "比較表演攝影是否需要大光圈，以及F4景深與現場曝光調整。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "GtZf-UPmPJ0:27"
+          ]
+        },
+        {
+          "id": "HphVKNlgQqc",
+          "verdict": "useful",
+          "reason": "以櫻花人像說明長焦大光圈如何隔離雜亂前後景。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "HphVKNlgQqc:14"
+          ]
+        },
+        {
+          "id": "HBSFLQMh6Qs",
+          "verdict": "useful",
+          "reason": "F2變焦評測解釋進光量、快門、ISO和閃燈輸出的實際取捨。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "HBSFLQMh6Qs:5"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "uk2de8H9XyA",
+          "verdict": "should_include",
+          "reason": "以夜間拍攝需求討論大光圈鏡頭的供應、價格、片幅與系統選擇。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "uk2de8H9XyA:1",
+            "uk2de8H9XyA:3",
+            "uk2de8H9XyA:5"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "iol3Rdq8aqc",
+          "verdict": "should_include",
+          "reason": "昏暗展區實拍交代F2.8、高ISO及測光情況，說明大光圈與機身可用ISO的限制。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "iol3Rdq8aqc:9"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第一候選的器材供應說法屬當年背景，只判斷相關內容是否值得被找到。"
+    },
+    {
+      "number": 139,
+      "query": "等效焦距",
+      "returned": [
+        {
+          "id": "A0p3kKqvhOs",
+          "verdict": "useful",
+          "reason": "以不同片幅搭配等效50mm，說明實際焦距與景深的差異。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "A0p3kKqvhOs:29"
+          ]
+        },
+        {
+          "id": "5LyD98Bh_Zc",
+          "verdict": "useful",
+          "reason": "直接解釋APS鏡頭仍標實體焦距、等效換算用來比較視角。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "5LyD98Bh_Zc:8"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "xZGdQrrt4us",
+          "verdict": "should_include",
+          "reason": "明確解釋M43、APS與全幅等效焦段，並回答APS專用鏡仍需換算。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "xZGdQrrt4us:8",
+            "xZGdQrrt4us:9",
+            "xZGdQrrt4us:10"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "pLB4SFLUHCo",
+          "verdict": "should_include",
+          "reason": "從感光元件大小和視角說明等效焦段換算的由來及全幅基準。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "pLB4SFLUHCo:4",
+            "pLB4SFLUHCo:5"
+          ],
+          "extra_source": true
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "僅涵蓋本包抽查項目。"
+    },
+    {
+      "number": 140,
+      "query": "最短對焦距離",
+      "returned": [
+        {
+          "id": "ufU_vFG8euU",
+          "verdict": "useful",
+          "reason": "提供鏡頭在最短對焦距離畫質下降的實拍觀察。",
+          "full_source_read": false,
+          "rank": 1,
+          "paragraph_ids": [
+            "ufU_vFG8euU:85"
+          ]
+        },
+        {
+          "id": "XcLXkriF9NY",
+          "verdict": "useful",
+          "reason": "解釋微距鏡在最短對焦距離才達到最大放大倍率。",
+          "full_source_read": false,
+          "rank": 2,
+          "paragraph_ids": [
+            "XcLXkriF9NY:3"
+          ]
+        },
+        {
+          "id": "xLfOI7HkDNY",
+          "verdict": "useful",
+          "reason": "直接回答APS裁切不會改變鏡頭最短對焦距離，並解釋其含義。",
+          "full_source_read": false,
+          "rank": 3,
+          "paragraph_ids": [
+            "xLfOI7HkDNY:18"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "id": "McCAolHx1uQ",
+          "verdict": "should_include",
+          "reason": "以實拍說明最近對焦距離限制，導致無法靠近拍特寫人像的取景代價。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "McCAolHx1uQ:26",
+            "McCAolHx1uQ:27"
+          ],
+          "extra_source": true
+        },
+        {
+          "id": "tipGuY2gksY",
+          "verdict": "should_include",
+          "reason": "利用90mm微距鏡的距離與倍率刻度，解釋最近對焦位置和最大放大倍率的關係。",
+          "full_source_read": true,
+          "paragraph_ids": [
+            "tipGuY2gksY:109"
+          ]
+        }
+      ],
+      "conclusion": "recall_issue",
+      "note": "第一候選逐字稿對距離數字前後不一致，因此僅引用操作限制，不採其精確數值。"
+    }
+  ]
+}

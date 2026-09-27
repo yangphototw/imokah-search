@@ -1,0 +1,47 @@
+{
+  "queries": 200,
+  "verified_passage_query_pairs": 7586,
+  "returned_video_query_pairs": 6909,
+  "old_zero_results": [
+    "中央重點測光",
+    "矩陣測光",
+    "離機閃燈",
+    "引閃器",
+    "環境人像",
+    "兒童攝影",
+    "街頭光影",
+    "風景構圖",
+    "夜拍對焦",
+    "光繪",
+    "鳥類攝影",
+    "搖攝",
+    "滾動快門",
+    "底片沖洗"
+  ],
+  "current_zero_results": [
+    "光繪"
+  ],
+  "previously_zero_now_found": [
+    "中央重點測光",
+    "矩陣測光",
+    "離機閃燈",
+    "引閃器",
+    "環境人像",
+    "兒童攝影",
+    "街頭光影",
+    "風景構圖",
+    "夜拍對焦",
+    "鳥類攝影",
+    "搖攝",
+    "滾動快門",
+    "底片沖洗"
+  ],
+  "changed_top_three_to_review": 43,
+  "reused_top_three_judgments": 496,
+  "unchanged_top_three_without_old_judgment": 34,
+  "newly_returned_previously_judged_useful": 22,
+  "dropped_previously_judged_useful": 2,
+  "removed_weak_old_top_three": 4,
+  "newly_returned_pairs": 614,
+  "dropped_pairs": 88
+}

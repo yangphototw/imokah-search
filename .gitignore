@@ -1,6 +1,11 @@
 __pycache__/
 *.pyc
 .env
+Cookie/
+.agents/
+data/transcripts/
+data/summary_packets*.json
+cookies.txt
 .antigravity/
 .system_generated/
 *.log
@@ -19,9 +24,14 @@ data/update_state.json
 data/summary_review_queue.json
 data/transcript_paragraph_audit.json.gz
 data/transcript_audio_reviews.json
+data/transcript_audio_alignment_reviews.json
+data/aligned_candidate_evaluation.json
 data/transcript_review_evaluation.json
 data/transcript_correction_ledger.json
+data/transcript_correction_application.json
+data/transcript_editorial_decisions.json
 data/transcript_punctuation_ledger.json
+data/transcript_punctuation_evaluation.json
 data/quality_baseline.json
 data/current_youtube_title_audit.json
 .python-packages/

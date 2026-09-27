@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
     filter.addEventListener('input', render);
 
     const embeddedData = window.APPROVED_VIDEO_SUMMARIES;
-    if (Array.isArray(embeddedData?.videos)) {
+    if (window.location.protocol === 'file:' && Array.isArray(embeddedData?.videos)) {
         videos = embeddedData.videos;
         exceptions = Array.isArray(embeddedData.exceptions) ? embeddedData.exceptions : [];
         render();
         return;
     }
 
-    fetch('approved-video-summaries.json')
+    fetch('approved-video-summaries.json', { cache: 'no-cache' })
         .then((response) => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             return response.json();

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoGrid = document.getElementById('videoGrid');
     const sectionTitle = document.getElementById('sectionTitle');
     const resultCount = document.getElementById('resultCount');
+    const searchInterpretation = document.getElementById('searchInterpretation');
     const hotTags = document.querySelectorAll('.tag-pill');
     const loadingOverlay = document.getElementById('loadingOverlay');
     const themeToggleBtn = document.getElementById('themeToggleBtn');
@@ -16,12 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCategory = 'all';
     let encyclopediaData = null;
     let isSearching = false;
+    let searchGeneration = 0;
+    let knowledgePromise = null;
 
     let lastSearchQuery = '';
     let currentRawSearchResults = null;
     const shardCache = new Map();
     const MAX_CACHED_SHARDS = 24;
     const MAX_SEARCH_RESULTS = 80;
+    const MAX_SUMMARY_RECALL_VIDEOS = 24;
     let videosById = null;
     const paragraphShardCache = new Map();
     const MAX_CACHED_PARAGRAPH_SHARDS = 32;
@@ -32,20 +36,52 @@ document.addEventListener('DOMContentLoaded', () => {
     // stay separate so multi-term queries retain their AND meaning.
     const SEARCH_ALIASES = {
         'iso': ['iso', '感光度'],
-        '高感': ['高感', '高iso', '高感光度'],
+        '高感': ['高感', '高iso', '高 iso', '高感光度'],
+        '自動iso': ['自動iso', '自動 iso', 'auto iso', 'iso auto'],
         '噪點': ['噪點', '雜訊'],
         '光圈': ['光圈', 'aperture', 'f值'],
+        '光圈先決': ['光圈先決', '光圈優先', 'aperture priority'],
         '景深': ['景深', 'depth of field'],
         '虛化': ['虛化', '背景虛化'],
+        '雜亂': ['雜亂', '凌亂', '很亂', '太亂'],
         '快門': ['快門', 'shutter', '快門速度'],
+        '快門先決': ['快門先決', '快門優先', 'shutter priority'],
         '慢快門': ['慢快門', '慢速快門'],
         '長曝': ['長曝', '長時間曝光'],
-        '底片': ['底片', '膠卷'],
+        '底片': ['底片', '膠片', '膠卷'],
         '底片模擬': ['底片模擬', 'film simulation'],
         '對焦': ['對焦', 'focus', '自動對焦', 'af'],
-        '追焦': ['追焦', '連續對焦'],
+        '自動對焦': ['自動對焦', 'af'],
+        'afc': ['afc', 'af-c', 'af c', '連續自動對焦'],
+        'afs': ['afs', 'af-s', 'af s', '單次自動對焦'],
+        'ael': ['ael', 'ae-l', 'ae l', '曝光鎖定'],
+        'afl': ['afl', 'af-l', 'af l', '對焦鎖定', '對焦鎖'],
+        'afon': ['afon', 'af-on', 'af on', '背鍵對焦'],
+        // 追焦 is used for both AF tracking and panning in this channel.
+        '追焦': ['追焦', '連續對焦', '連續自動對焦', 'afc', 'af-c', 'af c', 'fc'],
+        '連續對焦': ['連續對焦', '連續自動對焦', 'afc', 'af-c', 'af c', 'fc'],
+        '中央重點測光': ['中央重點測光', '中央重點側光'],
+        '矩陣測光': ['矩陣測光', '矩陣側光'],
+        '離機閃燈': ['離機閃燈', '離機閃', '離閃', '離機的閃光燈'],
+        '引閃器': ['引閃器', '觸發器'],
+        '鳥類攝影': ['鳥類攝影', '拍鳥'],
+        '搖攝': ['搖攝', '追焦照', '追焦橫向', '跟著車子移動'],
+        '滾動快門': ['滾動快門', '果凍效應'],
+        '兒童': ['兒童', '小孩子', '小孩', '孩子'],
+        '夜拍': ['夜拍', '夜間拍攝', '晚上拍', '晚上看星空'],
         '眼對焦': ['眼對焦', '眼部對焦'],
+        '眩光': ['眩光', '炫光', '耀光', 'lens flare'],
+        '畸變': ['畸變', '桶狀變形', '枕狀變形', '鏡頭變形', 'lens distortion'],
+        '解像力': ['解像力', '解析力'],
+        '銳利度': ['銳利度', '銳度'],
         '白平衡': ['白平衡', 'white balance', 'wb'],
+        '全片幅': ['全片幅', '全畫幅', 'full frame', 'fullframe'],
+        '中片幅': ['中片幅', '中畫幅', 'medium format'],
+        'm43': ['m43', 'm4/3', 'micro four thirds', 'micro 4/3'],
+        '機身防手震': ['機身防手震', '機身防抖', 'ibis'],
+        '鏡頭防手震': ['鏡頭防手震', '鏡頭防抖', 'ois'],
+        'evf': ['evf', '電子觀景窗', '電子觀景器'],
+        'ovf': ['ovf', '光學觀景窗', '光學觀景器'],
         '富士': ['富士', 'fuji', 'fujifilm'],
         '索尼': ['索尼', 'sony'],
         '尼康': ['尼康', 'nikon'],
@@ -53,11 +89,45 @@ document.addEventListener('DOMContentLoaded', () => {
         '佳能': ['佳能', 'canon'],
         '萊卡': ['萊卡', '徠卡', 'leica'],
         '蔡司': ['蔡司', 'zeiss', 'carl zeiss'],
+        'sigma': ['sigma', '適馬'],
+        'tamron': ['tamron', '騰龍'],
+        'panasonic': ['panasonic', '松下'],
+        'olympus': ['olympus', '奧林巴斯', 'om system', 'omsystem'],
+        'dji': ['dji', '大疆'],
+        'gopro': ['gopro', 'go pro'],
         'cpl': ['cpl', '偏光鏡', '偏振鏡'],
         'nd': ['nd', '減光鏡'],
         '街拍': ['街拍', '快照', 'snap', 'street photography', '掃街', '抓拍'],
         '調色': ['調色', 'color grading'],
+        '遮色片': ['遮色片', '蒙版', 'mask'],
+        '達芬奇': ['達芬奇', 'davinci resolve', 'davinci', 'resolve'],
+        '8bit': ['8bit', '8 bit', '8-bit'],
+        '10bit': ['10bit', '10 bit', '10-bit'],
+        'adobergb': ['adobergb', 'adobe rgb', 'adobe-rgb'],
         '鏡頭': ['鏡頭', 'lens'],
+        'a73': ['a73', 'a7iii', 'a7 iii', 'a7 3'],
+        'a74': ['a74', 'a7iv', 'a7 iv', 'a7 4'],
+        'a7r3': ['a7r3', 'a7riii', 'a7r iii', 'a7r 3'],
+        'a7r4': ['a7r4', 'a7riv', 'a7r iv', 'a7r 4'],
+        'a7r5': ['a7r5', 'a7rv', 'a7r v', 'a7r 5'],
+        'a7s3': ['a7s3', 'a7siii', 'a7s iii', 'a7s 3'],
+        'a7c2': ['a7c2', 'a7cii', 'a7c ii', 'a7c 2'],
+        'a92': ['a92', 'a9ii', 'a9 ii', 'a9 2'],
+        'a93': ['a93', 'a9iii', 'a9 iii', 'a9 3'],
+        'a12': ['a12', 'a1ii', 'a1 ii', 'a1 2'],
+        'r52': ['r52', 'r5ii', 'r5 ii', 'r5 2'],
+        'r62': ['r62', 'r6ii', 'r6 ii', 'r6 2'],
+        '5d4': ['5d4', '5div', '5d iv', '5d 4'],
+        'g7x3': ['g7x3', 'g7xiii', 'g7x iii', 'g7x 3'],
+        'z62': ['z62', 'z6ii', 'z6 ii', 'z6 2'],
+        'z63': ['z63', 'z6iii', 'z6 iii', 'z6 3'],
+        'z72': ['z72', 'z7ii', 'z7 ii', 'z7 2'],
+        'z52': ['z52', 'z5ii', 'z5 ii', 'z5 2'],
+        'x1005': ['x1005', 'x100v', 'x100 v'],
+        'x1006': ['x1006', 'x100vi', 'x100 vi', 'x100 6'],
+        'xt3': ['xt3', 'x-t3', 'x t3'],
+        'xt4': ['xt4', 'x-t4', 'x t4'],
+        'xt5': ['xt5', 'x-t5', 'x t5'],
         'gr3': ['gr3', 'griii', 'gr iii', 'gr 3'],
         'gr3x': ['gr3x', 'griiix', 'gr iiix', 'gr 3x']
     };
@@ -73,13 +143,120 @@ document.addEventListener('DOMContentLoaded', () => {
         '理光': 'ricoh'
     };
 
+    const ALIAS_TO_CANONICAL = Object.entries(SEARCH_ALIASES).reduce(
+        (aliases, [canonical, terms]) => {
+            [canonical, ...terms].forEach(term => {
+                aliases[String(term).toLowerCase()] = canonical;
+            });
+            return aliases;
+        },
+        {}
+    );
+
+    // These are safe building blocks for deliberate unspaced AND queries.
+    // They do not expand to synonyms: 前景層次 becomes 前景 + 層次, while an
+    // unknown phrase such as 景深合成 remains one literal phrase.
+    const COMPOUND_QUERY_TERMS = [
+        '構圖', '前景', '背景', '層次', '簡化', '對稱',
+        '光影', '焦外', '散景', '低角度', '框架'
+    ];
+
+    // A small set of learner phrases denotes two concrete concepts.  Keep
+    // each part visible so partial matches are labelled honestly in the UI.
+    const COMPOUND_QUERY_OVERRIDES = {
+        '環境人像': ['環境', '人像'],
+        '兒童攝影': ['兒童', '攝影'],
+        '街頭光影': ['街頭', '光影'],
+        '風景構圖': ['風景', '構圖'],
+        '夜拍對焦': ['夜拍', '對焦'],
+        '底片沖洗': ['底片', '沖洗']
+    };
+
     const KNOWN_QUERY_TERMS = [...new Set([
         ...Object.keys(SEARCH_ALIASES),
-        ...Object.keys(QUERY_NORMALIZATION)
+        ...Object.values(SEARCH_ALIASES).flat(),
+        ...Object.keys(QUERY_NORMALIZATION),
+        ...COMPOUND_QUERY_TERMS
     ])].sort((a, b) => b.length - a.length);
+    const KNOWN_SPACED_QUERY_TERMS = KNOWN_QUERY_TERMS.filter(term => term.includes(' '));
+
+    // Translate common question wording into search topics, never an inferred
+    // answer: 對不到焦 means 對焦, not 手動對焦 or 無限遠. An unknown span
+    // (including exclusions such as 不要) keeps the original literal query.
+    const QUESTION_TOPIC_WORDS = [...new Set([
+        ...KNOWN_QUERY_TERMS, '星空', '人像', '手動對焦', '無限遠',
+        '水平', '垂直', '逆光', '曝光', '曝光補償'
+    ])].sort((a, b) => b.length - a.length);
+    const QUESTION_WORDING = [
+        '有什麼關係', '怎麼辦', '為什麼', '怎麼樣', '一定要',
+        '請問', '怎麼', '如何', '需要', '可以', '照片', '拍攝',
+        '以及', '還有', '和', '與', '的', '用', '拍', '要', '嗎', '呢'
+    ];
+    const QUESTION_SYMPTOMS = ['對不到焦', '對不上焦', '無法對焦'];
+
+    function parseNaturalSearchQuery(query) {
+        let remaining = String(query || '').trim().toLowerCase().replace(/\s+/g, ' ');
+        const parts = [];
+        let hasQuestionWording = false;
+        while (remaining) {
+            const separator = remaining.match(/^[\s，。！？、；?!,;]+/);
+            if (separator) {
+                remaining = remaining.slice(separator[0].length);
+                continue;
+            }
+            const symptom = QUESTION_SYMPTOMS.find(word => remaining.startsWith(word));
+            const topic = symptom || QUESTION_TOPIC_WORDS.find(word => (
+                remaining.startsWith(word)
+                && !(/[a-z0-9]$/.test(word) && /^[a-z0-9]/.test(remaining.slice(word.length)))
+            )) || remaining.match(/^(?:f\/\d+(?:\.\d+)?|4:2:2|[a-z][a-z0-9]*(?:[./:][a-z0-9]+)*)/)?.[0];
+            if (topic) {
+                const term = symptom ? '對焦' : normalizeQueryTerm(topic);
+                hasQuestionWording ||= Boolean(symptom) || ['很亂', '太亂'].includes(topic);
+                if (!parts.some(part => part.term === term)) parts.push({term, label: term});
+                if (parts.length > 4) return null;
+                remaining = remaining.slice(topic.length);
+                continue;
+            }
+            const wording = QUESTION_WORDING.find(word => remaining.startsWith(word));
+            if (!wording) return null;
+            hasQuestionWording = true;
+            remaining = remaining.slice(wording.length);
+        }
+        return hasQuestionWording && parts.length ? parts : null;
+    }
 
     function normalizeQueryTerm(term) {
-        return QUERY_NORMALIZATION[term] || term;
+        const normalized = QUERY_NORMALIZATION[term] || term;
+        return ALIAS_TO_CANONICAL[normalized] || normalized;
+    }
+
+    function splitKnownQueryTokens(query) {
+        const source = String(query || '').trim().replace(/\s+/g, ' ');
+        const lowerSource = source.toLowerCase();
+        const chunks = [];
+        let offset = 0;
+
+        while (offset < source.length) {
+            while (source[offset] === ' ') offset += 1;
+            if (offset >= source.length) break;
+
+            const phrase = KNOWN_SPACED_QUERY_TERMS.find(candidate => {
+                if (!lowerSource.startsWith(candidate, offset)) return false;
+                const end = offset + candidate.length;
+                return end === source.length || source[end] === ' ';
+            });
+            if (phrase) {
+                chunks.push({ label: source.slice(offset, offset + phrase.length), value: phrase });
+                offset += phrase.length;
+                continue;
+            }
+
+            const nextSpace = source.indexOf(' ', offset);
+            const end = nextSpace === -1 ? source.length : nextSpace;
+            chunks.push({ label: source.slice(offset, end), value: lowerSource.slice(offset, end) });
+            offset = end;
+        }
+        return chunks;
     }
 
     // Preserve the visitor's wording alongside the canonical lookup term.
@@ -87,11 +264,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // { term: "街拍", label: "接拍" }].  The label is what we show on each
     // result card, so a partial hit can never be presented as the whole query.
     function parseSearchQuery(query) {
-        const rawTokens = String(query || '').trim().split(/\s+/).filter(Boolean);
+        const trimmedQuery = String(query || '').trim();
+        const normalizedQuery = trimmedQuery.replace(/\s+/g, ' ').toLowerCase();
+        const wholeCanonical = ALIAS_TO_CANONICAL[normalizedQuery];
+        if (wholeCanonical) {
+            return [{ term: wholeCanonical, label: trimmedQuery }];
+        }
+        if (COMPOUND_QUERY_OVERRIDES[normalizedQuery]) {
+            return COMPOUND_QUERY_OVERRIDES[normalizedQuery].map(term => ({term, label: term}));
+        }
+
+        const naturalParts = parseNaturalSearchQuery(trimmedQuery);
+        if (naturalParts) return naturalParts;
+
+        const rawTokens = splitKnownQueryTokens(trimmedQuery);
         const parts = [];
 
-        rawTokens.forEach(rawToken => {
-            const normalized = rawToken.toLowerCase()
+        rawTokens.forEach(({ label: rawToken, value }) => {
+            const normalized = value.toLowerCase()
                 .replace(/^gr\s*iii\s*x$/i, 'gr3x')
                 .replace(/^gr\s*iii$/i, 'gr3')
                 .replace(/^gr\s*3\s*x$/i, 'gr3x')
@@ -99,14 +289,46 @@ document.addEventListener('DOMContentLoaded', () => {
             const split = [];
             let remaining = normalized;
 
-            while (remaining) {
-                const known = KNOWN_QUERY_TERMS.find(candidate => remaining.startsWith(candidate));
-                if (!known) {
-                    split.push(normalizeQueryTerm(remaining));
-                    break;
+            if (ALIAS_TO_CANONICAL[normalized]) {
+                split.push(normalizeQueryTerm(normalized));
+                remaining = '';
+            }
+
+            // ISO3200 and ND1000 are exact parameter values, not two broad
+            // concepts. Preserve an unregistered letters+digits token whole;
+            // verified paragraph matching still enforces its token boundary.
+            if (
+                (/^[a-z]+\d+$/.test(normalized) || /^[a-z]{2,4}$/.test(normalized))
+                && !KNOWN_QUERY_TERMS.includes(normalized)
+            ) {
+                split.push(normalized);
+                remaining = '';
+            }
+
+            if (remaining) {
+                const compound = [];
+                let compoundRemaining = remaining;
+                while (compoundRemaining) {
+                    const known = KNOWN_QUERY_TERMS.find(
+                        candidate => compoundRemaining.startsWith(candidate)
+                    );
+                    if (!known) {
+                        compound.length = 0;
+                        break;
+                    }
+                    compound.push(normalizeQueryTerm(known));
+                    compoundRemaining = compoundRemaining.slice(known.length);
                 }
-                split.push(normalizeQueryTerm(known));
-                remaining = remaining.slice(known.length);
+
+                // Split an unspaced compound only when the whole token is made
+                // of known concepts (for example 光圈景深).  If only a prefix
+                // is known (景深合成), preserve the complete phrase so generic
+                // n-gram lookup can source-verify it literally.
+                if (compound.length >= 2) {
+                    split.push(...compound);
+                } else {
+                    split.push(normalizeQueryTerm(remaining));
+                }
             }
 
             split.forEach(term => {
@@ -126,17 +348,132 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function expandTerms(term) {
         const normalized = normalizeQueryTerm(term.trim().toLowerCase());
-        return [...new Set([normalized, ...(SEARCH_ALIASES[normalized] || [])])];
+        const aliases = [normalized, ...(SEARCH_ALIASES[normalized] || [])];
+        return [...new Set(aliases.flatMap(alias => [alias, ...technicalNotationAliases(alias)]))];
+    }
+
+    function technicalNotationAliases(term) {
+        const source = String(term || '').trim().toLowerCase();
+        const aperture = source.match(/^f\s*\/?\s*(\d+(?:\.\d+)?)$/);
+        if (aperture) return [`f${aperture[1]}`, `f/${aperture[1]}`];
+        if (/^m\s*4\s*\/?\s*3$/.test(source)) return ['m43', 'm4/3'];
+        if (/^(?:422|4\s*:\s*2\s*:\s*2)$/.test(source)) return ['422', '4:2:2'];
+        return [];
+    }
+
+    // Keep this candidate-locator tokenization in sync with
+    // build_static_search_index.py. A locator hit is never displayed until
+    // the complete alias has been verified against the source paragraph.
+    function lookupTokensForTerm(term) {
+        const source = String(term || '').toLowerCase();
+        const latinTokens = source.match(/[a-z0-9]+/g) || [];
+        const tokens = new Set(latinTokens);
+        latinTokens.filter(token => token.length >= 2).forEach(token => tokens.add(`=${token}`));
+        const compactLatin = source.replace(/[\s_-]+/g, '');
+        if (/^[a-z0-9]+$/.test(compactLatin) && compactLatin.length >= 2) {
+            tokens.add(`=${compactLatin}`);
+        }
+        technicalNotationAliases(source).forEach(alias => {
+            if (/^[a-z0-9.]+$/.test(alias)) {
+                tokens.add(alias);
+                tokens.add(`=${alias}`);
+            }
+        });
+        const compact = source.replace(/[\s_-]+/g, '');
+        const segments = compact.match(/[a-z0-9\u4e00-\u9fff]+/g) || [];
+        segments.forEach(segment => {
+            [2, 3].forEach(length => {
+                for (let offset = 0; offset + length <= segment.length; offset += 1) {
+                    tokens.add(segment.slice(offset, offset + length));
+                }
+            });
+        });
+        return [...tokens];
+    }
+
+    function bestLocatorToken(term, index) {
+        return lookupTokensForTerm(term)
+            .filter(token => (index.get(token) || []).length > 0)
+            .sort((a, b) => (
+                index.get(a).length - index.get(b).length
+                || b.length - a.length
+                || a.localeCompare(b)
+            ))[0] || null;
     }
 
     function normalizeForSearchMatch(value) {
-        return String(value || '').toLowerCase().replace(/[\s\-_]/g, '');
+        return String(value || '').toLowerCase()
+            .replace(/(^|[^a-z0-9])f\s*\/?\s*(\d+(?:\.\d+)?)(?![a-z0-9])/g, '$1f$2')
+            .replace(/(^|[^a-z0-9])m\s*4\s*\/\s*3(?![a-z0-9])/g, '$1m43')
+            .replace(
+                /(^|[^a-z0-9])4\s*:\s*2\s*:\s*2(?![a-z0-9])/g,
+                (_match, prefix) => `${prefix}422`
+            )
+            .replace(/[\s\-_]/g, '');
+    }
+
+    function exactSearchPattern(term) {
+        const source = String(term || '').trim().toLowerCase();
+        const aperture = source.match(/^f\s*\/?\s*(\d+(?:\.\d+)?)$/);
+        if (aperture) return `f\\s*\\/?\\s*${escapeRegExp(aperture[1])}`;
+        if (/^m\s*4\s*\/?\s*3$/.test(source)) return 'm\\s*4\\s*\\/?\\s*3';
+        if (/^(?:422|4\s*:\s*2\s*:\s*2)$/.test(source)) return '(?:422|4\\s*:\\s*2\\s*:\\s*2)';
+        return source.split(/[\s_-]+/).map(escapeRegExp).join('[\\s\\-_]*');
+    }
+
+    function textMatchesSearchTerm(text, term) {
+        const source = String(text || '').toLowerCase();
+        const candidate = String(term || '').toLowerCase();
+        if (candidate === '離閃') {
+            // Short spoken name for 離機閃; do not cut it out of 脫離閃燈.
+            let at = source.indexOf('離閃');
+            while (at >= 0) {
+                if (source[at - 1] !== '脫') return true;
+                at = source.indexOf('離閃', at + 2);
+            }
+            return false;
+        }
+        if (candidate === 'fc') {
+            // ASR often drops the A in AF-C.  Keep the abbreviated form only
+            // when the same paragraph is actually discussing focus.
+            return /(^|[^a-z0-9])fc(?![a-z0-9])/i.test(source) && source.includes('對焦');
+        }
+        if (candidate === '觸發器') {
+            // "引閃器" means a flash trigger.  A generic camera or sports
+            // trigger mention alone is not evidence for that intent.
+            return source.includes('觸發器')
+                && ['閃燈', '閃光燈', '棚拍', '離閃', '離機閃'].some(word => source.includes(word));
+        }
+        if (/^[a-z0-9\s_\-/:.]+$/.test(candidate) && /[a-z0-9]/.test(candidate)) {
+            // Short model names and acronyms must not match a longer token:
+            // "Zf" is not "Zfc", and "GR3" is not "GR3x".  A trailing
+            // number is still valid for acronyms such as "ISO800".
+            const compactCandidate = normalizeForSearchMatch(candidate);
+            const pattern = exactSearchPattern(candidate);
+            const trailingBoundary = /\d$/.test(compactCandidate) ? '(?![a-z0-9])' : '(?![a-z])';
+            return new RegExp(`(^|[^a-z0-9])${pattern}${trailingBoundary}`, 'i').test(source);
+        }
+        const normalizedSource = normalizeForSearchMatch(source);
+        const normalizedCandidate = normalizeForSearchMatch(candidate);
+        if (normalizedCandidate === '焦外') {
+            // ASR sometimes repeats an inner/outer focusing or zooming term.
+            // The join in 變焦外變焦 (or 面焦外面焦) is not about bokeh.
+            let at = normalizedSource.indexOf('焦外');
+            while (at >= 0) {
+                if (normalizedSource[at - 1] !== normalizedSource[at + 2]
+                    || normalizedSource[at + 3] !== '焦') {
+                    return true;
+                }
+                at = normalizedSource.indexOf('焦外', at + 2);
+            }
+            return false;
+        }
+        return normalizedSource.includes(normalizedCandidate);
     }
 
     function matchingTermGroupIndexes(text, termGroups) {
-        const content = normalizeForSearchMatch(text);
         return termGroups.flatMap((group, index) => (
-            group.some(term => content.includes(normalizeForSearchMatch(term))) ? [index] : []
+            group.some(term => textMatchesSearchTerm(text, term)) ? [index] : []
         ));
     }
 
@@ -273,7 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const pending = (async () => {
-            const response = await fetch(`/search-index/${shardId}.json.gz`);
+            const response = await fetch(`/search-index/${shardId}.json.gz?v=6`, { cache: 'no-cache' });
             if (!response.ok) throw new Error(`搜尋索引分片載入失敗 (${response.status})`);
             if (!('DecompressionStream' in window)) {
                 throw new Error('你的瀏覽器不支援壓縮搜尋索引');
@@ -309,7 +646,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const shardId = paragraphShardIdFor(videoId);
         if (!paragraphShardCache.has(shardId)) {
             const pending = (async () => {
-                const response = await fetch(`/paragraph-index/${shardId}.json.gz`);
+                const response = await fetch(`/paragraph-index/${shardId}.json.gz`, { cache: 'no-cache' });
                 if (!response.ok) throw new Error(`Paragraph index unavailable (${response.status})`);
                 if (!('DecompressionStream' in window)) throw new Error('This browser cannot read the paragraph index.');
                 return JSON.parse(await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).text());
@@ -325,8 +662,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function paragraphAt(paragraphs, start) {
         const point = Number(start) || 0;
-        return paragraphs.find(item => point >= item.start && point <= item.end + 1)
-            || paragraphs.reduce((nearest, item) => (!nearest || Math.abs(item.start - point) < Math.abs(nearest.start - point) ? item : nearest), null);
+        // Search hits are built from the published paragraph start itself.
+        // Resolve that exact source paragraph instead of accepting an
+        // overlapping neighbour at the boundary (the historical "長曝"
+        // false-negative happened exactly one second after the prior end).
+        return paragraphs.find(item => Math.abs(Number(item.start) - point) < 0.001) || null;
     }
 
     async function attachParagraphContexts(results) {
@@ -375,8 +715,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function compareSearchResultTiers(a, b) {
-        return Number(b.isTitleMatch) - Number(a.isTitleMatch)
-            || (b.matched_count || 0) - (a.matched_count || 0)
+        return (b.matched_count || 0) - (a.matched_count || 0)
+            // A timestamped spoken mention is stronger evidence than a title.
+            || Number(a.isTitleMatch) - Number(b.isTitleMatch)
+            || (b.specificity_score || 0) - (a.specificity_score || 0)
             || b.score - a.score;
     }
 
@@ -396,27 +738,136 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        [true, false].forEach(isTitleMatch => {
-            for (let matchedCount = totalTerms; matchedCount >= 1; matchedCount -= 1) {
+        for (let matchedCount = totalTerms; matchedCount >= 1; matchedCount -= 1) {
+            [false, true].forEach(isTitleMatch => {
                 items
                     .filter(item => item.isTitleMatch === isTitleMatch && item.matched_count === matchedCount)
                     .sort(compareSearchResultTiers)
                     .slice(0, perTierLimit)
                     .forEach(add);
-            }
-        });
+            });
+        }
 
         // Use any spare capacity without changing the displayed hierarchy.
         items.sort(compareSearchResultTiers).forEach(add);
         return selected.sort(compareSearchResultTiers);
     }
 
+    function searchResultVideoKey(item) {
+        if (item.video_id) return item.video_id;
+        const match = String(item.url || '').match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+        return match?.[1] || item.video_title;
+    }
+
+    function orderSearchResultsByVideo(items, termGroups) {
+        const groups = new Map();
+
+        items.forEach(item => {
+            const key = searchResultVideoKey(item);
+            if (!groups.has(key)) {
+                groups.set(key, {
+                    items: [],
+                    transcriptIndexes: new Set(),
+                    titleIndexes: new Set(),
+                    summaryIndexes: new Set(matchingTermGroupIndexes(item.summary, termGroups)),
+                    bestTranscriptCount: 0,
+                    bestScore: 0,
+                    clipCount: 0,
+                    specificityScore: 0
+                });
+            }
+
+            const group = groups.get(key);
+            const matchedIndexes = item.matched_group_indexes || [];
+            group.items.push(item);
+            group.bestScore = Math.max(group.bestScore, item.score || 0);
+            matchedIndexes.forEach(index => (
+                item.isTitleMatch ? group.titleIndexes : group.transcriptIndexes
+            ).add(index));
+            if (!item.isTitleMatch) {
+                group.bestTranscriptCount = Math.max(group.bestTranscriptCount, matchedIndexes.length);
+                group.clipCount += 1;
+            }
+        });
+
+        const rankedGroups = [...groups.values()];
+        const groupFrequencies = Array.from({ length: termGroups.length }, () => 0);
+        rankedGroups.forEach(group => {
+            group.matchedIndexes = new Set([...group.transcriptIndexes, ...group.titleIndexes]);
+            group.matchedIndexes.forEach(index => { groupFrequencies[index] += 1; });
+        });
+        rankedGroups.forEach(group => {
+            group.specificityScore = [...group.matchedIndexes].reduce(
+                (score, index) => score + (1 / Math.max(1, groupFrequencies[index])),
+                0
+            );
+            group.items.forEach(item => {
+                item.video_matched_count = group.matchedIndexes.size;
+                item.video_total_query_terms = termGroups.length;
+                item.video_match_is_complete = group.matchedIndexes.size === termGroups.length;
+                item.video_transcript_matched_count = group.transcriptIndexes.size;
+            });
+        });
+
+        rankedGroups.sort((a, b) => (
+            b.matchedIndexes.size - a.matchedIndexes.size
+            // Prefer topics spoken together over mentions scattered through
+            // a long stream, or coverage supplied only by its title/summary.
+            || b.bestTranscriptCount - a.bestTranscriptCount
+            || b.transcriptIndexes.size - a.transcriptIndexes.size
+            || b.specificityScore - a.specificityScore
+            || b.summaryIndexes.size - a.summaryIndexes.size
+            || b.titleIndexes.size - a.titleIndexes.size
+            || b.clipCount - a.clipCount
+            || b.bestScore - a.bestScore
+        ));
+
+        return rankedGroups
+            .slice(0, MAX_SEARCH_RESULTS)
+            .flatMap(group => group.items.sort(compareSearchResultTiers));
+    }
+
+    async function summaryRecallParagraphHits(videos, termGroups) {
+        // A capped posting list can omit a video that genuinely teaches a
+        // common topic. Summaries are recall hints only: every supplemental
+        // hit must still be proved by the published transcript itself.
+        const selected = [...videos.values()]
+            .map(video => ({
+                video,
+                matches: matchingTermGroupIndexes(video.ai_summary, termGroups).length
+            }))
+            .filter(item => item.matches > 0)
+            .sort((a, b) => b.matches - a.matches
+                || String(b.video.publish_date || '').localeCompare(String(a.video.publish_date || ''))
+                || a.video.id.localeCompare(b.video.id))
+            .slice(0, MAX_SUMMARY_RECALL_VIDEOS);
+        const batches = await Promise.all(selected.map(async ({ video }) => {
+            try {
+                const paragraphs = await loadParagraphsForVideo(video.id);
+                return paragraphs.map(paragraph => ({
+                    videoId: video.id,
+                    start: paragraph.start,
+                    matchedIndexes: matchingTermGroupIndexes(
+                        normalizePublicTranscript(paragraph.transcript), termGroups
+                    )
+                }))
+                    .filter(hit => hit.matchedIndexes.length > 0)
+                    .sort((a, b) => b.matchedIndexes.length - a.matchedIndexes.length || a.start - b.start)
+                    .slice(0, 2);
+            } catch (error) {
+                // Optional recall must not hide the normal source-backed results.
+                return [];
+            }
+        }));
+        return batches.flat();
+    }
+
     async function staticSearch(query) {
         const queryParts = parseSearchQuery(query);
         if (queryParts.length === 0) return [];
         const termGroups = queryParts.map(part => expandTerms(part.term));
-        const terms = [...new Set(termGroups.flat())];
-        const shards = await Promise.all([...new Set(terms.map(shardIdFor))].map(loadSearchShard));
+        const lookupTerms = [...new Set(termGroups.flatMap(group => group.flatMap(lookupTokensForTerm)))];
+        const shards = await Promise.all([...new Set(lookupTerms.map(shardIdFor))].map(loadSearchShard));
         const index = new Map();
         shards.forEach(shard => Object.entries(shard).forEach(([term, hits]) => index.set(term, hits)));
 
@@ -427,21 +878,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // Preserve useful partial results, but record exactly which requested
         // concepts each title contains.  A generic street-photography title
         // must say "標題符合『接拍』", never "符合『GRIII 接拍』".
+        const titleCandidates = [];
+        const titleGroupFrequencies = Array.from({ length: totalTerms }, () => 0);
         videos.forEach(video => {
             const title = (video.title || '').toLowerCase();
             const matchedIndexes = matchingTermGroupIndexes(title, termGroups);
             if (matchedIndexes.length > 0) {
+                matchedIndexes.forEach(index => { titleGroupFrequencies[index] += 1; });
+                titleCandidates.push({ video, matchedIndexes });
+            }
+        });
+        titleCandidates.forEach(({ video, matchedIndexes }) => {
                 const matchedTerms = labelsForIndexes(matchedIndexes, queryParts);
                 const isCompleteMatch = matchedIndexes.length === totalTerms;
                 const key = `${video.id}_title`;
                 scored.set(key, {
                     score: (isCompleteMatch ? 2000000 : 100000) + (matchedIndexes.length * 10000),
+                    specificity_score: matchedIndexes.reduce(
+                        (score, index) => score + (1 / Math.max(1, titleGroupFrequencies[index])),
+                        0
+                    ),
                     video_title: video.title,
                     timestamp: '00:00',
                     text: video.title,
                     topic_tag: '📌 【標題專題討論】',
                     match_reason: `影片標題符合「${matchedTerms.join('、')}」`,
                     matched_terms: matchedTerms,
+                    matched_group_indexes: matchedIndexes,
                     matched_count: matchedIndexes.length,
                     total_query_terms: totalTerms,
                     highlight_terms: literalMatchedTerms(video.title, termGroups, matchedIndexes),
@@ -454,43 +917,50 @@ document.addEventListener('DOMContentLoaded', () => {
                     is_member_only: video.is_member_only,
                     summary: video.ai_summary || ''
                 });
-            }
         });
 
+        const addTranscriptHit = (videoId, start, groupIndexes) => {
+            const timestamp = formatTimestamp(start);
+            const key = `${videoId}_${timestamp}`;
+            const video = videos.get(videoId);
+            if (!video) return;
+            let item = scored.get(key);
+            if (!item) {
+                item = {
+                    score: 0,
+                    hitGroups: new Set(),
+                    video_id: videoId,
+                    video_title: video.title,
+                    timestamp,
+                    start: Number(start) || 0,
+                    locating_excerpt: '',
+                    topic_tag: '對話段落',
+                    match_reason: '',
+                    url: `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(Number(start) || 0)}s`,
+                    type: '對白同義詞檢索',
+                    isTitleMatch: false,
+                    category: video.category,
+                    publish_date: video.publish_date,
+                    is_member_only: video.is_member_only,
+                    summary: video.ai_summary || ''
+                };
+                scored.set(key, item);
+            }
+            groupIndexes.forEach(groupIndex => {
+                if (item.hitGroups && !item.hitGroups.has(groupIndex)) {
+                    item.hitGroups.add(groupIndex);
+                    item.score += 5000 * (10 ** (totalTerms - groupIndex - 1));
+                }
+            });
+        };
+
+        const summaryHits = await summaryRecallParagraphHits(videos, termGroups);
+        summaryHits.forEach(hit => addTranscriptHit(hit.videoId, hit.start, hit.matchedIndexes));
         termGroups.forEach((group, groupIndex) => {
             group.forEach(term => {
-                (index.get(term) || []).forEach(hit => {
-                    const [videoId, timestamp, text, start] = hit;
-                    const displayText = normalizePublicTranscript(text);
-                    const key = `${videoId}_${timestamp}`;
-                    const video = videos.get(videoId);
-                    if (!video) return;
-                    let item = scored.get(key);
-                    if (!item) {
-                        item = {
-                            score: 0,
-                            hitGroups: new Set(),
-                            video_id: videoId,
-                            video_title: video.title,
-                            timestamp,
-                            start: Number(start) || 0,
-                            locating_excerpt: displayText,
-                            topic_tag: topicTag(displayText),
-                            match_reason: '',
-                            url: `https://www.youtube.com/watch?v=${videoId}&t=${Math.floor(Number(start) || 0)}s`,
-                            type: '對白同義詞檢索',
-                            isTitleMatch: false,
-                            category: video.category,
-                            publish_date: video.publish_date,
-                            is_member_only: video.is_member_only,
-                            summary: video.ai_summary || ''
-                        };
-                        scored.set(key, item);
-                    }
-                    if (item.hitGroups && !item.hitGroups.has(groupIndex)) {
-                        item.hitGroups.add(groupIndex);
-                        item.score += 5000 * (10 ** (totalTerms - groupIndex - 1));
-                    }
+                const locator = bestLocatorToken(term, index);
+                (index.get(locator) || []).forEach(([videoId, start]) => {
+                    addTranscriptHit(videoId, start, [groupIndex]);
                 });
             });
         });
@@ -503,6 +973,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         item.score += 1000000;
                     }
                     item.matched_count = item.hitGroups.size;
+                    item.matched_group_indexes = [...item.hitGroups];
                     item.total_query_terms = totalTerms;
                     delete item.hitGroups;
                 }
@@ -511,7 +982,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .sort((a, b) => b.score - a.score);
         const candidates = selectSearchResultsByTier(scoredCandidates, totalTerms);
         const results = await attachParagraphContexts(candidates);
-        return results
+        const verifiedResults = results
             .map(item => {
                 if (item.isTitleMatch) return item;
 
@@ -519,6 +990,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (matchedIndexes.length === 0) return null;
                 const matchedTerms = labelsForIndexes(matchedIndexes, queryParts);
                 item.matched_terms = matchedTerms;
+                item.matched_group_indexes = matchedIndexes;
                 item.matched_count = matchedIndexes.length;
                 item.total_query_terms = totalTerms;
                 item.highlight_terms = literalMatchedTerms(item.transcript, termGroups, matchedIndexes);
@@ -527,13 +999,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.transcript_excerpt = createSearchExcerpt(item.transcript, item.highlight_terms);
                 return item;
             })
-            .filter(Boolean)
-            // Keep the result hierarchy stable: every title tier first, from
-            // most to least query terms; then transcript evidence in the same
-            // order.  Partial matches remain useful without masquerading as a
-            // complete multi-term result.
-            .sort(compareSearchResultTiers)
-            .slice(0, MAX_SEARCH_RESULTS);
+            .filter(Boolean);
+        return orderSearchResultsByVideo(verifiedResults, termGroups);
     }
 
     function initTheme() {
@@ -572,12 +1039,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function rememberSearchLocation() {
+        const url = new URL(window.location.href);
+        if (lastSearchQuery) url.searchParams.set('q', lastSearchQuery);
+        else url.searchParams.delete('q');
+        if (currentCategory !== 'all') url.searchParams.set('category', currentCategory);
+        else url.searchParams.delete('category');
+        window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+    }
+
+    async function showKnowledgeSuggestions(query) {
+        const region = document.getElementById('knowledgeSuggestions');
+        if (!region || !window.AIOKKnowledgeSearch) return;
+        if (!query) {region.hidden = true; region.replaceChildren(); return;}
+        try {
+            knowledgePromise ||= fetch('/wiki/knowledge-lexicon.json', {cache:'no-cache'})
+                .then(response => {if (!response.ok) throw new Error('knowledge index unavailable'); return response.json();});
+            const lexicon = await knowledgePromise;
+            if (query !== lastSearchQuery) return;
+            const points = window.AIOKKnowledgeSearch.find(query, lexicon.points, 3);
+            region.hidden = !points.length;
+            region.innerHTML = '<span>也可以從這些知識點開始</span>' + points.map(point =>
+                `<a href="${escapeHtml(point.url)}">${escapeHtml(point.display_title)} →</a>`).join('');
+        } catch {region.hidden = true; knowledgePromise = null;}
+    }
+
     if (searchInput) {
         searchInput.addEventListener('input', toggleClearBtn);
     }
 
     if (clearBtn) {
         clearBtn.addEventListener('click', () => {
+            searchGeneration += 1;
             searchInput.value = '';
             lastSearchQuery = '';
             currentRawSearchResults = null;
@@ -630,7 +1123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadEncyclopedia() {
         try {
-            const res = await fetch('/catalog.json');
+            const res = await fetch('/catalog.json', { cache: 'no-cache' });
             if (!res.ok) throw new Error('API request failed');
             encyclopediaData = await res.json();
             videosById = null;
@@ -639,7 +1132,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (statusText && Number.isInteger(totalVideos)) {
                 statusText.textContent = `${totalVideos.toLocaleString('zh-TW')} 部影片資料庫在線`;
             }
-            renderCategory('all');
+            const statusUpdated = document.querySelector('[data-updated-date]');
+            const latestPublishDate = (encyclopediaData?.categories || [])
+                .flatMap(category => category.videos || [])
+                .map(video => video.publish_date)
+                .filter(date => /^\d{4}-\d{2}-\d{2}$/.test(date || ''))
+                .sort()
+                .at(-1);
+            if (statusUpdated && latestPublishDate) {
+                statusUpdated.textContent = `更新至 ${latestPublishDate.replaceAll('-', '/')}`;
+            }
+            const params = new URLSearchParams(window.location.search);
+            const requestedCategory = params.get('category');
+            currentCategory = encyclopediaData.categories.some(c => c.id === requestedCategory) ? requestedCategory : 'all';
+            document.querySelectorAll('.tab-pill').forEach(btn => btn.classList.toggle('active', btn.dataset.cat === currentCategory));
+            const query = params.get('q') || '';
+            searchInput.value = query;
+            toggleClearBtn();
+            if (query) await performSearch(query);
+            else renderCategory(currentCategory);
         } catch (err) {
             console.error('Failed to load data:', err);
             resultCount.textContent = '資料載入失敗，請重新整理。';
@@ -670,11 +1181,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderCategory(catId) {
         if (!encyclopediaData) return;
         currentCategory = catId;
+        rememberSearchLocation();
 
         if (lastSearchQuery && currentRawSearchResults) {
             renderSearchResultsByCategory();
             return;
         }
+        if (searchInterpretation) searchInterpretation.hidden = true;
+        showKnowledgeSuggestions('');
 
         let videos = [];
         if (catId === 'all') {
@@ -698,6 +1212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         resultCount.textContent = `共 ${videos.length} 部影片`;
         renderVideoCards(videos);
+        window.dispatchEvent(new Event('aiok-content-ready'));
     }
 
     function createVideoCardElement(v) {
@@ -829,13 +1344,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         titleMatchedCount: 0,
                         totalQueryTerms: 0,
                         titleMatchIsComplete: false,
+                        videoMatchedCount: r.video_matched_count || 0,
+                        videoTotalQueryTerms: r.video_total_query_terms || 0,
+                        videoMatchIsComplete: Boolean(r.video_match_is_complete),
+                        transcriptMatchedCount: r.video_transcript_matched_count || 0,
+                        videoUrl: r.isTitleMatch ? r.url : '',
                         summary: r.summary || '',
                         clips: []
                     });
                 }
                 const group = groupedMap.get(key);
+                group.videoMatchedCount = Math.max(group.videoMatchedCount, r.video_matched_count || 0);
+                group.videoTotalQueryTerms = Math.max(group.videoTotalQueryTerms, r.video_total_query_terms || 0);
+                group.videoMatchIsComplete = group.videoMatchIsComplete || Boolean(r.video_match_is_complete);
+                group.transcriptMatchedCount = Math.max(group.transcriptMatchedCount, r.video_transcript_matched_count || 0);
                 if (!group.summary && r.summary) group.summary = r.summary;
                 if (r.isTitleMatch) {
+                    group.videoUrl = r.url || group.videoUrl;
                     group.titleMatch = true;
                     group.titleMatchedTerms = r.matched_terms || [];
                     group.titleMatchedCount = r.matched_count || group.titleMatchedTerms.length;
@@ -856,10 +1381,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Keep every title tier.  The source result order is already:
-        // title all terms -> title partial tiers -> transcript all terms ->
-        // transcript partial tiers.  Grouping only merges evidence belonging
-        // to the same video; it must not discard a useful partial title match.
+        // The source results are already ranked as videos. Grouping here only
+        // merges each video's title and timestamped evidence for display.
         const groupedVideos = Array.from(groupedMap.values());
 
         const catNames = {
@@ -872,8 +1395,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const catLabel = catNames[currentCategory] || '';
+        const completeCount = groupedVideos.filter(item => item.videoMatchIsComplete).length;
+        const partialCount = groupedVideos.length - completeCount;
         sectionTitle.textContent = `搜尋「${lastSearchQuery}」 ‧ ${catLabel}`;
-        resultCount.textContent = `共 ${groupedVideos.length} 部符合條件的影片`;
+        resultCount.textContent = `共 ${groupedVideos.length} 部影片（完整 ${completeCount}、部分 ${partialCount}）`;
 
         videoGrid.innerHTML = '';
         if (groupedVideos.length === 0) {
@@ -885,7 +1410,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        let activeResultTier = '';
         groupedVideos.forEach(item => {
+            const resultTier = item.videoMatchIsComplete ? 'complete' : 'partial';
+            if (resultTier !== activeResultTier) {
+                const divider = document.createElement('div');
+                divider.className = `search-tier-divider ${resultTier}`;
+                divider.innerHTML = resultTier === 'complete'
+                    ? '<strong>完整符合</strong><span>同一支影片的標題或逐字稿涵蓋全部搜尋詞</span>'
+                    : '<strong>部分相關</strong><span>只符合部分搜尋詞，供延伸查找</span>';
+                videoGrid.appendChild(divider);
+                activeResultTier = resultTier;
+            }
+
             const card = document.createElement('div');
             card.className = 'video-card';
 
@@ -896,7 +1433,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let featureBadgeHtml = '';
             if (item.clips.length >= 3) {
-                featureBadgeHtml = `<span class="featured-label">「${lastSearchQuery}」主題精華</span>`;
+                featureBadgeHtml = `<span class="featured-label">「${escapeHtml(lastSearchQuery)}」主題精華</span>`;
             }
 
             const dateHtml = item.publish_date ? `<span class="card-date">發布 ${escapeHtml(item.publish_date)}</span>` : '';
@@ -920,7 +1457,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="clip-node title-match-node">
                         <div class="match-reason-pill">${escapeHtml(titleMatchDescription)}</div>
                         ${item.clips.length === 0
-                            ? `<div class="quote-text">${item.titleMatchIsComplete ? '標題包含所有搜尋詞' : '標題只符合部分搜尋詞'}；目前尚未找到可定位的逐字稿時間點。</div>`
+                            ? `<div class="quote-text">${item.titleMatchIsComplete ? '標題包含所有搜尋詞' : '標題只符合部分搜尋詞'}；目前尚未找到可定位的逐字稿時間點，點卡片可從影片開頭觀看。</div>`
                             : ''}
                     </div>
                 `;
@@ -1008,6 +1545,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!e.target.closest('.fold-btn')) {
                     if (item.clips.length > 0) {
                         window.open(item.clips[0].url, '_blank');
+                    } else if (item.videoUrl) {
+                        window.open(item.videoUrl, '_blank');
                     }
                 }
             });
@@ -1018,7 +1557,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function performSearch(query) {
         const cleanQuery = query.trim();
+        const topics = parseNaturalSearchQuery(cleanQuery);
+        if (searchInterpretation) {
+            searchInterpretation.hidden = !topics;
+            searchInterpretation.textContent = topics
+                ? `搜尋主題：${topics.map(part => part.label).join('、')}。完整符合表示主題都有出現，可點時間查看原片說明。`
+                : '';
+        }
         if (!cleanQuery) {
+            searchGeneration += 1;
             lastSearchQuery = '';
             currentRawSearchResults = null;
             renderCategory(currentCategory);
@@ -1027,15 +1574,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isSearching) return;
         isSearching = true;
+        const generation = ++searchGeneration;
 
         showLoadingState();
 
         lastSearchQuery = cleanQuery;
+        rememberSearchLocation();
+        showKnowledgeSuggestions(cleanQuery);
         sectionTitle.textContent = `搜尋「${cleanQuery}」觀點與時間軸`;
         resultCount.textContent = '正在搜尋索引...';
 
         try {
-            currentRawSearchResults = await staticSearch(cleanQuery);
+            const results = await staticSearch(cleanQuery);
+            if (generation !== searchGeneration) return;
+            currentRawSearchResults = results;
             renderSearchResultsByCategory();
         } catch (err) {
             console.error('Search failed:', err);
@@ -1043,6 +1595,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             hideLoadingState();
             isSearching = false;
+            window.dispatchEvent(new Event('aiok-content-ready'));
         }
     }
 

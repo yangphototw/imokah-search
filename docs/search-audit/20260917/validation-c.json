@@ -1,0 +1,63 @@
+{
+  "queries": 60,
+  "returned": 178,
+  "missing": 78,
+  "packet_returned": 177,
+  "packet_missing": 75,
+  "distinct_evidence_paragraphs": 413,
+  "extra_sources": [
+    [
+      161,
+      "returned",
+      "HjTiyYgp4d4"
+    ],
+    [
+      184,
+      "missing",
+      "6fyy7AOfxKo"
+    ],
+    [
+      184,
+      "missing",
+      "tcq_IJjsuNs"
+    ],
+    [
+      184,
+      "missing",
+      "HVYUB1dXsZg"
+    ]
+  ],
+  "intent_ambiguity_entries": [
+    [
+      163,
+      "2x8oQhQr1JY"
+    ],
+    [
+      163,
+      "1rTmX4lV1mE"
+    ],
+    [
+      166,
+      "EJ8iUj2iDBM"
+    ],
+    [
+      176,
+      "raBkI6zpZTE"
+    ]
+  ],
+  "verdict_counts": {
+    "returned": {
+      "useful": 149,
+      "mention": 17,
+      "irrelevant": 11,
+      "unclear": 1
+    },
+    "missing": {
+      "should_include": 53,
+      "mention": 15,
+      "unclear": 5,
+      "irrelevant": 5
+    }
+  },
+  "validation": "All 60 queries, packet coverage, paragraph identities, flags, and original ranks/full_match verified."
+}

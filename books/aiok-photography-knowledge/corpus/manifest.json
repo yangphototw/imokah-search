@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "purpose": "完整頻道逐字稿的可追溯檢索索引；內容表示影片說了什麼，不表示外部事實已獲驗證。",
+  "catalog_videos": 1058,
+  "indexed_videos": 1058,
+  "indexed_passages": 60712,
+  "approved_summaries": 1001,
+  "review_exceptions": 57,
+  "videos_without_approved_summary_or_exception": 0,
+  "category_video_counts": {
+    "器材評測": 306,
+    "日常影片": 435,
+    "會員評圖": 32,
+    "直播存檔": 251,
+    "讀書會": 34
+  },
+  "transcript_status_counts": {
+    "complete": 1048,
+    "no_transcript_expected": 10
+  },
+  "source_hashes": {
+    "catalog.json": "d14962d591beb5c0b0f0ed796b896f42219a3a4810c06bd13640fb86284da432",
+    "processing_manifest.json": "bb69d20cc01536088666311afdc654785a15eaa98b5331a8981390154302a949",
+    "approved_video_summaries.json": "bd23411cbac16a37d6e6419357b227dc153497ec26aff07ee1e094336d11bd91",
+    "summary_review_exceptions.json": "d62d09d4cd04726776b749fcd025bf735c5298c223f049087f937ac3af17bf3c"
+  }
+}

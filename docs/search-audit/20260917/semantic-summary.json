@@ -1,0 +1,46 @@
+{
+  "queries_reviewed": 200,
+  "returned_video_query_pairs_reviewed": 552,
+  "returned_verdicts": {
+    "useful": 472,
+    "mention": 49,
+    "irrelevant": 20,
+    "unclear": 4,
+    "alternate_intent": 7
+  },
+  "top_three_video_query_pairs_reviewed": 540,
+  "top_three_verdicts": {
+    "useful": 468,
+    "mention": 49,
+    "irrelevant": 14,
+    "unclear": 4,
+    "alternate_intent": 5
+  },
+  "missing_video_query_pairs_reviewed": 260,
+  "missing_verdicts": {
+    "should_include": 209,
+    "mention": 33,
+    "irrelevant": 13,
+    "unclear": 5
+  },
+  "judgments_with_full_source_read": 556,
+  "distinct_referenced_paragraphs": 1252,
+  "zero_results_with_confirmed_useful_source": [
+    "中央重點測光",
+    "矩陣測光",
+    "離機閃燈",
+    "引閃器",
+    "環境人像",
+    "兒童攝影",
+    "街頭光影",
+    "風景構圖",
+    "夜拍對焦",
+    "鳥類攝影",
+    "搖攝",
+    "滾動快門",
+    "底片沖洗"
+  ],
+  "queries_with_front_rank_concern": 48,
+  "queries_with_confirmed_missing_source": 124,
+  "all_returned_semantically_approved": false
+}
