@@ -1,6 +1,6 @@
 # 攝影關鍵字搜尋：低成本差異驗收
 
-日期：2026-09-27。比較對象是 [2026-09-17 固定基線](../20260917/SUMMARY.md)的同一批 200 個關鍵字、1,058 支影片與 60,712 個已發布逐字稿段落。搜尋修正已上傳 [GitHub 審查分支](https://github.com/yangphototw/imokah-search/tree/codex/keyword-search-20260927)；網站尚未部署。
+日期：2026-09-27。比較對象是 [2026-09-17 固定基線](../20260917/SUMMARY.md)的同一批 200 個關鍵字、1,058 支影片與 60,712 個已發布逐字稿段落。搜尋修正已由 [GitHub 審查分支](https://github.com/yangphototw/imokah-search/tree/codex/keyword-search-20260927)推送至 `master`，並在[正式網站](https://imokah-search.vercel.app/)確認搜尋程式、目錄、兩種索引與知識地圖均已載入。
 
 ## 這次修了什麼
 
